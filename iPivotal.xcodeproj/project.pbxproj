@@ -21,6 +21,7 @@
 		8C3FD3BE0FCF0B5A004D8DD0 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B90FCF0B5A004D8DD0 /* ASIHTTPRequest.m */; };
 		8C3FD3BF0FCF0B5A004D8DD0 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3BC0FCF0B5A004D8DD0 /* ASINetworkQueue.m */; };
 		8C3FD3C20FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3C10FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m */; };
+		8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		8C3FD3BC0FCF0B5A004D8DD0 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		8C3FD3C00FCF0B62004D8DD0 /* NSHTTPCookieAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHTTPCookieAdditions.h; sourceTree = "<group>"; };
 		8C3FD3C10FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHTTPCookieAdditions.m; sourceTree = "<group>"; };
+		8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Nibware.m"; sourceTree = "<group>"; };
+		8C3FD3C50FCF0B8B004D8DD0 /* NSDate+Nibware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Nibware.h"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +69,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				28216C950DB411BC00E5133A /* FirstViewController.h */,
 				28216C960DB411BC00E5133A /* FirstViewController.m */,
@@ -150,6 +154,15 @@
 			name = "ASI HTTP Library";
 			sourceTree = "<group>";
 		};
+		8C3FD3C30FCF0B7C004D8DD0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */,
+				8C3FD3C50FCF0B8B004D8DD0 /* NSDate+Nibware.h */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,6 +226,7 @@
 				8C3FD3BE0FCF0B5A004D8DD0 /* ASIHTTPRequest.m in Sources */,
 				8C3FD3BF0FCF0B5A004D8DD0 /* ASINetworkQueue.m in Sources */,
 				8C3FD3C20FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m in Sources */,
+				8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
