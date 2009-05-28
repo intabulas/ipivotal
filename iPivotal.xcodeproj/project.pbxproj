@@ -17,6 +17,10 @@
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B10FCF0A84004D8DD0 /* Default.png */; };
 		8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
+		8C3FD3BD0FCF0B5A004D8DD0 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B70FCF0B5A004D8DD0 /* ASIFormDataRequest.m */; };
+		8C3FD3BE0FCF0B5A004D8DD0 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B90FCF0B5A004D8DD0 /* ASIHTTPRequest.m */; };
+		8C3FD3BF0FCF0B5A004D8DD0 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3BC0FCF0B5A004D8DD0 /* ASINetworkQueue.m */; };
+		8C3FD3C20FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3C10FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,14 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C3FD3B10FCF0A84004D8DD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8C3FD3B20FCF0A84004D8DD0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		8C3FD3B70FCF0B5A004D8DD0 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		8C3FD3B80FCF0B5A004D8DD0 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		8C3FD3B90FCF0B5A004D8DD0 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		8C3FD3BA0FCF0B5A004D8DD0 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		8C3FD3BB0FCF0B5A004D8DD0 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		8C3FD3BC0FCF0B5A004D8DD0 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		8C3FD3C00FCF0B62004D8DD0 /* NSHTTPCookieAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHTTPCookieAdditions.h; sourceTree = "<group>"; };
+		8C3FD3C10FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHTTPCookieAdditions.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +66,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				28216C950DB411BC00E5133A /* FirstViewController.h */,
 				28216C960DB411BC00E5133A /* FirstViewController.m */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
@@ -122,6 +135,21 @@
 			path = ../ipivotal/Images;
 			sourceTree = "<group>";
 		};
+		8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FD3C00FCF0B62004D8DD0 /* NSHTTPCookieAdditions.h */,
+				8C3FD3C10FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m */,
+				8C3FD3B70FCF0B5A004D8DD0 /* ASIFormDataRequest.m */,
+				8C3FD3B80FCF0B5A004D8DD0 /* ASINetworkQueue.h */,
+				8C3FD3B90FCF0B5A004D8DD0 /* ASIHTTPRequest.m */,
+				8C3FD3BA0FCF0B5A004D8DD0 /* ASIHTTPRequest.h */,
+				8C3FD3BB0FCF0B5A004D8DD0 /* ASIFormDataRequest.h */,
+				8C3FD3BC0FCF0B5A004D8DD0 /* ASINetworkQueue.m */,
+			);
+			name = "ASI HTTP Library";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +209,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* iPivotalAppDelegate.m in Sources */,
 				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
+				8C3FD3BD0FCF0B5A004D8DD0 /* ASIFormDataRequest.m in Sources */,
+				8C3FD3BE0FCF0B5A004D8DD0 /* ASIHTTPRequest.m in Sources */,
+				8C3FD3BF0FCF0B5A004D8DD0 /* ASINetworkQueue.m in Sources */,
+				8C3FD3C20FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
