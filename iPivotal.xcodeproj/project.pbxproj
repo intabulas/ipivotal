@@ -22,6 +22,8 @@
 		8C3FD3BF0FCF0B5A004D8DD0 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3BC0FCF0B5A004D8DD0 /* ASINetworkQueue.m */; };
 		8C3FD3C20FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3C10FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m */; };
 		8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */; };
+		8C3FD3CA0FCF0BBD004D8DD0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */; };
+		8C3FD3CE0FCF0BC5004D8DD0 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		8C3FD3C10FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHTTPCookieAdditions.m; sourceTree = "<group>"; };
 		8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Nibware.m"; sourceTree = "<group>"; };
 		8C3FD3C50FCF0B8B004D8DD0 /* NSDate+Nibware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Nibware.h"; sourceTree = "<group>"; };
+		8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,8 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				8C3FD3CA0FCF0BBD004D8DD0 /* CFNetwork.framework in Frameworks */,
+				8C3FD3CE0FCF0BC5004D8DD0 /* libz.1.2.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +101,8 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */,
+				8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */,
 			);
 			name = iPivotal;
 			sourceTree = "<group>";
