@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ProjectsViewController : UIViewController {
-
+@interface ProjectsViewController : UIViewController <UITableViewDelegate> {
+    @private
+    
+    IBOutlet UITableView *projectTableView;
+    IBOutlet UITableViewCell *loadingProjectsCell;
+    IBOutlet UITableViewCell *noProjectsCell;
 }
+
+@property (nonatomic,retain) IBOutlet UITableView *projectTableView;
 
 - (IBAction)logout:(id)sender;
 - (IBAction)refresh:(id)sender;
