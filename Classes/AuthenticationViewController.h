@@ -20,6 +20,7 @@
     
 }
 
+- (IBAction)saveAuthenticationCredentials:(id)sender;
 - (id)initWithTarget:(id)theTarget andSelector:(SEL)theSelector;
 
 

@@ -31,6 +31,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    tokenField.text = [defaults valueForKey:kDefaultsApiToken];
+    
 }
 
 
@@ -70,11 +74,30 @@
     // Release anything that's not essential, such as cached data
 }
 
+
+#pragma mark User Defaults methods
+
+
+- (IBAction)saveAuthenticationCredentials:(id)sender {
+    
+	NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+	NSString *token_value = [tokenField.text stringByTrimmingCharactersInSet:trimSet];
+	if (![token_value isEqualToString:@""]) {
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		[defaults setValue:token_value forKey:kDefaultsApiToken];
+		[defaults synchronize];
+		[target performSelector:selector];
+    }    
+    
+}
+
+
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 
 
 // Customize the number of rows in the table view.

@@ -9,11 +9,18 @@
 #import "iPivotalAppDelegate.h"
 #import "AuthenticationViewController.h"
 
+@interface iPivotalAppDelegate ()
+- (void)postLaunch;
+- (void)presentLogin;
+- (void)authenticate;
+@end
+
 
 @implementation iPivotalAppDelegate
 
 @synthesize window;
 @synthesize navigationController;
+@synthesize toolbar;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
@@ -22,10 +29,16 @@
 	[window addSubview:[navigationController view]];    
 	[window makeKeyAndVisible];
     
-	[self performSelector:@selector(presentLogin) withObject:nil afterDelay:0.0];    
+	[self performSelector:@selector(postLaunch) withObject:nil afterDelay:0.0];    
 
     
 }
+
+
+- (void)postLaunch {
+	[self authenticate];
+}
+
 
 - (void)presentLogin {
     AuthenticationViewController *loginController = [[AuthenticationViewController alloc] initWithTarget:self andSelector:@selector(authenticate)];
@@ -34,6 +47,21 @@
 }    
 
 
+- (void)authenticate {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token = [defaults valueForKey:kDefaultsApiToken];
+    
+    if ( !token ) {
+		[self presentLogin];
+	} else {
+        if (self.loginController) [navigationController dismissModalViewControllerAnimated:YES];
+	}
+}
+
+
+- (AuthenticationViewController *)loginController {
+	return (AuthenticationViewController *)navigationController.modalViewController ;
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Save data if appropriate

@@ -13,4 +13,8 @@
 
 }
 
+- (IBAction)logout:(id)sender;
+- (IBAction)refresh:(id)sender;
+
+
 @end
