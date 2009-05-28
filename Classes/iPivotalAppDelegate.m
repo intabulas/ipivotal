@@ -7,6 +7,7 @@
 //
 
 #import "iPivotalAppDelegate.h"
+#import "AuthenticationViewController.h"
 
 
 @implementation iPivotalAppDelegate
@@ -21,7 +22,17 @@
 	[window addSubview:[navigationController view]];    
 	[window makeKeyAndVisible];
     
+	[self performSelector:@selector(presentLogin) withObject:nil afterDelay:0.0];    
+
+    
 }
+
+- (void)presentLogin {
+    AuthenticationViewController *loginController = [[AuthenticationViewController alloc] initWithTarget:self andSelector:@selector(authenticate)];
+    [navigationController presentModalViewController:loginController animated:YES];
+    [loginController release];
+}    
+
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {

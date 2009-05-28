@@ -25,6 +25,8 @@
 		8C3FD3FA0FCF1AD0004D8DD0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */; };
 		8C3FD4330FCF1C94004D8DD0 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */; };
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
+		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
+		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,9 @@
 		8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsViewController.h; sourceTree = "<group>"; };
 		8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsViewController.m; sourceTree = "<group>"; };
 		8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsViewController.xib; sourceTree = "<group>"; };
+		8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +88,8 @@
 				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
 				8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */,
 				8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */,
+				8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */,
+				8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
 				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
+				8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 				8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */,
 				8C3FD3FA0FCF1AD0004D8DD0 /* MainWindow.xib in Resources */,
 				8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */,
+				8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +248,7 @@
 				8C3FD3C20FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m in Sources */,
 				8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */,
 				8C3FD4330FCF1C94004D8DD0 /* ProjectsViewController.m in Sources */,
+				8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
