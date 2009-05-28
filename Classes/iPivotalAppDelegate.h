@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iPivotalAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface iPivotalAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    UITabBarController *tabBarController;
+    UINavigationController *navigationController;
+    UIToolbar *toolbar;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 @end

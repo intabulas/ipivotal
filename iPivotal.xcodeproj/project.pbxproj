@@ -11,10 +11,8 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
-		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
-		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		28AD73880D9D96C1002E5188 /* TabBarWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* TabBarWindow.xib */; };
 		8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B10FCF0A84004D8DD0 /* Default.png */; };
 		8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
 		8C3FD3BD0FCF0B5A004D8DD0 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B70FCF0B5A004D8DD0 /* ASIFormDataRequest.m */; };
@@ -24,6 +22,9 @@
 		8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */; };
 		8C3FD3CA0FCF0BBD004D8DD0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */; };
 		8C3FD3CE0FCF0BC5004D8DD0 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */; };
+		8C3FD3FA0FCF1AD0004D8DD0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */; };
+		8C3FD4330FCF1C94004D8DD0 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */; };
+		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +33,9 @@
 		1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPivotalAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iPivotal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPivotal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* iPivotal_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPivotal_Prefix.pch; sourceTree = "<group>"; };
-		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* TabBarWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C3FD3B10FCF0A84004D8DD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8C3FD3B20FCF0A84004D8DD0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -53,6 +51,10 @@
 		8C3FD3C50FCF0B8B004D8DD0 /* NSDate+Nibware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Nibware.h"; sourceTree = "<group>"; };
 		8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsViewController.h; sourceTree = "<group>"; };
+		8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsViewController.m; sourceTree = "<group>"; };
+		8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,10 +79,10 @@
 			children = (
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
-				28216C950DB411BC00E5133A /* FirstViewController.h */,
-				28216C960DB411BC00E5133A /* FirstViewController.m */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
+				8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */,
+				8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -120,9 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				8C3FD3B00FCF0A4D004D8DD0 /* Images */,
-				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
-				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				28AD73870D9D96C1002E5188 /* TabBarWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
+				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
+				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -213,10 +216,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
-				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
+				28AD73880D9D96C1002E5188 /* TabBarWindow.xib in Resources */,
 				8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */,
 				8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */,
+				8C3FD3FA0FCF1AD0004D8DD0 /* MainWindow.xib in Resources */,
+				8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,12 +233,12 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* iPivotalAppDelegate.m in Sources */,
-				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
 				8C3FD3BD0FCF0B5A004D8DD0 /* ASIFormDataRequest.m in Sources */,
 				8C3FD3BE0FCF0B5A004D8DD0 /* ASIHTTPRequest.m in Sources */,
 				8C3FD3BF0FCF0B5A004D8DD0 /* ASINetworkQueue.m in Sources */,
 				8C3FD3C20FCF0B62004D8DD0 /* NSHTTPCookieAdditions.m in Sources */,
 				8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */,
+				8C3FD4330FCF1C94004D8DD0 /* ProjectsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

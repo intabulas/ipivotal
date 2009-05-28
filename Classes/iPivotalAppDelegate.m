@@ -12,34 +12,28 @@
 @implementation iPivotalAppDelegate
 
 @synthesize window;
-@synthesize tabBarController;
+@synthesize navigationController;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+	
+	// Configure and show the window
+	[window addSubview:[navigationController view]];    
+	[window makeKeyAndVisible];
     
-    // Add the tab bar controller's current view as a subview of the window
-    [window addSubview:tabBarController.view];
 }
 
 
-/*
-// Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+- (void)applicationWillTerminate:(UIApplication *)application {
+	// Save data if appropriate
 }
-*/
-
-/*
-// Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
-}
-*/
 
 
 - (void)dealloc {
-    [tabBarController release];
-    [window release];
-    [super dealloc];
+	[navigationController release];
+    [toolbar release];
+	[window release];
+	[super dealloc];
 }
 
 @end
-
