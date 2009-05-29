@@ -6,6 +6,7 @@
     PivotalStory *story;
 @private 
     IBOutlet UIImageView *icon;
+    IBOutlet UIImageView *estimateIcon;    
     IBOutlet UILabel *name;    
 }
 

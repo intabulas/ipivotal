@@ -51,10 +51,20 @@
 								<int key="IBUIContentMode">4</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 							</object>
+							<object class="IBUIImageView" id="713119211">
+								<reference key="NSNextResponder" ref="572916589"/>
+								<int key="NSvFlags">268</int>
+								<string key="NSFrame">{{30, 16}, {8, 12}}</string>
+								<reference key="NSSuperview" ref="572916589"/>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+								<int key="IBUIContentMode">4</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+							</object>
 							<object class="IBUILabel" id="22568098">
 								<reference key="NSNextResponder" ref="572916589"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{31, 11}, {266, 21}}</string>
+								<string key="NSFrame">{{42, 12}, {256, 21}}</string>
 								<reference key="NSSuperview" ref="572916589"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -127,6 +137,14 @@
 					</object>
 					<int key="connectionID">10</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">estimateIcon</string>
+						<reference key="source" ref="687044030"/>
+						<reference key="destination" ref="713119211"/>
+					</object>
+					<int key="connectionID">12</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -157,6 +175,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="864998517"/>
 							<reference ref="22568098"/>
+							<reference ref="713119211"/>
 						</object>
 						<reference key="parent" ref="957960031"/>
 					</object>
@@ -170,6 +189,11 @@
 						<reference key="object" ref="22568098"/>
 						<reference key="parent" ref="687044030"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">11</int>
+						<reference key="object" ref="713119211"/>
+						<reference key="parent" ref="687044030"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -178,6 +202,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
+					<string>11.IBPluginDependency</string>
 					<string>2.CustomClassName</string>
 					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
@@ -188,6 +213,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>IterationsViewController</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>StoryCell</string>
 					<string>{{1840, 604}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -215,7 +241,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">10</int>
+			<int key="maxID">12</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -256,11 +282,13 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>estimateIcon</string>
 							<string>icon</string>
 							<string>name</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIImageView</string>
 							<string>UIImageView</string>
 							<string>UILabel</string>
 						</object>

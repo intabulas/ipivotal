@@ -1,15 +1,9 @@
-//
-//  IterationsViewController.m
-//  iPivotal
-//
-//  Created by Mark Lussier on 5/28/09.
-//  Copyright 2009 Juniper Networks. All rights reserved.
-//
 
 #import "IterationsViewController.h"
 #import "PivotalIteration.h"
 #import "PivotalStory.h"
 #import "IterationCell.h"
+#import "StoriesViewController.h"
 
 @implementation IterationsViewController
 
@@ -46,7 +40,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"Iterations";
+    self.navigationItem.title = @"Current/Backlog";
 }
 
 
@@ -148,6 +142,50 @@
 }
 
 
+- (UIView *)tableView: (UITableView *)tableView viewForHeaderInSection: (NSInteger)section {
+    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	dateFormatter.dateFormat = @"MMMM dd";
+        
+	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.iterationTableView.bounds.size.width, 40)];
+    [headerView setBackgroundColor: [UIColor colorWithRed:76.0/255.0 green:76.0/255.0 blue:76.0/255.0 alpha:1.0]];
+	UILabel *labelOne = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, headerView.bounds.size.width, 20)];
+	labelOne.backgroundColor = [UIColor clearColor];
+	labelOne.font = [UIFont boldSystemFontOfSize:14];
+	labelOne.textColor = [UIColor whiteColor];
+	if ( iterations.isLoaded ) labelOne.text = [NSString stringWithFormat:@"Iteration %d", iteration.iterationId];
+    
+	UILabel *labelTwo = [[UILabel alloc] initWithFrame:CGRectMake(10, 22, headerView.bounds.size.width, 10)];
+	labelTwo.backgroundColor = [UIColor clearColor];
+	labelTwo.font = [UIFont boldSystemFontOfSize:11];
+	labelTwo.textColor = [UIColor whiteColor];
+    if ( iterations.isLoaded ) labelTwo.text = [NSString stringWithFormat:@"%@ - %@", [dateFormatter stringFromDate:iteration.startDate], [dateFormatter stringFromDate:iteration.endDate]];
+    
+	[headerView addSubview:labelOne];
+	[headerView addSubview:labelTwo];
+    [dateFormatter release];
+	return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40.0f;
+}
+
+-(IBAction)showDoneStories:(id)sender {
+    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:project andType:@"done"];
+   [self.navigationController pushViewController:controller animated:YES];
+   [controller release];
+    
+}
+
+
+-(IBAction)showIceboxStories:(id)sender {
+    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:project andType:@"icebox"];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
+    
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
@@ -199,6 +237,7 @@
 - (void)dealloc {
     [iterations  removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [loadingCell release];
+    [doneStoriesButton release];
     [noIterationsCell release];
     [iterations release];
     [storyCell release];

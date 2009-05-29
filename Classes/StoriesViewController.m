@@ -1,41 +1,59 @@
-#import "ProjectsViewController.h"
-#import "ProjectCell.h"
-#import "PivotalProject.h"
-#import "IterationsViewController.h"
+//
+//  StoriesViewController.m
+//  iPivotal
+//
+//  Created by Mark Lussier on 5/29/09.
+//  Copyright 2009 Juniper Networks. All rights reserved.
+//
 
-@implementation ProjectsViewController
+#import "StoriesViewController.h"
 
-@synthesize projectTableView;
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style]) {
-    }
+@implementation StoriesViewController
+
+@synthesize storiesTableView;
+
+- (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
+    [super init];
+    project = theProject;
+    storyType = theType;
     return self;
 }
-*/
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
-
-    projects = [[PivotalProjects alloc] init];
-    [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
+    
+    stories = [[PivotalStories alloc] initWithProject:project andType:storyType];
+    [stories addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
+    if ( !stories.isLoaded) [stories loadStories];
     
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"Projects";
+    self.navigationItem.title = [storyType capitalizedString];
 }
 
 
-- (void)loadProjects {
-   if ( !projects.isLoaded ) [projects loadProjects];    
+- (void)loadStories {
+    if ( !stories.isLoaded ) [stories loadStories];    
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
+    if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
+        PivotalStories *theStories = (PivotalStories *)object;
+        if ( theStories.isLoading) {
+        } else {         
+     		[self.storiesTableView reloadData];
+        }        
+	}    
+}
+
+
 
 /*
 - (void)viewDidAppear:(BOOL)animated {
@@ -66,34 +84,6 @@
     // Release anything that's not essential, such as cached data
 }
 
-
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
-    if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
-        PivotalProjects *theProjects = (PivotalProjects *)object;
-        if ( theProjects.isLoading) {
-        } else {         
-//            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [tasks.lastUpdated prettyDate]];            
-     		[self.projectTableView reloadData];
-        }        
-	}    
-}
-
-
-#pragma mark Table view methods
-
-- (IBAction)logout:(id)sender {
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults removeObjectForKey:kDefaultsApiToken];
-    
-}
-
-- (IBAction)refresh:(id)sender {
-    [projects  reloadProjects];
-    [self.projectTableView reloadData];    
-}
-
-
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -103,37 +93,35 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  (projects.isLoading ) || (projects.projects.count == 0) ? 1 : projects.projects.count;
+    return ( !stories.isLoaded) ? 1 : [stories.stories count];
+
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    NSInteger row = indexPath.row;    
-    
-    if ( projects.isLoading ) return loadingProjectsCell;
-    if ( projects.projects.count == 0) return noProjectsCell;
     
     
-	ProjectCell *cell = (ProjectCell *)[tableView dequeueReusableCellWithIdentifier:@"ProjectCell"];
+    NSInteger row = indexPath.row;
+    
+    if ( stories.isLoading) return loadingCell;
+    
+	StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
 	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"ProjectCell" owner:self options:nil];
-		cell = projectCell;
+		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
+		cell = storyCell;
 	}
-
-	cell.project = [projects.projects objectAtIndex:row];
-	return cell;        
+    
+	cell.story = [stories.stories objectAtIndex:row];
+	return cell;   
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    PivotalProject *project = [projects.projects objectAtIndex:indexPath.row];
-	IterationsViewController *controller = [[IterationsViewController alloc] initWithProject:project];
-	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
-    
+    // Navigation logic may go here. Create and push another view controller.
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
 }
 
 
@@ -177,13 +165,18 @@
 */
 
 
+- (IBAction)refresh:(id)sender {
+    
+    [stories reloadStories];
+    [self.storiesTableView reloadData];  
+}
+
+
+
 - (void)dealloc {
-    [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [projects release];
-    [projectCell release];
-    [loadingProjectsCell release];
-    [noProjectsCell release];
-    [projectTableView release];
+    [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
+    [storyType release];
+    [stories release];
     [super dealloc];
 }
 

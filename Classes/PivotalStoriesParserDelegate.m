@@ -1,52 +1,29 @@
+#import "PivotalStoriesParserDelegate.h"
+#import "PivotalStory.h"
 
 
-#import "PivotalIterationsParserDelegate.h"
-#import "PivotalIteration.h"
-
-
-@implementation PivotalIterationsParserDelegate
+@implementation PivotalStoriesParserDelegate
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	[super parserDidStartDocument:parser];
 	dateFormatter = [[NSDateFormatter alloc] init];
 	dateFormatter.dateFormat = @"yyyy/MM/dd HH:mm:ss 'GMT'";
-    handlingStory = NO;
 }
 
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
-	if ([elementName isEqualToString:@"iteration"]) {
-		currentIteration = [[PivotalIteration alloc] init];
-    } else if ([elementName isEqualToString:@"story"]) {
+    if ([elementName isEqualToString:@"story"]) {
         currentStory = [[PivotalStory alloc] init];
-        handlingStory= YES;
 	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	if ([elementName isEqualToString:@"iteration"]) {
-		[resources addObject:currentIteration];
-		[currentIteration release];
-		currentIteration = nil;
-    } else if ([elementName isEqualToString:@"story"]) {
-        [currentIteration.stories addObject:currentStory];
+    if ([elementName isEqualToString:@"story"]) {
+        [resources addObject:currentStory];
         [currentStory release];
         currentStory = nil;        
-        handlingStory = NO;
 	} else if ([elementName isEqualToString:@"id"]) {      
-        if ( handlingStory ) { 
-            currentStory.storyId = [currentElementValue integerValue];
-        } else {
-           currentIteration.iterationId = [currentElementValue integerValue];
-        }
-	} else if ([elementName isEqualToString:@"number"]) {      
-        currentIteration.iterationNumber = [currentElementValue integerValue];
-	} else if ([elementName isEqualToString:@"start"]) {             
-        NSLog(@"Start: '%@'", currentElementValue);
-        currentIteration.startDate = [dateFormatter dateFromString:currentElementValue];
-	} else if ([elementName isEqualToString:@"finish"]) {                      
-        currentIteration.endDate = [dateFormatter dateFromString:currentElementValue];        
-        
+        currentStory.storyId = [currentElementValue integerValue];
 	} else if ([elementName isEqualToString:@"story_type"]) {              
         currentStory.storyType = currentElementValue;
 	} else if ([elementName isEqualToString:@"url"]) {              
@@ -84,7 +61,6 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-	[currentIteration release];
     [currentStory release];
 	[dateFormatter release];
     [super dealloc];
