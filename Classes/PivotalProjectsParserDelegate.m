@@ -17,7 +17,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	if ([elementName isEqualToString:@"task"]) {
+	if ([elementName isEqualToString:@"project"]) {
 		[resources addObject:currentProject];
 		[currentProject release];
 		currentProject = nil;

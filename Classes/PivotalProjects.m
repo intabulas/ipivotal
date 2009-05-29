@@ -1,13 +1,5 @@
-//
-//  PivotalProjects.m
-//  iPivotal
-//
-//  Created by Mark Lussier on 5/28/09.
-//  Copyright 2009 Juniper Networks. All rights reserved.
-//
-
 #import "PivotalProjects.h"
-
+#import "PivotalProjectsParserDelegate.h"
 
 @interface PivotalProjects ()
 - (void)parseProjects;
@@ -35,7 +27,7 @@
 - (void)loadProjects {
     self.error = nil;
     self.status = PivotalResourceStatusLoading;
-    [self performSelectorInBackground:@selector(loadRecords) withObject:nil]
+    [self performSelectorInBackground:@selector(loadRecords) withObject:nil];
 }
 
 
@@ -73,7 +65,7 @@
     
     NSData *feed = [NSData dataWithContentsOfFile:[self pathForFile:cacheFilename]];
     self.lastUpdated = [self modificationTimeForFile:cacheFilename];
-	PivotalProjectParserDelegate *parserDelegate = [[PivotalProjectParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedProjects:)];
+	PivotalProjectsParserDelegate *parserDelegate = [[PivotalProjectsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedProjects:)];
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:feed];
 	[parser setDelegate:parserDelegate];
 	[parser setShouldProcessNamespaces:NO];
@@ -88,11 +80,12 @@
 - (void)fetchProjects {
 
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    ASIHTTPRequest *request [PivotalResource authenticatedRequestForURL];
+    ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
 	[request start];
-    self.error = [request error]
+    self.error = [request error];
     NSError *theError;    
     NSString *writeableFile = [self pathForFile:cacheFilename];
+    NSLog(@"Response: '%@'", request.responseString );
     [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
     [self parseProjects];
 	[pool release];    

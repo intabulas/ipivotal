@@ -7,6 +7,7 @@
 //
 
 #import "ProjectsViewController.h"
+#import "ProjectCell.h"
 
 
 @implementation ProjectsViewController
@@ -27,8 +28,11 @@
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    projects = [[PivotalProjects alloc] init];
+    
+    if ( !projects.isLoaded ) [projects loadProjects];
+    [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
+    
 }
 
 
@@ -68,6 +72,17 @@
 
 
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
+    if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
+        PivotalProjects *theProjects = (PivotalProjects *)object;
+        if ( theProjects.isLoading) {
+        } else {         
+//            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [tasks.lastUpdated prettyDate]];            
+     		[self.projectTableView reloadData];
+        }        
+	}    
+}
+
 
 #pragma mark Table view methods
 
@@ -78,6 +93,8 @@
 }
 
 - (IBAction)refresh:(id)sender {
+    [projects  reloadProjects];
+    [self.projectTableView reloadData];    
 }
 
 
@@ -90,24 +107,27 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return  (projects.isLoading ) || (projects.projects.count == 0) ? 1 : projects.projects.count;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSInteger row = indexPath.row;    
     
-    return loadingProjectsCell;
-//    static NSString *CellIdentifier = @"Cell";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-//    }
-//    
-//    // Set up the cell...
-//
-//    return cell;
+    if ( projects.isLoading ) return loadingProjectsCell;
+    if ( projects.projects.count == 0) return noProjectsCell;
+    
+    
+	ProjectCell *cell = (ProjectCell *)[tableView dequeueReusableCellWithIdentifier:@"ProjectCell"];
+	if (cell == nil) {
+		[[NSBundle mainBundle] loadNibNamed:@"ProjectCell" owner:self options:nil];
+		cell = projectCell;
+	}
+
+	cell.project = [projects.projects objectAtIndex:row];
+	return cell;        
 }
 
 
@@ -160,6 +180,9 @@
 
 
 - (void)dealloc {
+    [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
+    [projects release];
+    [projectCell release];
     [loadingProjectsCell release];
     [noProjectsCell release];
     [projectTableView release];

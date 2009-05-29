@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-
+#import "PivotalResource.h"
 
 @interface PivotalProjects : PivotalResource {
    @private

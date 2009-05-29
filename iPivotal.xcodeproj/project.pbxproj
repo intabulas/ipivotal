@@ -32,6 +32,9 @@
 		8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */; };
 		8CDB63490FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */; };
 		8CDB634C0FCF5DD0003AC065 /* PivotalProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */; };
+		8CDB63B10FCF86BA003AC065 /* ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63B00FCF86BA003AC065 /* ProjectCell.m */; };
+		8CDB63B60FCF87D0003AC065 /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CDB63B50FCF87D0003AC065 /* ProjectCell.xib */; };
+		8CDB645B0FCF8D45003AC065 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CDB645A0FCF8D45003AC065 /* lightbulb.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,10 @@
 		8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalProjectsParserDelegate.m; sourceTree = "<group>"; };
 		8CDB634A0FCF5DD0003AC065 /* PivotalProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProject.h; sourceTree = "<group>"; };
 		8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalProject.m; sourceTree = "<group>"; };
+		8CDB63AF0FCF86BA003AC065 /* ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCell.h; sourceTree = "<group>"; };
+		8CDB63B00FCF86BA003AC065 /* ProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCell.m; sourceTree = "<group>"; };
+		8CDB63B50FCF87D0003AC065 /* ProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCell.xib; sourceTree = "<group>"; };
+		8CDB645A0FCF8D45003AC065 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +105,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB63AE0FCF86A9003AC065 /* Views */,
 				8CDB632C0FCF4FF0003AC065 /* Domain */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
@@ -146,6 +154,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB63B30FCF87BD003AC065 /* IBFiles */,
 				8C3FD3B00FCF0A4D004D8DD0 /* Images */,
 				28AD73870D9D96C1002E5188 /* TabBarWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -169,6 +178,7 @@
 		8C3FD3B00FCF0A4D004D8DD0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB64590FCF8D3C003AC065 /* Icons */,
 				8C3FD3B10FCF0A84004D8DD0 /* Default.png */,
 				8C3FD3B20FCF0A84004D8DD0 /* Icon.png */,
 			);
@@ -225,6 +235,39 @@
 			name = Parsers;
 			sourceTree = "<group>";
 		};
+		8CDB63AE0FCF86A9003AC065 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB63AF0FCF86BA003AC065 /* ProjectCell.h */,
+				8CDB63B00FCF86BA003AC065 /* ProjectCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8CDB63B30FCF87BD003AC065 /* IBFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB63B40FCF87C3003AC065 /* Cells */,
+			);
+			name = IBFiles;
+			sourceTree = "<group>";
+		};
+		8CDB63B40FCF87C3003AC065 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB63B50FCF87D0003AC065 /* ProjectCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		8CDB64590FCF8D3C003AC065 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB645A0FCF8D45003AC065 /* lightbulb.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,6 +316,8 @@
 				8C3FD3FA0FCF1AD0004D8DD0 /* MainWindow.xib in Resources */,
 				8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */,
 				8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */,
+				8CDB63B60FCF87D0003AC065 /* ProjectCell.xib in Resources */,
+				8CDB645B0FCF8D45003AC065 /* lightbulb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +342,7 @@
 				8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */,
 				8CDB63490FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m in Sources */,
 				8CDB634C0FCF5DD0003AC065 /* PivotalProject.m in Sources */,
+				8CDB63B10FCF86BA003AC065 /* ProjectCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
