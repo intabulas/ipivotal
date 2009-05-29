@@ -27,6 +27,11 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
+		8CDB633B0FCF5685003AC065 /* PivotalResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB633A0FCF5685003AC065 /* PivotalResource.m */; };
+		8CDB63430FCF58B9003AC065 /* PivotalProjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63420FCF58B9003AC065 /* PivotalProjects.m */; };
+		8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */; };
+		8CDB63490FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */; };
+		8CDB634C0FCF5DD0003AC065 /* PivotalProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +66,16 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		8CDB63390FCF5685003AC065 /* PivotalResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalResource.h; sourceTree = "<group>"; };
+		8CDB633A0FCF5685003AC065 /* PivotalResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalResource.m; sourceTree = "<group>"; };
+		8CDB63410FCF58B9003AC065 /* PivotalProjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProjects.h; sourceTree = "<group>"; };
+		8CDB63420FCF58B9003AC065 /* PivotalProjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalProjects.m; sourceTree = "<group>"; };
+		8CDB63440FCF5D69003AC065 /* PivotalResourceParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalResourceParserDelegate.h; sourceTree = "<group>"; };
+		8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalResourceParserDelegate.m; sourceTree = "<group>"; };
+		8CDB63470FCF5D9E003AC065 /* PivotalProjectsParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProjectsParserDelegate.h; sourceTree = "<group>"; };
+		8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalProjectsParserDelegate.m; sourceTree = "<group>"; };
+		8CDB634A0FCF5DD0003AC065 /* PivotalProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProject.h; sourceTree = "<group>"; };
+		8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalProject.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +98,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB632C0FCF4FF0003AC065 /* Domain */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
@@ -184,6 +200,31 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		8CDB632C0FCF4FF0003AC065 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB632D0FCF4FF7003AC065 /* Parsers */,
+				8CDB63390FCF5685003AC065 /* PivotalResource.h */,
+				8CDB633A0FCF5685003AC065 /* PivotalResource.m */,
+				8CDB63410FCF58B9003AC065 /* PivotalProjects.h */,
+				8CDB63420FCF58B9003AC065 /* PivotalProjects.m */,
+				8CDB634A0FCF5DD0003AC065 /* PivotalProject.h */,
+				8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		8CDB632D0FCF4FF7003AC065 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB63440FCF5D69003AC065 /* PivotalResourceParserDelegate.h */,
+				8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */,
+				8CDB63470FCF5D9E003AC065 /* PivotalProjectsParserDelegate.h */,
+				8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,6 +292,11 @@
 				8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */,
 				8C3FD4330FCF1C94004D8DD0 /* ProjectsViewController.m in Sources */,
 				8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */,
+				8CDB633B0FCF5685003AC065 /* PivotalResource.m in Sources */,
+				8CDB63430FCF58B9003AC065 /* PivotalProjects.m in Sources */,
+				8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */,
+				8CDB63490FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m in Sources */,
+				8CDB634C0FCF5DD0003AC065 /* PivotalProject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
