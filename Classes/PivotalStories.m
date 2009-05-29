@@ -13,7 +13,7 @@
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
     [super init];
     project = theProject;
-    self.cacheFilename = [NSString stringWithString:@"projects.xml"];
+    self.cacheFilename = [NSString stringWithFormat:@"stories_%@.xml", theType];
     self.storyType = theType;
     NSString *storiesURL ;
     if ( [theType hasPrefix:@"icebox"] ) {

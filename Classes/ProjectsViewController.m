@@ -112,7 +112,7 @@
 
     NSInteger row = indexPath.row;    
     
-    if ( projects.isLoading ) return loadingProjectsCell;
+    if ( projects.isLoading) return loadingProjectsCell;
     if ( projects.projects.count == 0) return noProjectsCell;
     
     
