@@ -17,5 +17,6 @@
 - (IBAction)logout:(id)sender;
 - (IBAction)refresh:(id)sender;
 
+- (void)loadProjects;
 
 @end

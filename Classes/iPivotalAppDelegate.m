@@ -18,13 +18,16 @@
 
 @implementation iPivotalAppDelegate
 
-@synthesize window;
-@synthesize navigationController;
-@synthesize toolbar;
+//@synthesize window;
+//@synthesize navigationController;
+//@synthesize toolbar;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
+    
+    [self authenticate];
+    
 	// Configure and show the window
 	[window addSubview:[navigationController view]];    
 	[window makeKeyAndVisible];
@@ -55,6 +58,7 @@
 		[self presentLogin];
 	} else {
         if (self.loginController) [navigationController dismissModalViewControllerAnimated:YES];
+        [projectsController loadProjects];
 	}
 }
 

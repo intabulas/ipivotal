@@ -29,8 +29,6 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
     projects = [[PivotalProjects alloc] init];
-    
-    if ( !projects.isLoaded ) [projects loadProjects];
     [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
     
 }
@@ -39,6 +37,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationItem.title = @"Your Projects";
+}
+
+
+- (void)loadProjects {
+   if ( !projects.isLoaded ) [projects loadProjects];    
 }
 
 /*
@@ -87,8 +90,8 @@
 #pragma mark Table view methods
 
 - (IBAction)logout:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removeObjectForKey:kDefaultsApiToken];
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults removeObjectForKey:kDefaultsApiToken];
     
 }
 
