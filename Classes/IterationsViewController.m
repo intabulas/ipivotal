@@ -4,6 +4,7 @@
 #import "PivotalStory.h"
 #import "IterationCell.h"
 #import "StoriesViewController.h"
+#import "StoryViewController.h"
 
 @implementation IterationsViewController
 
@@ -187,10 +188,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+    PivotalIteration *iteration = [iterations.iterations objectAtIndex:indexPath.section];
+
+    StoryViewController *controller = [[StoryViewController alloc] initWithStory:[iteration.stories objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
 
