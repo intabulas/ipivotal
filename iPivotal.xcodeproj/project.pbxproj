@@ -27,6 +27,24 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
+		8CA098F60FCFB4A600846DBA /* IterationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA098F50FCFB4A600846DBA /* IterationsViewController.m */; };
+		8CA098F80FCFB4B900846DBA /* IterationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */; };
+		8CA099030FCFB62900846DBA /* PivotalIterations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA099020FCFB62900846DBA /* PivotalIterations.m */; };
+		8CA099060FCFB63000846DBA /* PivotalIteration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA099050FCFB63000846DBA /* PivotalIteration.m */; };
+		8CA099090FCFB65900846DBA /* PivotalIterationsParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA099080FCFB65900846DBA /* PivotalIterationsParserDelegate.m */; };
+		8CA0990C0FCFB70600846DBA /* PivotalStories.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0990B0FCFB70600846DBA /* PivotalStories.m */; };
+		8CA0990F0FCFB70E00846DBA /* PivotalStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0990E0FCFB70E00846DBA /* PivotalStory.m */; };
+		8CA09A4C0FD029D100846DBA /* IterationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09A4B0FD029D100846DBA /* IterationCell.m */; };
+		8CA09A4E0FD029DA00846DBA /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09A4D0FD029DA00846DBA /* StoryCell.xib */; };
+		8CA09B4B0FD0363400846DBA /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09B4A0FD0363400846DBA /* StoryCell.m */; };
+		8CA09B5B0FD038A100846DBA /* chore.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09B5A0FD038A100846DBA /* chore.png */; };
+		8CA09B5D0FD038AA00846DBA /* feature.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09B5C0FD038AA00846DBA /* feature.png */; };
+		8CA09B9E0FD03A3D00846DBA /* release.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09B9D0FD03A3D00846DBA /* release.png */; };
+		8CA09C050FD04BEA00846DBA /* estimate_1pt.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09C010FD04BEA00846DBA /* estimate_1pt.gif */; };
+		8CA09C060FD04BEA00846DBA /* estimate_2pt.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09C020FD04BEA00846DBA /* estimate_2pt.gif */; };
+		8CA09C070FD04BEA00846DBA /* estimate_3pt.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09C030FD04BEA00846DBA /* estimate_3pt.gif */; };
+		8CA09C080FD04BEA00846DBA /* estimate_unestimated.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09C040FD04BEA00846DBA /* estimate_unestimated.gif */; };
+		8CA09C0A0FD04BF200846DBA /* bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09C090FD04BF200846DBA /* bug.png */; };
 		8CDB633B0FCF5685003AC065 /* PivotalResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB633A0FCF5685003AC065 /* PivotalResource.m */; };
 		8CDB63430FCF58B9003AC065 /* PivotalProjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63420FCF58B9003AC065 /* PivotalProjects.m */; };
 		8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */; };
@@ -69,6 +87,32 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		8CA098F40FCFB4A600846DBA /* IterationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationsViewController.h; sourceTree = "<group>"; };
+		8CA098F50FCFB4A600846DBA /* IterationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationsViewController.m; sourceTree = "<group>"; };
+		8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IterationsViewController.xib; sourceTree = "<group>"; };
+		8CA099010FCFB62900846DBA /* PivotalIterations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalIterations.h; sourceTree = "<group>"; };
+		8CA099020FCFB62900846DBA /* PivotalIterations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalIterations.m; sourceTree = "<group>"; };
+		8CA099040FCFB63000846DBA /* PivotalIteration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalIteration.h; sourceTree = "<group>"; };
+		8CA099050FCFB63000846DBA /* PivotalIteration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalIteration.m; sourceTree = "<group>"; };
+		8CA099070FCFB65900846DBA /* PivotalIterationsParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalIterationsParserDelegate.h; sourceTree = "<group>"; };
+		8CA099080FCFB65900846DBA /* PivotalIterationsParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalIterationsParserDelegate.m; sourceTree = "<group>"; };
+		8CA0990A0FCFB70600846DBA /* PivotalStories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalStories.h; sourceTree = "<group>"; };
+		8CA0990B0FCFB70600846DBA /* PivotalStories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalStories.m; sourceTree = "<group>"; };
+		8CA0990D0FCFB70E00846DBA /* PivotalStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalStory.h; sourceTree = "<group>"; };
+		8CA0990E0FCFB70E00846DBA /* PivotalStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalStory.m; sourceTree = "<group>"; };
+		8CA09A4A0FD029D100846DBA /* IterationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationCell.h; sourceTree = "<group>"; };
+		8CA09A4B0FD029D100846DBA /* IterationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationCell.m; sourceTree = "<group>"; };
+		8CA09A4D0FD029DA00846DBA /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
+		8CA09B490FD0363400846DBA /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
+		8CA09B4A0FD0363400846DBA /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
+		8CA09B5A0FD038A100846DBA /* chore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chore.png; sourceTree = "<group>"; };
+		8CA09B5C0FD038AA00846DBA /* feature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feature.png; sourceTree = "<group>"; };
+		8CA09B9D0FD03A3D00846DBA /* release.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = release.png; sourceTree = "<group>"; };
+		8CA09C010FD04BEA00846DBA /* estimate_1pt.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = estimate_1pt.gif; sourceTree = "<group>"; };
+		8CA09C020FD04BEA00846DBA /* estimate_2pt.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = estimate_2pt.gif; sourceTree = "<group>"; };
+		8CA09C030FD04BEA00846DBA /* estimate_3pt.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = estimate_3pt.gif; sourceTree = "<group>"; };
+		8CA09C040FD04BEA00846DBA /* estimate_unestimated.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = estimate_unestimated.gif; sourceTree = "<group>"; };
+		8CA09C090FD04BF200846DBA /* bug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bug.png; sourceTree = "<group>"; };
 		8CDB63390FCF5685003AC065 /* PivotalResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalResource.h; sourceTree = "<group>"; };
 		8CDB633A0FCF5685003AC065 /* PivotalResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalResource.m; sourceTree = "<group>"; };
 		8CDB63410FCF58B9003AC065 /* PivotalProjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProjects.h; sourceTree = "<group>"; };
@@ -105,16 +149,13 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8CA098F30FCFB47A00846DBA /* Controllers */,
 				8CDB63AE0FCF86A9003AC065 /* Views */,
 				8CDB632C0FCF4FF0003AC065 /* Domain */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
-				8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */,
-				8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */,
-				8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */,
-				8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -156,11 +197,7 @@
 			children = (
 				8CDB63B30FCF87BD003AC065 /* IBFiles */,
 				8C3FD3B00FCF0A4D004D8DD0 /* Images */,
-				28AD73870D9D96C1002E5188 /* TabBarWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
-				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
-				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
-				8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -210,6 +247,19 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		8CA098F30FCFB47A00846DBA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */,
+				8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */,
+				8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */,
+				8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */,
+				8CA098F40FCFB4A600846DBA /* IterationsViewController.h */,
+				8CA098F50FCFB4A600846DBA /* IterationsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		8CDB632C0FCF4FF0003AC065 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +270,14 @@
 				8CDB63420FCF58B9003AC065 /* PivotalProjects.m */,
 				8CDB634A0FCF5DD0003AC065 /* PivotalProject.h */,
 				8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */,
+				8CA099010FCFB62900846DBA /* PivotalIterations.h */,
+				8CA099020FCFB62900846DBA /* PivotalIterations.m */,
+				8CA099040FCFB63000846DBA /* PivotalIteration.h */,
+				8CA099050FCFB63000846DBA /* PivotalIteration.m */,
+				8CA0990A0FCFB70600846DBA /* PivotalStories.h */,
+				8CA0990B0FCFB70600846DBA /* PivotalStories.m */,
+				8CA0990D0FCFB70E00846DBA /* PivotalStory.h */,
+				8CA0990E0FCFB70E00846DBA /* PivotalStory.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -231,6 +289,8 @@
 				8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */,
 				8CDB63470FCF5D9E003AC065 /* PivotalProjectsParserDelegate.h */,
 				8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */,
+				8CA099070FCFB65900846DBA /* PivotalIterationsParserDelegate.h */,
+				8CA099080FCFB65900846DBA /* PivotalIterationsParserDelegate.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -240,6 +300,10 @@
 			children = (
 				8CDB63AF0FCF86BA003AC065 /* ProjectCell.h */,
 				8CDB63B00FCF86BA003AC065 /* ProjectCell.m */,
+				8CA09A4A0FD029D100846DBA /* IterationCell.h */,
+				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
+				8CA09B490FD0363400846DBA /* StoryCell.h */,
+				8CA09B4A0FD0363400846DBA /* StoryCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,7 +311,12 @@
 		8CDB63B30FCF87BD003AC065 /* IBFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
+				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
+				8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */,
+				28AD73870D9D96C1002E5188 /* TabBarWindow.xib */,
 				8CDB63B40FCF87C3003AC065 /* Cells */,
+				8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";
@@ -256,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				8CDB63B50FCF87D0003AC065 /* ProjectCell.xib */,
+				8CA09A4D0FD029DA00846DBA /* StoryCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -263,6 +333,14 @@
 		8CDB64590FCF8D3C003AC065 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8CA09C090FD04BF200846DBA /* bug.png */,
+				8CA09C010FD04BEA00846DBA /* estimate_1pt.gif */,
+				8CA09C020FD04BEA00846DBA /* estimate_2pt.gif */,
+				8CA09C030FD04BEA00846DBA /* estimate_3pt.gif */,
+				8CA09C040FD04BEA00846DBA /* estimate_unestimated.gif */,
+				8CA09B9D0FD03A3D00846DBA /* release.png */,
+				8CA09B5C0FD038AA00846DBA /* feature.png */,
+				8CA09B5A0FD038A100846DBA /* chore.png */,
 				8CDB645A0FCF8D45003AC065 /* lightbulb.png */,
 			);
 			name = Icons;
@@ -318,6 +396,16 @@
 				8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */,
 				8CDB63B60FCF87D0003AC065 /* ProjectCell.xib in Resources */,
 				8CDB645B0FCF8D45003AC065 /* lightbulb.png in Resources */,
+				8CA098F80FCFB4B900846DBA /* IterationsViewController.xib in Resources */,
+				8CA09A4E0FD029DA00846DBA /* StoryCell.xib in Resources */,
+				8CA09B5B0FD038A100846DBA /* chore.png in Resources */,
+				8CA09B5D0FD038AA00846DBA /* feature.png in Resources */,
+				8CA09B9E0FD03A3D00846DBA /* release.png in Resources */,
+				8CA09C050FD04BEA00846DBA /* estimate_1pt.gif in Resources */,
+				8CA09C060FD04BEA00846DBA /* estimate_2pt.gif in Resources */,
+				8CA09C070FD04BEA00846DBA /* estimate_3pt.gif in Resources */,
+				8CA09C080FD04BEA00846DBA /* estimate_unestimated.gif in Resources */,
+				8CA09C0A0FD04BF200846DBA /* bug.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +431,14 @@
 				8CDB63490FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m in Sources */,
 				8CDB634C0FCF5DD0003AC065 /* PivotalProject.m in Sources */,
 				8CDB63B10FCF86BA003AC065 /* ProjectCell.m in Sources */,
+				8CA098F60FCFB4A600846DBA /* IterationsViewController.m in Sources */,
+				8CA099030FCFB62900846DBA /* PivotalIterations.m in Sources */,
+				8CA099060FCFB63000846DBA /* PivotalIteration.m in Sources */,
+				8CA099090FCFB65900846DBA /* PivotalIterationsParserDelegate.m in Sources */,
+				8CA0990C0FCFB70600846DBA /* PivotalStories.m in Sources */,
+				8CA0990F0FCFB70E00846DBA /* PivotalStory.m in Sources */,
+				8CA09A4C0FD029D100846DBA /* IterationCell.m in Sources */,
+				8CA09B4B0FD0363400846DBA /* StoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

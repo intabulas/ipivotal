@@ -13,7 +13,7 @@
 
 @synthesize projectId, name, iterationLength, weekStartDay, pointScale;
 
-#pragma mark 0
+#pragma mark -
 #pragma mark Cleanup Methods
 
 - (void)dealloc {

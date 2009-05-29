@@ -1,11 +1,26 @@
-#import "ProjectsViewController.h"
-#import "ProjectCell.h"
-#import "PivotalProject.h"
+//
+//  IterationsViewController.m
+//  iPivotal
+//
+//  Created by Mark Lussier on 5/28/09.
+//  Copyright 2009 Juniper Networks. All rights reserved.
+//
+
 #import "IterationsViewController.h"
+#import "PivotalIteration.h"
+#import "PivotalStory.h"
+#import "IterationCell.h"
 
-@implementation ProjectsViewController
+@implementation IterationsViewController
 
-@synthesize projectTableView;
+@synthesize iterationTableView;
+
+- (id)initWithProject:(PivotalProject *)theProject {
+    [super init];
+    project = theProject;
+    return self;
+}
+
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -16,26 +31,42 @@
 }
 */
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
-
-    projects = [[PivotalProjects alloc] init];
-    [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
+    
+    iterations = [[PivotalIterations alloc] initWithProject:project];
+    [iterations addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
+    if ( !iterations.isLoaded) [iterations loadIterations];
     
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"Your Projects";
+    self.navigationItem.title = @"Iterations";
 }
 
 
-- (void)loadProjects {
-   if ( !projects.isLoaded ) [projects loadProjects];    
+- (void)loadIterations {
+    if ( !iterations.isLoaded ) [iterations loadIterations];    
 }
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
+    if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
+        PivotalIterations *theIterations = (PivotalIterations *)object;
+        if ( theIterations.isLoading) {
+        } else {         
+     		[self.iterationTableView reloadData];
+        }        
+	}    
+}
+
+
+
 
 /*
 - (void)viewDidAppear:(BOOL)animated {
@@ -66,74 +97,62 @@
     // Release anything that's not essential, such as cached data
 }
 
-
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
-    if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
-        PivotalProjects *theProjects = (PivotalProjects *)object;
-        if ( theProjects.isLoading) {
-        } else {         
-//            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [tasks.lastUpdated prettyDate]];            
-     		[self.projectTableView reloadData];
-        }        
-	}    
-}
-
-
-#pragma mark Table view methods
-
-- (IBAction)logout:(id)sender {
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults removeObjectForKey:kDefaultsApiToken];
-    
-}
-
 - (IBAction)refresh:(id)sender {
-    [projects  reloadProjects];
-    [self.projectTableView reloadData];    
+    
+    [iterations reloadIterations];
+    [self.iterationTableView reloadData];  
 }
-
 
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return ( !iterations.isLoaded) ? 1 : [iterations.iterations count];
 }
 
 
 // Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  (projects.isLoading ) || (projects.projects.count == 0) ? 1 : projects.projects.count;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
+    if ( !iterations.isLoaded) return 0;
+    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+    return iteration.stories.count;
 }
 
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+   PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+   return [NSString stringWithFormat:@"Iteration %d: start - end", [iteration iterationId]];
+}
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger row = indexPath.row;
+    NSInteger section = indexPath.section;
+    
+    if ( iterations.isLoading) return loadingCell;
+    
+    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
 
-    NSInteger row = indexPath.row;    
-    
-    if ( projects.isLoading ) return loadingProjectsCell;
-    if ( projects.projects.count == 0) return noProjectsCell;
-    
-    
-	ProjectCell *cell = (ProjectCell *)[tableView dequeueReusableCellWithIdentifier:@"ProjectCell"];
+
+	StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
 	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"ProjectCell" owner:self options:nil];
-		cell = projectCell;
+		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
+		cell = storyCell;
 	}
+    
+	cell.story = [iteration.stories objectAtIndex:row];
+	return cell;   
 
-	cell.project = [projects.projects objectAtIndex:row];
-	return cell;        
+
+
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    PivotalProject *project = [projects.projects objectAtIndex:indexPath.row];
-	IterationsViewController *controller = [[IterationsViewController alloc] initWithProject:project];
-	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
-    
+    // Navigation logic may go here. Create and push another view controller.
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
 }
 
 
@@ -178,12 +197,11 @@
 
 
 - (void)dealloc {
-    [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [projects release];
-    [projectCell release];
-    [loadingProjectsCell release];
-    [noProjectsCell release];
-    [projectTableView release];
+    [iterations  removeObserver:self forKeyPath:kResourceStatusKeyPath];
+    [loadingCell release];
+    [noIterationsCell release];
+    [iterations release];
+    [storyCell release];
     [super dealloc];
 }
 
