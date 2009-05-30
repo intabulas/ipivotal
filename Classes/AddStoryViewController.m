@@ -1,52 +1,45 @@
-#import "StoriesViewController.h"
-#import "StoryViewController.h"
 #import "AddStoryViewController.h"
 
-@implementation StoriesViewController
 
-@synthesize storiesTableView;
+@implementation AddStoryViewController
 
-- (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
+
+- (id)initWithProject:(PivotalProject *)theProject {
     [super init];
     project = theProject;
-    storyType = theType;
     return self;
 }
 
+- (void)dealloc {
+    [storyTableView release];
+    [nameCell release];
+    [typeCell release];    
+    [estimateCell release];
+    [stateCell release];
+    [descriptionCell release];    
+    [super dealloc];
+}
+
+
+/*
+- (id)initWithStyle:(UITableViewStyle)style {
+    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+    if (self = [super initWithStyle:style]) {
+    }
+    return self;
+}
+*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
-    
-    stories = [[PivotalStories alloc] initWithProject:project andType:storyType];
-    [stories addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
-    if ( !stories.isLoaded) [stories loadStories];
-    
 }
+
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = [storyType capitalizedString];
+    self.title = @"Add Story";
 }
-
-
-- (void)loadStories {
-    if ( !stories.isLoaded ) [stories loadStories];    
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
-    if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
-        PivotalStories *theStories = (PivotalStories *)object;
-        if ( theStories.isLoading) {
-        } else {         
-     		[self.storiesTableView reloadData];
-        }        
-	}    
-}
-
-
 
 /*
 - (void)viewDidAppear:(BOOL)animated {
@@ -80,50 +73,47 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return ( section == 0 ) ? @"Details" : @"Description";
+}
+
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ( !stories.isLoaded) ? 1 : [stories.stories count];
-
+    return ( section == 1 ) ? 1 : 4;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;    
     
-    NSInteger row = indexPath.row;
-    
-    if ( stories.isLoading) return loadingCell;
-    
-	StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
-		cell = storyCell;
-	}
-    
-	cell.story = [stories.stories objectAtIndex:row];
-	return cell;   
+    if ( section == 0 && row == 0 ) return nameCell;
+    if ( section == 0 && row == 1 ) return typeCell;    
+    if ( section == 0 && row == 2 ) return estimateCell;
+    if ( section == 0 && row == 3 ) return stateCell;
+    if ( section == 1 && row == 0 ) return descriptionCell;    
+
+    return nil;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 1 ) ? 103.0f : 40.0f;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    StoryViewController *controller = [[StoryViewController alloc] initWithStory:[stories.stories objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
-    
+    // Navigation logic may go here. Create and push another view controller.
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
 }
 
-
--(IBAction)addStory:(id)sender {
-    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
-}
 
 /*
 // Override to support conditional editing of the table view.
@@ -165,20 +155,6 @@
 */
 
 
-- (IBAction)refresh:(id)sender {
-    
-    [stories reloadStories];
-    [self.storiesTableView reloadData];  
-}
-
-
-
-- (void)dealloc {
-    [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [storyType release];
-    [stories release];
-    [super dealloc];
-}
 
 
 @end

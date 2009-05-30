@@ -18,5 +18,6 @@
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType;
 - (IBAction)refresh:(id)sender;
 - (void)loadStories;
+- (IBAction)addStory:(id)sender;
 
 @end

@@ -1,53 +1,53 @@
-#import "StoriesViewController.h"
-#import "StoryViewController.h"
-#import "AddStoryViewController.h"
+//
+//  SelectionListViewController.m
+//  iPivotal
+//
+//  Created by Mark Lussier on 5/30/09.
+//  Copyright 2009 Juniper Networks. All rights reserved.
+//
 
-@implementation StoriesViewController
+#import "SelectionListViewController.h"
 
-@synthesize storiesTableView;
 
-- (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
+@implementation SelectionListViewController
+
+@synthesize selectionList;
+
+- (id)initWithObjects:(NSArray *)theList {
     [super init];
-    project = theProject;
-    storyType = theType;
+    selectionList = theList;
     return self;
 }
 
+- (void)dealloc {
+    [selectionTableView release];
+    [selectionList release];
+    [super dealloc];
+}
 
+/*
+- (id)initWithStyle:(UITableViewStyle)style {
+    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+    if (self = [super initWithStyle:style]) {
+    }
+    return self;
+}
+*/
+
+/*
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
-    
-    stories = [[PivotalStories alloc] initWithProject:project andType:storyType];
-    [stories addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
-    if ( !stories.isLoaded) [stories loadStories];
-    
+
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+*/
 
-
+/*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = [storyType capitalizedString];
 }
-
-
-- (void)loadStories {
-    if ( !stories.isLoaded ) [stories loadStories];    
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
-    if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
-        PivotalStories *theStories = (PivotalStories *)object;
-        if ( theStories.isLoading) {
-        } else {         
-     		[self.storiesTableView reloadData];
-        }        
-	}    
-}
-
-
-
+*/
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -86,8 +86,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ( !stories.isLoaded) ? 1 : [stories.stories count];
-
+    return [selectionList count];
 }
 
 
@@ -95,35 +94,25 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    NSInteger row = indexPath.row;
+    LabelCell *cell = (LabelCell *)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] autorelease];
+    }
     
-    if ( stories.isLoading) return loadingCell;
+    [cell.textLabel setText:[selectionList objectAtIndex:indexPath.row]];
+
+    return cell;
     
-	StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
-		cell = storyCell;
-	}
-    
-	cell.story = [stories.stories objectAtIndex:row];
-	return cell;   
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    StoryViewController *controller = [[StoryViewController alloc] initWithStory:[stories.stories objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
-    
+    // Navigation logic may go here. Create and push another view controller.
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
 }
 
-
--(IBAction)addStory:(id)sender {
-    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
-}
 
 /*
 // Override to support conditional editing of the table view.
@@ -165,20 +154,6 @@
 */
 
 
-- (IBAction)refresh:(id)sender {
-    
-    [stories reloadStories];
-    [self.storiesTableView reloadData];  
-}
-
-
-
-- (void)dealloc {
-    [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [storyType release];
-    [stories release];
-    [super dealloc];
-}
 
 
 @end

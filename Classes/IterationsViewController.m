@@ -5,9 +5,9 @@
 #import "IterationCell.h"
 #import "StoriesViewController.h"
 #import "StoryViewController.h"
+#import "AddStoryViewController.h"
 
 @implementation IterationsViewController
-
 @synthesize iterationTableView;
 
 - (id)initWithProject:(PivotalProject *)theProject {
@@ -187,6 +187,15 @@
     
 }
 
+-(IBAction)addStory:(id)sender {
+    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];        
+}
+
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:indexPath.section];
 
@@ -194,6 +203,8 @@
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
 }
+
+
 
 
 /*

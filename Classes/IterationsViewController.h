@@ -22,6 +22,6 @@
 
 -(IBAction)showDoneStories:(id)sender;
 -(IBAction)showIceboxStories:(id)sender;
-
+-(IBAction)addStory:(id)sender;
 
 @end

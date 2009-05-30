@@ -29,6 +29,12 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
+		8C826A760FD1699F008F9E51 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826A750FD1699F008F9E51 /* LabelCell.m */; };
+		8C826A780FD16A14008F9E51 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A770FD16A14008F9E51 /* LabelCell.xib */; };
+		8C826A7D0FD16A44008F9E51 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826A7C0FD16A44008F9E51 /* SelectionListViewController.m */; };
+		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
+		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
+		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
 		8CA098F60FCFB4A600846DBA /* IterationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA098F50FCFB4A600846DBA /* IterationsViewController.m */; };
 		8CA098F80FCFB4B900846DBA /* IterationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */; };
 		8CA099030FCFB62900846DBA /* PivotalIterations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA099020FCFB62900846DBA /* PivotalIterations.m */; };
@@ -95,6 +101,15 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		8C826A740FD1699F008F9E51 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
+		8C826A750FD1699F008F9E51 /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
+		8C826A770FD16A14008F9E51 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		8C826A7B0FD16A44008F9E51 /* SelectionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
+		8C826A7C0FD16A44008F9E51 /* SelectionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
+		8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionListViewController.xib; sourceTree = "<group>"; };
+		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
+		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
+		8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStoryViewController.xib; sourceTree = "<group>"; };
 		8CA098F40FCFB4A600846DBA /* IterationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationsViewController.h; sourceTree = "<group>"; };
 		8CA098F50FCFB4A600846DBA /* IterationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationsViewController.m; sourceTree = "<group>"; };
 		8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IterationsViewController.xib; sourceTree = "<group>"; };
@@ -264,6 +279,7 @@
 		8C5224830FD094170090C625 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
+				8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -271,6 +287,8 @@
 		8C5224840FD0941F0090C625 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
+				8C826A7B0FD16A44008F9E51 /* SelectionListViewController.h */,
+				8C826A7C0FD16A44008F9E51 /* SelectionListViewController.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -278,6 +296,8 @@
 		8CA098F30FCFB47A00846DBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */,
+				8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */,
 				8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */,
 				8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */,
 				8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */,
@@ -338,6 +358,8 @@
 				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
 				8CA09B490FD0363400846DBA /* StoryCell.h */,
 				8CA09B4A0FD0363400846DBA /* StoryCell.m */,
+				8C826A740FD1699F008F9E51 /* LabelCell.h */,
+				8C826A750FD1699F008F9E51 /* LabelCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -354,6 +376,7 @@
 				8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */,
 				8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */,
 				8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */,
+				8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";
@@ -363,6 +386,7 @@
 			children = (
 				8CDB63B50FCF87D0003AC065 /* ProjectCell.xib */,
 				8CA09A4D0FD029DA00846DBA /* StoryCell.xib */,
+				8C826A770FD16A14008F9E51 /* LabelCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -445,6 +469,9 @@
 				8CA09C0A0FD04BF200846DBA /* bug.png in Resources */,
 				8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */,
 				8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */,
+				8C826A780FD16A14008F9E51 /* LabelCell.xib in Resources */,
+				8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */,
+				8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +508,9 @@
 				8CA09CEA0FD05B1300846DBA /* StoriesViewController.m in Sources */,
 				8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */,
 				8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */,
+				8C826A760FD1699F008F9E51 /* LabelCell.m in Sources */,
+				8C826A7D0FD16A44008F9E51 /* SelectionListViewController.m in Sources */,
+				8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
