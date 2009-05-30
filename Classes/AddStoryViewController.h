@@ -11,6 +11,9 @@
       IBOutlet UITableViewCell *estimateCell;
       IBOutlet UITableViewCell *stateCell;
       IBOutlet UITableViewCell *descriptionCell;    
+    
+      IBOutlet UITextField *nameField;
+    
 }
 
 - (id)initWithProject:(PivotalProject *)theProject;

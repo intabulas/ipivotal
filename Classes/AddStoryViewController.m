@@ -17,6 +17,7 @@
     [estimateCell release];
     [stateCell release];
     [descriptionCell release];    
+    [nameField release];
     [super dealloc];
 }
 
@@ -32,6 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [nameField becomeFirstResponder];
 }
 
 
