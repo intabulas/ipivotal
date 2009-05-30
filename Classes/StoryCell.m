@@ -49,6 +49,8 @@
     
     }
     
+    
+    state.text = story.currentState;
 
     UIView* backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectZero ] autorelease ];
     backgroundView.backgroundColor = theColor ;

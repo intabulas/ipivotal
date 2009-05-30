@@ -29,6 +29,9 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
+		8C5224870FD0943B0090C625 /* GroupSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5224860FD0943B0090C625 /* GroupSelectView.m */; };
+		8C5224890FD094470090C625 /* GroupSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5224880FD094470090C625 /* GroupSelectView.xib */; };
+		8C52248D0FD0948F0090C625 /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C52248C0FD0948F0090C625 /* GroupCell.m */; };
 		8CA098F60FCFB4A600846DBA /* IterationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA098F50FCFB4A600846DBA /* IterationsViewController.m */; };
 		8CA098F80FCFB4B900846DBA /* IterationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */; };
 		8CA099030FCFB62900846DBA /* PivotalIterations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA099020FCFB62900846DBA /* PivotalIterations.m */; };
@@ -95,6 +98,11 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		8C5224850FD0943B0090C625 /* GroupSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupSelectView.h; sourceTree = "<group>"; };
+		8C5224860FD0943B0090C625 /* GroupSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupSelectView.m; sourceTree = "<group>"; };
+		8C5224880FD094470090C625 /* GroupSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSelectView.xib; sourceTree = "<group>"; };
+		8C52248B0FD0948F0090C625 /* GroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupCell.h; sourceTree = "<group>"; };
+		8C52248C0FD0948F0090C625 /* GroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCell.m; sourceTree = "<group>"; };
 		8CA098F40FCFB4A600846DBA /* IterationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationsViewController.h; sourceTree = "<group>"; };
 		8CA098F50FCFB4A600846DBA /* IterationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationsViewController.m; sourceTree = "<group>"; };
 		8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IterationsViewController.xib; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C5224840FD0941F0090C625 /* Lists */,
 				8CA098F30FCFB47A00846DBA /* Controllers */,
 				8CDB63AE0FCF86A9003AC065 /* Views */,
 				8CDB632C0FCF4FF0003AC065 /* Domain */,
@@ -260,6 +269,23 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		8C5224830FD094170090C625 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				8C5224880FD094470090C625 /* GroupSelectView.xib */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		8C5224840FD0941F0090C625 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				8C5224850FD0943B0090C625 /* GroupSelectView.h */,
+				8C5224860FD0943B0090C625 /* GroupSelectView.m */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
 		8CA098F30FCFB47A00846DBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +349,8 @@
 				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
 				8CA09B490FD0363400846DBA /* StoryCell.h */,
 				8CA09B4A0FD0363400846DBA /* StoryCell.m */,
+				8C52248B0FD0948F0090C625 /* GroupCell.h */,
+				8C52248C0FD0948F0090C625 /* GroupCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -330,6 +358,7 @@
 		8CDB63B30FCF87BD003AC065 /* IBFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8C5224830FD094170090C625 /* Lists */,
 				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
 				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
 				8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */,
@@ -429,6 +458,7 @@
 				8CA09C0A0FD04BF200846DBA /* bug.png in Resources */,
 				8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */,
 				8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */,
+				8C5224890FD094470090C625 /* GroupSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +495,8 @@
 				8CA09CEA0FD05B1300846DBA /* StoriesViewController.m in Sources */,
 				8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */,
 				8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */,
+				8C5224870FD0943B0090C625 /* GroupSelectView.m in Sources */,
+				8C52248D0FD0948F0090C625 /* GroupCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
