@@ -29,6 +29,7 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
+		8C7188800FD5EEDB004A4233 /* EGOTitledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C71887E0FD5EEDB004A4233 /* EGOTitledTableViewCell.m */; };
 		8C826A760FD1699F008F9E51 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826A750FD1699F008F9E51 /* LabelCell.m */; };
 		8C826A780FD16A14008F9E51 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A770FD16A14008F9E51 /* LabelCell.xib */; };
 		8C826A7D0FD16A44008F9E51 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826A7C0FD16A44008F9E51 /* SelectionListViewController.m */; };
@@ -101,6 +102,8 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		8C71887E0FD5EEDB004A4233 /* EGOTitledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOTitledTableViewCell.m; sourceTree = "<group>"; };
+		8C71887F0FD5EEDB004A4233 /* EGOTitledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOTitledTableViewCell.h; sourceTree = "<group>"; };
 		8C826A740FD1699F008F9E51 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
 		8C826A750FD1699F008F9E51 /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
 		8C826A770FD16A14008F9E51 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 		8CDB63AE0FCF86A9003AC065 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C71887E0FD5EEDB004A4233 /* EGOTitledTableViewCell.m */,
+				8C71887F0FD5EEDB004A4233 /* EGOTitledTableViewCell.h */,
 				8CDB63AF0FCF86BA003AC065 /* ProjectCell.h */,
 				8CDB63B00FCF86BA003AC065 /* ProjectCell.m */,
 				8CA09A4A0FD029D100846DBA /* IterationCell.h */,
@@ -511,6 +516,7 @@
 				8C826A760FD1699F008F9E51 /* LabelCell.m in Sources */,
 				8C826A7D0FD16A44008F9E51 /* SelectionListViewController.m in Sources */,
 				8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */,
+				8C7188800FD5EEDB004A4233 /* EGOTitledTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
