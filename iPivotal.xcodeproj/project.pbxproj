@@ -41,6 +41,8 @@
 		8CA0990C0FCFB70600846DBA /* PivotalStories.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0990B0FCFB70600846DBA /* PivotalStories.m */; };
 		8CA0990F0FCFB70E00846DBA /* PivotalStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0990E0FCFB70E00846DBA /* PivotalStory.m */; };
 		8CA09A4C0FD029D100846DBA /* IterationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09A4B0FD029D100846DBA /* IterationCell.m */; };
+		8CA09A4E0FD029DA00846DBA /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09A4D0FD029DA00846DBA /* StoryCell.xib */; };
+		8CA09B4B0FD0363400846DBA /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09B4A0FD0363400846DBA /* StoryCell.m */; };
 		8CA09B5B0FD038A100846DBA /* chore.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09B5A0FD038A100846DBA /* chore.png */; };
 		8CA09B5D0FD038AA00846DBA /* feature.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09B5C0FD038AA00846DBA /* feature.png */; };
 		8CA09B9E0FD03A3D00846DBA /* release.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09B9D0FD03A3D00846DBA /* release.png */; };
@@ -60,7 +62,6 @@
 		8CDB63490FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */; };
 		8CDB634C0FCF5DD0003AC065 /* PivotalProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */; };
 		8CDB645B0FCF8D45003AC065 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CDB645A0FCF8D45003AC065 /* lightbulb.png */; };
-		8CDB9B2A0FD9CFC0008B53D4 /* IterationStoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9B290FD9CFC0008B53D4 /* IterationStoryCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,9 @@
 		8CA0990E0FCFB70E00846DBA /* PivotalStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalStory.m; sourceTree = "<group>"; };
 		8CA09A4A0FD029D100846DBA /* IterationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationCell.h; sourceTree = "<group>"; };
 		8CA09A4B0FD029D100846DBA /* IterationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationCell.m; sourceTree = "<group>"; };
+		8CA09A4D0FD029DA00846DBA /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
+		8CA09B490FD0363400846DBA /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
+		8CA09B4A0FD0363400846DBA /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		8CA09B5A0FD038A100846DBA /* chore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chore.png; sourceTree = "<group>"; };
 		8CA09B5C0FD038AA00846DBA /* feature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feature.png; sourceTree = "<group>"; };
 		8CA09B9D0FD03A3D00846DBA /* release.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = release.png; sourceTree = "<group>"; };
@@ -147,8 +151,6 @@
 		8CDB634A0FCF5DD0003AC065 /* PivotalProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProject.h; sourceTree = "<group>"; };
 		8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalProject.m; sourceTree = "<group>"; };
 		8CDB645A0FCF8D45003AC065 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
-		8CDB9B280FD9CFC0008B53D4 /* IterationStoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationStoryCell.h; sourceTree = "<group>"; };
-		8CDB9B290FD9CFC0008B53D4 /* IterationStoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationStoryCell.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -338,8 +340,8 @@
 			children = (
 				8CA09A4A0FD029D100846DBA /* IterationCell.h */,
 				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
-				8CDB9B280FD9CFC0008B53D4 /* IterationStoryCell.h */,
-				8CDB9B290FD9CFC0008B53D4 /* IterationStoryCell.m */,
+				8CA09B490FD0363400846DBA /* StoryCell.h */,
+				8CA09B4A0FD0363400846DBA /* StoryCell.m */,
 				8C826A740FD1699F008F9E51 /* LabelCell.h */,
 				8C826A750FD1699F008F9E51 /* LabelCell.m */,
 				8CCB36060FD9635F00AEEE0E /* ImageLabelCell.h */,
@@ -369,6 +371,7 @@
 		8CDB63B40FCF87C3003AC065 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8CA09A4D0FD029DA00846DBA /* StoryCell.xib */,
 				8C826A770FD16A14008F9E51 /* LabelCell.xib */,
 			);
 			name = Cells;
@@ -439,6 +442,7 @@
 				8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */,
 				8CDB645B0FCF8D45003AC065 /* lightbulb.png in Resources */,
 				8CA098F80FCFB4B900846DBA /* IterationsViewController.xib in Resources */,
+				8CA09A4E0FD029DA00846DBA /* StoryCell.xib in Resources */,
 				8CA09B5B0FD038A100846DBA /* chore.png in Resources */,
 				8CA09B5D0FD038AA00846DBA /* feature.png in Resources */,
 				8CA09B9E0FD03A3D00846DBA /* release.png in Resources */,
@@ -483,6 +487,7 @@
 				8CA0990C0FCFB70600846DBA /* PivotalStories.m in Sources */,
 				8CA0990F0FCFB70E00846DBA /* PivotalStory.m in Sources */,
 				8CA09A4C0FD029D100846DBA /* IterationCell.m in Sources */,
+				8CA09B4B0FD0363400846DBA /* StoryCell.m in Sources */,
 				8CA09CEA0FD05B1300846DBA /* StoriesViewController.m in Sources */,
 				8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */,
 				8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */,
@@ -490,7 +495,6 @@
 				8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */,
 				8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */,
 				8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */,
-				8CDB9B2A0FD9CFC0008B53D4 /* IterationStoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

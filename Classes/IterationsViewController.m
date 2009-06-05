@@ -7,8 +7,6 @@
 #import "StoryViewController.h"
 #import "AddStoryViewController.h"
 #import "IterationHeaderView.h"
-#import "IterationStoryCell.h"
-
 
 @implementation IterationsViewController
 @synthesize iterationTableView;
@@ -25,6 +23,7 @@
     [doneStoriesButton release];
     [noIterationsCell release];
     [iterations release];
+    [storyCell release];
     [super dealloc];
 }
 
@@ -101,18 +100,39 @@
     NSInteger row = indexPath.row;
     NSInteger section = indexPath.section;
     
-    static NSString *CellIdentifier = @"IterationStoryCell";
+    if ( iterations.isLoading) return loadingCell;
     
-    IterationStoryCell *cell = (IterationStoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+
+	Iter *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
+	if (cell == nil) {
+		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
+		cell = storyCell;
+	}
+    
+	cell.story = [iteration.stories objectAtIndex:row];
+	return cell;   
+
+    
+    static NSString *CellIdentifier = @"ImageLabelCell";
+    
+    IterationS *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[IterationStoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
-    [cell setStory:[iteration.stories objectAtIndex:row]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
-    return cell;    
+    [cell set
+    cell.text = pp.name;
+    cell.image = [UIImage imageNamed:kIconTypeProject];
     
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+	
+    return cell;  
+    
+
+
 }
 
 

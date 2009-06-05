@@ -79,22 +79,27 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     NSInteger row = indexPath.row;
-   
+    
     if ( stories.isLoading) return loadingCell;
     
+    NSInteger row = indexPath.row;
+    NSInteger section = indexPath.section;
     
-    static NSString *CellIdentifier = @"IterationStoryCell";    
-
-    IterationStoryCell *cell = (IterationStoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[IterationStoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-    }
-
-    [cell setStory:[stories.stories objectAtIndex:row]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if ( iterations.isLoading) return loadingCell;
     
-    return cell;    
+    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+    
+    
+	StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
+	if (cell == nil) {
+		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
+		cell = storyCell;
+	}
+    
+	cell.story = [stories.stories objectAtIndex:row];
+	return cell;    
 }
 
 
