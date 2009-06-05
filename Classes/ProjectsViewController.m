@@ -1,7 +1,7 @@
 #import "ProjectsViewController.h"
-#import "ProjectCell.h"
 #import "PivotalProject.h"
 #import "IterationsViewController.h"
+#import "ImageLabelCell.h"
 
 @implementation ProjectsViewController
 
@@ -110,20 +110,23 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    NSInteger row = indexPath.row;    
+    static NSString *CellIdentifier = @"ImageLabelCell";
     
-    if ( projects.isLoading) return loadingProjectsCell;
-    if ( projects.projects.count == 0) return noProjectsCell;
+    ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+    }
+    PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
+    cell.text = pp.name;
+    cell.image = [UIImage imageNamed:@"lightbulb.png"];
+    	
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+	
+    return cell;    
     
     
-	ProjectCell *cell = (ProjectCell *)[tableView dequeueReusableCellWithIdentifier:@"ProjectCell"];
-	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"ProjectCell" owner:self options:nil];
-		cell = projectCell;
-	}
-
-	cell.project = [projects.projects objectAtIndex:row];
-	return cell;        
+    
 }
 
 
@@ -180,7 +183,6 @@
 - (void)dealloc {
     [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [projects release];
-    [projectCell release];
     [loadingProjectsCell release];
     [noProjectsCell release];
     [projectTableView release];

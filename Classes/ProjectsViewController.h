@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import "PivotalProjects.h"
-#import "ProjectCell.h"
 
 @interface ProjectsViewController : UIViewController <UITableViewDelegate> {
     @private
@@ -8,7 +7,6 @@
     IBOutlet UITableView *projectTableView;
     IBOutlet UITableViewCell *loadingProjectsCell;
     IBOutlet UITableViewCell *noProjectsCell;
-    IBOutlet ProjectCell *projectCell;
     PivotalProjects *projects;    
 }
 
