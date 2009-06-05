@@ -37,13 +37,13 @@
     estimate.text = [NSString stringWithFormat:@"Estimated as %d points", story.estimate];
  
     if ( [story.storyType hasPrefix:@"bug"] ) {    
-        typeIcon.image = [UIImage imageNamed:@"bug.png"];        
+        typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
     } else if ( [story.storyType hasPrefix:@"feature"] ) {
-        typeIcon.image = [UIImage imageNamed:@"feature.png"];
+        typeIcon.image = [UIImage imageNamed:kIconTypeFeature];
     } else if ( [story.storyType hasPrefix:@"chor"] ) {
-        typeIcon.image = [UIImage imageNamed:@"chore.png"];        
+        typeIcon.image = [UIImage imageNamed:kIconTypeChore];        
     } else if ( [story.storyType hasPrefix:@"release"] ) {
-        typeIcon.image = [UIImage imageNamed:@"release.png"];
+        typeIcon.image = [UIImage imageNamed:kIconTypeRelease];
         
     }    
     

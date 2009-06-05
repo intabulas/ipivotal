@@ -86,7 +86,7 @@
     }
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
     cell.text = pp.name;
-    cell.image = [UIImage imageNamed:@"lightbulb.png"];
+    cell.image = [UIImage imageNamed:kIconTypeProject];
     	
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;

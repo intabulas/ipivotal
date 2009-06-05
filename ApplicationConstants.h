@@ -14,3 +14,25 @@
 
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"
+
+
+// Cache File Formats
+
+#define kCacheFileStories @"stories_%@.xml"
+
+// String Formats
+
+
+
+// Images and Artwork
+
+#define kIconTypeFeature         @"feature.png"
+#define kIconTypeBug             @"bug.png"
+#define kIconTypeRelease         @"release.png"
+#define kIconTypeChore           @"chore.png"
+#define kIconTypeProject         @"lightbulb.png"
+
+#define kIconEstimateOnePoint    @"estimate_1pt.gif"
+#define kIconEstimateTwoPoints   @"estimate_2pt.gif"
+#define kIconEstimateThreePoints @"estimate_3pt.gif"
+#define kIconEstimateNone        @"estimate_unestimated.gif"

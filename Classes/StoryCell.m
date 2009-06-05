@@ -28,24 +28,24 @@
         theColor = [UIColor whiteColor];
     }
 
-    
-    if ( story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:@"estimate_1pt.gif"];
-    if ( story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:@"estimate_2pt.gif"];    
-    if ( story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:@"estimate_3pt.gif"];        
+    estimateIcon.image = [UIImage imageNamed: kIconEstimateNone];
+    if ( story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateOnePoint];
+    if ( story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
+    if ( story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed: kIconEstimateThreePoints];        
     
 //       
 //       theColor = [UIColor colorWithRed:216.0/255.0 green:238.0/255.0 blue:206.0/255.0 alpha:1.0];
     
     if ( [story.storyType hasPrefix:@"bug"] ) {    
-        icon.image = [UIImage imageNamed:@"bug.png"];
+        icon.image = [UIImage imageNamed:kIconTypeBug];
         
     } else if ( [story.storyType hasPrefix:@"feature"] ) {
-       icon.image = [UIImage imageNamed:@"feature.png"];
+       icon.image = [UIImage imageNamed:kIconTypeFeature];
     } else if ( [story.storyType hasPrefix:@"chor"] ) {
-       icon.image = [UIImage imageNamed:@"chore.png"];
+       icon.image = [UIImage imageNamed:kIconTypeChore];
 
     } else if ( [story.storyType hasPrefix:@"release"] ) {
-       icon.image = [UIImage imageNamed:@"release.png"];
+       icon.image = [UIImage imageNamed:kIconTypeRelease];
     
     }
     
