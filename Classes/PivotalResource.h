@@ -18,7 +18,7 @@ typedef enum {
 @property (nonatomic, readonly) BOOL isLoading;
 
 
-(ASIHTTPRequest *)authenticatedRequestForURL:(NSURL *)theUrl;
++(ASIHTTPRequest *)authenticatedRequestForURL:(NSURL *)theUrl;
 
 - (NSString *)pathForFile:(NSString *)filename;
 - (NSDate *)modificationTimeForFile:(NSString *)filename ;

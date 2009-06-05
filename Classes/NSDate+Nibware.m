@@ -6,7 +6,7 @@
 //  Copyright 2009 Robert Sanders. All rights reserved.
 //
 
-#import "NSDateNibware.h"
+#import "NSDate+Nibware.h"
 
 
 @implementation NSDate (Nibware)

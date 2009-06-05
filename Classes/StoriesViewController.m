@@ -2,7 +2,7 @@
 #import "StoryViewController.h"
 #import "AddStoryViewController.h"
 #import "IterationStoryCell.h"
-#import 
+
 @implementation StoriesViewController
 
 @synthesize storiesTableView;
