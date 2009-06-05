@@ -6,6 +6,7 @@
 #import "StoriesViewController.h"
 #import "StoryViewController.h"
 #import "AddStoryViewController.h"
+#import "IterationHeaderView.h"
 
 @implementation IterationsViewController
 @synthesize iterationTableView;
@@ -144,27 +145,8 @@
 
 
 - (UIView *)tableView: (UITableView *)tableView viewForHeaderInSection: (NSInteger)section {
-    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	dateFormatter.dateFormat = @"MMMM dd";
-        
-	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.iterationTableView.bounds.size.width, 40)];
-    [headerView setBackgroundColor: [UIColor colorWithRed:76.0/255.0 green:76.0/255.0 blue:76.0/255.0 alpha:1.0]];
-	UILabel *labelOne = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, headerView.bounds.size.width, 20)];
-	labelOne.backgroundColor = [UIColor clearColor];
-	labelOne.font = [UIFont boldSystemFontOfSize:14];
-	labelOne.textColor = [UIColor whiteColor];
-	if ( iterations.isLoaded ) labelOne.text = [NSString stringWithFormat:@"Iteration %d", iteration.iterationId];
-    
-	UILabel *labelTwo = [[UILabel alloc] initWithFrame:CGRectMake(10, 22, headerView.bounds.size.width, 10)];
-	labelTwo.backgroundColor = [UIColor clearColor];
-	labelTwo.font = [UIFont boldSystemFontOfSize:11];
-	labelTwo.textColor = [UIColor whiteColor];
-    if ( iterations.isLoaded ) labelTwo.text = [NSString stringWithFormat:@"%@ - %@", [dateFormatter stringFromDate:iteration.startDate], [dateFormatter stringFromDate:iteration.endDate]];
-    
-	[headerView addSubview:labelOne];
-	[headerView addSubview:labelTwo];
-    [dateFormatter release];
+    IterationHeaderView* headerView = [[[IterationHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.iterationTableView.bounds.size.width, 40)] autorelease];   
+    [headerView setIteration:[iterations.iterations objectAtIndex:section]];
 	return headerView;
 }
 

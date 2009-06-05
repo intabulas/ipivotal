@@ -58,6 +58,7 @@
 		8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */; };
 		8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */; };
 		8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */; };
+		8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */; };
 		8CDB633B0FCF5685003AC065 /* PivotalResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB633A0FCF5685003AC065 /* PivotalResource.m */; };
 		8CDB63430FCF58B9003AC065 /* PivotalProjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63420FCF58B9003AC065 /* PivotalProjects.m */; };
 		8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */; };
@@ -145,6 +146,8 @@
 		8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalStoriesParserDelegate.m; sourceTree = "<group>"; };
 		8CCB36060FD9635F00AEEE0E /* ImageLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelCell.h; sourceTree = "<group>"; };
 		8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelCell.m; sourceTree = "<group>"; };
+		8CCB37030FD9721400AEEE0E /* IterationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationHeaderView.h; sourceTree = "<group>"; };
+		8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationHeaderView.m; sourceTree = "<group>"; };
 		8CDB63390FCF5685003AC065 /* PivotalResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalResource.h; sourceTree = "<group>"; };
 		8CDB633A0FCF5685003AC065 /* PivotalResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalResource.m; sourceTree = "<group>"; };
 		8CDB63410FCF58B9003AC065 /* PivotalProjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProjects.h; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				8C826A750FD1699F008F9E51 /* LabelCell.m */,
 				8CCB36060FD9635F00AEEE0E /* ImageLabelCell.h */,
 				8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */,
+				8CCB37030FD9721400AEEE0E /* IterationHeaderView.h */,
+				8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */,
 				8C7188800FD5EEDB004A4233 /* EGOTitledTableViewCell.m in Sources */,
 				8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */,
+				8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
