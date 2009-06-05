@@ -50,7 +50,7 @@
 
 #pragma mark === HTTP Authentication Methods ===
 
-+ (ASIHTTPRequest *)authenticatedRequestForURL:(NSURL *)theURL {
+ (ASIHTTPRequest *)authenticatedRequestForURL:(NSURL *)theURL {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults stringForKey:kDefaultsApiToken];
     ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:theURL] autorelease];

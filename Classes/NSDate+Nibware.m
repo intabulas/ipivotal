@@ -1,12 +1,12 @@
 //
-//  NSDate+Nibware.m
+//  NSDateNibware.m
 //  Inspired by John Resig's pretty.js
 //
 //  Created by robertsanders on 1/19/09.
 //  Copyright 2009 Robert Sanders. All rights reserved.
 //
 
-#import "NSDate+Nibware.h"
+#import "NSDateNibware.h"
 
 
 @implementation NSDate (Nibware)

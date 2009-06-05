@@ -133,7 +133,7 @@
 {
 	if ([operation isKindOfClass:[ASIHTTPRequest class]]) {
 		
-		requestsCount++;
+		requestsCount;
 		
 		ASIHTTPRequest *request = (ASIHTTPRequest *)operation;
 		
@@ -152,7 +152,7 @@
 			// If we want to track uploading for this request accurately, we need to add the size of the post content to the total
 			} else if (uploadProgressDelegate) {
 				[request buildPostBody];
-				uploadProgressTotalBytes += [request postLength];
+				uploadProgressTotalBytes = [request postLength];
 			}
 		}
 		[request setShowAccurateProgress:showAccurateProgress];
@@ -217,7 +217,7 @@
 	if (!uploadProgressDelegate) {
 		return;
 	}
-	uploadProgressTotalBytes += bytes;
+	uploadProgressTotalBytes = bytes;
 	[self incrementUploadProgressBy:0];
 }
 
@@ -238,7 +238,7 @@
 	if (!uploadProgressDelegate || uploadProgressTotalBytes == 0) {
 		return;
 	}
-	uploadProgressBytes += bytes;
+	uploadProgressBytes = bytes;
 	
 	double progress = (uploadProgressBytes*1.0)/(uploadProgressTotalBytes*1.0);
 	[ASIHTTPRequest setProgress:progress forProgressIndicator:uploadProgressDelegate];
@@ -250,7 +250,7 @@
 	if (!downloadProgressDelegate) {
 		return;
 	}
-	downloadProgressTotalBytes += bytes;
+	downloadProgressTotalBytes = bytes;
 	[self incrementDownloadProgressBy:0];
 }
 
@@ -259,7 +259,7 @@
 	if (!downloadProgressDelegate || downloadProgressTotalBytes == 0) {
 		return;
 	}
-	downloadProgressBytes += bytes;
+	downloadProgressBytes = bytes;
 	double progress = (downloadProgressBytes*1.0)/(downloadProgressTotalBytes*1.0);
 	[ASIHTTPRequest setProgress:progress forProgressIndicator:downloadProgressDelegate];
 }

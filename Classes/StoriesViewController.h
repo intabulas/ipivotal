@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "PivotalStories.h"
 #import "PivotalProject.h"
-#import "StoryCell.h"
 
 @interface StoriesViewController :  UIViewController <UITableViewDelegate>  {
 @private
@@ -10,7 +9,6 @@
     NSString *storyType;
     IBOutlet UITableViewCell *loadingCell;
     IBOutlet UITableViewCell *noneCell; 
-    IBOutlet StoryCell *storyCell;     
     IBOutlet UITableView *storiesTableView;    
 }
 @property (nonatomic,retain) IBOutlet UITableView *storiesTableView;

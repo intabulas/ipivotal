@@ -1,7 +1,8 @@
 #import "StoriesViewController.h"
 #import "StoryViewController.h"
 #import "AddStoryViewController.h"
-
+#import "IterationStoryCell.h"
+#import 
 @implementation StoriesViewController
 
 @synthesize storiesTableView;
@@ -83,22 +84,19 @@
     NSInteger row = indexPath.row;
     
     if ( stories.isLoading) return loadingCell;
+
+    static NSString *CellIdentifier = @"IterationStoryCell";
     
-    NSInteger row = indexPath.row;
-    NSInteger section = indexPath.section;
+    IterationStoryCell *cell = (IterationStoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[IterationStoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+    }
+    [cell setStory:[stories.stories objectAtIndex:row]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    if ( iterations.isLoading) return loadingCell;
-    
-    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+    return cell;  
     
     
-	StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
-		cell = storyCell;
-	}
-    
-	cell.story = [stories.stories objectAtIndex:row];
 	return cell;    
 }
 

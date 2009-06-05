@@ -1,5 +1,5 @@
 //
-//  NSDate+Nibware.h
+//  NSDateNibware.h
 //  pingle
 //
 //  Created by robertsanders on 1/19/09.

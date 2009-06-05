@@ -44,7 +44,7 @@ static NSError *ASIUnableToCreateRequestError;
 
 #pragma mark init / dealloc
 
-+ (void)initialize
+ (void)initialize
 {
 	if (self == [ASIHTTPRequest class]) {
 		progressLock = [[NSRecursiveLock alloc] init];
@@ -738,7 +738,7 @@ static NSError *ASIUnableToCreateRequestError;
 	// We won't update download progress until we've examined the headers, since we might need to authenticate
 	if (responseHeaders) {
 		
-		unsigned long long bytesReadSoFar = totalBytesRead+partialDownloadSize;
+		unsigned long long bytesReadSoFar = totalBytesReadpartialDownloadSize;
 		
 		if (bytesReadSoFar > lastBytesRead) {
 			[self setLastActivityTime:[NSDate date]];
@@ -772,7 +772,7 @@ static NSError *ASIUnableToCreateRequestError;
 				
 				// We aren't using a queue, we should just set progress of the indicator to 0
 			} else if (contentLength > 0)  {
-				[ASIHTTPRequest setProgress:(double)(1.0*bytesReadSoFar/(contentLength+partialDownloadSize)) forProgressIndicator:downloadProgressDelegate];
+				[ASIHTTPRequest setProgress:(double)(1.0*bytesReadSoFar/(contentLengthpartialDownloadSize)) forProgressIndicator:downloadProgressDelegate];
 			}
 		}
 		
@@ -901,7 +901,7 @@ static NSError *ASIUnableToCreateRequestError;
 					[mainRequest setContentLength:contentLength];
 				}
 				if (downloadProgressDelegate && showAccurateProgress && shouldResetProgressIndicators) {
-					[self resetDownloadProgress:contentLength+partialDownloadSize];
+					[self resetDownloadProgress:contentLengthpartialDownloadSize];
 				}
 			}
 			
@@ -917,7 +917,7 @@ static NSError *ASIUnableToCreateRequestError;
 
 				if ([charsetScanner scanUpToString: charsetSeparator intoString: NULL] && [charsetScanner scanLocation] < [contentType length])
 				{
-					[charsetScanner setScanLocation: [charsetScanner scanLocation] + [charsetSeparator length]];
+					[charsetScanner setScanLocation: [charsetScanner scanLocation]  [charsetSeparator length]];
 					[charsetScanner scanUpToString: @";" intoString: &IANAEncoding];
 				}
 
@@ -977,7 +977,7 @@ static NSError *ASIUnableToCreateRequestError;
 
 - (BOOL)applyCredentials:(NSMutableDictionary *)newCredentials
 {
-	authenticationRetryCount++;
+	authenticationRetryCount;
 
 	if (newCredentials && requestAuthentication && request) {
 		// Apply whatever credentials we've built up to the old request
@@ -1212,7 +1212,7 @@ static NSError *ASIUnableToCreateRequestError;
 		// If zero bytes were read, wait for the EOF to come.
     } else if (bytesRead) {
 		
-		totalBytesRead += bytesRead;
+		totalBytesRead = bytesRead;
 		
 		// Are we downloading to a file?
 		if (downloadDestinationPath) {
@@ -1340,7 +1340,7 @@ static NSError *ASIUnableToCreateRequestError;
 
 #pragma mark keychain storage
 
-+ (void)saveCredentials:(NSURLCredential *)credentials forHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm
+ (void)saveCredentials:(NSURLCredential *)credentials forHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm
 {
 	NSURLProtectionSpace *protectionSpace = [[[NSURLProtectionSpace alloc] initWithHost:host
 																				   port:port
@@ -1353,7 +1353,7 @@ static NSError *ASIUnableToCreateRequestError;
 	[storage setDefaultCredential:credentials forProtectionSpace:protectionSpace];
 }
 
-+ (NSURLCredential *)savedCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm
+ (NSURLCredential *)savedCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm
 {
 	NSURLProtectionSpace *protectionSpace = [[[NSURLProtectionSpace alloc] initWithHost:host
 																				   port:port
@@ -1366,7 +1366,7 @@ static NSError *ASIUnableToCreateRequestError;
 	return [storage defaultCredentialForProtectionSpace:protectionSpace];
 }
 
-+ (void)removeCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm
+ (void)removeCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm
 {
 	NSURLProtectionSpace *protectionSpace = [[[NSURLProtectionSpace alloc] initWithHost:host
 																				   port:port
@@ -1381,12 +1381,12 @@ static NSError *ASIUnableToCreateRequestError;
 }
 
 
-+ (NSMutableArray *)sessionCookies
+ (NSMutableArray *)sessionCookies
 {
 	return sessionCookies;
 }
 
-+ (void)setSessionCookies:(NSMutableArray *)newSessionCookies
+ (void)setSessionCookies:(NSMutableArray *)newSessionCookies
 {
 	// Remove existing cookies from the persistent store
 	for (NSHTTPCookie *cookie in [ASIHTTPRequest sessionCookies]) {
@@ -1397,7 +1397,7 @@ static NSError *ASIUnableToCreateRequestError;
 }
 
 // Dump all session data (authentication and cookies)
-+ (void)clearSession
+ (void)clearSession
 {
 	[ASIHTTPRequest setSessionAuthentication:NULL];
 	[ASIHTTPRequest setSessionCredentials:nil];
@@ -1411,14 +1411,14 @@ static NSError *ASIUnableToCreateRequestError;
 // Contributed by Shaun Harrison of Enormego, see: http://developers.enormego.com/view/asihttprequest_gzip
 // Based on this: http://deusty.blogspot.com/2007/07/gzip-compressiondecompression.html
 //
-+ (NSData *)uncompressZippedData:(NSData*)compressedData
+ (NSData *)uncompressZippedData:(NSData*)compressedData
 {
 	if ([compressedData length] == 0) return compressedData;
 	
 	unsigned full_length = [compressedData length];
 	unsigned half_length = [compressedData length] / 2;
 	
-	NSMutableData *decompressed = [NSMutableData dataWithLength: full_length + half_length];
+	NSMutableData *decompressed = [NSMutableData dataWithLength: full_length  half_length];
 	BOOL done = NO;
 	int status;
 	
@@ -1429,14 +1429,14 @@ static NSError *ASIUnableToCreateRequestError;
 	strm.zalloc = Z_NULL;
 	strm.zfree = Z_NULL;
 	
-	if (inflateInit2(&strm, (15+32)) != Z_OK) return nil;
+	if (inflateInit2(&strm, (1532)) != Z_OK) return nil;
 	
 	while (!done) {
 		// Make sure we have enough room and reset the lengths.
 		if (strm.total_out >= [decompressed length]) {
 			[decompressed increaseLengthBy: half_length];
 		}
-		strm.next_out = [decompressed mutableBytes] + strm.total_out;
+		strm.next_out = [decompressed mutableBytes]  strm.total_out;
 		strm.avail_out = [decompressed length] - strm.total_out;
 		
 		// Inflate another chunk.
@@ -1459,7 +1459,7 @@ static NSError *ASIUnableToCreateRequestError;
 }
 
 
-+ (int)uncompressZippedDataFromFile:(NSString *)sourcePath toFile:(NSString *)destinationPath
+ (int)uncompressZippedDataFromFile:(NSString *)sourcePath toFile:(NSString *)destinationPath
 {
 	// Get a FILE struct for the source file
 	FILE *source = fdopen([[NSFileHandle fileHandleForReadingAtPath:sourcePath] fileDescriptor], "r");
@@ -1484,7 +1484,7 @@ static NSError *ASIUnableToCreateRequestError;
 //	http://www.zlib.net/zpipe.c
 //
 #define CHUNK 16384
-+ (int)uncompressZippedDataFromSource:(FILE *)source toDestination:(FILE *)dest
+ (int)uncompressZippedDataFromSource:(FILE *)source toDestination:(FILE *)dest
 {
     int ret;
     unsigned have;
@@ -1498,7 +1498,7 @@ static NSError *ASIUnableToCreateRequestError;
     strm.opaque = Z_NULL;
     strm.avail_in = 0;
     strm.next_in = Z_NULL;
-    ret = inflateInit2(&strm, (15+32));
+    ret = inflateInit2(&strm, (1532));
     if (ret != Z_OK)
         return ret;
 	

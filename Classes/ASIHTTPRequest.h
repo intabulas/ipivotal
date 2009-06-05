@@ -319,29 +319,29 @@ typedef enum _ASINetworkErrorType {
 - (void)saveCredentialsToKeychain:(NSMutableDictionary *)newCredentials;
 
 // Save creddentials to the keychain
-+ (void)saveCredentials:(NSURLCredential *)credentials forHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm;
+ (void)saveCredentials:(NSURLCredential *)credentials forHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm;
 
 // Return credentials from the keychain
-+ (NSURLCredential *)savedCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm;
+ (NSURLCredential *)savedCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm;
 
 // Remove credentials from the keychain
-+ (void)removeCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm;
+ (void)removeCredentialsForHost:(NSString *)host port:(int)port protocol:(NSString *)protocol realm:(NSString *)realm;
 
 // We keep track of any cookies we accept, so that we can remove them from the persistent store later
-+ (void)setSessionCookies:(NSMutableArray *)newSessionCookies;
-+ (NSMutableArray *)sessionCookies;
+ (void)setSessionCookies:(NSMutableArray *)newSessionCookies;
+ (NSMutableArray *)sessionCookies;
 
 // Dump all session data (authentication and cookies)
-+ (void)clearSession;
+ (void)clearSession;
 
 #pragma mark gzip compression
 
 // Uncompress gzipped data with zlib
-+ (NSData *)uncompressZippedData:(NSData*)compressedData;
+ (NSData *)uncompressZippedData:(NSData*)compressedData;
 
 // Uncompress gzipped data from a file into another file, used when downloading to a file
-+ (int)uncompressZippedDataFromFile:(NSString *)sourcePath toFile:(NSString *)destinationPath;
-+ (int)uncompressZippedDataFromSource:(FILE *)source toDestination:(FILE *)dest;
+ (int)uncompressZippedDataFromFile:(NSString *)sourcePath toFile:(NSString *)destinationPath;
+ (int)uncompressZippedDataFromSource:(FILE *)source toDestination:(FILE *)dest;
 
 @property (retain) NSString *username;
 @property (retain) NSString *password;

@@ -2,8 +2,7 @@
 #import "PivotalProjects.h"
 
 @interface ProjectsViewController : UIViewController <UITableViewDelegate> {
-    @private
-    
+@private    
     IBOutlet UITableView *projectTableView;
     IBOutlet UITableViewCell *loadingProjectsCell;
     IBOutlet UITableViewCell *noProjectsCell;
