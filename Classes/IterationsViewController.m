@@ -7,6 +7,8 @@
 #import "StoryViewController.h"
 #import "AddStoryViewController.h"
 #import "IterationHeaderView.h"
+#import "IterationStoryCell.h"
+
 
 @implementation IterationsViewController
 @synthesize iterationTableView;
@@ -23,7 +25,6 @@
     [doneStoriesButton release];
     [noIterationsCell release];
     [iterations release];
-    [storyCell release];
     [super dealloc];
 }
 
@@ -100,22 +101,18 @@
     NSInteger row = indexPath.row;
     NSInteger section = indexPath.section;
     
-    if ( iterations.isLoading) return loadingCell;
+    static NSString *CellIdentifier = @"IterationStoryCell";
     
+    IterationStoryCell *cell = (IterationStoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[IterationStoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+    }
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+    [cell setStory:[iteration.stories objectAtIndex:row]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
-
-	StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-	if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
-		cell = storyCell;
-	}
+    return cell;    
     
-	cell.story = [iteration.stories objectAtIndex:row];
-	return cell;   
-
-
-
 }
 
 
