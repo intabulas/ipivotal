@@ -10,15 +10,20 @@
     return self;
 }
 
+- (void)dealloc {
+    [description release];
+    [story release];
+    [name release];
+    [estimate release];
+    [typeIcon release];
+    [currentState release];
+    [acceptedDate release];
+    [estimateIcon release];    
+    [requestedBy release];
+    [ownedBy release];
+    [super dealloc];
+}    
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -51,32 +56,8 @@
 }
 
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
-}
-
-
-- (void)dealloc {
-    [description release];
-    [story release];
-    [name release];
-    [estimate release];
-    [typeIcon release];
-    [currentState release];
-    [acceptedDate release];
-    [estimateIcon release];    
-    [requestedBy release];
-    [ownedBy release];
-    [super dealloc];
 }
 
 

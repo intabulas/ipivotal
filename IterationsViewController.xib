@@ -179,6 +179,7 @@
 								<reference key="IBUIToolbar" ref="963904797"/>
 							</object>
 							<object class="IBUIBarButtonItem" id="705116041">
+								<bool key="IBUIEnabled">NO</bool>
 								<string key="IBUITitle">Add Story</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="963904797"/>
@@ -435,7 +436,7 @@
 					<string>IterationsViewController</string>
 					<string>UIResponder</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{1967, 115}, {320, 460}}</string>
+					<string>{{1400, 115}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

@@ -1,11 +1,3 @@
-//
-//  iPivotalAppDelegate.m
-//  iPivotal
-//
-//  Created by Mark Lussier on 5/28/09.
-//  Copyright Juniper Networks 2009. All rights reserved.
-//
-
 #import "iPivotalAppDelegate.h"
 #import "AuthenticationViewController.h"
 
@@ -17,10 +9,6 @@
 
 
 @implementation iPivotalAppDelegate
-
-//@synthesize window;
-//@synthesize navigationController;
-//@synthesize toolbar;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

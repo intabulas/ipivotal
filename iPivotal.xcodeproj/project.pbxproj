@@ -12,7 +12,6 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
-		28AD73880D9D96C1002E5188 /* TabBarWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* TabBarWindow.xib */; };
 		8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */; };
 		8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */; };
 		8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B10FCF0A84004D8DD0 /* Default.png */; };
@@ -29,10 +28,8 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
-		8C7188800FD5EEDB004A4233 /* EGOTitledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C71887E0FD5EEDB004A4233 /* EGOTitledTableViewCell.m */; };
 		8C826A760FD1699F008F9E51 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826A750FD1699F008F9E51 /* LabelCell.m */; };
 		8C826A780FD16A14008F9E51 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A770FD16A14008F9E51 /* LabelCell.xib */; };
-		8C826A7D0FD16A44008F9E51 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826A7C0FD16A44008F9E51 /* SelectionListViewController.m */; };
 		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
@@ -75,7 +72,6 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* iPivotal_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPivotal_Prefix.pch; sourceTree = "<group>"; };
-		28AD73870D9D96C1002E5188 /* TabBarWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C2A7DBC0FD07FF7005E00FB /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
@@ -102,13 +98,9 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
-		8C71887E0FD5EEDB004A4233 /* EGOTitledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOTitledTableViewCell.m; sourceTree = "<group>"; };
-		8C71887F0FD5EEDB004A4233 /* EGOTitledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOTitledTableViewCell.h; sourceTree = "<group>"; };
 		8C826A740FD1699F008F9E51 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
 		8C826A750FD1699F008F9E51 /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
 		8C826A770FD16A14008F9E51 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
-		8C826A7B0FD16A44008F9E51 /* SelectionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
-		8C826A7C0FD16A44008F9E51 /* SelectionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
 		8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionListViewController.xib; sourceTree = "<group>"; };
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
@@ -181,7 +173,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8C5224840FD0941F0090C625 /* Lists */,
 				8CA098F30FCFB47A00846DBA /* Controllers */,
 				8CDB63AE0FCF86A9003AC065 /* Views */,
 				8CDB632C0FCF4FF0003AC065 /* Domain */,
@@ -288,15 +279,6 @@
 			name = Lists;
 			sourceTree = "<group>";
 		};
-		8C5224840FD0941F0090C625 /* Lists */ = {
-			isa = PBXGroup;
-			children = (
-				8C826A7B0FD16A44008F9E51 /* SelectionListViewController.h */,
-				8C826A7C0FD16A44008F9E51 /* SelectionListViewController.m */,
-			);
-			name = Lists;
-			sourceTree = "<group>";
-		};
 		8CA098F30FCFB47A00846DBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,8 +338,6 @@
 		8CDB63AE0FCF86A9003AC065 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8C71887F0FD5EEDB004A4233 /* EGOTitledTableViewCell.h */,
-				8C71887E0FD5EEDB004A4233 /* EGOTitledTableViewCell.m */,
 				8CA09A4A0FD029D100846DBA /* IterationCell.h */,
 				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
 				8CA09B490FD0363400846DBA /* StoryCell.h */,
@@ -379,7 +359,6 @@
 				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
 				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
 				8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */,
-				28AD73870D9D96C1002E5188 /* TabBarWindow.xib */,
 				8CDB63B40FCF87C3003AC065 /* Cells */,
 				8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */,
 				8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */,
@@ -456,7 +435,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD73880D9D96C1002E5188 /* TabBarWindow.xib in Resources */,
 				8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */,
 				8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */,
 				8C3FD3FA0FCF1AD0004D8DD0 /* MainWindow.xib in Resources */,
@@ -514,9 +492,7 @@
 				8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */,
 				8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */,
 				8C826A760FD1699F008F9E51 /* LabelCell.m in Sources */,
-				8C826A7D0FD16A44008F9E51 /* SelectionListViewController.m in Sources */,
 				8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */,
-				8C7188800FD5EEDB004A4233 /* EGOTitledTableViewCell.m in Sources */,
 				8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */,
 				8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */,
 			);

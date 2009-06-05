@@ -1,0 +1,5 @@
+h1. iPivotal
+
+… is a iPhone and iPod Touch app for Pivotal Tracker.
+
+Your participation is welcome - feel free to fork, add missing features or "report issues":http://github.com/intabulas/ipivotal/issues :)
