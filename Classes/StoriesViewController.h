@@ -7,7 +7,6 @@
     PivotalProject *project;
     PivotalStories *stories;
     NSString *storyType;
-    IBOutlet UITableViewCell *loadingCell;
     IBOutlet UITableView *storiesTableView;    
 }
 @property (nonatomic,retain) IBOutlet UITableView *storiesTableView;

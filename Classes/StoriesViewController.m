@@ -3,6 +3,7 @@
 #import "AddStoryViewController.h"
 #import "IterationStoryCell.h"
 #import "CenteredLabelCell.h"
+#import "ActivityLabelCell.h"
 
 @implementation StoriesViewController
 
@@ -21,7 +22,6 @@
 
 - (void)dealloc {
     [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [loadingCell release];
     [storyType release];
     [stories release];
     [super dealloc];
@@ -86,7 +86,17 @@
     
     NSInteger row = indexPath.row;
     
-    if ( stories.isLoading) return loadingCell;
+    if ( stories.isLoading) { 
+        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
+        if (cell == nil) {
+            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
+        }
+        [cell.activityView startAnimating];
+        return  cell;
+        
+    }
+    
+    
     if ( stories.stories.count == 0 ) { 
         CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"CenteredLabelCell"];
         if (cell == nil) {

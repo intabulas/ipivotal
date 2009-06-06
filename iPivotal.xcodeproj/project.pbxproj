@@ -60,6 +60,7 @@
 		8CDB645B0FCF8D45003AC065 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CDB645A0FCF8D45003AC065 /* lightbulb.png */; };
 		8CDB9C190FD9DBCA008B53D4 /* IterationStoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9C180FD9DBCA008B53D4 /* IterationStoryCell.m */; };
 		8CDB9CD50FD9EA03008B53D4 /* CenteredLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */; };
+		8CDB9DED0FD9F05E008B53D4 /* ActivityLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +148,8 @@
 		8CDB9C180FD9DBCA008B53D4 /* IterationStoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationStoryCell.m; sourceTree = "<group>"; };
 		8CDB9CD30FD9EA03008B53D4 /* CenteredLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenteredLabelCell.h; sourceTree = "<group>"; };
 		8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenteredLabelCell.m; sourceTree = "<group>"; };
+		8CDB9DEB0FD9F05E008B53D4 /* ActivityLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLabelCell.h; sourceTree = "<group>"; };
+		8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLabelCell.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -334,6 +337,8 @@
 		8CDB63AE0FCF86A9003AC065 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB9DEB0FD9F05E008B53D4 /* ActivityLabelCell.h */,
+				8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */,
 				8CA09A4A0FD029D100846DBA /* IterationCell.h */,
 				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
 				8CCB36060FD9635F00AEEE0E /* ImageLabelCell.h */,
@@ -479,6 +484,7 @@
 				8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */,
 				8CDB9C190FD9DBCA008B53D4 /* IterationStoryCell.m in Sources */,
 				8CDB9CD50FD9EA03008B53D4 /* CenteredLabelCell.m in Sources */,
+				8CDB9DED0FD9F05E008B53D4 /* ActivityLabelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
