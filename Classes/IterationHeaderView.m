@@ -18,6 +18,7 @@
         dateLabel.backgroundColor = [UIColor clearColor];
         dateLabel.font = [UIFont boldSystemFontOfSize:11];
         dateLabel.textColor = [UIColor whiteColor];
+        dateLabel.text = @"no dates for this iteration yet";
         
         [self addSubview:titleLabel];
         [self addSubview:dateLabel];
@@ -38,7 +39,9 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"MMMM dd";
     titleLabel.text = [NSString stringWithFormat:@"Iteration %d", iteration.iterationId];  
-    dateLabel.text = [NSString stringWithFormat:@"%@ - %@", [dateFormatter stringFromDate:iteration.startDate], [dateFormatter stringFromDate:iteration.endDate]];
+    if ( iteration.startDate && iteration.endDate ) {
+       dateLabel.text = [NSString stringWithFormat:@"%@ - %@", [dateFormatter stringFromDate:iteration.startDate], [dateFormatter stringFromDate:iteration.endDate]];
+    }
     [dateFormatter release];        
 
 }
