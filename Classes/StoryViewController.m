@@ -3,10 +3,11 @@
 
 @implementation StoryViewController
 
+@synthesize story;
 
 - (id)initWithStory:(PivotalStory *)theStory {
     [super init];
-    story = theStory;
+    self.story = theStory;
     return self;
 }
 
@@ -17,7 +18,6 @@
     [estimate release];
     [typeIcon release];
     [currentState release];
-    [acceptedDate release];
     [estimateIcon release];    
     [requestedBy release];
     [ownedBy release];
@@ -29,30 +29,29 @@
     
     self.navigationItem.title = @"Story";
     
-    if ( story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:@"estimate_1pt.gif"];
-    if ( story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:@"estimate_2pt.gif"];    
-    if ( story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:@"estimate_3pt.gif"];          
+    if ( self.story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:@"estimate_1pt.gif"];
+    if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:@"estimate_2pt.gif"];    
+    if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:@"estimate_3pt.gif"];          
 
-    name.text = story.name;
-    estimate.text = [NSString stringWithFormat:@"Estimated as %d points", story.estimate];
+    name.text = self.story.name;
+    estimate.text = [NSString stringWithFormat:@"Estimated as %d points", self.story.estimate];
  
     if ( [story.storyType hasPrefix:@"bug"] ) {    
         typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
-    } else if ( [story.storyType hasPrefix:@"feature"] ) {
+    } else if ( [self.story.storyType hasPrefix:@"feature"] ) {
         typeIcon.image = [UIImage imageNamed:kIconTypeFeature];
-    } else if ( [story.storyType hasPrefix:@"chor"] ) {
+    } else if ( [self.story.storyType hasPrefix:@"chor"] ) {
         typeIcon.image = [UIImage imageNamed:kIconTypeChore];        
-    } else if ( [story.storyType hasPrefix:@"release"] ) {
+    } else if ( [self.story.storyType hasPrefix:@"release"] ) {
         typeIcon.image = [UIImage imageNamed:kIconTypeRelease];
         
     }    
     
-    currentState.text = story.currentState;
-    if ( story.acceptedAt ) acceptedDate.text = [story.acceptedAt prettyDate];
+    currentState.text = self.story.currentState;
     
-    requestedBy.text = story.requestedBy;
-    ownedBy.text = story.owner;    
-    description.text = story.description;
+    requestedBy.text = self.story.requestedBy;
+    ownedBy.text = self.story.owner;    
+    description.text = self.story.description;
 }
 
 

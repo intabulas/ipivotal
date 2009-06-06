@@ -9,13 +9,14 @@
     IBOutlet UIImageView *typeIcon;
     IBOutlet UIImageView *estimateIcon;
     IBOutlet UILabel *currentState;
-    IBOutlet UILabel *acceptedDate;    
     IBOutlet UILabel *requestedBy;
     IBOutlet UILabel *ownedBy;    
     IBOutlet UITextView *description;
 }
 
 - (id)initWithStory:(PivotalStory *)theStory;
+
+@property (nonatomic,retain) PivotalStory* story;
 
 
 @end

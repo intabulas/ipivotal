@@ -51,7 +51,6 @@
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.selectedSegmentIndex = 1;
     self.navigationItem.titleView = segmentedControl;
-    [segmentedControl release];
     
     
 }
