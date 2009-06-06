@@ -9,6 +9,8 @@
 #import "IterationHeaderView.h"
 #import "IterationStoryCell.h"
 #import "ActivityLabelCell.h"
+#import "CenteredLabelCell.h"
+
 
 @implementation IterationsViewController
 @synthesize iterationTableView, project;
@@ -23,7 +25,6 @@
     [iterations  removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [project release];
     [doneStoriesButton release];
-    [noIterationsCell release];
     [iterations release];
     [super dealloc];
 }
@@ -86,7 +87,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     if ( !iterations.isLoaded) return 0;
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
-    return iteration.stories.count;
+    return (iteration.stories.count == 0 ) ? 1 : iteration.stories.count;
 }
 
 
@@ -101,6 +102,8 @@
     NSInteger row = indexPath.row;
     NSInteger section = indexPath.section;
     
+    
+    
     if ( iterations.isLoading) { 
         ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
         if (cell == nil) {
@@ -111,7 +114,16 @@
         
     }    
     
+    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
     
+    if ( iteration.stories.count == 0 ) { 
+        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"CenteredLabelCell"];
+        if (cell == nil) {
+            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
+        }
+        [cell setText:@"you have no storied defined for this iteration"];    
+        return  cell;
+    }    
     
     
     static NSString *CellIdentifier = @"IterationStoryCell";
@@ -120,7 +132,6 @@
     if (cell == nil) {
        cell = [[[IterationStoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
-    PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
     [cell setStory:[iteration.stories objectAtIndex:row]];
      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     

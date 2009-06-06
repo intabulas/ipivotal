@@ -6,7 +6,6 @@
     @private
     PivotalProject *project;
     PivotalIterations *iterations;
-    IBOutlet UITableViewCell *noIterationsCell; 
     IBOutlet UITableView *iterationTableView;    
     IBOutlet UIBarButtonItem *doneStoriesButton;
     
