@@ -11,11 +11,12 @@
                 typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 12.0f, 20.0f, 20.0f)];
                 typeImage.backgroundColor = [UIColor clearColor];
                 
-                estimateImage = [[UIImageView alloc] initWithFrame:CGRectMake(30.0f, 17.0f, 12.0f, 12.0f)];        
-                typeImage.backgroundColor = [UIColor clearColor];
+                estimateImage = [[UIImageView alloc] initWithFrame:CGRectMake(30.0f, 9.0f, 12.0f, 12.0f)];        
+                estimateImage.contentMode =  UIViewContentModeBottom;
+
         
                 
-                storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(49.0f, 3.0f, (self.contentView.frame.size.width - 61.0f) , 25.0f)];
+                storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(45.0f, 3.0f, (self.contentView.frame.size.width - 65.0f) , 25.0f)];
                 storyLabel.autoresizingMask = UIViewAutoresizingNone;
                 storyLabel.backgroundColor = [UIColor clearColor];
                 storyLabel.highlightedTextColor = [UIColor whiteColor];
@@ -24,11 +25,11 @@
                 storyLabel.textAlignment = UITextAlignmentLeft;
         
                 
-                statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(49.0f, 23.0f, (self.contentView.frame.size.width - 61.0f) , 15.0f)];
+                statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(31.0f, 23.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
                 statusLabel.autoresizingMask = UIViewAutoresizingNone;
                 statusLabel.backgroundColor = [UIColor clearColor];
                 statusLabel.highlightedTextColor = [UIColor whiteColor];
-                statusLabel.font = [UIFont  systemFontOfSize:12.0f];
+                statusLabel.font = [UIFont  systemFontOfSize:11.0f];
                 statusLabel.textColor = [UIColor blackColor];
                 statusLabel.textAlignment = UITextAlignmentLeft;
                 

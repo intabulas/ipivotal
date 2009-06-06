@@ -42,7 +42,6 @@
 	} else if ([elementName isEqualToString:@"number"]) {      
         currentIteration.iterationNumber = [currentElementValue integerValue];
 	} else if ([elementName isEqualToString:@"start"]) {             
-        NSLog(@"Start: '%@'", currentElementValue);
         currentIteration.startDate = [dateFormatter dateFromString:currentElementValue];
 	} else if ([elementName isEqualToString:@"finish"]) {                      
         currentIteration.endDate = [dateFormatter dateFromString:currentElementValue];        
