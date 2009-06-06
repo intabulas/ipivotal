@@ -2,6 +2,7 @@
 #import "StoryViewController.h"
 #import "AddStoryViewController.h"
 #import "IterationStoryCell.h"
+#import "CenteredLabelCell.h"
 
 @implementation StoriesViewController
 
@@ -11,6 +12,7 @@
     [super init];
     project = theProject;
     storyType = theType;
+
     return self;
 }
 
@@ -19,6 +21,7 @@
 
 - (void)dealloc {
     [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
+    [loadingCell release];
     [storyType release];
     [stories release];
     [super dealloc];
@@ -72,7 +75,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ( !stories.isLoaded) ? 1 : [stories.stories count];
+    return ( !stories.isLoaded || stories.stories.count == 0 ) ? 1 : [stories.stories count];
 
 }
 
@@ -84,7 +87,15 @@
     NSInteger row = indexPath.row;
     
     if ( stories.isLoading) return loadingCell;
-
+    if ( stories.stories.count == 0 ) { 
+        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"CenteredLabelCell"];
+        if (cell == nil) {
+            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
+        }
+        [cell setText:@"there are no stories defined"];    
+        return  cell;
+    }
+    
     static NSString *CellIdentifier = @"IterationStoryCell";
     
     IterationStoryCell *cell = (IterationStoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -93,8 +104,6 @@
     }
     [cell setStory:[stories.stories objectAtIndex:row]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    return cell;  
     
     
 	return cell;    

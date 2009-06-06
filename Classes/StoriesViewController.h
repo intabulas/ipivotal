@@ -8,7 +8,6 @@
     PivotalStories *stories;
     NSString *storyType;
     IBOutlet UITableViewCell *loadingCell;
-    IBOutlet UITableViewCell *noneCell; 
     IBOutlet UITableView *storiesTableView;    
 }
 @property (nonatomic,retain) IBOutlet UITableView *storiesTableView;
