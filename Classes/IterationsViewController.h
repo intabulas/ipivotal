@@ -6,13 +6,13 @@
     @private
     PivotalProject *project;
     PivotalIterations *iterations;
-    IBOutlet UITableViewCell *loadingCell;
     IBOutlet UITableViewCell *noIterationsCell; 
     IBOutlet UITableView *iterationTableView;    
     IBOutlet UIBarButtonItem *doneStoriesButton;
     
 }
 @property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
+@property (nonatomic,retain) PivotalProject* project;
 
 - (id)initWithProject:(PivotalProject *)theProject;
 - (IBAction)refresh:(id)sender;

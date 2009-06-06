@@ -11,7 +11,7 @@
 
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
     [super init];
-    project = theProject;
+    project = [theProject retain];
     storyType = theType;
 
     return self;

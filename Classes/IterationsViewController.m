@@ -8,19 +8,20 @@
 #import "AddStoryViewController.h"
 #import "IterationHeaderView.h"
 #import "IterationStoryCell.h"
+#import "ActivityLabelCell.h"
 
 @implementation IterationsViewController
-@synthesize iterationTableView;
+@synthesize iterationTableView, project;
 
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
-    project = theProject;
+    self.project = theProject;
     return self;
 }
 
 - (void)dealloc {
     [iterations  removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [loadingCell release];
+    [project release];
     [doneStoriesButton release];
     [noIterationsCell release];
     [iterations release];
@@ -33,7 +34,7 @@
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     
-    iterations = [[PivotalIterations alloc] initWithProject:project];
+    iterations = [[PivotalIterations alloc] initWithProject:self.project];
     [iterations addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
     if ( !iterations.isLoaded) [iterations loadIterations];
     
@@ -100,7 +101,18 @@
     NSInteger row = indexPath.row;
     NSInteger section = indexPath.section;
     
-    if ( iterations.isLoading) return loadingCell;
+    if ( iterations.isLoading) { 
+        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
+        if (cell == nil) {
+            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
+        }
+        [cell.activityView startAnimating];
+        return  cell;
+        
+    }    
+    
+    
+    
     
     static NSString *CellIdentifier = @"IterationStoryCell";
     
@@ -128,7 +140,7 @@
 }
 
 -(IBAction)showDoneStories:(id)sender {
-    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:project andType:@"done"];
+    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:@"done"];
    [self.navigationController pushViewController:controller animated:YES];
    [controller release];
     
@@ -136,14 +148,14 @@
 
 
 -(IBAction)showIceboxStories:(id)sender {
-    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:project andType:@"icebox"];
+    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:@"icebox"];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
     
 }
 
 -(IBAction)addStory:(id)sender {
-    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project];
+    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:self.project];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];        
 }
