@@ -7,6 +7,7 @@
     PivotalProject *project;
 @private
     NSURL *url;
+    NSString* group;
     NSArray *iterations;
     NSString *cacheFilename;
     NSDate *lastUpdated;    
@@ -17,6 +18,7 @@
 @property (nonatomic,retain) NSArray *iterations;
 @property (nonatomic, retain) NSString *cacheFilename;
 @property (nonatomic, retain) NSDate *lastUpdated;
+@property (nonatomic, retain) NSString* group;
 
 
 - (id)initWithProject:(PivotalProject *)theProject;
@@ -24,6 +26,6 @@
 - (void)loadedIterations:(id)theResult;
 - (void)reloadIterations;
 - (BOOL)hasCachedDocument;
-
+- (void)reloadInterationForGroup:(NSString*)theGroup;
 
 @end

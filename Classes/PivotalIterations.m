@@ -9,12 +9,13 @@
 
 @implementation PivotalIterations
 
-@synthesize url, iterations, cacheFilename, lastUpdated, project;
+@synthesize url, iterations, cacheFilename, lastUpdated, project, group;
 
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
+    self.group = @"current";
     self.project = theProject;
-    self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlIterationList, [self.project projectId]]];
+    self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlIterationTypeList, [self.project projectId], self.group]];
     self.cacheFilename = [NSString stringWithFormat:@"%d_iterations.xml", [self.project projectId]];
     return self;
 }
@@ -25,6 +26,14 @@
 
 #pragma mark -
 #pragma mark Loading methods
+
+- (void)reloadInterationForGroup:(NSString*)theGroup {
+    self.group = theGroup;
+    self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlIterationTypeList, [self.project projectId], self.group]];
+    self.cacheFilename = [NSString stringWithFormat:@"%d_%@_iterations.xml", [self.project projectId], self.group];
+    
+    [self loadIterations];
+}
 
 - (void)loadIterations {
     self.error = nil;
@@ -87,6 +96,7 @@
     self.error = [request error];
     NSError *theError;    
     NSString *writeableFile = [self pathForFile:cacheFilename];
+    NSLog(@"%@", [request responseString]);
     [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
     [self parseIterations];
 	[pool release];    
@@ -110,11 +120,13 @@
 
 - (void)dealloc {
     [url release];
+    [group release];
     [iterations release];
     [cacheFilename release];
     [lastUpdated release];
     [project release];
     [super dealloc];
+    
 }
 
 @end

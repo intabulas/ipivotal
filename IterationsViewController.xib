@@ -65,28 +65,19 @@
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<object class="NSMutableArray" key="IBUIItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIBarButtonItem" id="567089673">
-								<int key="IBUISystemItemIdentifier">5</int>
-								<reference key="IBUIToolbar" ref="963904797"/>
-							</object>
 							<object class="IBUIBarButtonItem" id="705116041">
 								<bool key="IBUIEnabled">NO</bool>
 								<string key="IBUITitle">Add Story</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="963904797"/>
 							</object>
-							<object class="IBUIBarButtonItem" id="871712279">
-								<string key="IBUITitle">View Done</string>
-								<int key="IBUIStyle">1</int>
+							<object class="IBUIBarButtonItem" id="567089673">
+								<int key="IBUISystemItemIdentifier">5</int>
 								<reference key="IBUIToolbar" ref="963904797"/>
 							</object>
 							<object class="IBUIBarButtonItem" id="381849714">
 								<string key="IBUITitle">View Icebox</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="963904797"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="392778615">
-								<int key="IBUISystemItemIdentifier">5</int>
 								<reference key="IBUIToolbar" ref="963904797"/>
 							</object>
 						</object>
@@ -138,22 +129,6 @@
 						<reference key="destination" ref="1000653521"/>
 					</object>
 					<int key="connectionID">25</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">doneStoriesButton</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="871712279"/>
-					</object>
-					<int key="connectionID">33</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">showDoneStories:</string>
-						<reference key="source" ref="871712279"/>
-						<reference key="destination" ref="841351856"/>
-					</object>
-					<int key="connectionID">34</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -215,26 +190,14 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="381849714"/>
-							<reference ref="871712279"/>
 							<reference ref="705116041"/>
 							<reference ref="567089673"/>
-							<reference ref="392778615"/>
 						</object>
 						<reference key="parent" ref="945880390"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">16</int>
-						<reference key="object" ref="567089673"/>
-						<reference key="parent" ref="963904797"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">30</int>
 						<reference key="object" ref="381849714"/>
-						<reference key="parent" ref="963904797"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">31</int>
-						<reference key="object" ref="871712279"/>
 						<reference key="parent" ref="963904797"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -243,8 +206,8 @@
 						<reference key="parent" ref="963904797"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">37</int>
-						<reference key="object" ref="392778615"/>
+						<int key="objectID">38</int>
+						<reference key="object" ref="567089673"/>
 						<reference key="parent" ref="963904797"/>
 					</object>
 				</object>
@@ -258,20 +221,16 @@
 					<string>13.IBEditorWindowLastContentRect</string>
 					<string>13.IBPluginDependency</string>
 					<string>14.IBPluginDependency</string>
-					<string>16.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
 					<string>30.IBPluginDependency</string>
-					<string>31.IBPluginDependency</string>
 					<string>32.IBPluginDependency</string>
-					<string>37.IBPluginDependency</string>
+					<string>38.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>IterationsViewController</string>
 					<string>UIResponder</string>
-					<string>{{1400, 115}, {320, 460}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>{{422, 245}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -300,7 +259,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">37</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -313,12 +272,14 @@
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addStory:</string>
+							<string>iterationTypeChanged:</string>
 							<string>refresh:</string>
 							<string>showDoneStories:</string>
 							<string>showIceboxStories:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>

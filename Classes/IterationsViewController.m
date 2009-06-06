@@ -45,8 +45,29 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationItem.title = @"Current/Backlog";
+    
+    UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:@"done", @"current", @"backlog", nil]] autorelease];
+    [segmentedControl addTarget:self action:@selector(iterationTypeChanged:) forControlEvents:UIControlEventValueChanged];
+    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    segmentedControl.selectedSegmentIndex = 1;
+    self.navigationItem.titleView = segmentedControl;
+    [segmentedControl release];
+    
+    
 }
 
+- (void)iterationTypeChanged:(id)sender {
+    if ( iterations.isLoaded ) {
+    NSInteger selectedIndex = ((UISegmentedControl*)sender).selectedSegmentIndex;
+    if ( selectedIndex == 0 ) {
+        [iterations reloadInterationForGroup:@"done"];
+    } else if ( selectedIndex == 1 ) {
+        [iterations reloadInterationForGroup:@"current"];
+    } else {
+        [iterations reloadInterationForGroup:@"backlog"];        
+    }
+    }
+}
 
 - (void)loadIterations {
     if ( !iterations.isLoaded ) [iterations loadIterations];    
@@ -79,7 +100,7 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return ( !iterations.isLoaded) ? 1 : [iterations.iterations count];
+    return ( (!iterations.isLoaded) || (iterations.iterations.count == 0))  ? 1 : [iterations.iterations count];
 }
 
 
