@@ -26,5 +26,8 @@
 @property (nonatomic, retain) NSString *owner;
 @property (nonatomic, retain) NSDate  *createdAt;
 @property (nonatomic, retain) NSDate  *acceptedAt;
+
+- (id)init;
+
 @end
 

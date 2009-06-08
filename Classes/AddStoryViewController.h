@@ -5,13 +5,14 @@
 @interface AddStoryViewController : UIViewController <UITableViewDelegate> {
     PivotalProject *project;
     PivotalStory* story;
+    NSMutableDictionary *editingDictionary;
     id activeField;
     @private
       IBOutlet UITableView *storyTableView;       
 }
 
 @property (nonatomic,retain) PivotalStory* story;
-
+@property (nonatomic,retain) NSMutableDictionary *editingDictionary;
 - (id)initWithProject:(PivotalProject *)theProject;
 
 

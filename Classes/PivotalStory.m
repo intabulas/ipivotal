@@ -8,6 +8,14 @@
 #pragma mark -
 #pragma mark Cleanup Methods
 
+- (id)init {
+    [super init];
+    storyType = @"Feature";
+    estimate = 2;
+    name = @"please give this story a title";
+    description = @"please give this story a description";
+    return self;
+}
 - (void)dealloc {
     [storyType release];
     [url release];

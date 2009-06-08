@@ -13,6 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		8C026B260FDC9829002CFEE0 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026B250FDC9829002CFEE0 /* LabelCell.m */; };
+		8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */; };
+		8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */; };
 		8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */; };
 		8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */; };
 		8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B10FCF0A84004D8DD0 /* Default.png */; };
@@ -75,6 +77,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C026B240FDC9829002CFEE0 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
 		8C026B250FDC9829002CFEE0 /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
+		8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSelectionController.h; sourceTree = "<group>"; };
+		8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSelectionController.m; sourceTree = "<group>"; };
+		8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSelectionController.xib; sourceTree = "<group>"; };
 		8C2A7DBC0FD07FF7005E00FB /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryViewController.xib; sourceTree = "<group>"; };
@@ -296,6 +301,8 @@
 				8CA09CE90FD05B1300846DBA /* StoriesViewController.m */,
 				8C2A7DBC0FD07FF7005E00FB /* StoryViewController.h */,
 				8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */,
+				8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */,
+				8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -369,6 +376,7 @@
 				8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */,
 				8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */,
 				8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */,
+				8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";
@@ -450,6 +458,7 @@
 				8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */,
 				8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */,
 				8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */,
+				8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +500,7 @@
 				8CDB9CD50FD9EA03008B53D4 /* CenteredLabelCell.m in Sources */,
 				8CDB9DED0FD9F05E008B53D4 /* ActivityLabelCell.m in Sources */,
 				8C026B260FDC9829002CFEE0 /* LabelCell.m in Sources */,
+				8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
