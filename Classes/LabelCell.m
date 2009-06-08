@@ -1,23 +1,22 @@
-#import "CenteredLabelCell.h"
+#import "LabelCell.h"
 
-
-@implementation CenteredLabelCell
+@implementation LabelCell
 
 @synthesize cellLabel;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         
-        
-        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.contentView.frame.size.width, self.contentView.frame.size.height)];
+        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 10.0f, self.contentView.frame.size.height)];
 		cellLabel.autoresizingMask = UIViewAutoresizingNone;
 		cellLabel.backgroundColor = [UIColor clearColor];
 		cellLabel.highlightedTextColor = [UIColor whiteColor];
 		cellLabel.font = [UIFont  systemFontOfSize:14.0f];
 		cellLabel.textColor = [UIColor blackColor];
-		cellLabel.textAlignment = UITextAlignmentCenter;
+		cellLabel.textAlignment = UITextAlignmentLeft;
 
-		[self.contentView addSubview:cellLabel];
+        [self.contentView addSubview:cellLabel];
+        
     }
     return self;
 }
@@ -26,8 +25,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
 }
 
 
@@ -39,6 +36,7 @@
 	return cellLabel.text;
 }
 
+
 - (void)dealloc {
     [cellLabel release];
     [super dealloc];
@@ -46,3 +44,4 @@
 
 
 @end
+

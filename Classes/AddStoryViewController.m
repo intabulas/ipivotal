@@ -1,30 +1,29 @@
 #import "AddStoryViewController.h"
-
+#import "LabelCell.h"
+#import "ImageLabelCell.h"
+#import "PivotalStory.h"
 
 @implementation AddStoryViewController
 
+@synthesize story;
 
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
     project = theProject;
+    self.story = [[PivotalStory alloc] init];
+    self.story.name = @"please give this story a title";
     return self;
 }
 
 - (void)dealloc {
+    [story release];
     [storyTableView release];
-    [nameCell release];
-    [typeCell release];    
-    [estimateCell release];
-    [stateCell release];
-    [descriptionCell release];    
-    [nameField release];
     [super dealloc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [nameField becomeFirstResponder];
 }
 
 
@@ -44,17 +43,17 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return ( section == 0 ) ? @"Details" : @"Description";
+    return  @"New Story Details" ;
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ( section == 1 ) ? 1 : 4;
+    return 5;
 }
 
 
@@ -64,23 +63,66 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;    
     
-    if ( section == 0 && row == 0 ) return nameCell;
-    if ( section == 0 && row == 1 ) return typeCell;    
-    if ( section == 0 && row == 2 ) return estimateCell;
-    if ( section == 0 && row == 3 ) return stateCell;
-    if ( section == 1 && row == 0 ) return descriptionCell;    
+    if (  row == 0 ) {
+        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+        if (cell == nil) {
+            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+        cell.text = self.story.name;
+        return  cell;        
+    }
+    
+    if ( row == 1 ) {
+        ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ImageLabelCell"];
+        if (cell == nil) {
+            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ImageLabelCell"];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+        [cell setText:@"Feature"];   
+        [cell setImage:[UIImage imageNamed:kIconTypeFeature]];
+        return  cell;            
+    }
+    
+    if ( row == 2 ) {
+        ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ImageLabelCell"];
+        if (cell == nil) {
+            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ImageLabelCell"];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+        [cell setText:@"2 Points"];   
+        [cell setImage:[UIImage imageNamed:kIconEstimateTwoPoints]];
+        return  cell;            
+    }
+    
+    if (  row == 3 ) {
+        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+        if (cell == nil) {
+            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] ;
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+        [cell setText:@"UnAssigned"];    
+        return  cell;        
+    }
 
+    if (  row == 4 ) {
+        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+        if (cell == nil) {
+            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] ;
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+        [cell setText:@"please enter a description"];    
+        return  cell;        
+    }    
+    
+    
     return nil;
 }
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return (indexPath.section == 1 ) ? 103.0f : 40.0f;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-}
-
 
 
 

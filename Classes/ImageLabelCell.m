@@ -11,12 +11,13 @@
         
         
         cellImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 7.0f, 30.0f, 30.0f)];
+        cellImage.contentMode = UIViewContentModeCenter;
         
-        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0f, 0.0f, (self.contentView.frame.size.width - 40.0f) , self.contentView.frame.size.height)];
+        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(36.0f, 0.0f, (self.contentView.frame.size.width - 36.0f) , self.contentView.frame.size.height)];
 		cellLabel.autoresizingMask = UIViewAutoresizingNone;
 		cellLabel.backgroundColor = [UIColor clearColor];
 		cellLabel.highlightedTextColor = [UIColor whiteColor];
-		cellLabel.font = [UIFont  systemFontOfSize:17.0f];
+		cellLabel.font = [UIFont  systemFontOfSize:14.0f];
 		cellLabel.textColor = [UIColor blackColor];
 		cellLabel.textAlignment = UITextAlignmentLeft;
         
