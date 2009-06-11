@@ -3,6 +3,8 @@
 #import "ImageLabelCell.h"
 #import "PivotalStory.h"
 #import "ListSelectionController.h"
+#import "ASIHTTPRequest.h"
+#import "PivotalResource.h"
 
 @implementation AddStoryViewController
 
@@ -25,6 +27,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+
+- (void) saveStory:(id)sender {
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        NSString *urlString = [NSString stringWithFormat:kUrlAddStory, project.projectId];                            
+	    NSURL *followingURL = [NSURL URLWithString:urlString];    
+        ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
+        NSString *newstory = [self.story to_xml];
+    
+        NSLog(@"%@", newstory);
+        NSLog(@"%@", followingURL);    
+        [request addRequestHeader:@"Content-type" value:@"application/xml"];
+        [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
+        [request start];
+
+        NSLog(@"%@", [request responseString]);
+
+        [pool release];    
+       [self.navigationController popViewControllerAnimated:YES];    
 }
 
 

@@ -29,5 +29,7 @@
 
 - (id)init;
 
+- (NSString *)to_xml;
+
 @end
 

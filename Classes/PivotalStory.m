@@ -29,5 +29,11 @@
     [super dealloc];
 }
 
+- (NSString *)to_xml {
+//    return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name><estimate>%d</estimate></story>", [storyType lowercaseString], name, estimate];
+    return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name></story>", [storyType lowercaseString], name];
+    
+}
+
 
 @end

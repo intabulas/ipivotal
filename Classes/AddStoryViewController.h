@@ -16,4 +16,6 @@
 - (id)initWithProject:(PivotalProject *)theProject;
 
 
+- (IBAction) saveStory:(id)sender;
+
 @end

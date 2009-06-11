@@ -50,7 +50,7 @@
     if ( !stories.isLoaded ) [stories loadStories];    
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:object change:change context:context {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
         PivotalStories *theStories = (PivotalStories *)object;
         if ( theStories.isLoading) {
