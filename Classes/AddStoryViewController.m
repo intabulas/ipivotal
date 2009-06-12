@@ -92,7 +92,8 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+//    return 5;  // if we have assignment 
+    return 4;
 }
 
 
@@ -153,18 +154,18 @@
         return  cell;            
     }
     
-    if (  row == 3 ) {
-        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
-        if (cell == nil) {
-            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] ;
-        }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        [cell setText:@"UnAssigned"];    
-        return  cell;        
-    }
+//    if (  row == 3 ) {
+//        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+//        if (cell == nil) {
+//            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] ;
+//        }
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+//        [cell setText:@"UnAssigned"];    
+//        return  cell;        
+//    }
 
-    if (  row == 4 ) {
+    if (  row == 3  ) {  /// 4 if there is assignment
         LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
         if (cell == nil) {
             cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] ;
