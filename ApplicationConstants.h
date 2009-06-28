@@ -19,7 +19,7 @@
 
 // Cache File Formats
 
-#define kCacheFileStories @"stories_%@.xml"
+#define kCacheFileStories @"%@_stories_%@.xml"
 
 // String Formats
 

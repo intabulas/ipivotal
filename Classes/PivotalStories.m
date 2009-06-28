@@ -13,7 +13,7 @@
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
     [super init];
     project = theProject;
-    self.cacheFilename = [NSString stringWithFormat:kCacheFileStories, theType];
+    self.cacheFilename = [NSString stringWithFormat:kCacheFileStories, theProject.name, theType];
     self.storyType = theType;
     NSString *storiesURL ;
     if ( [theType hasPrefix:@"icebox"] ) {

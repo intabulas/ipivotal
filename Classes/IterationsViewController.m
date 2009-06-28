@@ -141,7 +141,7 @@
         if (cell == nil) {
             cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
         }
-        [cell setText:@"you have no storied defined for this iteration"];    
+        [cell.cellLabel setText:@"you have no storied defined for this iteration"];    
         return  cell;
     }    
     

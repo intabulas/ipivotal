@@ -102,7 +102,7 @@
         if (cell == nil) {
             cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
         }
-        [cell setText:@"there are no stories defined"];    
+        [cell.cellLabel setText:@"there are no stories defined"];    
         return  cell;
     }
     

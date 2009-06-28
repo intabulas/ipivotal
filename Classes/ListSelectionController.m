@@ -70,7 +70,7 @@
     if (cell == nil) {
         cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] autorelease];
     }
-    cell.text = [listItems objectAtIndex:indexPath.row];
+    [cell.cellLabel setText:[listItems objectAtIndex:indexPath.row]];
     return cell;
 }
 

@@ -110,7 +110,7 @@
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        cell.text = self.story.name;
+        [cell.cellLabel setText:self.story.name];
         return  cell;        
     }
     
@@ -122,7 +122,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;      
         
-        [cell setText:story.storyType];   
+        [cell.cellLabel setText:story.storyType];   
         
         if ( [story.storyType hasPrefix:@"Bug"] ) {    
             [cell setImage:[UIImage imageNamed:kIconTypeBug]];        
@@ -145,7 +145,7 @@
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        [cell setText:[NSString stringWithFormat:@"%d Point(s)", story.estimate]];   
+        [cell.cellLabel setText:[NSString stringWithFormat:@"%d Point(s)", story.estimate]];   
         
         if ( story.estimate == 0 ) [cell setImage:[UIImage imageNamed:kIconEstimateNone]];
         if ( story.estimate == 1 ) [cell setImage:[UIImage imageNamed:kIconEstimateOnePoint]];
@@ -173,7 +173,7 @@
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        [cell setText:@"please enter a description"];    
+        [cell.cellLabel setText:@"please enter a description"];    
         return  cell;        
     }    
     

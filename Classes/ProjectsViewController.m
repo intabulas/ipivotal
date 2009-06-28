@@ -85,7 +85,7 @@
         cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
-    cell.text = pp.name;
+    [cell.cellLabel setText:pp.name];
     cell.image = [UIImage imageNamed:kIconTypeProject];
     	
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
