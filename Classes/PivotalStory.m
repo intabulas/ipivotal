@@ -30,7 +30,11 @@
 }
 
 - (NSString *)to_xml {
-    return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>", [storyType lowercaseString], name, estimate];    
+    if ([storyType hasPrefix:@"Feature"]) {
+        return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>", [storyType lowercaseString], name, estimate];            
+    } else {
+        return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name></story>", [storyType lowercaseString], name];    
+    }
 }
 
 

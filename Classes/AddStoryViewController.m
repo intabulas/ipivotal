@@ -5,6 +5,7 @@
 #import "ListSelectionController.h"
 #import "ASIHTTPRequest.h"
 #import "PivotalResource.h"
+#import "TextInputController.h"
 
 @implementation AddStoryViewController
 
@@ -181,6 +182,10 @@
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        TextInputController *controller = [[TextInputController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
     if (indexPath.row == 1) {
         ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:@"Type" andTitle:@"Story Type"];
         controller.listItems = [[NSArray alloc] initWithObjects:@"Feature", @"Bug", @"Chore", @"Release", nil];

@@ -32,6 +32,9 @@
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
 		8C50D61A0FE1A86300F41900 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C50D6190FE1A86300F41900 /* Entitlements.plist */; };
+		8C70E2270FE320FB0074DE16 /* TextInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E2260FE320FB0074DE16 /* TextInputController.m */; };
+		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
+		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
 		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
@@ -107,6 +110,11 @@
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
 		8C50D6190FE1A86300F41900 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		8C70E2250FE320FB0074DE16 /* TextInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputController.h; sourceTree = "<group>"; };
+		8C70E2260FE320FB0074DE16 /* TextInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputController.m; sourceTree = "<group>"; };
+		8C70E2290FE3216E0074DE16 /* TextInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputController.xib; sourceTree = "<group>"; };
+		8C70E22C0FE321F30074DE16 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		8C70E22D0FE321F30074DE16 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 		8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionListViewController.xib; sourceTree = "<group>"; };
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
@@ -306,6 +314,8 @@
 				8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */,
 				8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */,
 				8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */,
+				8C70E2250FE320FB0074DE16 /* TextInputController.h */,
+				8C70E2260FE320FB0074DE16 /* TextInputController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +374,8 @@
 				8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */,
 				8C026B240FDC9829002CFEE0 /* LabelCell.h */,
 				8C026B250FDC9829002CFEE0 /* LabelCell.m */,
+				8C70E22C0FE321F30074DE16 /* TextFieldCell.h */,
+				8C70E22D0FE321F30074DE16 /* TextFieldCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -380,6 +392,7 @@
 				8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */,
 				8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */,
 				8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */,
+				8C70E2290FE3216E0074DE16 /* TextInputController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";
@@ -463,6 +476,7 @@
 				8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */,
 				8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */,
 				8C50D61A0FE1A86300F41900 /* Entitlements.plist in Resources */,
+				8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +519,8 @@
 				8CDB9DED0FD9F05E008B53D4 /* ActivityLabelCell.m in Sources */,
 				8C026B260FDC9829002CFEE0 /* LabelCell.m in Sources */,
 				8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */,
+				8C70E2270FE320FB0074DE16 /* TextInputController.m in Sources */,
+				8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
