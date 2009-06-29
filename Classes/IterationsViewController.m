@@ -185,6 +185,10 @@
     
 }
 
+-(IBAction)projectActivity:(id)sender {
+	
+}
+
 -(IBAction)addStory:(id)sender {
     AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:self.project];
     [self.navigationController pushViewController:controller animated:YES];

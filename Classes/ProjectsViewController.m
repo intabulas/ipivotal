@@ -52,7 +52,7 @@
 }
 
 
-#pragma mark Table view methods
+#pragma mark Actions
 
 - (IBAction)logout:(id)sender {
     // @TODO
@@ -65,6 +65,9 @@
 - (IBAction)refresh:(id)sender {
     [projects  reloadProjects];
     [self.projectTableView reloadData];    
+}
+
+- (IBAction)recentActivity:(id)sender {
 }
 
 

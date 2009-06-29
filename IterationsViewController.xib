@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="14"/>
+			<integer value="13"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -65,14 +65,23 @@
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<object class="NSMutableArray" key="IBUIItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUIBarButtonItem" id="341347299">
+								<string key="IBUITitle">View Activity</string>
+								<int key="IBUIStyle">1</int>
+								<reference key="IBUIToolbar" ref="963904797"/>
+							</object>
+							<object class="IBUIBarButtonItem" id="858608613">
+								<reference key="IBUIToolbar" ref="963904797"/>
+								<int key="IBUISystemItemIdentifier">5</int>
+							</object>
 							<object class="IBUIBarButtonItem" id="705116041">
 								<string key="IBUITitle">Add Story</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="963904797"/>
 							</object>
 							<object class="IBUIBarButtonItem" id="567089673">
-								<int key="IBUISystemItemIdentifier">5</int>
 								<reference key="IBUIToolbar" ref="963904797"/>
+								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
 							<object class="IBUIBarButtonItem" id="381849714">
 								<string key="IBUITitle">View Icebox</string>
@@ -145,6 +154,14 @@
 					</object>
 					<int key="connectionID">36</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">projectActivity:</string>
+						<reference key="source" ref="341347299"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">41</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -191,6 +208,8 @@
 							<reference ref="381849714"/>
 							<reference ref="705116041"/>
 							<reference ref="567089673"/>
+							<reference ref="341347299"/>
+							<reference ref="858608613"/>
 						</object>
 						<reference key="parent" ref="945880390"/>
 					</object>
@@ -209,6 +228,16 @@
 						<reference key="object" ref="567089673"/>
 						<reference key="parent" ref="963904797"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">39</int>
+						<reference key="object" ref="341347299"/>
+						<reference key="parent" ref="963904797"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">40</int>
+						<reference key="object" ref="858608613"/>
+						<reference key="parent" ref="963904797"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -224,12 +253,16 @@
 					<string>30.IBPluginDependency</string>
 					<string>32.IBPluginDependency</string>
 					<string>38.IBPluginDependency</string>
+					<string>39.IBPluginDependency</string>
+					<string>40.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>IterationsViewController</string>
 					<string>UIResponder</string>
-					<string>{{422, 245}, {320, 460}}</string>
+					<string>{{640, 528}, {320, 460}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -258,7 +291,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">38</int>
+			<int key="maxID">41</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -272,12 +305,14 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addStory:</string>
 							<string>iterationTypeChanged:</string>
+							<string>projectActivity:</string>
 							<string>refresh:</string>
 							<string>showDoneStories:</string>
 							<string>showIceboxStories:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -308,5 +343,6 @@
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.LastKnownRelativeProjectPath">iPivotal.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<string key="IBCocoaTouchPluginVersion">3.0</string>
 	</data>
 </archive>

@@ -12,6 +12,8 @@
 
 - (IBAction)logout:(id)sender;
 - (IBAction)refresh:(id)sender;
+- (IBAction)recentActivity:(id)sender;
+
 
 - (void)loadProjects;
 - (void)reloadProjects;

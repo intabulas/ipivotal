@@ -20,6 +20,8 @@
 -(IBAction)showDoneStories:(id)sender;
 -(IBAction)showIceboxStories:(id)sender;
 -(IBAction)addStory:(id)sender;
+-(IBAction)projectActivity:(id)sender;
+
 - (void) iterationTypeChanged:(id)sender;
 
 @end
