@@ -6,8 +6,6 @@
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	[super parserDidStartDocument:parser];
-	dateFormatter = [[NSDateFormatter alloc] init];
-	dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
@@ -40,8 +38,6 @@
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
 	[super parserDidEndDocument:parser];
-	[dateFormatter release];
-	dateFormatter = nil;
 }
 
 #pragma mark -
@@ -49,7 +45,6 @@
 
 - (void)dealloc {
 	[currentProject release];
-	[dateFormatter release];
     [super dealloc];
 }
 

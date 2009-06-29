@@ -5,7 +5,6 @@
 
 @interface PivotalProjectsParserDelegate : PivotalResourceParserDelegate {
     @private
-    NSDateFormatter *dateFormatter;
     PivotalProject *currentProject;    
 }
 
