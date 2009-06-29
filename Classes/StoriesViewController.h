@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "PivotalStories.h"
-#import "PivotalProject.h"
+
+@class PivotalProject;
 
 @interface StoriesViewController :  UIViewController <UITableViewDelegate>  {
 @private
@@ -9,6 +10,7 @@
     NSString *storyType;
     IBOutlet UITableView *storiesTableView;    
 }
+
 @property (nonatomic,retain) IBOutlet UITableView *storiesTableView;
 
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType;

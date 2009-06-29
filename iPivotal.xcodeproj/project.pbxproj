@@ -72,8 +72,8 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPivotalAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPivotalAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iPivotalAppDelegate.h; path = Classes/iPivotalAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iPivotalAppDelegate.m; path = Classes/iPivotalAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iPivotal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPivotal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -195,8 +195,6 @@
 				8CDB632C0FCF4FF0003AC065 /* Domain */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
-				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
-				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -226,6 +224,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
+				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
 				28A0AB4B0D9B1048005BE974 /* iPivotal_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */,
