@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AuthenticationViewController : UITableViewController {
+@interface AuthenticationViewController : UITableViewController <UITextFieldDelegate> {
 	id target;
 	SEL selector;    
     IBOutlet UINavigationBar *settingsHeader;

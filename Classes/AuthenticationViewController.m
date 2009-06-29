@@ -7,6 +7,8 @@
 	target = theTarget;
 	selector = theSelector;
     self.tableView.tableHeaderView = settingsHeader;
+	tokenField.delegate = self;
+	
 	return self;
 }
 
@@ -19,8 +21,6 @@
     [super dealloc];
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,7 +28,6 @@
     tokenField.text = [defaults valueForKey:kDefaultsApiToken];
     
 }
-
 
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,6 +41,13 @@
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
 }
 
+
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+	[theTextField resignFirstResponder];
+	return YES;
+}
 
 #pragma mark User Defaults methods
 
