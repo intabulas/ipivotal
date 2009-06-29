@@ -50,9 +50,9 @@
 #pragma mark Table view methods
 
 - (IBAction)logout:(id)sender {
-    //@TODO
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults removeObjectForKey:kDefaultsApiToken];
+    // @TODO
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:kDefaultsApiToken];
     
 }
 
@@ -78,6 +78,10 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+	
+	if (projects.isLoading ) return loadingProjectsCell;
+	if (projects.projects.count == 0) return noProjectsCell;
+	
     static NSString *CellIdentifier = @"ImageLabelCell";
     
     ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
