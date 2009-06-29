@@ -46,7 +46,7 @@
 		[self presentLogin];
 	} else {
         if (self.loginController) [navigationController dismissModalViewControllerAnimated:YES];
-        [projectsController loadProjects];
+        [projectsController reloadProjects];
 	}
 }
 

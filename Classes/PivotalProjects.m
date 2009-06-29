@@ -87,6 +87,7 @@
     NSString *writeableFile = [self pathForFile:cacheFilename];
     [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
     [self parseProjects];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;		
 	[pool release];    
 }
 

@@ -23,6 +23,9 @@
     self.navigationItem.title = @"Projects";
 }
 
+- (void)reloadProjects {
+	[projects reloadProjects];
+}
 
 - (void)loadProjects {
    if ( !projects.isLoaded ) [projects loadProjects];    

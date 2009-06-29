@@ -14,5 +14,5 @@
 - (IBAction)refresh:(id)sender;
 
 - (void)loadProjects;
-
+- (void)reloadProjects;
 @end
