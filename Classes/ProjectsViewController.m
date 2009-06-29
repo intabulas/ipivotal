@@ -85,7 +85,7 @@
 
 	
 	if (projects.isLoading ) return loadingProjectsCell;
-	if (projects.projects.count == 0) return noProjectsCell;
+	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
 	
     static NSString *CellIdentifier = @"ImageLabelCell";
     
