@@ -57,6 +57,12 @@
 		8CA09CEA0FD05B1300846DBA /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09CE90FD05B1300846DBA /* StoriesViewController.m */; };
 		8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */; };
 		8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */; };
+		8CBBB4A40FF9531700A32C37 /* PivotalActivities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */; };
+		8CBBB4A70FF9532100A32C37 /* PivotalActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A60FF9532100A32C37 /* PivotalActivity.m */; };
+		8CBBB4AA0FF953BC00A32C37 /* PivotalActivityParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A90FF953BC00A32C37 /* PivotalActivityParserDelegate.m */; };
+		8CBBB5160FF957D000A32C37 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB5150FF957D000A32C37 /* ActivityViewController.m */; };
+		8CBBB5180FF957DB00A32C37 /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */; };
+		8CBBB6600FF9696800A32C37 /* ActivityItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */; };
 		8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */; };
 		8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */; };
 		8CDB633B0FCF5685003AC065 /* PivotalResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB633A0FCF5685003AC065 /* PivotalResource.m */; };
@@ -147,6 +153,17 @@
 		8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesViewController.xib; sourceTree = "<group>"; };
 		8CA09D0C0FD05FB500846DBA /* PivotalStoriesParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalStoriesParserDelegate.h; sourceTree = "<group>"; };
 		8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalStoriesParserDelegate.m; sourceTree = "<group>"; };
+		8CBBB4A20FF9531700A32C37 /* PivotalActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalActivities.h; sourceTree = "<group>"; };
+		8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalActivities.m; sourceTree = "<group>"; };
+		8CBBB4A50FF9532100A32C37 /* PivotalActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalActivity.h; sourceTree = "<group>"; };
+		8CBBB4A60FF9532100A32C37 /* PivotalActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalActivity.m; sourceTree = "<group>"; };
+		8CBBB4A80FF953BC00A32C37 /* PivotalActivityParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalActivityParserDelegate.h; sourceTree = "<group>"; };
+		8CBBB4A90FF953BC00A32C37 /* PivotalActivityParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalActivityParserDelegate.m; sourceTree = "<group>"; };
+		8CBBB5140FF957D000A32C37 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		8CBBB5150FF957D000A32C37 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
+		8CBBB65E0FF9696800A32C37 /* ActivityItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityItemCell.h; sourceTree = "<group>"; };
+		8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityItemCell.m; sourceTree = "<group>"; };
 		8CCB36060FD9635F00AEEE0E /* ImageLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelCell.h; sourceTree = "<group>"; };
 		8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelCell.m; sourceTree = "<group>"; };
 		8CCB37030FD9721400AEEE0E /* IterationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationHeaderView.h; sourceTree = "<group>"; };
@@ -316,6 +333,8 @@
 				8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */,
 				8C70E2250FE320FB0074DE16 /* TextInputController.h */,
 				8C70E2260FE320FB0074DE16 /* TextInputController.m */,
+				8CBBB5140FF957D000A32C37 /* ActivityViewController.h */,
+				8CBBB5150FF957D000A32C37 /* ActivityViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -338,6 +357,10 @@
 				8CA0990B0FCFB70600846DBA /* PivotalStories.m */,
 				8CA0990D0FCFB70E00846DBA /* PivotalStory.h */,
 				8CA0990E0FCFB70E00846DBA /* PivotalStory.m */,
+				8CBBB4A20FF9531700A32C37 /* PivotalActivities.h */,
+				8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */,
+				8CBBB4A50FF9532100A32C37 /* PivotalActivity.h */,
+				8CBBB4A60FF9532100A32C37 /* PivotalActivity.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -353,6 +376,8 @@
 				8CA099080FCFB65900846DBA /* PivotalIterationsParserDelegate.m */,
 				8CA09D0C0FD05FB500846DBA /* PivotalStoriesParserDelegate.h */,
 				8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */,
+				8CBBB4A80FF953BC00A32C37 /* PivotalActivityParserDelegate.h */,
+				8CBBB4A90FF953BC00A32C37 /* PivotalActivityParserDelegate.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -376,6 +401,8 @@
 				8C026B250FDC9829002CFEE0 /* LabelCell.m */,
 				8C70E22C0FE321F30074DE16 /* TextFieldCell.h */,
 				8C70E22D0FE321F30074DE16 /* TextFieldCell.m */,
+				8CBBB65E0FF9696800A32C37 /* ActivityItemCell.h */,
+				8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -393,6 +420,7 @@
 				8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */,
 				8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */,
 				8C70E2290FE3216E0074DE16 /* TextInputController.xib */,
+				8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";
@@ -477,6 +505,7 @@
 				8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */,
 				8C50D61A0FE1A86300F41900 /* Entitlements.plist in Resources */,
 				8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */,
+				8CBBB5180FF957DB00A32C37 /* ActivityViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +550,11 @@
 				8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */,
 				8C70E2270FE320FB0074DE16 /* TextInputController.m in Sources */,
 				8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */,
+				8CBBB4A40FF9531700A32C37 /* PivotalActivities.m in Sources */,
+				8CBBB4A70FF9532100A32C37 /* PivotalActivity.m in Sources */,
+				8CBBB4AA0FF953BC00A32C37 /* PivotalActivityParserDelegate.m in Sources */,
+				8CBBB5160FF957D000A32C37 /* ActivityViewController.m in Sources */,
+				8CBBB6600FF9696800A32C37 /* ActivityItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

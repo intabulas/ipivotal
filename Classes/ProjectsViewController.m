@@ -3,6 +3,7 @@
 #import "IterationsViewController.h"
 #import "ImageLabelCell.h"
 #import "iPivotalAppDelegate.h"
+#import "ActivityViewController.h"
 
 @implementation ProjectsViewController
 
@@ -68,6 +69,9 @@
 }
 
 - (IBAction)recentActivity:(id)sender {
+    ActivityViewController *controller = [[ActivityViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];	
 }
 
 
