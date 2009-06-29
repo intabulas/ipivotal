@@ -69,8 +69,12 @@
                 theColor = [UIColor colorWithRed:216.0/255.0 green:238.0/255.0 blue:206.0/255.0 alpha:1.0];
         } else if ( [theStory.currentState hasPrefix:@"started"] || [theStory.currentState hasPrefix:@"delivered"] ) {
                 theColor = [UIColor colorWithRed:255.0/255.0 green:248.0/255.0 blue:228.0/255.0 alpha:1.0];
-        } else if ( [theStory.currentState hasPrefix:@"unstarted"] && [theStory.storyType hasPrefix:@"release"] ) {
-                theColor = [UIColor colorWithRed:64.0/255.0 green:122.0/255.0 blue:165.0/255.0 alpha:1.0];        
+        } else if ( [theStory.currentState hasPrefix:@"unstarted"] &&  [theStory.storyType hasPrefix:@"release"] ) {
+//                theColor = [UIColor colorWithRed:64.0/255.0 green:122.0/255.0 blue:165.0/255.0 alpha:1.0];       
+			statusLabel.textColor = [UIColor whiteColor];
+			storyLabel.textColor = [UIColor whiteColor];
+ 			
+                theColor = [UIColor colorWithRed:145.0/255.0 green:49.0/255.0 blue:50.0/255.0 alpha:1.0];        			
         } else if ( [theStory.currentState hasPrefix:@"unscheduled"] ) {
                 theColor = [UIColor colorWithRed:231.0/255.0 green:243.0/255.0 blue:250.0/255.0 alpha:1.0];        
                 
