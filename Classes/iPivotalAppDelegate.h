@@ -11,4 +11,6 @@
 
 @property (nonatomic, readonly) AuthenticationViewController *loginController;
 
+- (void)authenticate;
+
 @end

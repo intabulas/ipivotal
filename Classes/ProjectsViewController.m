@@ -2,6 +2,7 @@
 #import "PivotalProject.h"
 #import "IterationsViewController.h"
 #import "ImageLabelCell.h"
+#import "iPivotalAppDelegate.h"
 
 @implementation ProjectsViewController
 
@@ -56,7 +57,8 @@
     // @TODO
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:kDefaultsApiToken];
-    
+    iPivotalAppDelegate *appdelegate = (iPivotalAppDelegate *)[[UIApplication sharedApplication]delegate];
+	[appdelegate authenticate];
 }
 
 - (IBAction)refresh:(id)sender {
