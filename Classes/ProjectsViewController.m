@@ -29,7 +29,8 @@
 }
 
 - (void)loadProjects {
-   if ( !projects.isLoaded ) [projects loadProjects];    
+//   if ( !projects.isLoaded ) [projects loadProjects];    
+    [projects loadProjects];    	
 }
 
 

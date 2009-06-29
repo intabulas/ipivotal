@@ -9,7 +9,7 @@
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	[super parserDidStartDocument:parser];
 	dateFormatter = [[NSDateFormatter alloc] init];
-	dateFormatter.dateFormat = @"yyyy/MM/dd HH:mm:ss 'GMT'";
+	dateFormatter.dateFormat = @"yyyy/MM/dd HH:mm:ss 'UTC'";
     handlingStory = NO;
 }
 
