@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "PivotalResource.h"
 
+@class PivotalProject;
+
 @interface PivotalActivities : PivotalResource {
 	NSArray *activities;
     NSString *cacheFilename;   
@@ -15,7 +17,9 @@ NSDate *lastUpdated;
 
 
 - (id)init;
-//- (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType;;
+
+- (id)initWithProject:(PivotalProject *)theProject;
+
 - (void)loadActivities;
 - (void)loadedActivities:(id)theResult;
 - (void)reloadActivities;

@@ -1,6 +1,6 @@
 #import "PivotalActivities.h"
 #import "PivotalActivityParserDelegate.h"
-
+#import "PivotalProject.h"
 
 @interface PivotalActivities ()
 - (void)parseActivities;
@@ -18,20 +18,14 @@
 	return self;
 }
 
-//- (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
-//    [super init];
-//    project = theProject;
-//    self.cacheFilename = [NSString stringWithFormat:kCacheFileStories, theProject.name, theType];
-//    self.storyType = theType;
-//    NSString *storiesURL ;
-//    if ( [theType hasPrefix:@"icebox"] ) {
-//        storiesURL = [NSString stringWithFormat:kUrlIceboxStories, project.projectId];        
-//    } else {
-//		storiesURL = [NSString stringWithFormat:kUrlIterationTypeList, project.projectId, theType];
-//    }
-//    self.url = [NSURL URLWithString:storiesURL];
-//    return self;
-//}
+- (id)initWithProject:(PivotalProject *)theProject {
+     [self init];
+     self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlProjectActivityStream, theProject.projectId ]];
+     self.cacheFilename = [NSString stringWithFormat:kCacheProjectActivityStream, theProject.projectId];
+     NSLog(@"Url: '%@'", self.url);
+     NSLog(@"Cache: '%@'", self.cacheFilename);    
+     return self;
+}
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"<PivotalActivities url:'%@'>", url];

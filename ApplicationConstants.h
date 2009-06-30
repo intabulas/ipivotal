@@ -18,8 +18,9 @@
 
 // Cache File Formats
 
-#define kCacheFileStories      @"%@_stories_%@.xml"
-#define kCacheActivityStream   @"activities.xml"
+#define kCacheFileStories            @"%@_stories_%@.xml"
+#define kCacheActivityStream         @"activities.xml"
+#define kCacheProjectActivityStream  @"%d_activities.xml"
 // String Formats
 
 

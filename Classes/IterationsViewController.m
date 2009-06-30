@@ -1,4 +1,3 @@
-
 #import "IterationsViewController.h"
 #import "PivotalIteration.h"
 #import "PivotalStory.h"
@@ -10,7 +9,7 @@
 #import "IterationStoryCell.h"
 #import "ActivityLabelCell.h"
 #import "CenteredLabelCell.h"
-
+#import "ActivityViewController.h"
 
 @implementation IterationsViewController
 @synthesize iterationTableView, project;
@@ -186,6 +185,9 @@
 }
 
 -(IBAction)projectActivity:(id)sender {
+    ActivityViewController *controller = [[ActivityViewController alloc] initWithProject:self.project];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];	    
 	
 }
 

@@ -1,11 +1,18 @@
 
 #import "ActivityViewController.h"
 #import "ActivityItemCell.h"
+#import "PivotalProject.h"
 
 @implementation ActivityViewController
 
 - (id)init {
     [super initWithNibName:@"ActivityViewController" bundle:nil];
+    return self;
+}
+
+- (id)initWithProject:(PivotalProject *)theProject {
+    [self init];
+    project = theProject;
     return self;
 }
 
@@ -22,8 +29,11 @@
 	
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
-	
+	if ( !project) {
 	activities = [[PivotalActivities alloc] init];
+    } else {
+     activities = [[PivotalActivities alloc] initWithProject:project];
+    }
 	[activities addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
 	if ( !activities.isLoaded) [ activities loadActivities];
 }
@@ -31,7 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"Activity Stream";
+    self.navigationItem.title = @"Activity";
 }
 
 
@@ -72,7 +82,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 	( activities.isLoading ) ? 1 : activities.activities.count;
+    return 	( activities.isLoading || activities.activities.count == 0) ? 1 : activities.activities.count;
 }
 
 
