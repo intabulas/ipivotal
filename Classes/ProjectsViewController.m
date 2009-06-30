@@ -9,6 +9,7 @@
 
 @synthesize projectTableView;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -84,7 +85,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  (projects.isLoading ) || (projects.projects.count == 0) ? 1 : projects.projects.count;
+    return  (projects.isLoading  || projects.projects.count == 0) ? 1 : projects.projects.count;
 }
 
 
@@ -92,7 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	
-	if (projects.isLoading ) return loadingProjectsCell;
+	if (!projects.isLoaded ) return loadingProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
 	
     static NSString *CellIdentifier = @"ImageLabelCell";

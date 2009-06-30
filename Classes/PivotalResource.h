@@ -8,7 +8,7 @@ typedef enum {
 } PivotalResourceStatus;
 
 @interface PivotalResource : NSObject {
-   PivotalResourceStatus status;
+    PivotalResourceStatus status;
     NSError *error;
 }
 
