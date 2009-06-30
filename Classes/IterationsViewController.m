@@ -107,7 +107,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
-    if ( !iterations.isLoaded) return 0;
+    if ( !iterations.isLoaded) return 1;
     if ( iterations.iterations.count == 0 ) return 1;
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
     return (iteration.stories.count == 0 ) ? 1 : iteration.stories.count;
