@@ -22,8 +22,6 @@
      [self init];
      self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlProjectActivityStream, theProject.projectId ]];
      self.cacheFilename = [NSString stringWithFormat:kCacheProjectActivityStream, theProject.projectId];
-     NSLog(@"Url: '%@'", self.url);
-     NSLog(@"Cache: '%@'", self.cacheFilename);    
      return self;
 }
 

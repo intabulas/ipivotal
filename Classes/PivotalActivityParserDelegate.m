@@ -32,7 +32,6 @@
 	} else if ([elementName isEqualToString:@"author"]) {                      
         currentActivity.author = currentElementValue;
 	} else if ([elementName isEqualToString:@"when"]) {  
-		NSLog(@"%@", currentElementValue);
         currentActivity.when = [dateFormatter dateFromString:currentElementValue];
 	} 
     

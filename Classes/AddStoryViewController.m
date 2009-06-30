@@ -36,15 +36,9 @@
 	    NSURL *followingURL = [NSURL URLWithString:urlString];    
         ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
         NSString *newstory = [self.story to_xml];
-    
-        NSLog(@"%@", newstory);
-        NSLog(@"%@", followingURL);    
         [request addRequestHeader:@"Content-type" value:@"application/xml"];
         [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
         [request start];
-
-        NSLog(@"%@", [request responseString]);
-
         [pool release];    
        [self.navigationController popViewControllerAnimated:YES];    
 }
