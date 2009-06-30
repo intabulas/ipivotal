@@ -82,7 +82,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return  @"New Story Details" ;
+    return  @"Add a New Story" ;
 }
 
 // Customize the number of rows in the table view.

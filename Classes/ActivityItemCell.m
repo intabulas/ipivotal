@@ -5,13 +5,16 @@
 
 
 
-@synthesize activityLabel, statusLabel, activity;
+@synthesize activityLabel, statusLabel, activity, typeImage;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         
-		
-		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 3.0f, (self.contentView.frame.size.width - 35.0f) , 25.0f)];
+        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 12.0f, 20.0f, 20.0f)];
+        typeImage.backgroundColor = [UIColor clearColor];
+		typeImage.image = [UIImage  imageNamed:@"77-ekg.png"];
+        
+		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 3.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
 		activityLabel.autoresizingMask = UIViewAutoresizingNone;
 		activityLabel.backgroundColor = [UIColor clearColor];
 		activityLabel.highlightedTextColor = [UIColor whiteColor];
@@ -20,7 +23,7 @@
 		activityLabel.textAlignment = UITextAlignmentLeft;
         
 		
-		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 23.0f, (self.contentView.frame.size.width -35.0f) , 15.0f)];
+		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 23.0f, (self.contentView.frame.size.width - 55.0f) , 15.0f)];
 		statusLabel.autoresizingMask = UIViewAutoresizingNone;
 		statusLabel.backgroundColor = [UIColor clearColor];
 		statusLabel.highlightedTextColor = [UIColor whiteColor];
@@ -33,7 +36,7 @@
 		UIView* backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectZero ] autorelease ];
 		self.backgroundView = backgroundView;
 		
-		
+		[self.contentView addSubview:typeImage];
 		[self.contentView addSubview:activityLabel];        
 		[self.contentView addSubview:statusLabel];                
 		

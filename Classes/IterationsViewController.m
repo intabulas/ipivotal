@@ -115,12 +115,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    if (   iterations.iterations.count != 0 ) {
-//     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
-//     return [NSString stringWithFormat:@"Iteration %d: start - end", [iteration iterationId]];
-//    } else {
         return nil;;
-//    }
 }
 
 // Customize the appearance of table view cells.
@@ -135,7 +130,7 @@
         if (cell == nil) {
             cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
         }
-        [cell.cellLabel setText:@"there are no iterations for this phase"];
+        [cell.cellLabel setText:@"there are no iterations for this group"];
 
         return  cell;        
     }
@@ -158,7 +153,7 @@
         if (cell == nil) {
             cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
         }
-        [cell.cellLabel setText:@"you have no storied defined for this iteration"];    
+        [cell.cellLabel setText:@"you have no stories defined for this iteration"];    
         return  cell;
     }    
     
@@ -221,11 +216,8 @@
 }
 
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:indexPath.section];
-
     StoryViewController *controller = [[StoryViewController alloc] initWithStory:[iteration.stories objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
