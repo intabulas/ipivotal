@@ -10,24 +10,34 @@
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         
-        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 12.0f, 20.0f, 20.0f)];
+        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 20.0f, 20.0f, 20.0f)];
         typeImage.backgroundColor = [UIColor clearColor];
 		typeImage.image = [UIImage  imageNamed:@"77-ekg.png"];
+
+		storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 18.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
+		storyLabel.autoresizingMask = UIViewAutoresizingNone;
+		storyLabel.backgroundColor = [UIColor clearColor];
+		storyLabel.highlightedTextColor = [UIColor whiteColor];
+		storyLabel.font = [UIFont  systemFontOfSize:12.0f];
+		storyLabel.textColor = [UIColor blackColor];
+		storyLabel.textAlignment = UITextAlignmentLeft;
         
-		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 3.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
+        
+        
+		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 2.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
 		activityLabel.autoresizingMask = UIViewAutoresizingNone;
 		activityLabel.backgroundColor = [UIColor clearColor];
 		activityLabel.highlightedTextColor = [UIColor whiteColor];
-		activityLabel.font = [UIFont  systemFontOfSize:14.0f];
+		activityLabel.font = [UIFont  systemFontOfSize:12.0f];
 		activityLabel.textColor = [UIColor blackColor];
 		activityLabel.textAlignment = UITextAlignmentLeft;
         
 		
-		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 23.0f, (self.contentView.frame.size.width - 55.0f) , 15.0f)];
+		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 38.0f, (self.contentView.frame.size.width - 55.0f) , 15.0f)];
 		statusLabel.autoresizingMask = UIViewAutoresizingNone;
 		statusLabel.backgroundColor = [UIColor clearColor];
 		statusLabel.highlightedTextColor = [UIColor whiteColor];
-		statusLabel.font = [UIFont  systemFontOfSize:11.0f];
+		statusLabel.font = [UIFont  systemFontOfSize:10.0f];
 		statusLabel.textColor = [UIColor blackColor];
 		statusLabel.textAlignment = UITextAlignmentLeft;
 		
@@ -37,6 +47,7 @@
 		self.backgroundView = backgroundView;
 		
 		[self.contentView addSubview:typeImage];
+        [self.contentView addSubview:storyLabel];
 		[self.contentView addSubview:activityLabel];        
 		[self.contentView addSubview:statusLabel];                
 		
@@ -62,8 +73,10 @@
 	
 	NSString *prettyDate = [theActivity.when prettyDate];
 	
-	statusLabel.text = [NSString stringWithFormat:@"%@ by %@", prettyDate, theActivity.author];
+	statusLabel.text = [NSString stringWithFormat:@"%@ / %@", prettyDate, theActivity.project];
 	
+    storyLabel.text = theActivity.story;
+    
 //	UIColor *theColor;
 //	
 //	if ( [theStory.currentState hasPrefix:@"accepted"] ) {
