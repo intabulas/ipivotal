@@ -108,14 +108,19 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     if ( !iterations.isLoaded) return 0;
+    if ( iterations.iterations.count == 0 ) return 1;
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
     return (iteration.stories.count == 0 ) ? 1 : iteration.stories.count;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-   PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
-   return [NSString stringWithFormat:@"Iteration %d: start - end", [iteration iterationId]];
+    if ( iterations.iterations.count != 0 ) {
+     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+     return [NSString stringWithFormat:@"Iteration %d: start - end", [iteration iterationId]];
+    } else {
+        return nil;;
+    }
 }
 
 // Customize the appearance of table view cells.
@@ -125,8 +130,15 @@
     NSInteger section = indexPath.section;
     
     
-    
-    if ( iterations.isLoading) { 
+    if ( iterations.isLoaded && iterations.iterations.count == 0 ) {
+        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
+        if (cell == nil) {
+            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
+        }
+        [cell.cellLabel setText:@"there are no iterations for this phase"];
+        return  cell;        
+    }
+    if ( !iterations.isLoaded) { 
         ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
         if (cell == nil) {
             cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
@@ -163,9 +175,14 @@
 
 
 - (UIView *)tableView: (UITableView *)tableView viewForHeaderInSection: (NSInteger)section {
+
+   if ( iterations.isLoaded && iterations.iterations.count != 0 ) {    
     IterationHeaderView* headerView = [[[IterationHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.iterationTableView.bounds.size.width, 40)] autorelease];   
-    [headerView setIteration:[iterations.iterations objectAtIndex:section]];
-	return headerView;
+       [headerView setIteration:[iterations.iterations objectAtIndex:section]];
+	return headerView; 
+   } else {
+     return nil;
+   }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

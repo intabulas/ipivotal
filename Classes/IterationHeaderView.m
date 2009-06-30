@@ -12,7 +12,7 @@
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, self.bounds.size.width, 20)];
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.font = [UIFont boldSystemFontOfSize:14];
-        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.textColor = [UIColor whiteColor];    
         
         dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 22, self.bounds.size.width, 10)];
         dateLabel.backgroundColor = [UIColor clearColor];
