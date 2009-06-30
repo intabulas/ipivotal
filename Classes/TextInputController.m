@@ -6,6 +6,11 @@
 
 @synthesize listTableView, editingItem;
 
+- (id)initWithTitle:(NSString *)theTitle {
+    [super init];
+    inputTitle = theTitle;
+    return self;
+}
 
 
 #pragma mark UITextFieldDelegate methods
@@ -36,6 +41,7 @@
     [textField setDelegate:self];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveInput:)];
     
+    [textInputCell setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
 
@@ -70,6 +76,10 @@
     return 1;
 }
 
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return  inputTitle;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;

@@ -171,7 +171,7 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        TextInputController *controller = [[TextInputController alloc] init];
+        TextInputController *controller = [[TextInputController alloc] initWithTitle:@"Story Name"];
 
         controller.editingItem = editingDictionary;
         [editingDictionary setValue:story.name forKey:@"StoryName"];

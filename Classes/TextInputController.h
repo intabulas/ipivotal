@@ -6,12 +6,15 @@
     IBOutlet UITableViewCell *textInputCell;
     IBOutlet UITextField *textField;
     NSMutableDictionary *editingItem;
-    
+    NSString *inputTitle;
 }
 
 
 @property (nonatomic,retain)  IBOutlet  UITableView *listTableView;
 @property (nonatomic,retain) NSMutableDictionary *editingItem;
+
+
+- (id)initWithTitle:(NSString *)theTitle;
 
 - (IBAction) saveInput:(id)sender;
 
