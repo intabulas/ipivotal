@@ -10,7 +10,7 @@
 
 - (id)init {
     [super init];
-    storyType = @"Feature";
+    storyType = kTypeFeature;
     estimate = 0;
     name = @"please give this story a title";
     description = @"please give this story a description";
@@ -30,7 +30,7 @@
 }
 
 - (NSString *)to_xml {
-    if ([storyType hasPrefix:@"Feature"]) {
+    if ([storyType hasPrefix:kTypeFeature]) {
         return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>", [storyType lowercaseString], name, estimate];            
     } else {
         return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name></story>", [storyType lowercaseString], name];    

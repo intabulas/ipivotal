@@ -59,7 +59,7 @@
         PivotalStories *theStories = (PivotalStories *)object;
         if ( theStories.isLoading) {
         } else {         
-            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [stories.lastUpdated prettyDate]];                        
+            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [stories.lastUpdated prettyDate]];                        
      		[self.storiesTableView reloadData];
         }        
 	}    

@@ -47,7 +47,7 @@
     [super viewWillAppear:animated];
     self.navigationItem.title = @"Iterations";
     
-    UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:@"done", @"current", @"backlog", nil]] autorelease];
+    UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:kTypeDone, kTypeCurrent, kTypeBacklog, nil]] autorelease];
     [segmentedControl addTarget:self action:@selector(iterationTypeChanged:) forControlEvents:UIControlEventValueChanged];
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.selectedSegmentIndex = 1;
@@ -60,11 +60,11 @@
     if ( iterations.isLoaded ) {
     NSInteger selectedIndex = ((UISegmentedControl*)sender).selectedSegmentIndex;
     if ( selectedIndex == 0 ) {
-        [iterations reloadInterationForGroup:@"done"];
+        [iterations reloadInterationForGroup:kTypeDone];
     } else if ( selectedIndex == 1 ) {
-        [iterations reloadInterationForGroup:@"current"];
+        [iterations reloadInterationForGroup:kTypeCurrent];
     } else {
-        [iterations reloadInterationForGroup:@"backlog"];        
+        [iterations reloadInterationForGroup:kTypeBacklog];        
     }
     }
 }
@@ -79,7 +79,7 @@
         PivotalIterations *theIterations = (PivotalIterations *)object;
         if ( theIterations.isLoading) {
         } else {     
-            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [iterations.lastUpdated prettyDate]];            
+            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [iterations.lastUpdated prettyDate]];            
      		[self.iterationTableView reloadData];
         }        
 	}    
@@ -188,7 +188,7 @@
 }
 
 -(IBAction)showDoneStories:(id)sender {
-    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:@"done"];
+    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:kTypeDone];
    [self.navigationController pushViewController:controller animated:YES];
    [controller release];
     

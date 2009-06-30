@@ -12,7 +12,7 @@
         
         typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 20.0f, 20.0f, 20.0f)];
         typeImage.backgroundColor = [UIColor clearColor];
-		typeImage.image = [UIImage  imageNamed:@"77-ekg.png"];
+		typeImage.image = [UIImage  imageNamed:kIconActivity];
 
 		storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 18.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
 		storyLabel.autoresizingMask = UIViewAutoresizingNone;

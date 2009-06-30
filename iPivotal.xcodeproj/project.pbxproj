@@ -243,11 +243,11 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
 				28A0AB4B0D9B1048005BE974 /* iPivotal_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -319,24 +319,24 @@
 		8CA098F30FCFB47A00846DBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8CBBB5140FF957D000A32C37 /* ActivityViewController.h */,
+				8CBBB5150FF957D000A32C37 /* ActivityViewController.m */,
 				8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */,
 				8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */,
-				8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */,
-				8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */,
 				8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */,
 				8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */,
 				8CA098F40FCFB4A600846DBA /* IterationsViewController.h */,
 				8CA098F50FCFB4A600846DBA /* IterationsViewController.m */,
+				8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */,
+				8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */,
+				8C3FD4310FCF1C94004D8DD0 /* ProjectsViewController.h */,
+				8C3FD4320FCF1C94004D8DD0 /* ProjectsViewController.m */,
 				8CA09CE80FD05B1300846DBA /* StoriesViewController.h */,
 				8CA09CE90FD05B1300846DBA /* StoriesViewController.m */,
 				8C2A7DBC0FD07FF7005E00FB /* StoryViewController.h */,
 				8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */,
-				8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */,
-				8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */,
 				8C70E2250FE320FB0074DE16 /* TextInputController.h */,
 				8C70E2260FE320FB0074DE16 /* TextInputController.m */,
-				8CBBB5140FF957D000A32C37 /* ActivityViewController.h */,
-				8CBBB5150FF957D000A32C37 /* ActivityViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -345,24 +345,24 @@
 			isa = PBXGroup;
 			children = (
 				8CDB632D0FCF4FF7003AC065 /* Parsers */,
-				8CDB63390FCF5685003AC065 /* PivotalResource.h */,
-				8CDB633A0FCF5685003AC065 /* PivotalResource.m */,
-				8CDB63410FCF58B9003AC065 /* PivotalProjects.h */,
-				8CDB63420FCF58B9003AC065 /* PivotalProjects.m */,
-				8CDB634A0FCF5DD0003AC065 /* PivotalProject.h */,
-				8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */,
-				8CA099010FCFB62900846DBA /* PivotalIterations.h */,
-				8CA099020FCFB62900846DBA /* PivotalIterations.m */,
-				8CA099040FCFB63000846DBA /* PivotalIteration.h */,
-				8CA099050FCFB63000846DBA /* PivotalIteration.m */,
-				8CA0990A0FCFB70600846DBA /* PivotalStories.h */,
-				8CA0990B0FCFB70600846DBA /* PivotalStories.m */,
-				8CA0990D0FCFB70E00846DBA /* PivotalStory.h */,
-				8CA0990E0FCFB70E00846DBA /* PivotalStory.m */,
 				8CBBB4A20FF9531700A32C37 /* PivotalActivities.h */,
 				8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */,
 				8CBBB4A50FF9532100A32C37 /* PivotalActivity.h */,
 				8CBBB4A60FF9532100A32C37 /* PivotalActivity.m */,
+				8CA099040FCFB63000846DBA /* PivotalIteration.h */,
+				8CA099050FCFB63000846DBA /* PivotalIteration.m */,
+				8CA099010FCFB62900846DBA /* PivotalIterations.h */,
+				8CA099020FCFB62900846DBA /* PivotalIterations.m */,
+				8CDB634A0FCF5DD0003AC065 /* PivotalProject.h */,
+				8CDB634B0FCF5DD0003AC065 /* PivotalProject.m */,
+				8CDB63410FCF58B9003AC065 /* PivotalProjects.h */,
+				8CDB63420FCF58B9003AC065 /* PivotalProjects.m */,
+				8CDB63390FCF5685003AC065 /* PivotalResource.h */,
+				8CDB633A0FCF5685003AC065 /* PivotalResource.m */,
+				8CA0990D0FCFB70E00846DBA /* PivotalStory.h */,
+				8CA0990E0FCFB70E00846DBA /* PivotalStory.m */,
+				8CA0990A0FCFB70600846DBA /* PivotalStories.h */,
+				8CA0990B0FCFB70600846DBA /* PivotalStories.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -370,16 +370,16 @@
 		8CDB632D0FCF4FF7003AC065 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				8CDB63440FCF5D69003AC065 /* PivotalResourceParserDelegate.h */,
-				8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */,
-				8CDB63470FCF5D9E003AC065 /* PivotalProjectsParserDelegate.h */,
-				8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */,
-				8CA099070FCFB65900846DBA /* PivotalIterationsParserDelegate.h */,
-				8CA099080FCFB65900846DBA /* PivotalIterationsParserDelegate.m */,
-				8CA09D0C0FD05FB500846DBA /* PivotalStoriesParserDelegate.h */,
-				8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */,
 				8CBBB4A80FF953BC00A32C37 /* PivotalActivityParserDelegate.h */,
 				8CBBB4A90FF953BC00A32C37 /* PivotalActivityParserDelegate.m */,
+				8CA099070FCFB65900846DBA /* PivotalIterationsParserDelegate.h */,
+				8CA099080FCFB65900846DBA /* PivotalIterationsParserDelegate.m */,
+				8CDB63470FCF5D9E003AC065 /* PivotalProjectsParserDelegate.h */,
+				8CDB63480FCF5D9E003AC065 /* PivotalProjectsParserDelegate.m */,
+				8CDB63440FCF5D69003AC065 /* PivotalResourceParserDelegate.h */,
+				8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */,
+				8CA09D0C0FD05FB500846DBA /* PivotalStoriesParserDelegate.h */,
+				8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -387,24 +387,24 @@
 		8CDB63AE0FCF86A9003AC065 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CBBB65E0FF9696800A32C37 /* ActivityItemCell.h */,
+				8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */,
 				8CDB9DEB0FD9F05E008B53D4 /* ActivityLabelCell.h */,
 				8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */,
-				8CA09A4A0FD029D100846DBA /* IterationCell.h */,
-				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
+				8CDB9CD30FD9EA03008B53D4 /* CenteredLabelCell.h */,
+				8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */,
 				8CCB36060FD9635F00AEEE0E /* ImageLabelCell.h */,
 				8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */,
+				8CA09A4A0FD029D100846DBA /* IterationCell.h */,
+				8CA09A4B0FD029D100846DBA /* IterationCell.m */,
 				8CCB37030FD9721400AEEE0E /* IterationHeaderView.h */,
 				8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */,
 				8CDB9C170FD9DBCA008B53D4 /* IterationStoryCell.h */,
 				8CDB9C180FD9DBCA008B53D4 /* IterationStoryCell.m */,
-				8CDB9CD30FD9EA03008B53D4 /* CenteredLabelCell.h */,
-				8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */,
 				8C026B240FDC9829002CFEE0 /* LabelCell.h */,
 				8C026B250FDC9829002CFEE0 /* LabelCell.m */,
 				8C70E22C0FE321F30074DE16 /* TextFieldCell.h */,
 				8C70E22D0FE321F30074DE16 /* TextFieldCell.m */,
-				8CBBB65E0FF9696800A32C37 /* ActivityItemCell.h */,
-				8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -413,16 +413,16 @@
 			isa = PBXGroup;
 			children = (
 				8C5224830FD094170090C625 /* Lists */,
-				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
-				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
+				8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */,
+				8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */,
 				8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */,
 				8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */,
+				8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */,
+				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
+				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
 				8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */,
 				8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */,
-				8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */,
-				8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */,
 				8C70E2290FE3216E0074DE16 /* TextInputController.xib */,
-				8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";

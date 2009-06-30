@@ -65,17 +65,17 @@
         statusLabel.text = theStory.currentState;
         UIColor *theColor;
             
-        if ( [theStory.currentState hasPrefix:@"accepted"] ) {
+        if ( [theStory.currentState hasPrefix:kStateAccepted] ) {
                 theColor = [UIColor colorWithRed:216.0/255.0 green:238.0/255.0 blue:206.0/255.0 alpha:1.0];
-        } else if ( [theStory.currentState hasPrefix:@"started"] || [theStory.currentState hasPrefix:@"delivered"] ) {
+        } else if ( [theStory.currentState hasPrefix:kStateStarted] || [theStory.currentState hasPrefix:kStateDelivered] ) {
                 theColor = [UIColor colorWithRed:255.0/255.0 green:248.0/255.0 blue:228.0/255.0 alpha:1.0];
-        } else if ( [theStory.currentState hasPrefix:@"unstarted"] &&  [theStory.storyType hasPrefix:@"release"] ) {
+        } else if ( [theStory.currentState hasPrefix:kStateUnStarted] &&  [theStory.storyType hasPrefix:kStateRelease] ) {
 //                theColor = [UIColor colorWithRed:64.0/255.0 green:122.0/255.0 blue:165.0/255.0 alpha:1.0];       
 			statusLabel.textColor = [UIColor whiteColor];
 			storyLabel.textColor = [UIColor whiteColor];
  			
                 theColor = [UIColor colorWithRed:145.0/255.0 green:49.0/255.0 blue:50.0/255.0 alpha:1.0];        			
-        } else if ( [theStory.currentState hasPrefix:@"unscheduled"] ) {
+        } else if ( [theStory.currentState hasPrefix:kStateUnScheduled] ) {
                 theColor = [UIColor colorWithRed:231.0/255.0 green:243.0/255.0 blue:250.0/255.0 alpha:1.0];        
                 
         } else {
@@ -87,14 +87,14 @@
         if ( theStory.estimate == 2 ) estimateImage.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
         if ( theStory.estimate == 3 ) estimateImage.image = [UIImage imageNamed: kIconEstimateThreePoints];        
         
-        if ( [theStory.storyType hasPrefix:@"bug"] ) {    
+        if ( [theStory.storyType hasPrefix:kMatchBug] ) {    
                 typeImage.image = [UIImage imageNamed:kIconTypeBug];        
-        } else if ( [theStory.storyType hasPrefix:@"feature"] ) {
+        } else if ( [theStory.storyType hasPrefix:kMatchFeature] ) {
                 typeImage.image = [UIImage imageNamed:kIconTypeFeature];
-        } else if ( [theStory.storyType hasPrefix:@"chor"] ) {
+        } else if ( [theStory.storyType hasPrefix:kMatchChore] ) {
                 typeImage.image = [UIImage imageNamed:kIconTypeChore];
                 
-        } else if ( [theStory.storyType hasPrefix:@"release"] ) {
+        } else if ( [theStory.storyType hasPrefix:kMatchRelease] ) {
                 typeImage.image = [UIImage imageNamed:kIconTypeRelease];        
         }
         

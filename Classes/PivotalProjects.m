@@ -13,7 +13,7 @@
 - (id)init {
     [super init];
     self.url = [NSURL URLWithString:kUrlProjectList];
-    self.cacheFilename = [NSString stringWithString:@"projects.xml"];
+    self.cacheFilename = [NSString stringWithString:kCacheFileProjects];
     return self;
 }
 

@@ -32,12 +32,9 @@
 	self.tableView.tableHeaderView = updatedHeaderView;
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
-	if ( !project) {
-	activities = [[PivotalActivities alloc] init];
-    } else {
-     activities = [[PivotalActivities alloc] initWithProject:project];
-    }
+    activities = [[PivotalActivities alloc] initWithProject:project];
 	[activities addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
+
 	if ( !activities.isLoaded) [ activities loadActivities];
 }
 
@@ -53,7 +50,7 @@
         PivotalActivities *theActivities = (PivotalActivities *)object;
         if ( theActivities.isLoading) {
         } else {         
-            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [activities.lastUpdated prettyDate]];
+            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [activities.lastUpdated prettyDate]];
      		[self.tableView reloadData];
         }        
 	}    

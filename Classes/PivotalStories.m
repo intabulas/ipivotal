@@ -16,7 +16,7 @@
     self.cacheFilename = [NSString stringWithFormat:kCacheFileStories, theProject.name, theType];
     self.storyType = theType;
     NSString *storiesURL ;
-    if ( [theType hasPrefix:@"icebox"] ) {
+    if ( [theType hasPrefix:kTypeIcebox] ) {
         storiesURL = [NSString stringWithFormat:kUrlIceboxStories, project.projectId];        
     } else {
        storiesURL = [NSString stringWithFormat:kUrlIterationTypeList, project.projectId, theType];

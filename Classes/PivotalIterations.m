@@ -13,10 +13,10 @@
 
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
-    self.group = @"current";
+    self.group = kTypeCurrent;
     self.project = theProject;
     self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlIterationTypeList, [self.project projectId], self.group]];
-    self.cacheFilename = [NSString stringWithFormat:@"%d_iterations.xml", [self.project projectId]];
+    self.cacheFilename = [NSString stringWithFormat:kCacheFileIterations, [self.project projectId]];
     return self;
 }
 
@@ -30,7 +30,7 @@
 - (void)reloadInterationForGroup:(NSString*)theGroup {
     self.group = theGroup;
     self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlIterationTypeList, [self.project projectId], self.group]];
-    self.cacheFilename = [NSString stringWithFormat:@"%d_%@_iterations.xml", [self.project projectId], self.group];
+    self.cacheFilename = [NSString stringWithFormat:kCacheFileIterationsGrouped, [self.project projectId], self.group];
     
     [self loadIterations];
 }

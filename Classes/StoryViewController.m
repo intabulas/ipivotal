@@ -29,20 +29,20 @@
     
     self.navigationItem.title = @"Story";
     
-    if ( self.story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:@"estimate_1pt.gif"];
-    if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:@"estimate_2pt.gif"];    
-    if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:@"estimate_3pt.gif"];          
+    if ( self.story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateOnePoint];
+    if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
+    if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateThreePoints];          
 
     name.text = self.story.name;
     estimate.text = [NSString stringWithFormat:@"Estimated as %d points", self.story.estimate];
  
-    if ( [story.storyType hasPrefix:@"bug"] ) {    
+    if ( [story.storyType hasPrefix:kMatchBug] ) {    
         typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
-    } else if ( [self.story.storyType hasPrefix:@"feature"] ) {
+    } else if ( [self.story.storyType hasPrefix:kMatchFeature] ) {
         typeIcon.image = [UIImage imageNamed:kIconTypeFeature];
-    } else if ( [self.story.storyType hasPrefix:@"chor"] ) {
+    } else if ( [self.story.storyType hasPrefix:kMatchChore] ) {
         typeIcon.image = [UIImage imageNamed:kIconTypeChore];        
-    } else if ( [self.story.storyType hasPrefix:@"release"] ) {
+    } else if ( [self.story.storyType hasPrefix:kMatchRelease] ) {
         typeIcon.image = [UIImage imageNamed:kIconTypeRelease];
         
     }    

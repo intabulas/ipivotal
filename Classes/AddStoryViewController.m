@@ -56,7 +56,7 @@
     [super viewWillAppear:animated];
     if ( editingDictionary == nil ) {
         editingDictionary = [[NSMutableDictionary alloc] init];        
-       [editingDictionary setObject:@"Feature" forKey:@"Type"];
+       [editingDictionary setObject:kTypeFeature forKey:@"Type"];
        [editingDictionary setObject:kDefaultStoryTitle forKey:@"StoryName"];
        [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:@"Estimate"];        
     }
@@ -130,7 +130,7 @@
         
         if ( [story.storyType hasPrefix:@"Bug"] ) {    
             [cell setImage:[UIImage imageNamed:kIconTypeBug]];        
-        } else if ( [self.story.storyType hasPrefix:@"Feature"] ) {
+        } else if ( [self.story.storyType hasPrefix:kTypeFeature] ) {
             [cell setImage:[UIImage imageNamed:kIconTypeFeature]];
         } else if ( [self.story.storyType hasPrefix:@"Chor"] ) {
             [cell setImage:[UIImage imageNamed:kIconTypeChore]];        
@@ -188,7 +188,7 @@
     }
     if (indexPath.row == 1) {
         ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:@"Type" andTitle:@"Story Type"];
-        controller.listItems = [[NSArray alloc] initWithObjects:@"Feature", @"Bug", @"Chore", @"Release", nil];
+        controller.listItems = [[NSArray alloc] initWithObjects:kTypeFeature, @"Bug", @"Chore", @"Release", nil];
                         
         controller.editingItem = editingDictionary;
         [editingDictionary setValue:story.storyType forKey:@"Type"];

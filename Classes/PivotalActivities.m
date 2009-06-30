@@ -20,8 +20,10 @@
 
 - (id)initWithProject:(PivotalProject *)theProject {
      [self init];
-     self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlProjectActivityStream, theProject.projectId ]];
-     self.cacheFilename = [NSString stringWithFormat:kCacheProjectActivityStream, theProject.projectId];
+     if ( theProject ) {
+       self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlProjectActivityStream, theProject.projectId ]];
+       self.cacheFilename = [NSString stringWithFormat:kCacheProjectActivityStream, theProject.projectId];
+     }
      return self;
 }
 
