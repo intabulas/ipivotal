@@ -8,7 +8,8 @@
     PivotalIterations *iterations;
     IBOutlet UITableView *iterationTableView;    
     IBOutlet UIBarButtonItem *doneStoriesButton;
-    
+	IBOutlet UIView *updatedHeaderView;
+	IBOutlet UILabel *lastUpdatedLabel;        
 }
 @property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
 @property (nonatomic,retain) PivotalProject* project;

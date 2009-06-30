@@ -10,6 +10,7 @@
 #import "ActivityLabelCell.h"
 #import "CenteredLabelCell.h"
 #import "ActivityViewController.h"
+#import "NSDate+Nibware.h"
 
 @implementation IterationsViewController
 @synthesize iterationTableView, project;
@@ -31,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.iterationTableView.tableHeaderView = updatedHeaderView;
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     
@@ -76,7 +78,8 @@
     if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
         PivotalIterations *theIterations = (PivotalIterations *)object;
         if ( theIterations.isLoading) {
-        } else {         
+        } else {     
+            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [iterations.lastUpdated prettyDate]];            
      		[self.iterationTableView reloadData];
         }        
 	}    
