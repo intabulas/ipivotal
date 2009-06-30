@@ -26,19 +26,7 @@
     [listTableView reloadData];
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
-    
-    NSObject *sobject = [editingItem valueForKey:key];
-    if ( [sobject isKindOfClass:[NSNumber class]] ) {
-        NSInteger index = [(NSNumber*)sobject integerValue];
-        return (indexPath.row == index ) ?      UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 
-    } else {
-    
-    return ([[listItems objectAtIndex:indexPath.row] isEqualToString:[editingItem valueForKey:key]]) ? 
-                    UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    }
-}
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [editingItem setValue:[listItems objectAtIndex:indexPath.row] forKey:key];
@@ -71,6 +59,21 @@
         cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] autorelease];
     }
     [cell.cellLabel setText:[listItems objectAtIndex:indexPath.row]];
+    
+    
+        NSObject *sobject = [editingItem valueForKey:key];
+        if ( [sobject isKindOfClass:[NSNumber class]] ) {
+            NSInteger index = [(NSNumber*)sobject integerValue];
+            [cell setAccessoryType:(indexPath.row == index ) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone ];
+            
+        } else {
+            
+          [cell setAccessoryType:([[listItems objectAtIndex:indexPath.row] isEqualToString:[editingItem valueForKey:key]]) ? 
+            UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone];
+        }
+    
+    
+    
     return cell;
 }
 
