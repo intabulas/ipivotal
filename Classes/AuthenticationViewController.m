@@ -38,8 +38,7 @@
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-}
+    [super didReceiveMemoryWarning]; }
 
 
 #pragma mark UITextFieldDelegate methods
@@ -56,7 +55,7 @@
     
 	NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 	NSString *token_value = [tokenField.text stringByTrimmingCharactersInSet:trimSet];
-	if (![token_value isEqualToString:@""]) {
+	if (![token_value isEqualToString:kEmptyString]) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		[defaults setValue:token_value forKey:kDefaultsApiToken];
 		[defaults synchronize];
@@ -73,16 +72,11 @@
 }
 
 
-
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
 }
 
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
     if ( indexPath.row == 0 ) return tokenCell;
     if ( indexPath.row == 1) return sslCell;    
     return nil;

@@ -10,6 +10,15 @@
 
 @synthesize projectTableView;
 
+- (void)dealloc {
+    [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
+    [projects release];
+    [loadingProjectsCell release];
+    [noProjectsCell release];
+    [projectTableView release];
+    [super dealloc];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -17,7 +26,6 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
     self.projectTableView.tableHeaderView = updatedHeaderView;
-
     
     projects = [[PivotalProjects alloc] init];
     [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
@@ -35,13 +43,13 @@
 }
 
 - (void)loadProjects {
-//   if ( !projects.isLoaded ) [projects loadProjects];    
+    if ( !projects.isLoaded ) [projects loadProjects];    
     [projects loadProjects];    	
 }
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
+    [super didReceiveMemoryWarning];
 }
 
 
@@ -87,13 +95,11 @@
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return  (projects.isLoading  || projects.projects.count == 0) ? 1 : projects.projects.count;
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	
@@ -120,8 +126,7 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
     PivotalProject *project = [projects.projects objectAtIndex:indexPath.row];
 	IterationsViewController *controller = [[IterationsViewController alloc] initWithProject:project];
 	[self.navigationController pushViewController:controller animated:YES];
@@ -129,16 +134,6 @@
     
 }
 
-
-
-- (void)dealloc {
-    [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [projects release];
-    [loadingProjectsCell release];
-    [noProjectsCell release];
-    [projectTableView release];
-    [super dealloc];
-}
 
 
 @end

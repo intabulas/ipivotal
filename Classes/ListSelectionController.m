@@ -20,12 +20,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    // Remove any previous selection.
     NSIndexPath *tableSelection = [listTableView indexPathForSelectedRow];
 	[listTableView deselectRowAtIndexPath:tableSelection animated:NO];
     [listTableView reloadData];
 }
-
 
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -36,8 +34,7 @@
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+    [super didReceiveMemoryWarning]; 
 }
 
 #pragma mark Table view methods
@@ -46,34 +43,29 @@
     return 1;
 }
 
-
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [listItems count];
 }
 
-// The table uses standard UITableViewCells. The text for a cell is simply the string value of the matching type.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LabelCell *cell = (LabelCell*)[listTableView dequeueReusableCellWithIdentifier:@"LabelCell"];
     if (cell == nil) {
         cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] autorelease];
     }
+
     [cell.cellLabel setText:[listItems objectAtIndex:indexPath.row]];
-    
-    
-        NSObject *sobject = [editingItem valueForKey:key];
-        if ( [sobject isKindOfClass:[NSNumber class]] ) {
-            NSInteger index = [(NSNumber*)sobject integerValue];
-            [cell setAccessoryType:(indexPath.row == index ) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone ];
-            
-        } else {
-            
-          [cell setAccessoryType:([[listItems objectAtIndex:indexPath.row] isEqualToString:[editingItem valueForKey:key]]) ? 
-            UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone];
-        }
-    
-    
-    
+        
+    NSObject *sobject = [editingItem valueForKey:key];
+    if ( [sobject isKindOfClass:[NSNumber class]] ) {
+        NSInteger index = [(NSNumber*)sobject integerValue];
+        [cell setAccessoryType:(indexPath.row == index ) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone ];
+        
+    } else {
+        
+      [cell setAccessoryType:([[listItems objectAtIndex:indexPath.row] isEqualToString:[editingItem valueForKey:key]]) ? 
+        UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone];
+    }
+        
     return cell;
 }
 

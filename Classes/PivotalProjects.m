@@ -48,7 +48,7 @@
         self.parseProjects;        
     } else {
         self.fetchProjects;
-    }
+	    }
     [pool release];    
 }
 

@@ -11,7 +11,7 @@
 	[iteration release];
 	iteration = [anIteration retain];
 	name.text = [NSString stringWithFormat:@"%d", iteration.iterationNumber];
-    dateRange.text = @"";
+    dateRange.text = kEmptyString;
 }
 
 

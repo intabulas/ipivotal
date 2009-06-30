@@ -45,6 +45,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [textField becomeFirstResponder];
 }
 
 - (void)dealloc {
@@ -56,15 +57,10 @@
 }
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
 
 
@@ -75,13 +71,11 @@
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *storyName = (NSString *)[editingItem valueForKey:@"StoryName"];
@@ -89,20 +83,10 @@
       [textField setText:storyName];
     }
     return textInputCell;
-//    TextFieldCell *cell = (TextFieldCell*)[listTableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-//    [cell.textField setDelegate:self];
-//    if (cell == nil) {
-//        cell = [[[TextFieldCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TextFieldCell"] autorelease];
-//    }
-//    return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
 }
 
 

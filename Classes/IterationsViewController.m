@@ -13,6 +13,7 @@
 #import "NSDate+Nibware.h"
 
 @implementation IterationsViewController
+
 @synthesize iterationTableView, project;
 
 - (id)initWithProject:(PivotalProject *)theProject {
@@ -88,8 +89,7 @@
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+    [super didReceiveMemoryWarning]; 
 }
 
 - (IBAction)refresh:(id)sender {
@@ -105,7 +105,6 @@
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     if ( !iterations.isLoaded) return 1;
     if ( iterations.iterations.count == 0 ) return 1;
@@ -118,7 +117,6 @@
         return nil;;
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSInteger row = indexPath.row;

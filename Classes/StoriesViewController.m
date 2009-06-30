@@ -19,9 +19,6 @@
     return self;
 }
 
-
-
-
 - (void)dealloc {
     [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [storyType release];
@@ -68,7 +65,7 @@
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
+    [super didReceiveMemoryWarning];
 }
 
 #pragma mark Table view methods
@@ -78,14 +75,12 @@
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return ( !stories.isLoaded || stories.stories.count == 0 ) ? 1 : [stories.stories count];
 
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     

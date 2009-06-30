@@ -27,6 +27,7 @@
     [super dealloc];
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.tableView.tableHeaderView = updatedHeaderView;
@@ -81,17 +82,15 @@
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 	( activities.isLoading || activities.activities.count == 0) ? 1 : activities.activities.count;
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	
-	if ( activities.isLoading && loadingActivitiesCell ) return loadingActivitiesCell;
+	if ( !activities.isLoaded) return loadingActivitiesCell;
 	if ( activities.isLoaded && activities.activities.count == 0 ) return noActivitiesCell;
 	
 	
@@ -109,6 +108,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+   // @todo
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

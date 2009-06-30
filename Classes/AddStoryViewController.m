@@ -66,10 +66,6 @@
     NSNumber *estimateNumber = [editingDictionary valueForKey:@"Estimate"];
     story.estimate = [estimateNumber integerValue];
     
-    
-    
-    
-    
     self.title = @"Add Story";
     
     [storyTableView reloadData];
@@ -79,8 +75,7 @@
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+    [super didReceiveMemoryWarning]; 
 }
 
 #pragma mark Table view methods
@@ -94,7 +89,6 @@
     return  @"Add a New Story" ;
 }
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return 5;  // if we have assignment 
 //    return 4;  // if we have description
@@ -102,15 +96,14 @@
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSInteger row = indexPath.row;    
     
     if (  row == 0 ) {
-        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
         if (cell == nil) {
-            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"];
+            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
@@ -119,22 +112,22 @@
     }
     
     if ( row == 1 ) {
-        ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ImageLabelCell"];
+        ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierImageLabelCell];
         if (cell == nil) {
-            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ImageLabelCell"];
+            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierImageLabelCell];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;      
         
         [cell.cellLabel setText:story.storyType];   
         
-        if ( [story.storyType hasPrefix:@"Bug"] ) {    
+        if ( [story.storyType hasPrefix:kTypeBug] ) {    
             [cell setImage:[UIImage imageNamed:kIconTypeBug]];        
         } else if ( [self.story.storyType hasPrefix:kTypeFeature] ) {
             [cell setImage:[UIImage imageNamed:kIconTypeFeature]];
-        } else if ( [self.story.storyType hasPrefix:@"Chor"] ) {
+        } else if ( [self.story.storyType hasPrefix:kTypeChore] ) {
             [cell setImage:[UIImage imageNamed:kIconTypeChore]];        
-        } else if ( [self.story.storyType hasPrefix:@"Release"] ) {
+        } else if ( [self.story.storyType hasPrefix:kTypeRelease] ) {
             [cell setImage:[UIImage imageNamed:kIconTypeRelease]];
             
         }          
@@ -143,14 +136,14 @@
     }
     
     if ( row == 2 ) {
-        ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ImageLabelCell"];
+        ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierImageLabelCell];
         if (cell == nil) {
-            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ImageLabelCell"];
+            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierImageLabelCell];
         }
         [cell setContentMode:UIViewContentModeBottom];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        [cell.cellLabel setText:[NSString stringWithFormat:@"%d Point(s)", story.estimate]];   
+        [cell.cellLabel setText:[NSString stringWithFormat:kFormatPoints, story.estimate]];   
         
         if ( story.estimate == 0 ) [cell setImage:[UIImage imageNamed:kIconEstimateNone]];
         if ( story.estimate == 1 ) [cell setImage:[UIImage imageNamed:kIconEstimateOnePoint]];
@@ -162,9 +155,9 @@
     
 
     if (  row == 3  ) {  /// 4 if there is assignment
-        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
         if (cell == nil) {
-            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] ;
+            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] ;
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
@@ -188,7 +181,7 @@
     }
     if (indexPath.row == 1) {
         ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:@"Type" andTitle:@"Story Type"];
-        controller.listItems = [[NSArray alloc] initWithObjects:kTypeFeature, @"Bug", @"Chore", @"Release", nil];
+        controller.listItems = [[NSArray alloc] initWithObjects:kTypeFeature, kTypeBug, kTypeChore, kTypeRelease, nil];
                         
         controller.editingItem = editingDictionary;
         [editingDictionary setValue:story.storyType forKey:@"Type"];

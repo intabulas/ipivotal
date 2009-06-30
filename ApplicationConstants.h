@@ -64,6 +64,8 @@
 #define kResourceErrorKeyPath @"error"
 
 
+#define kEmptyString     @""
+
 #define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'UTC'"
 #define kDateFormatActivity  @"MM/dd/yyyy hh:mm a"
 // Cache File Formats
@@ -97,3 +99,11 @@
 
 #define kTextStoryNeedsName       @"please enter a story name"
 
+// Formats
+
+#define kFormatPoints             @"%d Point(s)"
+
+// Cells
+
+#define kIdentifierLabelCell       @"LabelCell"
+#define kIdentifierImageLabelCell  @"ImageLabelCell"

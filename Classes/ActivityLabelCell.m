@@ -29,17 +29,17 @@
 }
 
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-
-    [super setSelected:selected animated:animated];
-}
-
-
 - (void)dealloc {
     [cellLabel release];
     [activityView release];
     [super dealloc];
 }
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+
+    [super setSelected:selected animated:animated];
+}
+
 
 
 @end
