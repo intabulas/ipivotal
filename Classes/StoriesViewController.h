@@ -9,6 +9,8 @@
     PivotalStories *stories;
     NSString *storyType;
     IBOutlet UITableView *storiesTableView;    
+	IBOutlet UIView *updatedHeaderView;
+	IBOutlet UILabel *lastUpdatedLabel;       
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *storiesTableView;

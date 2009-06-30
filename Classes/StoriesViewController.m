@@ -4,6 +4,8 @@
 #import "IterationStoryCell.h"
 #import "CenteredLabelCell.h"
 #import "ActivityLabelCell.h"
+#import "NSDate+Nibware.h"
+
 
 @implementation StoriesViewController
 
@@ -31,6 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.storiesTableView.tableHeaderView = updatedHeaderView;
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     
     stories = [[PivotalStories alloc] initWithProject:project andType:storyType];
@@ -55,6 +59,7 @@
         PivotalStories *theStories = (PivotalStories *)object;
         if ( theStories.isLoading) {
         } else {         
+            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [stories.lastUpdated prettyDate]];                        
      		[self.storiesTableView reloadData];
         }        
 	}    

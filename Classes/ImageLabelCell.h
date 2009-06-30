@@ -11,5 +11,6 @@
 @property (nonatomic,readonly) UILabel* cellLabel;
 @property (nonatomic,retain) UIImage* image;
 
+- (void)setImageContentMode:(UIViewContentMode)contentMode;
 
 @end

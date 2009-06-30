@@ -11,7 +11,7 @@
 - (id)init {
     [super init];
     storyType = @"Feature";
-    estimate = 2;
+    estimate = 0;
     name = @"please give this story a title";
     description = @"please give this story a description";
     return self;

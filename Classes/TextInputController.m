@@ -1,10 +1,25 @@
 
 #import "TextInputController.h"
-#import "TextFieldCell.h"
+
 
 @implementation TextInputController
 
-@synthesize listTableView;
+@synthesize listTableView, editingItem;
+
+
+
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+	[theTextField resignFirstResponder];
+	return YES;
+}
+
+
+- (IBAction) saveInput:(id)sender {
+    [editingItem setValue:textField.text forKey:@"StoryName"];
+    [self.navigationController popViewControllerAnimated:YES];    
+}
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 //// When the user presses return, take focus away from the text field so that the keyboard is dismissed.
@@ -18,6 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [textField setDelegate:self];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveInput:)];
+    
 }
 
 
@@ -30,6 +48,9 @@
 }
 
 - (void)dealloc {
+    [editingItem release];
+    [textInputCell release];
+    [textField release];
     [listTableView release];
     [super dealloc];
 }
@@ -62,12 +83,18 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TextFieldCell *cell = (TextFieldCell*)[listTableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    [cell.textField setDelegate:self];
-    if (cell == nil) {
-        cell = [[[TextFieldCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TextFieldCell"] autorelease];
+    
+    NSString *storyName = (NSString *)[editingItem valueForKey:@"StoryName"];
+    if ( ![storyName isEqualToString:kDefaultStoryTitle] ) {
+      [textField setText:storyName];
     }
-    return cell;
+    return textInputCell;
+//    TextFieldCell *cell = (TextFieldCell*)[listTableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
+//    [cell.textField setDelegate:self];
+//    if (cell == nil) {
+//        cell = [[[TextFieldCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TextFieldCell"] autorelease];
+//    }
+//    return cell;
 }
 
 

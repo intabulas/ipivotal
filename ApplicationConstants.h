@@ -23,7 +23,7 @@
 #define kCacheProjectActivityStream  @"%d_activities.xml"
 // String Formats
 
-
+#define kDefaultStoryTitle       @"please enter the story name"
 
 // Images and Artwork
 

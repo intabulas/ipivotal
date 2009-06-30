@@ -27,8 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(sav:)];
-    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveStory:)];
+  //  [self.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
 - (void) saveStory:(id)sender {
@@ -51,9 +51,11 @@
     if ( editingDictionary == nil ) {
         editingDictionary = [[NSMutableDictionary alloc] init];        
        [editingDictionary setObject:@"Feature" forKey:@"Type"];
-       [editingDictionary setObject:[NSNumber numberWithInteger:2] forKey:@"Estimate"];        
+       [editingDictionary setObject:kDefaultStoryTitle forKey:@"StoryName"];
+       [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:@"Estimate"];        
     }
     
+    story.name          = (NSString *)[editingDictionary valueForKey:@"StoryName"];
     story.storyType          = [editingDictionary valueForKey:@"Type"];
     NSNumber *estimateNumber = [editingDictionary valueForKey:@"Estimate"];
     story.estimate = [estimateNumber integerValue];
@@ -89,7 +91,8 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return 5;  // if we have assignment 
-    return 4;
+//    return 4;  // if we have description
+    return 4;    
 }
 
 
@@ -138,6 +141,7 @@
         if (cell == nil) {
             cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ImageLabelCell"];
         }
+        [cell setContentMode:UIViewContentModeBottom];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
         [cell.cellLabel setText:[NSString stringWithFormat:@"%d Point(s)", story.estimate]];   
@@ -150,16 +154,6 @@
         return  cell;            
     }
     
-//    if (  row == 3 ) {
-//        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
-//        if (cell == nil) {
-//            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] ;
-//        }
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-//        [cell setText:@"UnAssigned"];    
-//        return  cell;        
-//    }
 
     if (  row == 3  ) {  /// 4 if there is assignment
         LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:@"LabelCell"];
@@ -179,7 +173,12 @@
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         TextInputController *controller = [[TextInputController alloc] init];
+
+        controller.editingItem = editingDictionary;
+        [editingDictionary setValue:story.name forKey:@"StoryName"];
+        
         [self.navigationController pushViewController:controller animated:YES];
+        
     }
     if (indexPath.row == 1) {
         ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:@"Type" andTitle:@"Story Type"];
