@@ -32,16 +32,22 @@
 }
 
 - (void) saveStory:(id)sender {
-        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-        NSString *urlString = [NSString stringWithFormat:kUrlAddStory, project.projectId];                            
-	    NSURL *followingURL = [NSURL URLWithString:urlString];    
-        ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
-        NSString *newstory = [self.story to_xml];
-        [request addRequestHeader:@"Content-type" value:@"application/xml"];
-        [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
-        [request start];
-        [pool release];    
-       [self.navigationController popViewControllerAnimated:YES];    
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSString *urlString = [NSString stringWithFormat:kUrlAddStory, project.projectId];                            
+	NSURL *followingURL = [NSURL URLWithString:urlString];    
+    ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
+    NSString *newstory = [self.story to_xml];
+    [request addRequestHeader:@"Content-type" value:@"application/xml"];
+    [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
+    [request start];
+    [pool release];    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Add Story" message:@"New story has been added to your Icebox" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles: nil];
+    [alert show];
+    [alert release];        
+    
+    [self.navigationController popViewControllerAnimated:YES];    
 }
 
 
@@ -92,7 +98,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return 5;  // if we have assignment 
 //    return 4;  // if we have description
-    return 4;    
+    return 3;    
 }
 
 
