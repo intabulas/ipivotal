@@ -27,7 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(sav:)];
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
 - (void) saveStory:(id)sender {
