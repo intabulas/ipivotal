@@ -1,7 +1,8 @@
-
 #import "ActivityViewController.h"
 #import "ActivityItemCell.h"
 #import "PivotalProject.h"
+#import "NSDate+Nibware.h"
+
 
 @implementation ActivityViewController
 
@@ -18,6 +19,8 @@
 
 - (void)dealloc {
 	[loadingActivitiesCell release];
+    [updatedHeaderView release];
+    [lastUpdatedLabel release];
 	[noActivitiesCell release];
 	[activities removeObserver:self forKeyPath:kResourceStatusKeyPath];
 	[activities release];
@@ -26,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	self.tableView.tableHeaderView = updatedHeaderView;
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
 	if ( !project) {
@@ -50,6 +53,7 @@
         PivotalActivities *theActivities = (PivotalActivities *)object;
         if ( theActivities.isLoading) {
         } else {         
+            lastUpdatedLabel.text = [NSString stringWithFormat:@"last updated %@", [activities.lastUpdated prettyDate]];
      		[self.tableView reloadData];
         }        
 	}    
