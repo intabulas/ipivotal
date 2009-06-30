@@ -4,6 +4,7 @@
 #import "ImageLabelCell.h"
 #import "iPivotalAppDelegate.h"
 #import "ActivityViewController.h"
+#import "NSDate+Nibware.h"
 
 @implementation ProjectsViewController
 
@@ -15,6 +16,9 @@
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
+    self.projectTableView.tableHeaderView = updatedHeaderView;
+
+    
     projects = [[PivotalProjects alloc] init];
     [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
     
@@ -47,7 +51,7 @@
         PivotalProjects *theProjects = (PivotalProjects *)object;
         if ( theProjects.isLoading) {
         } else {         
-//            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [tasks.lastUpdated prettyDate]];            
+            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [projects.lastUpdated prettyDate]];            
      		[self.projectTableView reloadData];
         }        
 	}    

@@ -6,6 +6,8 @@
     IBOutlet UITableViewCell *loadingProjectsCell;
     IBOutlet UITableViewCell *noProjectsCell;
     PivotalProjects *projects;    
+	IBOutlet UIView *updatedHeaderView;
+	IBOutlet UILabel *lastUpdatedLabel;          
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *projectTableView;
