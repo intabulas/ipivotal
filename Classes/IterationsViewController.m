@@ -115,12 +115,12 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if ( iterations.iterations.count != 0 ) {
-     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
-     return [NSString stringWithFormat:@"Iteration %d: start - end", [iteration iterationId]];
-    } else {
+//    if (   iterations.iterations.count != 0 ) {
+//     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
+//     return [NSString stringWithFormat:@"Iteration %d: start - end", [iteration iterationId]];
+//    } else {
         return nil;;
-    }
+//    }
 }
 
 // Customize the appearance of table view cells.
@@ -131,11 +131,12 @@
     
     
     if ( iterations.isLoaded && iterations.iterations.count == 0 ) {
-        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
+        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"CenteredLabelCell"];
         if (cell == nil) {
-            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
+            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
         }
         [cell.cellLabel setText:@"there are no iterations for this phase"];
+
         return  cell;        
     }
     if ( !iterations.isLoaded) { 
@@ -143,7 +144,9 @@
         if (cell == nil) {
             cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
         }
+        [cell.cellLabel setText:@"Loading, please wait..."];
         [cell.activityView startAnimating];
+        
         return  cell;
         
     }    
