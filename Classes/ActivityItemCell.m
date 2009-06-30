@@ -5,7 +5,7 @@
 
 
 
-@synthesize activityLabel, statusLabel, activity, typeImage;
+@synthesize activityLabel, statusLabel, activity, typeImage, storyLabel;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
@@ -67,12 +67,16 @@
 
 - (void)setActivity:(PivotalActivity *)theActivity {
 	
-    
-	activityLabel.text = theActivity.description;
+
+    NSMutableString *activityText = [[NSMutableString alloc] initWithString:theActivity.description];
+    [activityText replaceOccurrencesOfString:@"\"" withString:@" " options:NSLiteralSearch range:NSMakeRange(0,[activityText length])];
+     activityLabel.text = activityText;
 	
 	
 	NSString *prettyDate = [theActivity.when prettyDate];
 	
+
+    
 	statusLabel.text = [NSString stringWithFormat:@"%@ / %@", prettyDate, theActivity.project];
 	
     storyLabel.text = theActivity.story;
@@ -99,6 +103,7 @@
 
 - (void)dealloc {
 	[activityLabel release];
+    [storyLabel release];
 	[statusLabel release];    
 	[super dealloc];
 }
