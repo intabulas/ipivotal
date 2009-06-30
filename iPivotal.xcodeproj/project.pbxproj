@@ -18,7 +18,6 @@
 		8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */; };
 		8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */; };
 		8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */; };
-		8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B10FCF0A84004D8DD0 /* Default.png */; };
 		8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
 		8C3FD3BD0FCF0B5A004D8DD0 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B70FCF0B5A004D8DD0 /* ASIFormDataRequest.m */; };
 		8C3FD3BE0FCF0B5A004D8DD0 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B90FCF0B5A004D8DD0 /* ASIHTTPRequest.m */; };
@@ -95,7 +94,6 @@
 		8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryViewController.xib; sourceTree = "<group>"; };
 		8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "77-ekg.png"; sourceTree = "<group>"; };
-		8C3FD3B10FCF0A84004D8DD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8C3FD3B20FCF0A84004D8DD0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8C3FD3B70FCF0B5A004D8DD0 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
 		8C3FD3B80FCF0B5A004D8DD0 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				8CDB64590FCF8D3C003AC065 /* Icons */,
-				8C3FD3B10FCF0A84004D8DD0 /* Default.png */,
 				8C3FD3B20FCF0A84004D8DD0 /* Icon.png */,
 			);
 			name = Images;
@@ -486,7 +483,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C3FD3B30FCF0A84004D8DD0 /* Default.png in Resources */,
 				8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */,
 				8C3FD3FA0FCF1AD0004D8DD0 /* MainWindow.xib in Resources */,
 				8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */,

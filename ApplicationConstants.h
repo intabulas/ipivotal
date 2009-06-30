@@ -1,4 +1,29 @@
 
+
+#define kTagStory              @"story"
+#define kTagId                 @"id"
+#define kTagStoryType          @"story_type"
+#define kTagUrl                @"url"
+#define kTagEstimate           @"estimate"
+#define kTagCurrentState       @"current_state"
+#define kTagDescription        @"description"
+#define kTagName               @"name"
+#define kTagRequestedBy        @"requested_by"
+#define kTagOwnedBy            @"owned_by"
+#define kTagCreatedAt          @"created_at"
+#define kTagAcceptedAt         @"accepted_at"
+#define kTagProject            @"project"
+#define kTagIterationLength    @"iteration_length"
+#define kTagWeekStartDay       @"week_start_day"
+#define kTagpPointScale        @"point_scale"
+#define kTagIteration          @"iteration"
+#define kTagNumber             @"number"
+#define kTagStart              @"start"
+#define kTagFinish             @"finish"
+#define kTagAuthor             @"author"
+#define kTagWhen               @"when"
+#define kTagActivity           @"activity"
+
 #define kDefaultsApiToken @"apiToken"
 
 #define kFormatLastUpdated  @"last updated %@"
@@ -39,6 +64,8 @@
 #define kResourceErrorKeyPath @"error"
 
 
+#define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'UTC'"
+#define kDateFormatActivity  @"MM/dd/yyyy hh:mm a"
 // Cache File Formats
 #define kCacheFileProjects           @"projects.xml"
 #define kCacheFileIterations         @"%d_iterations.xml"
@@ -67,3 +94,6 @@
 
 #define RGB(r, g, b) [UIColor colorWithRed:r/256.0 green:g/256.0 blue:b/256.0 alpha:1]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/256.0 green:g/256.0 blue:b/256.0 alpha:a]
+
+#define kTextStoryNeedsName       @"please enter a story name"
+

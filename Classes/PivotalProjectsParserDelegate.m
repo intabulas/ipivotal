@@ -9,25 +9,25 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
-	if ([elementName isEqualToString:@"project"]) {
+	if ([elementName isEqualToString:kTagProject]) {
 		currentProject = [[PivotalProject alloc] init];
 	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	if ([elementName isEqualToString:@"project"]) {
+	if ([elementName isEqualToString:kTagProject]) {
 		[resources addObject:currentProject];
 		[currentProject release];
 		currentProject = nil;
-	} else if ([elementName isEqualToString:@"id"]) {      
+	} else if ([elementName isEqualToString:kTagId]) {      
         currentProject.projectId = [currentElementValue integerValue];
-	} else if ([elementName isEqualToString:@"iteration_length"]) {      
+	} else if ([elementName isEqualToString:kTagIterationLength]) {      
         currentProject.iterationLength = [currentElementValue integerValue];
-	} else if ([elementName isEqualToString:@"name"]) {        
+	} else if ([elementName isEqualToString:kTagName]) {        
         currentProject.name  = currentElementValue;        
-	} else if ([elementName isEqualToString:@"week_start_day"]) {        
+	} else if ([elementName isEqualToString:kTagWeekStartDay]) {        
         currentProject.weekStartDay  = currentElementValue;        
-	} else if ([elementName isEqualToString:@"point_scale"]) {        
+	} else if ([elementName isEqualToString:kTagpPointScale]) {        
         currentProject.pointScale  = currentElementValue;        
 	} 
 

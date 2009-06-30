@@ -7,42 +7,42 @@
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	[super parserDidStartDocument:parser];
 	dateFormatter = [[NSDateFormatter alloc] init];
-	dateFormatter.dateFormat = @"yyyy/MM/dd HH:mm:ss 'UTC'";
+	dateFormatter.dateFormat = kDateFormatUTC;
 }
 
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
-    if ([elementName isEqualToString:@"story"]) {
+    if ([elementName isEqualToString:kTagStory]) {
         currentStory = [[PivotalStory alloc] init];
 	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([elementName isEqualToString:@"story"]) {
+    if ([elementName isEqualToString:kTagStory]) {
         [resources addObject:currentStory];
         [currentStory release];
         currentStory = nil;        
-	} else if ([elementName isEqualToString:@"id"]) {      
+	} else if ([elementName isEqualToString:kTagId]) {      
         currentStory.storyId = [currentElementValue integerValue];
-	} else if ([elementName isEqualToString:@"story_type"]) {              
+	} else if ([elementName isEqualToString:kTagStoryType]) {              
         currentStory.storyType = currentElementValue;
-	} else if ([elementName isEqualToString:@"url"]) {              
+	} else if ([elementName isEqualToString:kTagUrl]) {              
         currentStory.url = [NSURL URLWithString:currentElementValue];
-	} else if ([elementName isEqualToString:@"estimate"]) {                      
+	} else if ([elementName isEqualToString:kTagEstimate]) {                      
         currentStory.estimate = [currentElementValue integerValue];
-	} else if ([elementName isEqualToString:@"current_state"]) {                      
+	} else if ([elementName isEqualToString:kTagCurrentState]) {                      
         currentStory.currentState = currentElementValue;
-	} else if ([elementName isEqualToString:@"description"]) {
+	} else if ([elementName isEqualToString:kTagDescription]) {
         currentStory.description = currentElementValue;
-	} else if ([elementName isEqualToString:@"name"]) {
+	} else if ([elementName isEqualToString:kTagName]) {
         currentStory.name = currentElementValue;
-	} else if ([elementName isEqualToString:@"requested_by"]) {
+	} else if ([elementName isEqualToString:kTagRequestedBy]) {
         currentStory.requestedBy = currentElementValue;
-   	} else if ([elementName isEqualToString:@"owned_by"]) {         
+   	} else if ([elementName isEqualToString:kTagOwnedBy]) {         
         currentStory.owner = currentElementValue;
-	} else if ([elementName isEqualToString:@"created_at"]) {  
+	} else if ([elementName isEqualToString:kTagCreatedAt]) {  
         currentStory.createdAt = [dateFormatter dateFromString:currentElementValue];
-	} else if ([elementName isEqualToString:@"accepted_at"]) {  
+	} else if ([elementName isEqualToString:kTagAcceptedAt]) {  
         currentStory.acceptedAt = [dateFormatter dateFromString:currentElementValue];        
 	} 
     

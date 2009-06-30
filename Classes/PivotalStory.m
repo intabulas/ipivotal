@@ -12,7 +12,7 @@
     [super init];
     storyType = kTypeFeature;
     estimate = 0;
-    name = @"please give this story a title";
+    name = kTextStoryNeedsName;
     description = @"please give this story a description";
     return self;
 }

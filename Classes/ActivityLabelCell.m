@@ -4,6 +4,7 @@
 
 @synthesize cellLabel, activityView;
 
+
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         
@@ -14,7 +15,7 @@
         cellLabel.font = [UIFont  systemFontOfSize:14.0f];
         cellLabel.textColor = [UIColor blackColor];
         cellLabel.textAlignment = UITextAlignmentLeft;
-        [cellLabel setText:@"Loading..."];
+        [cellLabel setText:@"Loading, please wait..."];
     
         activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(6.0f, 13.0f, 20.0f, 20.0f)];
         activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;

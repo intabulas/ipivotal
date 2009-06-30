@@ -95,7 +95,6 @@
     self.error = [request error];
     NSError *theError;    
     NSString *writeableFile = [self pathForFile:cacheFilename];
-    //NSLog(@"Activities\n\n%@", [request responseString]);
     [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
     [self parseActivities];
 	[pool release];    
