@@ -55,10 +55,10 @@
 #define kUrlProjectList            @"https://www.pivotaltracker.com/services/v2/projects"
 #define kUrlIterationList          @"https://www.pivotaltracker.com/services/v2/projects/%d/iterations"    
 #define kUrlIterationTypeList      @"https://www.pivotaltracker.com/services/v2/projects/%d/iterations/%@"
-#define kUrlActivityStream         @"http://www.pivotaltracker.com/services/v2/activities"
+#define kUrlActivityStream         @"https://www.pivotaltracker.com/services/v2/activities"
 #define kUrlProjectActivityStream  @"https://www.pivotaltracker.com/services/v2/projects/%d/activities"
-#define kUrlIceboxStories          @"http://www.pivotaltracker.com/services/v2/projects/%d/stories?filter=current_state:unscheduled"
-#define kUrlAddStory               @"http://www.pivotaltracker.com/services/v2/projects/%d/stories"
+#define kUrlIceboxStories          @"https://www.pivotaltracker.com/services/v2/projects/%d/stories?filter=current_state:unscheduled"
+#define kUrlAddStory               @"https://www.pivotaltracker.com/services/v2/projects/%d/stories"
 
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"
