@@ -216,7 +216,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:indexPath.section];
-    StoryViewController *controller = [[StoryViewController alloc] initWithStory:[iteration.stories objectAtIndex:indexPath.row]];
+    StoryViewController *controller = [[StoryViewController alloc] initWithStory:[iteration.stories objectAtIndex:indexPath.row] andProject:project];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
 }

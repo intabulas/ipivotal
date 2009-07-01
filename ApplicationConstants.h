@@ -59,6 +59,7 @@
 #define kUrlProjectActivityStream  @"https://www.pivotaltracker.com/services/v2/projects/%d/activities"
 #define kUrlIceboxStories          @"https://www.pivotaltracker.com/services/v2/projects/%d/stories?filter=current_state:unscheduled"
 #define kUrlAddStory               @"https://www.pivotaltracker.com/services/v2/projects/%d/stories"
+#define kUrlUpdateStory            @"http://www.pivotaltracker.com/services/v2/projects/%d/stories/%d"
 
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"
