@@ -80,6 +80,7 @@
 - (void)fetchProjects {
 
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
 	[request start];
     self.error = [request error];

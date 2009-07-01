@@ -88,9 +88,10 @@
 	[pool release];    
 }
 
-- (void)fetchIterations {
-    
+- (void)fetchIterations {    
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
 	[request start];
     self.error = [request error];
@@ -98,6 +99,7 @@
     NSString *writeableFile = [self pathForFile:cacheFilename];
     [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
     [self parseIterations];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
 	[pool release];    
 }
 

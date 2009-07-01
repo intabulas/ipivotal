@@ -110,6 +110,7 @@
 
 - (void)toggleStoryState:(NSString *)newState {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     NSString *urlString = [NSString stringWithFormat:kUrlUpdateStory, self.project.projectId, self.story.storyId];                            
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
@@ -118,6 +119,7 @@
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
     [request start];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
 }
 

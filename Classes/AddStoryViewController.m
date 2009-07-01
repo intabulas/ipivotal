@@ -34,6 +34,7 @@
 - (void) saveStory:(id)sender {
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     NSString *urlString = [NSString stringWithFormat:kUrlAddStory, project.projectId];                            
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
@@ -41,6 +42,7 @@
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
     [request start];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kLabelAddStory message:@"New story has been added to your Icebox" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles: nil];
