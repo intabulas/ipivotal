@@ -40,7 +40,35 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(startStory:)];
 
-    [startButton setEnabled:[self.story.currentState hasPrefix:kStateUnScheduled]];
+    [startButton   setEnabled:([self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateAccepted] )];
+    [finishButton  setEnabled:(([self.story.currentState hasPrefix:kStateStarted] ||  ![self.story.currentState hasPrefix:kStateAccepted] ) && ![self.story.currentState hasPrefix:kStateFinished ])];    
+    [deliverButton setEnabled:([self.story.currentState hasPrefix:kStateFinished] && ![self.story.currentState hasPrefix:kStateDelivered ])];    
+
+    [acceptButton  setEnabled:[self.story.currentState hasPrefix:kStateDelivered]];        
+    [rejectButton  setEnabled:[self.story.currentState hasPrefix:kStateDelivered]];        
+    
+                                  
+    
+    NSMutableArray     *items = [[toolbar.items mutableCopy] autorelease];
+    
+    if ( ![self.story.currentState hasPrefix:kStateDelivered] && ![self.story.currentState hasPrefix:kStateRejected]  ) {
+        [items removeObject:acceptButton];
+        [items removeObject:rejectButton];
+        [items removeObject:restartButton]; 
+    } else if ( [self.story.currentState hasPrefix:kStateRejected] ) {        
+        [items removeObject:acceptButton];
+        [items removeObject:rejectButton];
+        [items removeObject:startButton];
+        [items removeObject:finishButton];        
+        [items removeObject:deliverButton];        
+    } else {
+        [items removeObject:restartButton];        
+        [items removeObject:startButton];
+        [items removeObject:finishButton];        
+        [items removeObject:deliverButton];        
+    }
+    //    [items removeObject: myButton];
+    toolbar.items = items;    
     
     
     if ( self.story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateOnePoint];
@@ -69,26 +97,55 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
 }
 
 
-- (IBAction)startStory:(id)sender {
+- (void)toggleStoryState:(NSString *)newState {
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSString *urlString = [NSString stringWithFormat:kUrlUpdateStory, self.project.projectId, self.story.storyId];                            
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
-    NSString *newstory = [NSString stringWithFormat:@"<story><current_state>started</current_state><estimate type=\"Integer\">%d</estimate></story>", self.story.estimate];
+    NSString *newstory = [NSString stringWithFormat:@"<story><current_state>%@</current_state><estimate type=\"Integer\">%d</estimate></story>", newState, self.story.estimate];
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:@"Content-type" value:@"application/xml"];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
     [request start];
     [pool release];    
-    
-    [self.navigationController popViewControllerAnimated:YES];        
-    
 }
+
+- (IBAction)startStory:(id)sender {
+    [self toggleStoryState: kStateStarted ];
+    [self.navigationController popViewControllerAnimated:YES];        
+}
+
+
+- (IBAction)finishStory:(id)sender {
+    [self toggleStoryState: kStateFinished ];
+    [self.navigationController popViewControllerAnimated:YES];        
+}
+
+- (IBAction)deliverStory:(id)sender {
+    [self toggleStoryState: kStateDelivered ];
+    [self.navigationController popViewControllerAnimated:YES];        
+}
+
+- (IBAction)acceptStory:(id)sender {
+    [self toggleStoryState: kStateAccepted];
+    [self.navigationController popViewControllerAnimated:YES];        
+}
+
+- (IBAction)rejectStory:(id)sender {
+    [self toggleStoryState: kStateRejected];
+    [self.navigationController popViewControllerAnimated:YES];        
+}
+
 
 @end
