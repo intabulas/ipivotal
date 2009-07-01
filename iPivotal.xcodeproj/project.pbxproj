@@ -15,6 +15,7 @@
 		8C026B260FDC9829002CFEE0 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026B250FDC9829002CFEE0 /* LabelCell.m */; };
 		8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */; };
 		8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */; };
+		8C1065DF0FFBF05100548B94 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1065DE0FFBF05100548B94 /* Default.png */; };
 		8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */; };
 		8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */; };
 		8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */; };
@@ -90,6 +91,7 @@
 		8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSelectionController.h; sourceTree = "<group>"; };
 		8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSelectionController.m; sourceTree = "<group>"; };
 		8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSelectionController.xib; sourceTree = "<group>"; };
+		8C1065DE0FFBF05100548B94 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8C2A7DBC0FD07FF7005E00FB /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryViewController.xib; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		8C3FD3B00FCF0A4D004D8DD0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8C1065DE0FFBF05100548B94 /* Default.png */,
 				8CDB64590FCF8D3C003AC065 /* Icons */,
 				8C3FD3B20FCF0A84004D8DD0 /* Icon.png */,
 			);
@@ -506,6 +509,7 @@
 				8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */,
 				8CBBB5180FF957DB00A32C37 /* ActivityViewController.xib in Resources */,
 				8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */,
+				8C1065DF0FFBF05100548B94 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
