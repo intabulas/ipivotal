@@ -87,9 +87,9 @@
     NSInteger row = indexPath.row;
     
     if ( stories.isLoading) { 
-        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
+        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityLabelCell];
         if (cell == nil) {
-            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
+            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityLabelCell] autorelease];
         }
         [cell.activityView startAnimating];
         return  cell;
@@ -98,15 +98,15 @@
     
     
     if ( stories.stories.count == 0 ) { 
-        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"CenteredLabelCell"];
+        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierCenteredCell];
         if (cell == nil) {
-            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
+            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierCenteredCell] autorelease];
         }
-        [cell.cellLabel setText:@"there are no stories defined"];    
+        [cell.cellLabel setText:kLabelNoStories];    
         return  cell;
     }
     
-    static NSString *CellIdentifier = @"IterationStoryCell";
+    static NSString *CellIdentifier = kIdentifierIterationStoryCell;
     
     IterationStoryCell *cell = (IterationStoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {

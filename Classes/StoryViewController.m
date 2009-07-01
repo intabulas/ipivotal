@@ -2,6 +2,7 @@
 #import "NSDate+Nibware.h"
 #import "ASIHTTPRequest.h"
 #import "PivotalResource.h"
+#import "PivotalStory.h"
 
 @implementation StoryViewController
 
@@ -108,14 +109,13 @@
 
 
 - (void)toggleStoryState:(NSString *)newState {
-    
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSString *urlString = [NSString stringWithFormat:kUrlUpdateStory, self.project.projectId, self.story.storyId];                            
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
-    NSString *newstory = [NSString stringWithFormat:@"<story><current_state>%@</current_state><estimate type=\"Integer\">%d</estimate></story>", newState, self.story.estimate];
+    NSString *newstory = [NSString stringWithFormat:kXmlStoryStateTransitiion, newState, self.story.estimate];
     [request setRequestMethod:@"PUT"];
-    [request addRequestHeader:@"Content-type" value:@"application/xml"];
+    [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
     [request start];
     [pool release];    

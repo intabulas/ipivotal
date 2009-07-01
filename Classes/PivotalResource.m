@@ -19,6 +19,7 @@
 	return status == PivotalResourceStatusLoaded;
 }
 
+
 - (void) dealloc {
 	[error release];
 	[super dealloc];

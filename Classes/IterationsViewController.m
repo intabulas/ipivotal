@@ -124,20 +124,20 @@
     
     
     if ( iterations.isLoaded && iterations.iterations.count == 0 ) {
-        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"CenteredLabelCell"];
+        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierCenteredCell];
         if (cell == nil) {
-            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
+            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierCenteredCell] autorelease];
         }
-        [cell.cellLabel setText:@"there are no iterations for this group"];
+        [cell.cellLabel setText:kLabelNoIterations];
 
         return  cell;        
     }
     if ( !iterations.isLoaded) { 
-        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ActivityLabelCell"];
+        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityLabelCell];
         if (cell == nil) {
-            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ActivityLabelCell"] autorelease];
+            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityLabelCell] autorelease];
         }
-        [cell.cellLabel setText:@"Loading, please wait..."];
+        [cell.cellLabel setText:kLabelLoading];
         [cell.activityView startAnimating];
         
         return  cell;
@@ -147,16 +147,16 @@
     PivotalIteration *iteration = [iterations.iterations objectAtIndex:section];
     
     if ( iteration.stories.count == 0 ) { 
-        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"CenteredLabelCell"];
+        CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierCenteredCell];
         if (cell == nil) {
-            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"CenteredLabelCell"] autorelease];
+            cell = [[[CenteredLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierCenteredCell] autorelease];
         }
-        [cell.cellLabel setText:@"you have no stories defined for this iteration"];    
+        [cell.cellLabel setText:kLabelNoStories];    
         return  cell;
     }    
     
     
-    static NSString *CellIdentifier = @"IterationStoryCell";
+    static NSString *CellIdentifier = kIdentifierIterationStoryCell;
     
     IterationStoryCell *cell = (IterationStoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -194,7 +194,7 @@
 
 
 -(IBAction)showIceboxStories:(id)sender {
-    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:@"icebox"];
+    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:kTypeIcebox];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
     

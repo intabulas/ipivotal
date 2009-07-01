@@ -48,9 +48,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LabelCell *cell = (LabelCell*)[listTableView dequeueReusableCellWithIdentifier:@"LabelCell"];
+    LabelCell *cell = (LabelCell*)[listTableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
     if (cell == nil) {
-        cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"LabelCell"] autorelease];
+        cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] autorelease];
     }
 
     [cell.cellLabel setText:[listItems objectAtIndex:indexPath.row]];

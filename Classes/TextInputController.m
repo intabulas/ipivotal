@@ -22,7 +22,7 @@
 
 
 - (IBAction) saveInput:(id)sender {
-    [editingItem setValue:textField.text forKey:@"StoryName"];
+    [editingItem setValue:textField.text forKey:kKeyStoryName];
     [self.navigationController popViewControllerAnimated:YES];    
 }
 
@@ -88,7 +88,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *storyName = (NSString *)[editingItem valueForKey:@"StoryName"];
+    NSString *storyName = (NSString *)[editingItem valueForKey:kKeyStoryName];
     if ( ![storyName isEqualToString:kDefaultStoryTitle] ) {
       [textField setText:storyName];
     }

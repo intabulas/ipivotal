@@ -67,7 +67,23 @@
 #define kResourceErrorKeyPath @"error"
 
 
+
+#define kXmlStoryStateTransitiion       @"<story><current_state>%@</current_state><estimate type=\"Integer\">%d</estimate></story>"
+#define kXmlAddStoryFeature             @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>"
+#define kXmlAddStory                    @"<story><story_type>%@</story_type><name>%@</name></story>"
+
 #define kEmptyString     @""
+
+
+#define kHttpContentType     @"Content-type"
+#define kHttpMimeTypeXml     @"application/xml"
+
+
+
+#define kKeyType        @"Type"
+#define kKeyStoryName   @"StoryName"
+#define kKeyEstimate    @"Estimate"
+
 
 #define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'UTC'"
 #define kDateFormatActivity  @"MM/dd/yyyy hh:mm a"
@@ -102,11 +118,26 @@
 
 #define kTextStoryNeedsName       @"please enter a story name"
 
+#define kLabelNoDatesForIteration   @"no dates for this iteration yet"
+#define kLabelLoading               @"Loading, please wait..."
+#define kLabelNoIterations          @"there are no iterations"
+#define kLabelNoStories             @"there are no stories"
+#define kLabelAddStory              @"Add Story"
+
+
 // Formats
 
 #define kFormatPoints             @"%d Point(s)"
+#define kFormatIterationNumber    @"Iteration %d"
 
 // Cells
 
-#define kIdentifierLabelCell       @"LabelCell"
-#define kIdentifierImageLabelCell  @"ImageLabelCell"
+#define kIdentifierLabelCell           @"LabelCell"
+#define kIdentifierImageLabelCell      @"ImageLabelCell"
+#define kIdentifierCenteredCell        @"CenteredLabelCell"
+#define kIdentifierActivityLabelCell   @"ActivityLabelCell"
+#define kIdentifierIterationStoryCell  @"IterationStoryCell"
+
+
+
+

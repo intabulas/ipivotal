@@ -106,7 +106,7 @@
 	if (!projects.isLoaded ) return loadingProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
 	
-    static NSString *CellIdentifier = @"ImageLabelCell";
+    static NSString *CellIdentifier = kIdentifierImageLabelCell;
     
     ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {

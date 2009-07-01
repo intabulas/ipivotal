@@ -31,9 +31,9 @@
 
 - (NSString *)to_xml {
     if ([storyType hasPrefix:kTypeFeature]) {
-        return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>", [storyType lowercaseString], name, estimate];            
+        return [NSString stringWithFormat:kXmlAddStoryFeature, [storyType lowercaseString], name, estimate];            
     } else {
-        return [NSString stringWithFormat:@"<story><story_type>%@</story_type><name>%@</name></story>", [storyType lowercaseString], name];    
+        return [NSString stringWithFormat:kXmlAddStory, [storyType lowercaseString], name];    
     }
 }
 

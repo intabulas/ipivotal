@@ -9,6 +9,7 @@ typedef enum {
 
 @interface PivotalResource : NSObject {
     PivotalResourceStatus status;
+
     NSError *error;
 }
 
@@ -16,7 +17,6 @@ typedef enum {
 @property (nonatomic, readwrite) PivotalResourceStatus status;
 @property (nonatomic, readonly) BOOL isLoaded;
 @property (nonatomic, readonly) BOOL isLoading;
-
 
 +(ASIHTTPRequest *)authenticatedRequestForURL:(NSURL *)theUrl;
 

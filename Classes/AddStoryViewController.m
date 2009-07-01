@@ -38,12 +38,12 @@
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
     NSString *newstory = [self.story to_xml];
-    [request addRequestHeader:@"Content-type" value:@"application/xml"];
+    [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
     [request start];
     [pool release];    
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Add Story" message:@"New story has been added to your Icebox" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kLabelAddStory message:@"New story has been added to your Icebox" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles: nil];
     [alert show];
     [alert release];        
     
@@ -56,17 +56,17 @@
     [super viewWillAppear:animated];
     if ( editingDictionary == nil ) {
         editingDictionary = [[NSMutableDictionary alloc] init];        
-       [editingDictionary setObject:kTypeFeature forKey:@"Type"];
-       [editingDictionary setObject:kDefaultStoryTitle forKey:@"StoryName"];
-       [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:@"Estimate"];        
+       [editingDictionary setObject:kTypeFeature forKey:kKeyType];
+       [editingDictionary setObject:kDefaultStoryTitle forKey:kKeyStoryName];
+       [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:kKeyEstimate];        
     }
     
-    story.name          = (NSString *)[editingDictionary valueForKey:@"StoryName"];
-    story.storyType          = [editingDictionary valueForKey:@"Type"];
-    NSNumber *estimateNumber = [editingDictionary valueForKey:@"Estimate"];
+    story.name          = (NSString *)[editingDictionary valueForKey:kKeyStoryName];
+    story.storyType          = [editingDictionary valueForKey:kKeyType];
+    NSNumber *estimateNumber = [editingDictionary valueForKey:kKeyEstimate];
     story.estimate = [estimateNumber integerValue];
     
-    self.title = @"Add Story";
+    self.title = kLabelAddStory;
     
     [storyTableView reloadData];
     
@@ -174,25 +174,25 @@
         TextInputController *controller = [[TextInputController alloc] initWithTitle:@"Story Name"];
 
         controller.editingItem = editingDictionary;
-        [editingDictionary setValue:story.name forKey:@"StoryName"];
+        [editingDictionary setValue:story.name forKey:kKeyStoryName];
         
         [self.navigationController pushViewController:controller animated:YES];
         
     }
     if (indexPath.row == 1) {
-        ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:@"Type" andTitle:@"Story Type"];
+        ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:kKeyType andTitle:@"Story Type"];
         controller.listItems = [[NSArray alloc] initWithObjects:kTypeFeature, kTypeBug, kTypeChore, kTypeRelease, nil];
                         
         controller.editingItem = editingDictionary;
-        [editingDictionary setValue:story.storyType forKey:@"Type"];
+        [editingDictionary setValue:story.storyType forKey:kKeyType];
         [self.navigationController pushViewController:controller animated:YES];
     }
     if (indexPath.row == 2) {
-        ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:@"Estimate" andTitle:@"Point Estimate"];
+        ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:kKeyEstimate andTitle:@"Point Estimate"];
         controller.listItems = [[NSArray alloc] initWithObjects:@"0 Points", @"1 Point", @"2 Points", @"3 Points", nil];
         
         controller.editingItem = editingDictionary;
-        [editingDictionary setValue:[NSNumber numberWithInteger:story.estimate] forKey:@"Estimate"];
+        [editingDictionary setValue:[NSNumber numberWithInteger:story.estimate] forKey:kKeyEstimate];
         [self.navigationController pushViewController:controller animated:YES];
     }
     
