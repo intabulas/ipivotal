@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
 			<integer value="10"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -79,7 +79,7 @@
 							<object class="IBUITextField" id="827952303">
 								<reference key="NSNextResponder" ref="476237727"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{7, 7}, {305, 31}}</string>
+								<string key="NSFrame">{{7, 7}, {284, 31}}</string>
 								<reference key="NSSuperview" ref="476237727"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -97,7 +97,7 @@
 								</object>
 								<bool key="IBUIClearsOnBeginEditing">YES</bool>
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
-								<float key="IBUIMinimumFontSize">1.700000e+01</float>
+								<float key="IBUIMinimumFontSize">1.400000e+01</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
 									<int key="IBUIReturnKeyType">9</int>
@@ -249,7 +249,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>TextInputController</string>
 					<string>UIResponder</string>
-					<string>{{384, 471}, {320, 44}}</string>
+					<string>{{469, 507}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{58, 385}, {320, 460}}</string>
