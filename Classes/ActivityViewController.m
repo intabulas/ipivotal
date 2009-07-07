@@ -30,7 +30,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    #ifdef CACHED_CONTENT
 	self.tableView.tableHeaderView = updatedHeaderView;
+    #endif
+
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
     activities = [[PivotalActivities alloc] initWithProject:project];
