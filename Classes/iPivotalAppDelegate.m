@@ -10,10 +10,10 @@
 
 @implementation iPivotalAppDelegate
 
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
-    
+
+	
     [self authenticate];
     
 	// Configure and show the window
