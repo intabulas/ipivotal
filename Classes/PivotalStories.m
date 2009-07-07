@@ -108,11 +108,13 @@
 #pragma mark Cached File Methods
 
 - (BOOL)hasCachedDocument {
+#ifdef CACHED_CONTENT	
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    return [fileManager fileExistsAtPath:[self pathForFile:cacheFilename]];
+#else
 	return NO;
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    return [fileManager fileExistsAtPath:[self pathForFile:cacheFilename]];
+#endif
 }
-
 
 #pragma mark === Cleanup ===
 
