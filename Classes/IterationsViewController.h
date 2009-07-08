@@ -9,7 +9,8 @@
     IBOutlet UITableView *iterationTableView;    
     IBOutlet UIBarButtonItem *doneStoriesButton;
 	IBOutlet UIView *updatedHeaderView;
-	IBOutlet UILabel *lastUpdatedLabel;        
+	IBOutlet UILabel *lastUpdatedLabel;     
+    NSInteger lastIterationType;
 }
 @property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
 @property (nonatomic,retain) PivotalProject* project;

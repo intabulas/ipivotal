@@ -60,6 +60,8 @@
 
 - (void)setStory:(PivotalStory *)theStory {
      
+        statusLabel.textColor = [UIColor blackColor];
+        storyLabel.textColor = [UIColor blackColor];
     
         storyLabel.text = theStory.name;
         statusLabel.text = theStory.currentState;
@@ -69,7 +71,8 @@
                 theColor = [UIColor colorWithRed:216.0/255.0 green:238.0/255.0 blue:206.0/255.0 alpha:1.0];
         } else if ( [theStory.currentState hasPrefix:kStateStarted] || [theStory.currentState hasPrefix:kStateDelivered] ) {
                 theColor = [UIColor colorWithRed:255.0/255.0 green:248.0/255.0 blue:228.0/255.0 alpha:1.0];
-        } else if ( [theStory.currentState hasPrefix:kStateUnStarted] &&  [theStory.storyType hasPrefix:kStateRelease] ) {
+//        } else if ( [theStory.currentState hasPrefix:kStateUnStarted] &&  [theStory.storyType hasPrefix:kStateRelease] ) {
+        } else if ( [theStory.storyType hasPrefix:kStateRelease] ) {            
             theColor = [UIColor colorWithRed:64.0/255.0 green:122.0/255.0 blue:165.0/255.0 alpha:1.0];       
 			statusLabel.textColor = [UIColor whiteColor];
 			storyLabel.textColor = [UIColor whiteColor];

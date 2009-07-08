@@ -18,6 +18,7 @@
 
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
+    lastIterationType = 1;
     self.project = theProject;
     return self;
 }
@@ -54,7 +55,7 @@
     UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:kTypeDone, kTypeCurrent, kTypeBacklog, nil]] autorelease];
     [segmentedControl addTarget:self action:@selector(iterationTypeChanged:) forControlEvents:UIControlEventValueChanged];
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-    segmentedControl.selectedSegmentIndex = 1;
+    segmentedControl.selectedSegmentIndex = lastIterationType;
     self.navigationItem.titleView = segmentedControl;
     
     
@@ -63,6 +64,7 @@
 - (void)iterationTypeChanged:(id)sender {
     if ( iterations.isLoaded ) {
     NSInteger selectedIndex = ((UISegmentedControl*)sender).selectedSegmentIndex;
+        lastIterationType = selectedIndex;
     if ( selectedIndex == 0 ) {
         [iterations reloadInterationForGroup:kTypeDone];
     } else if ( selectedIndex == 1 ) {
