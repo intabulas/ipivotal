@@ -2,6 +2,7 @@
 #import "PivotalProject.h"
 #import "IterationsViewController.h"
 #import "ImageLabelCell.h"
+#import "ProjectLabelCell.h"
 #import "iPivotalAppDelegate.h"
 #import "ActivityViewController.h"
 #import "NSDate+Nibware.h"
@@ -110,13 +111,20 @@
 	
     static NSString *CellIdentifier = kIdentifierImageLabelCell;
     
-    ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+//    }
+
+    ProjectLabelCell *cell = (ProjectLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ProjectLabelCell"];
     if (cell == nil) {
-        cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
+    
+    
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
     [cell.cellLabel setText:pp.name];
-    cell.image = [UIImage imageNamed:kIconTypeProject];
+//    cell.image = [UIImage imageNamed:kIconTypeProject];
     	
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
