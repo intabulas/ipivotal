@@ -18,6 +18,7 @@
 		8C1065DF0FFBF05100548B94 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1065DE0FFBF05100548B94 /* Default.png */; };
 		8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */; };
 		8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */; };
+		8C38D14210046B29003BF739 /* ProjectLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C38D14110046B29003BF739 /* ProjectLabelCell.m */; };
 		8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */; };
 		8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
 		8C3FD3C60FCF0B8B004D8DD0 /* NSDate+Nibware.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */; };
@@ -95,6 +96,8 @@
 		8C2A7DBC0FD07FF7005E00FB /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryViewController.xib; sourceTree = "<group>"; };
+		8C38D14010046B29003BF739 /* ProjectLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectLabelCell.h; sourceTree = "<group>"; };
+		8C38D14110046B29003BF739 /* ProjectLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectLabelCell.m; sourceTree = "<group>"; };
 		8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "77-ekg.png"; sourceTree = "<group>"; };
 		8C3FD3B20FCF0A84004D8DD0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Nibware.m"; sourceTree = "<group>"; };
@@ -405,6 +408,8 @@
 				8C026B250FDC9829002CFEE0 /* LabelCell.m */,
 				8C70E22C0FE321F30074DE16 /* TextFieldCell.h */,
 				8C70E22D0FE321F30074DE16 /* TextFieldCell.m */,
+				8C38D14010046B29003BF739 /* ProjectLabelCell.h */,
+				8C38D14110046B29003BF739 /* ProjectLabelCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -559,6 +564,7 @@
 				8C4D63C80FFACA9C008E7478 /* ASINetworkQueue.m in Sources */,
 				8C4D63C90FFACA9C008E7478 /* ASIHTTPRequest.m in Sources */,
 				8C4D63CA0FFACA9C008E7478 /* ASINSStringAdditions.m in Sources */,
+				8C38D14210046B29003BF739 /* ProjectLabelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

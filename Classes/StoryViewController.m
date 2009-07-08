@@ -41,9 +41,11 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(startStory:)];
 
-    [startButton   setEnabled:([self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateAccepted] )];
-    [finishButton  setEnabled:(([self.story.currentState hasPrefix:kStateStarted] ||  ![self.story.currentState hasPrefix:kStateAccepted] ) && ![self.story.currentState hasPrefix:kStateFinished ])];    
-    [deliverButton setEnabled:([self.story.currentState hasPrefix:kStateFinished] && ![self.story.currentState hasPrefix:kStateDelivered ])];    
+    [startButton   setEnabled:([self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateUnStarted] )];
+    
+    [finishButton  setEnabled:[self.story.currentState hasPrefix:kStateStarted]];    
+    
+    [deliverButton setEnabled:[self.story.currentState hasPrefix:kStateFinished]];    
 
     [acceptButton  setEnabled:[self.story.currentState hasPrefix:kStateDelivered]];        
     [rejectButton  setEnabled:[self.story.currentState hasPrefix:kStateDelivered]];        

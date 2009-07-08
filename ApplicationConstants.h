@@ -44,7 +44,7 @@
 #define kMatchFeature   @"feature"
 #define kMatchBug       @"bug"
 #define kMatchChore     @"chore"
-#define kMatchRelease   @"feature"
+#define kMatchRelease   @"release"
 
 #define kStateAccepted       @"accepted"
 #define kStateStarted        @"started"

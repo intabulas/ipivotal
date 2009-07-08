@@ -241,6 +241,7 @@
 						<bool key="IBUIDelaysContentTouches">NO</bool>
 						<bool key="IBUICanCancelContentTouches">NO</bool>
 						<bool key="IBUIBouncesZoom">NO</bool>
+						<bool key="IBUIEditable">NO</bool>
 						<string key="IBUIText"/>
 						<reference key="IBUIFont" ref="894512580"/>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits"/>
