@@ -39,7 +39,7 @@
     
     self.navigationItem.title = @"Story";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(startStory:)];
+
 
     [startButton   setEnabled:([self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateUnStarted] )];
     
@@ -116,7 +116,12 @@
     NSString *urlString = [NSString stringWithFormat:kUrlUpdateStory, self.project.projectId, self.story.storyId];                            
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
-    NSString *newstory = [NSString stringWithFormat:kXmlStoryStateTransitiion, newState, self.story.estimate];
+    NSString *newstory;
+    if ( [self.story.storyType hasPrefix:kMatchFeature] ) {    
+        newstory = [NSString stringWithFormat:kXmlStoryStateTransitiion, newState, self.story.estimate];
+    } else {    
+        newstory = [NSString stringWithFormat:kXmlStoryStateTransitiionNoEstimate, newState];
+    }
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];

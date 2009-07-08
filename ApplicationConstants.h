@@ -69,9 +69,10 @@
 
 
 
-#define kXmlStoryStateTransitiion       @"<story><current_state>%@</current_state><estimate type=\"Integer\">%d</estimate></story>"
-#define kXmlAddStoryFeature             @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>"
-#define kXmlAddStory                    @"<story><story_type>%@</story_type><name>%@</name></story>"
+#define kXmlStoryStateTransitiion            @"<story><current_state>%@</current_state><estimate type=\"Integer\">%d</estimate></story>"
+#define kXmlStoryStateTransitiionNoEstimate  @"<story><current_state>%@</current_state></story>"
+#define kXmlAddStoryFeature                  @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>"
+#define kXmlAddStory                         @"<story><story_type>%@</story_type><name>%@</name></story>"
 
 #define kEmptyString     @""
 

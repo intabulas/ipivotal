@@ -181,6 +181,7 @@
         [self.navigationController pushViewController:controller animated:YES];
         
     }
+            
     if (indexPath.row == 1) {
         ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:kKeyType andTitle:@"Story Type"];
         controller.listItems = [[NSArray alloc] initWithObjects:kTypeFeature, kTypeBug, kTypeChore, kTypeRelease, nil];
@@ -189,7 +190,10 @@
         [editingDictionary setValue:story.storyType forKey:kKeyType];
         [self.navigationController pushViewController:controller animated:YES];
     }
-    if (indexPath.row == 2) {
+    
+//    if( indexPath.row == 2 && [story.storyType hasPrefix:kTypeFeature]) {
+      if( indexPath.row == 2 ) {
+
         ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:kKeyEstimate andTitle:@"Point Estimate"];
         controller.listItems = [[NSArray alloc] initWithObjects:@"0 Points", @"1 Point", @"2 Points", @"3 Points", nil];
         
