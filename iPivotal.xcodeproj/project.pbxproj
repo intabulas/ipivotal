@@ -237,8 +237,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */,
-				8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */,
 			);
 			name = iPivotal;
 			sourceTree = "<group>";
@@ -269,6 +267,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */,
+				8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
