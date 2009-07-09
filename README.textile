@@ -1,4 +1,4 @@
-h1. iPivotal
+h1. iPivotal v0.83
 
 … is a iPhone and iPod Touch app for Pivotal Tracker.
 
