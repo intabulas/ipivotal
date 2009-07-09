@@ -29,7 +29,7 @@
                 statusLabel.autoresizingMask = UIViewAutoresizingNone;
                 statusLabel.backgroundColor = [UIColor clearColor];
                 statusLabel.highlightedTextColor = [UIColor whiteColor];
-                statusLabel.font = [UIFont  systemFontOfSize:11.0f];
+                statusLabel.font = [UIFont  systemFontOfSize:12.0f];
                 statusLabel.textColor = [UIColor blackColor];
                 statusLabel.textAlignment = UITextAlignmentLeft;
                 
