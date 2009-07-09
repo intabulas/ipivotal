@@ -79,7 +79,7 @@
     if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateThreePoints];          
 
     name.text = self.story.name;
-    estimate.text = [NSString stringWithFormat:@"Estimated as %d points", self.story.estimate];
+    estimate.text = [NSString stringWithFormat:@"a %@, estimated as %d points", self.story.storyType, self.story.estimate];
  
     if ( [story.storyType hasPrefix:kMatchBug] ) {    
         typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
