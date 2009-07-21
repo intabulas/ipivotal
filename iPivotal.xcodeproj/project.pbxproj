@@ -36,6 +36,7 @@
 		8C70E2270FE320FB0074DE16 /* TextInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E2260FE320FB0074DE16 /* TextInputController.m */; };
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
+		8C7C5F3E10155C5B002A4C52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */; };
 		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
@@ -125,6 +126,7 @@
 		8C70E2290FE3216E0074DE16 /* TextInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputController.xib; sourceTree = "<group>"; };
 		8C70E22C0FE321F30074DE16 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		8C70E22D0FE321F30074DE16 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionListViewController.xib; sourceTree = "<group>"; };
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				8C3FD3CA0FCF0BBD004D8DD0 /* CFNetwork.framework in Frameworks */,
 				8C3FD3CE0FCF0BC5004D8DD0 /* libz.1.2.3.dylib in Frameworks */,
+				8C7C5F3E10155C5B002A4C52 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +240,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */,
 			);
 			name = iPivotal;
 			sourceTree = "<group>";
@@ -603,12 +607,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mark Lussier";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "958BE20A-C63D-478E-97A1-E86C03B4094B";
 				SDKROOT = iphoneos2.2.1;
 			};
 			name = Distribution;
@@ -647,12 +651,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mark Lussier";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "958BE20A-C63D-478E-97A1-E86C03B4094B";
 				SDKROOT = iphoneos2.2.1;
 			};
 			name = Release;

@@ -1,5 +1,6 @@
 #import "iPivotalAppDelegate.h"
 #import "AuthenticationViewController.h"
+#import "Reachability.h"
 
 @interface iPivotalAppDelegate ()
 - (void)postLaunch;
