@@ -37,6 +37,7 @@
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
 		8C7C5F3E10155C5B002A4C52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */; };
+		8C7C5F6210155D49002A4C52 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C5F6110155D49002A4C52 /* Reachability.m */; };
 		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
@@ -127,6 +128,8 @@
 		8C70E22C0FE321F30074DE16 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		8C70E22D0FE321F30074DE16 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 		8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8C7C5F6010155D49002A4C52 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8C7C5F6110155D49002A4C52 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionListViewController.xib; sourceTree = "<group>"; };
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
@@ -240,7 +243,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */,
 			);
 			name = iPivotal;
 			sourceTree = "<group>";
@@ -248,6 +250,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8C7C5F6010155D49002A4C52 /* Reachability.h */,
+				8C7C5F6110155D49002A4C52 /* Reachability.m */,
 				8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
@@ -271,6 +275,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */,
 				8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */,
 				8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -569,6 +574,7 @@
 				8C4D63C90FFACA9C008E7478 /* ASIHTTPRequest.m in Sources */,
 				8C4D63CA0FFACA9C008E7478 /* ASINSStringAdditions.m in Sources */,
 				8C38D14210046B29003BF739 /* ProjectLabelCell.m in Sources */,
+				8C7C5F6210155D49002A4C52 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

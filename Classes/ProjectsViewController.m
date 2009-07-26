@@ -105,7 +105,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	
+    iPivotalAppDelegate *appdelegate = (iPivotalAppDelegate *)[[UIApplication sharedApplication]delegate];
+    if ( [appdelegate hasNoInternetConnectivity]) return noProjectsCell;
+
+    
 	if (!projects.isLoaded ) return loadingProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
 	

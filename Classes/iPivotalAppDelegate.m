@@ -11,9 +11,54 @@
 
 @implementation iPivotalAppDelegate
 
+@synthesize internetConnectionStatus, remoteHostStatus, localWiFiConnectionStatus;
+
+- (void)reachabilityChanged:(NSNotification *)note {
+    
+    [self updateStatus];
+}
+
+- (BOOL)hasNoInternetConnectivity {
+    return ( self.internetConnectionStatus != ReachableViaCarrierDataNetwork && self.localWiFiConnectionStatus != ReachableViaWiFiNetwork );    
+}
+
+- (void)updateStatus
+{
+    // Query the SystemConfiguration framework for the state of the device's network connections.
+    self.remoteHostStatus = [[Reachability sharedReachability] remoteHostStatus];
+    self.internetConnectionStatus    = [[Reachability sharedReachability] internetConnectionStatus];
+    self.localWiFiConnectionStatus	= [[Reachability sharedReachability] localWiFiConnectionStatus];
+
+    NSLog(@"remote status = %d, internet status = %d, wifi is %d", self.remoteHostStatus, self.internetConnectionStatus, self.localWiFiConnectionStatus);
+    if (self.internetConnectionStatus == NotReachable && self.remoteHostStatus == NotReachable && self.localWiFiConnectionStatus == NotReachable) {
+        //show an alert to let the user know that they can't connect...
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Unavailable" message:@"iPivotal requires an active network connection to communicate with Pivotal Tracker\n\n Please try again when an internet connection is available" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Exit", nil];
+        [alert show];
+    } else {
+    }
+}
+
+-(void)initStatus {
+    self.remoteHostStatus = [[Reachability sharedReachability] remoteHostStatus];
+    self.internetConnectionStatus    = [[Reachability sharedReachability] internetConnectionStatus];
+    self.localWiFiConnectionStatus    = [[Reachability sharedReachability] localWiFiConnectionStatus];    
+}
+
+#pragma mark AlertView delegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [alertView release];
+    [self applicationWillTerminate:[UIApplication sharedApplication]];
+    exit(0);
+}
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
 
+    [[Reachability sharedReachability] setHostName:kPivotalTrackerHost];
+    [[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"kNetworkReachabilityChangedNotification" object:nil];
+    [self initStatus];
+//    [self updateStatus];
+    
 	
     [self authenticate];
     
