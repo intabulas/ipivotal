@@ -17,6 +17,8 @@
 		8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */; };
 		8C222A3E1036669D00A75012 /* PivotalNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C222A3D1036669D00A75012 /* PivotalNote.m */; };
 		8C222AD910372B0700A75012 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C222AD810372B0700A75012 /* comment.png */; };
+		8C222B2B103744CE00A75012 /* StoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C222B2A103744CE00A75012 /* StoryDetailViewController.m */; };
+		8C222B2D103744E500A75012 /* StoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C222B2C103744E500A75012 /* StoryDetailViewController.xib */; };
 		8C2A7DBE0FD07FF7005E00FB /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */; };
 		8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */; };
 		8C38D14210046B29003BF739 /* ProjectLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C38D14110046B29003BF739 /* ProjectLabelCell.m */; };
@@ -100,6 +102,9 @@
 		8C222A3C1036669D00A75012 /* PivotalNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalNote.h; sourceTree = "<group>"; };
 		8C222A3D1036669D00A75012 /* PivotalNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalNote.m; sourceTree = "<group>"; };
 		8C222AD810372B0700A75012 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		8C222B29103744CE00A75012 /* StoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryDetailViewController.h; sourceTree = "<group>"; };
+		8C222B2A103744CE00A75012 /* StoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryDetailViewController.m; sourceTree = "<group>"; };
+		8C222B2C103744E500A75012 /* StoryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryDetailViewController.xib; sourceTree = "<group>"; };
 		8C2A7DBC0FD07FF7005E00FB /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryViewController.xib; sourceTree = "<group>"; };
@@ -360,6 +365,8 @@
 				8C2A7DBD0FD07FF7005E00FB /* StoryViewController.m */,
 				8C70E2250FE320FB0074DE16 /* TextInputController.h */,
 				8C70E2260FE320FB0074DE16 /* TextInputController.m */,
+				8C222B29103744CE00A75012 /* StoryDetailViewController.h */,
+				8C222B2A103744CE00A75012 /* StoryDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -449,6 +456,7 @@
 				8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */,
 				8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */,
 				8C70E2290FE3216E0074DE16 /* TextInputController.xib */,
+				8C222B2C103744E500A75012 /* StoryDetailViewController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";
@@ -538,6 +546,7 @@
 				8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */,
 				8CC0E79410047A2800C7F6CB /* Default.png in Resources */,
 				8C222AD910372B0700A75012 /* comment.png in Resources */,
+				8C222B2D103744E500A75012 /* StoryDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +600,7 @@
 				8CC7CDC91032246C00BCC2DF /* ASIInputStream.m in Sources */,
 				8CC7CDCA1032246C00BCC2DF /* ASIFormDataRequest.m in Sources */,
 				8C222A3E1036669D00A75012 /* PivotalNote.m in Sources */,
+				8C222B2B103744CE00A75012 /* StoryDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
