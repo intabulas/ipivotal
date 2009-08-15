@@ -3,7 +3,7 @@
 
 @implementation IterationStoryCell
 
-@synthesize typeImage, estimateImage, storyLabel, statusLabel, story;
+@synthesize typeImage, estimateImage, storyLabel, statusLabel, story, commentsLabel;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
         if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
@@ -20,7 +20,7 @@
                 storyLabel.autoresizingMask = UIViewAutoresizingNone;
                 storyLabel.backgroundColor = [UIColor clearColor];
                 storyLabel.highlightedTextColor = [UIColor whiteColor];
-                storyLabel.font = [UIFont  systemFontOfSize:14.0f];
+                storyLabel.font = [UIFont  systemFontOfSize:13.0f];
                 storyLabel.textColor = [UIColor blackColor];
                 storyLabel.textAlignment = UITextAlignmentLeft;
         
@@ -32,7 +32,15 @@
                 statusLabel.font = [UIFont  systemFontOfSize:12.0f];
                 statusLabel.textColor = [UIColor blackColor];
                 statusLabel.textAlignment = UITextAlignmentLeft;
-                
+
+                commentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(230.0f, 23.0f, (self.contentView.frame.size.width - 10.0f) , 15.0f)];
+                commentsLabel.autoresizingMask = UIViewAutoresizingNone;
+                commentsLabel.backgroundColor = [UIColor clearColor];
+                commentsLabel.highlightedTextColor = [UIColor whiteColor];
+                commentsLabel.font = [UIFont  systemFontOfSize:12.0f];
+                commentsLabel.textColor = [UIColor blackColor];
+                commentsLabel.textAlignment = UITextAlignmentLeft;
+            
                 
                 
                 UIView* backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectZero ] autorelease ];
@@ -42,7 +50,8 @@
                 [self.contentView addSubview:typeImage];
                 [self.contentView addSubview:estimateImage];        
                 [self.contentView addSubview:storyLabel];        
-                [self.contentView addSubview:statusLabel];                
+                [self.contentView addSubview:statusLabel];      
+                [self.contentView addSubview:commentsLabel];
                 
                 
         }
@@ -102,6 +111,12 @@
         } else if ( [theStory.storyType hasPrefix:kMatchRelease] ) {
                 typeImage.image = [UIImage imageNamed:kIconTypeRelease];        
         }
+    
+        
+        if ( [theStory.comments count] > 0 ) {
+            [commentsLabel setText:@"comments"];
+        }
+    
         
         [self.backgroundView setBackgroundColor:theColor];
 }

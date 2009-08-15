@@ -127,9 +127,10 @@
     } else {    
         newstory = [NSString stringWithFormat:kXmlStoryStateTransitiionNoEstimate, newState];
     }
-    
+
+#ifdef LOG_NETWORK    
     NSLog(@"Toggle Story State XML: %@", newstory);
-    
+#endif    
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];

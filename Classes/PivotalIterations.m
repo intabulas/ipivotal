@@ -97,7 +97,9 @@
     self.error = [request error];
     NSError *theError;    
     NSString *writeableFile = [self pathForFile:cacheFilename];
+#ifdef LOG_NETWORK    
     NSLog(@"Iterations: '%@'", [request responseString]);
+#endif    
     [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
     [self parseIterations];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    

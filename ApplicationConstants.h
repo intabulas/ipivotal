@@ -1,5 +1,6 @@
 
 //#define CACHED_CONTENT
+//#define LOG_NETWORK
 
 #define kTagStory              @"story"
 #define kTagId                 @"id"
