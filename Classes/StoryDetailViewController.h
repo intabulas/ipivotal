@@ -2,10 +2,11 @@
 #import <UIKit/UIKit.h>
 
 @class PivotalStory, PivotalProject;
-@interface StoryDetailViewController : UITableViewController {
+@interface StoryDetailViewController : UIViewController <UITableViewDelegate, UIActionSheetDelegate> {
     PivotalStory *story;
     PivotalProject *project;
     @private    
+    IBOutlet UITableView *storyTableView;
     IBOutlet UIView *tableHeaderView;
     IBOutlet UITableViewCell *commentsCell;
     IBOutlet UITableViewCell *ownerCell;
@@ -25,9 +26,13 @@
 }
 
 - (id)initWithStory:(PivotalStory *)theStory;
+- (IBAction)showActions:(id)sender;
 - (id)initWithStory:(PivotalStory *)theStory andProject:(PivotalProject *)theProject;
+- (void)toggleStoryState:(NSString *)newState ;
 
 @property (nonatomic,retain) PivotalStory* story;
 @property (nonatomic,retain) PivotalProject *project;
+@property (nonatomic,retain) IBOutlet UITableView *storyTableView;
+
 
 @end

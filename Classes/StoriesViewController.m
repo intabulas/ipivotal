@@ -47,6 +47,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationItem.title = [storyType capitalizedString];
+    [self refresh:self];
 }
 
 
