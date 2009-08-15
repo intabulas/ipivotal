@@ -21,6 +21,7 @@
     IBOutlet UIBarButtonItem *rejectButton;       
     IBOutlet UIBarButtonItem *restartButton;           
     IBOutlet UIToolbar *toolbar;
+    IBOutlet UIImageView *commentsIcon;
 }
 
 - (id)initWithStory:(PivotalStory *)theStory;

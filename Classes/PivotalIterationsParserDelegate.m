@@ -2,6 +2,8 @@
 
 #import "PivotalIterationsParserDelegate.h"
 #import "PivotalIteration.h"
+#import "PivotalNote.h"
+#import "PivotalStory.h"
 
 
 @implementation PivotalIterationsParserDelegate
@@ -11,6 +13,7 @@
 	dateFormatter = [[NSDateFormatter alloc] init];
 	dateFormatter.dateFormat = kDateFormatUTC;
     handlingStory = NO;
+    handlingNotes = NO;
 }
 
 
@@ -20,6 +23,10 @@
     } else if ([elementName isEqualToString:kTagStory]) {
         currentStory = [[PivotalStory alloc] init];
         handlingStory= YES;
+    } else if ([elementName isEqualToString:kTagNote]) {
+        currentNote = [[PivotalNote alloc] init];
+        handlingNotes = YES;
+        
 	}
 }
 
@@ -33,9 +40,16 @@
         [currentStory release];
         currentStory = nil;        
         handlingStory = NO;
+    } else if ([elementName isEqualToString:kTagNote]) {
+        [currentStory.comments addObject:currentNote];
+        [currentNote release];
+        currentNote = nil;        
+        handlingNotes = NO;                
 	} else if ([elementName isEqualToString:kTagId]) {      
         if ( handlingStory ) { 
             currentStory.storyId = [currentElementValue integerValue];
+        } else if ( handlingNotes ) { 
+                currentNote.noteId = [currentElementValue integerValue];            
         } else {
            currentIteration.iterationId = [currentElementValue integerValue];
         }
@@ -66,8 +80,13 @@
         currentStory.createdAt = [dateFormatter dateFromString:currentElementValue];
 	} else if ([elementName isEqualToString:kTagAcceptedAt]) {  
         currentStory.acceptedAt = [dateFormatter dateFromString:currentElementValue];        
+    } else if ([elementName isEqualToString:kTagText]) {          
+        currentNote.text = currentElementValue;
+	} else if ([elementName isEqualToString:kTagAuthor]) {          
+        currentNote.author = currentElementValue;
+	} else if ([elementName isEqualToString:kTagNotedAt]) {          
+        currentNote.createdAt =  [dateFormatter dateFromString:currentElementValue];         
 	} 
-    
 	[currentElementValue release];
 	currentElementValue = nil;
 }

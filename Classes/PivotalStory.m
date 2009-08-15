@@ -3,7 +3,7 @@
 
 @implementation PivotalStory
 
-@synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt;
+@synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt, comments;
 
 #pragma mark -
 #pragma mark Cleanup Methods
@@ -14,9 +14,12 @@
     estimate = 0;
     name = kTextStoryNeedsName;
     description = @"please give this story a description";
+    comments = [[NSMutableArray alloc] init];
     return self;
 }
+
 - (void)dealloc {
+    [comments release];
     [storyType release];
     [url release];
     [currentState release];

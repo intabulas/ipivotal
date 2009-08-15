@@ -13,6 +13,7 @@
     NSString *owner;
     NSDate  *createdAt;
     NSDate  *acceptedAt;
+    NSMutableArray *comments;
 }
 
 @property (nonatomic, readwrite) NSInteger storyId;
@@ -26,7 +27,7 @@
 @property (nonatomic, retain) NSString *owner;
 @property (nonatomic, retain) NSDate  *createdAt;
 @property (nonatomic, retain) NSDate  *acceptedAt;
-
+@property (nonatomic, retain) NSMutableArray  *comments;
 - (id)init;
 
 - (NSString *)to_xml;

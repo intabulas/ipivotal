@@ -24,6 +24,9 @@
 #define kTagAuthor             @"author"
 #define kTagWhen               @"when"
 #define kTagActivity           @"activity"
+#define kTagNote               @"note"
+#define kTagText               @"text"
+#define kTagNotedAt            @"noted_at"
 
 #define kDefaultsApiToken @"apiToken"
 
@@ -110,6 +113,8 @@
 #define kIconTypeRelease         @"release.png"
 #define kIconTypeChore           @"chore.png"
 #define kIconTypeProject         @"lightbulb.png"
+
+#define kIconComments            @"comment.png"
 
 #define kIconEstimateOnePoint    @"estimate_1pt.gif"
 #define kIconEstimateTwoPoints   @"estimate_2pt.gif"

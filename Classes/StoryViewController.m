@@ -92,6 +92,11 @@
         
     }    
     
+    if ([self.story.comments count] > 0 ) {
+        commentsIcon.image = [UIImage imageNamed:kIconComments];
+    }
+    
+    
     currentState.text = self.story.currentState;
     
     requestedBy.text = self.story.requestedBy;

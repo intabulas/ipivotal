@@ -1,5 +1,6 @@
 #import "PivotalStoriesParserDelegate.h"
 #import "PivotalStory.h"
+#import "PivotalNote.h"
 
 
 @implementation PivotalStoriesParserDelegate
@@ -8,13 +9,17 @@
 	[super parserDidStartDocument:parser];
 	dateFormatter = [[NSDateFormatter alloc] init];
 	dateFormatter.dateFormat = kDateFormatUTC;
+    handlingNotes = NO;
 }
 
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
     if ([elementName isEqualToString:kTagStory]) {
         currentStory = [[PivotalStory alloc] init];
-	}
+	} else if ([elementName isEqualToString:kTagNote]) {
+        currentNote = [[PivotalNote alloc] init];
+        handlingNotes = YES;
+	}    
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
@@ -22,8 +27,17 @@
         [resources addObject:currentStory];
         [currentStory release];
         currentStory = nil;        
-	} else if ([elementName isEqualToString:kTagId]) {      
-        currentStory.storyId = [currentElementValue integerValue];
+    } else if ([elementName isEqualToString:kTagNote]) {
+        [currentStory.comments addObject:currentNote];
+        [currentNote release];
+        currentNote = nil;        
+        handlingNotes = NO;        
+	} else if ([elementName isEqualToString:kTagId]) {             
+        if ( handlingNotes ) { 
+            currentNote.noteId = [currentElementValue integerValue];
+        } else {
+            currentStory.storyId = [currentElementValue integerValue];
+        }                
 	} else if ([elementName isEqualToString:kTagStoryType]) {              
         currentStory.storyType = currentElementValue;
 	} else if ([elementName isEqualToString:kTagUrl]) {              
@@ -44,6 +58,12 @@
         currentStory.createdAt = [dateFormatter dateFromString:currentElementValue];
 	} else if ([elementName isEqualToString:kTagAcceptedAt]) {  
         currentStory.acceptedAt = [dateFormatter dateFromString:currentElementValue];        
+	} else if ([elementName isEqualToString:kTagText]) {          
+        currentNote.text = currentElementValue;
+	} else if ([elementName isEqualToString:kTagAuthor]) {          
+        currentNote.author = currentElementValue;
+	} else if ([elementName isEqualToString:kTagNotedAt]) {          
+        currentNote.createdAt =  [dateFormatter dateFromString:currentElementValue];       
 	} 
     
 	[currentElementValue release];
