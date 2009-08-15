@@ -54,11 +54,11 @@
 
 - (void)loadRecords {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
-    if ([self hasCachedDocument]) {
-        self.parseActivities;        
-    } else {
+//    if ([self hasCachedDocument]) {
+//        self.parseActivities;        
+//    } else {
         self.fetchActivities;
-    }
+//    }
     [pool release];    
 }
 

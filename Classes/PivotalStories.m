@@ -51,11 +51,11 @@
 
 - (void)loadRecords {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
-    if ([self hasCachedDocument]) {
-        self.parseStories;        
-    } else {
+//    if ([self hasCachedDocument]) {
+//        self.parseStories;        
+//    } else {
         self.fetchStories;
-    }
+//    }
     [pool release];    
 }
 
@@ -93,6 +93,7 @@
     self.error = [request error];
     NSError *theError;    
     NSString *writeableFile = [self pathForFile:cacheFilename];
+    NSLog(@"Stories: '%@'", [request responseString]);
     [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
     [self parseStories];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

@@ -9,9 +9,11 @@
 @end
 
 
+
 @implementation iPivotalAppDelegate
 
 @synthesize internetConnectionStatus, remoteHostStatus, localWiFiConnectionStatus;
+
 
 - (void)reachabilityChanged:(NSNotification *)note {
     

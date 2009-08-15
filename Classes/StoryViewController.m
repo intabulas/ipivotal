@@ -122,6 +122,9 @@
     } else {    
         newstory = [NSString stringWithFormat:kXmlStoryStateTransitiionNoEstimate, newState];
     }
+    
+    NSLog(@"Toggle Story State XML: %@", newstory);
+    
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
@@ -131,27 +134,32 @@
 }
 
 - (IBAction)startStory:(id)sender {
+    NSLog(@"toggling story state to: STARTED");
     [self toggleStoryState: kStateStarted ];
     [self.navigationController popViewControllerAnimated:YES];        
 }
 
 
 - (IBAction)finishStory:(id)sender {
+    NSLog(@"toggling story state to: FINISHED");
     [self toggleStoryState: kStateFinished ];
     [self.navigationController popViewControllerAnimated:YES];        
 }
 
 - (IBAction)deliverStory:(id)sender {
+    NSLog(@"toggling story state to: DELIVERED");    
     [self toggleStoryState: kStateDelivered ];
     [self.navigationController popViewControllerAnimated:YES];        
 }
 
 - (IBAction)acceptStory:(id)sender {
+    NSLog(@"toggling story state to: ACCEPTED");    
     [self toggleStoryState: kStateAccepted];
     [self.navigationController popViewControllerAnimated:YES];        
 }
 
 - (IBAction)rejectStory:(id)sender {
+    NSLog(@"toggling story state to: REJECTED");
     [self toggleStoryState: kStateRejected];
     [self.navigationController popViewControllerAnimated:YES];        
 }
