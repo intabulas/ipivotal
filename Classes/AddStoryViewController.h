@@ -2,7 +2,7 @@
 #import "PivotalProject.h"
 #import "PivotalStory.h"
 
-@interface AddStoryViewController : UIViewController <UITableViewDelegate> {
+@interface AddStoryViewController : UIViewController <UITableViewDelegate, UIAlertViewDelegate> {
     PivotalProject *project;
     PivotalStory* story;
     NSMutableDictionary *editingDictionary;
