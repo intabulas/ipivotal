@@ -1,6 +1,7 @@
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK
+//#define LOG_NETWORK
+//#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory              @"story"
 #define kTagId                 @"id"
@@ -60,13 +61,13 @@
 #define kStateRejected       @"rejected"
 
 #define kPivotalTrackerHost        @"www.apple.com"
-#define kUrlProjectList            @"https://www.pivotaltracker.com/services/v2/projects"
-#define kUrlIterationList          @"https://www.pivotaltracker.com/services/v2/projects/%d/iterations"    
-#define kUrlIterationTypeList      @"https://www.pivotaltracker.com/services/v2/projects/%d/iterations/%@"
-#define kUrlActivityStream         @"https://www.pivotaltracker.com/services/v2/activities"
-#define kUrlProjectActivityStream  @"https://www.pivotaltracker.com/services/v2/projects/%d/activities"
-#define kUrlIceboxStories          @"https://www.pivotaltracker.com/services/v2/projects/%d/stories?filter=current_state:unscheduled"
-#define kUrlAddStory               @"https://www.pivotaltracker.com/services/v2/projects/%d/stories"
+#define kUrlProjectList            @"http://www.pivotaltracker.com/services/v2/projects"
+#define kUrlIterationList          @"http://www.pivotaltracker.com/services/v2/projects/%d/iterations"    
+#define kUrlIterationTypeList      @"http://www.pivotaltracker.com/services/v2/projects/%d/iterations/%@"
+#define kUrlActivityStream         @"http://www.pivotaltracker.com/services/v2/activities"
+#define kUrlProjectActivityStream  @"http://www.pivotaltracker.com/services/v2/projects/%d/activities"
+#define kUrlIceboxStories          @"http://www.pivotaltracker.com/services/v2/projects/%d/stories?filter=current_state:unscheduled"
+#define kUrlAddStory               @"http://www.pivotaltracker.com/services/v2/projects/%d/stories"
 #define kUrlUpdateStory            @"http://www.pivotaltracker.com/services/v2/projects/%d/stories/%d"
 
 #define kResourceStatusKeyPath @"status"

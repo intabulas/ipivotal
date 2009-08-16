@@ -55,6 +55,10 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults stringForKey:kDefaultsApiToken];
     ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:theURL] autorelease];
+#ifdef NO_COMPRESS_RESPONSE    
+    [request setAllowCompressedResponse:NO];
+    [request setShouldCompressRequestBody:NO];
+#endif    
     [request addRequestHeader:kTrackerTokenHeader value:token];
     return request;
 }
