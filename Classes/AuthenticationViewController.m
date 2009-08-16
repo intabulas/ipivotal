@@ -1,4 +1,5 @@
 #import "AuthenticationViewController.h"
+#import "ASIHTTPRequest.h"
 
 @implementation AuthenticationViewController
 
@@ -27,6 +28,9 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     tokenField.text = [defaults valueForKey:kDefaultsApiToken];
     
+    [tableFooterView setBackgroundColor:[UIColor clearColor]];
+    self.tableView.tableFooterView = tableFooterView;
+    
 }
 
 
@@ -46,6 +50,71 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
 	[theTextField resignFirstResponder];
 	return YES;
+}
+
+
+#pragma mark  UIAlertViewDelegate Stuff
+
+-(IBAction)lookupToken:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Lookup API Token" 
+                          message:@"Lookup Pivotal Tracker API Token"
+                          delegate:self
+                          cancelButtonTitle:@"Cancel" 
+                          otherButtonTitles:@"Lookup", nil];
+    
+    [alert addTextFieldWithValue:@"" label:@"Username"];
+    [alert addTextFieldWithValue:@"" label:@"Password"];    
+    
+    usernameField = [alert textFieldAtIndex:0];
+    usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    usernameField.keyboardType = UIKeyboardTypeAlphabet;
+    usernameField.keyboardAppearance = UIKeyboardAppearanceAlert;
+    usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
+
+    passwordField = [alert textFieldAtIndex:1];
+    passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    passwordField.keyboardType = UIKeyboardTypeAlphabet;
+    passwordField.keyboardAppearance = UIKeyboardAppearanceAlert;
+    passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
+    passwordField.secureTextEntry = YES;
+    
+    [alert show];
+    
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    [alertView release];    
+//    [self retrieveToken:self];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+
+    NSString *username = [usernameField text];
+    NSString *password = [passwordField text];    
+    
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
+    
+    NSString *tokenAddress = [NSString stringWithFormat:kUrlRetrieveToken, username, password];
+
+    
+    ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:tokenAddress]] autorelease];
+    [request setUsername:username];
+    [request setPassword:password]; 
+    [request setAllowCompressedResponse:NO];
+    [request setShouldCompressRequestBody:NO];    
+    NSLog(@"URL: %@", [request url]);
+    [request start];
+    NSLog(@"Result :'%@' '%d'", [request error], [request responseStatusCode]);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+    [pool release];        
 }
 
 #pragma mark User Defaults methods

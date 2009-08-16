@@ -61,6 +61,7 @@
 #define kStateRejected       @"rejected"
 
 #define kPivotalTrackerHost        @"www.apple.com"
+#define kUrlRetrieveToken          @"https://www.pivotaltracker.com/services/tokens/active"
 #define kUrlProjectList            @"http://www.pivotaltracker.com/services/v2/projects"
 #define kUrlIterationList          @"http://www.pivotaltracker.com/services/v2/projects/%d/iterations"    
 #define kUrlIterationTypeList      @"http://www.pivotaltracker.com/services/v2/projects/%d/iterations/%@"
