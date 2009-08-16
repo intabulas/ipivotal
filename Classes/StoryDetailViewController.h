@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 
 @class PivotalStory, PivotalProject;
-@interface StoryDetailViewController : UIViewController <UITableViewDelegate, UIActionSheetDelegate> {
+@interface StoryDetailViewController : UIViewController <UITableViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     PivotalStory *story;
     PivotalProject *project;
     @private    
@@ -18,6 +18,7 @@
     IBOutlet UILabel *storyRequestor;
     IBOutlet UITextView *storyDescription;    
     IBOutlet UILabel *storyName;
+    IBOutlet UILabel *commentsLabel;
 
     IBOutlet UILabel *estimate;
     IBOutlet UIImageView *typeIcon;

@@ -102,7 +102,6 @@
         NSLog(@"Unknown Action '%@'", actionLabel);
     }
     
-    [self.navigationController popViewControllerAnimated:YES];        
     
     
 }
@@ -139,6 +138,8 @@
         
     }    
     
+    
+    [commentsLabel setText:[NSString stringWithFormat:@"%d Comments", [self.story.comments count]]];
     
     
     self.storyTableView.tableHeaderView = tableHeaderView;
@@ -302,10 +303,18 @@
     [request start];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kLabelAddStory message:@"Story has been placed in the Icebox. \n\nIt may take a minute or two for it to show up in the list (api lag)" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+    [alert show];
+    [alert release];        
+    
+    
 }
 
 
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated:YES];            
+}
 
 @end
 
