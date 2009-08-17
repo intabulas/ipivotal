@@ -26,10 +26,7 @@
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
-#ifdef CACHED_CONTENT
-    self.projectTableView.tableHeaderView = updatedHeaderView;
-#endif
-    
+   
     projects = [[PivotalProjects alloc] init];
     [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
     

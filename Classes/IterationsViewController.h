@@ -8,8 +8,6 @@
     PivotalIterations *iterations;
     IBOutlet UITableView *iterationTableView;    
     IBOutlet UIBarButtonItem *doneStoriesButton;
-	IBOutlet UIView *updatedHeaderView;
-	IBOutlet UILabel *lastUpdatedLabel;     
     NSInteger lastIterationType;
 }
 @property (nonatomic,retain) IBOutlet UITableView *iterationTableView;

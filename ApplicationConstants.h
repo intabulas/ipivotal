@@ -32,8 +32,6 @@
 
 #define kDefaultsApiToken @"apiToken"
 
-#define kFormatLastUpdated  @"last updated %@"
-
 #define kTrackerTokenHeader @"X-TrackerToken"
 
 #define kTypeDone       @"done"

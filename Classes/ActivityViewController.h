@@ -7,8 +7,6 @@
     PivotalProject *project;
 	IBOutlet UITableViewCell *loadingActivitiesCell;
 	IBOutlet UITableViewCell *noActivitiesCell;
-	IBOutlet UIView *updatedHeaderView;
-	IBOutlet UILabel *lastUpdatedLabel;    
 }
 
 

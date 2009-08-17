@@ -3,17 +3,15 @@
 #import "PivotalProject.h"
 
 @interface PivotalActivities ()
-- (void)parseActivities;
 - (void)fetchActivities;
 @end
 
 @implementation PivotalActivities
 
-@synthesize activities, cacheFilename, url, lastUpdated;	
+@synthesize activities, url;	
 
 - (id)init {
 	[super init];
-    self.cacheFilename = [NSString stringWithFormat:kCacheActivityStream];
 	self.url = [NSURL URLWithString:kUrlActivityStream];
 	return self;
 }
@@ -22,7 +20,6 @@
      [self init];
      if ( theProject ) {
        self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlProjectActivityStream, theProject.projectId ]];
-       self.cacheFilename = [NSString stringWithFormat:kCacheProjectActivityStream, theProject.projectId];
      }
      return self;
 }
@@ -54,11 +51,7 @@
 
 - (void)loadRecords {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
-//    if ([self hasCachedDocument]) {
-//        self.parseActivities;        
-//    } else {
         self.fetchActivities;
-//    }
     [pool release];    
 }
 
@@ -70,23 +63,6 @@
 	[self performSelectorInBackground:@selector(fetchActivities) withObject:nil];    
 }
 
-- (void)parseActivities {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
-    NSData *feed = [NSData dataWithContentsOfFile:[self pathForFile:cacheFilename]];
-    self.lastUpdated = [self modificationTimeForFile:cacheFilename];
-	PivotalActivityParserDelegate *parserDelegate = [[PivotalActivityParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedActivities:)];
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:feed];
-	[parser setDelegate:parserDelegate];
-	[parser setShouldProcessNamespaces:NO];
-	[parser setShouldReportNamespacePrefixes:NO];
-	[parser setShouldResolveExternalEntities:NO];
-	[parser parse];
-	[parser release];
-	[parserDelegate release];
-	[pool release];    
-}
-
 - (void)fetchActivities {
     
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -95,29 +71,27 @@
 	[request start];
     self.error = [request error];
     NSError *theError;    
-    NSString *writeableFile = [self pathForFile:cacheFilename];
 #ifdef LOG_NETWORK    
     NSLog(@"Activities: '%@'", [request responseString]);
 #endif    
-    [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
-    [self parseActivities];
+
+    PivotalActivityParserDelegate *parserDelegate = [[PivotalActivityParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedActivities:)];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+	[parser setDelegate:parserDelegate];
+	[parser setShouldProcessNamespaces:NO];
+	[parser setShouldReportNamespacePrefixes:NO];
+	[parser setShouldResolveExternalEntities:NO];
+	[parser parse];
+	[parser release];
+	[parserDelegate release];
+    
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
 	[pool release];    
 }
 
 
 
-#pragma mark -
-#pragma mark Cached File Methods
-
-- (BOOL)hasCachedDocument {
-#ifdef CACHED_CONTENT	
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    return [fileManager fileExistsAtPath:[self pathForFile:cacheFilename]];
-#else
-	return NO;
-#endif
-}
 
 
 #pragma mark === Cleanup ===
@@ -125,8 +99,6 @@
 - (void)dealloc {
 	[activities release];
     [url release];
-    [cacheFilename release];
-    [lastUpdated release];
     [super dealloc];
 }
 

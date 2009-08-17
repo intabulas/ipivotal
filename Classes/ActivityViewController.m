@@ -19,8 +19,6 @@
 
 - (void)dealloc {
 	[loadingActivitiesCell release];
-    [updatedHeaderView release];
-    [lastUpdatedLabel release];
 	[noActivitiesCell release];
 	[activities removeObserver:self forKeyPath:kResourceStatusKeyPath];
 	[activities release];
@@ -31,10 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    #ifdef CACHED_CONTENT
-	self.tableView.tableHeaderView = updatedHeaderView;
-    #endif
-
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
     activities = [[PivotalActivities alloc] initWithProject:project];
@@ -55,7 +49,6 @@
         PivotalActivities *theActivities = (PivotalActivities *)object;
         if ( theActivities.isLoading) {
         } else {         
-            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [activities.lastUpdated prettyDate]];
      		[self.tableView reloadData];
         }        
 	}    

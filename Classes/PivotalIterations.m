@@ -3,7 +3,6 @@
 #import "PivotalIterationsParserDelegate.h"
 
 @interface PivotalIterations ()
-- (void)parseIterations;
 - (void)fetchIterations;
 @end
 

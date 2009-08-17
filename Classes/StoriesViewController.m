@@ -31,10 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-#ifdef CACHED_CONTENT    
-    self.storiesTableView.tableHeaderView = updatedHeaderView;
-#endif
-	
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     
     stories = [[PivotalStories alloc] initWithProject:project andType:storyType];
@@ -60,7 +56,6 @@
         PivotalStories *theStories = (PivotalStories *)object;
         if ( theStories.isLoading) {
         } else {         
-            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [stories.lastUpdated prettyDate]];                        
      		[self.storiesTableView reloadData];
         }        
 	}    

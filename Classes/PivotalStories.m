@@ -2,18 +2,16 @@
 #import "PivotalStoriesParserDelegate.h"
 
 @interface PivotalStories ()
-- (void)parseStories;
 - (void)fetchStories;
 @end
 
 @implementation PivotalStories
 
-@synthesize url, stories, cacheFilename, lastUpdated, storyType;
+@synthesize url, stories, storyType;
 
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
     [super init];
     project = theProject;
-    self.cacheFilename = [NSString stringWithFormat:kCacheFileStories, theProject.name, theType];
     self.storyType = theType;
     NSString *storiesURL ;
     if ( [theType hasPrefix:kTypeIcebox] ) {
@@ -51,11 +49,7 @@
 
 - (void)loadRecords {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
-//    if ([self hasCachedDocument]) {
-//        self.parseStories;        
-//    } else {
-        self.fetchStories;
-//    }
+     self.fetchStories;
     [pool release];    
 }
 
@@ -67,22 +61,6 @@
 	[self performSelectorInBackground:@selector(fetchStories) withObject:nil];    
 }
 
-- (void)parseStories {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
-    NSData *feed = [NSData dataWithContentsOfFile:[self pathForFile:cacheFilename]];
-    self.lastUpdated = [self modificationTimeForFile:cacheFilename];
-	PivotalStoriesParserDelegate *parserDelegate = [[PivotalStoriesParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedStories:)];
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:feed];
-	[parser setDelegate:parserDelegate];
-	[parser setShouldProcessNamespaces:NO];
-	[parser setShouldReportNamespacePrefixes:NO];
-	[parser setShouldResolveExternalEntities:NO];
-	[parser parse];
-	[parser release];
-	[parserDelegate release];
-	[pool release];    
-}
 
 - (void)fetchStories {
     
@@ -92,12 +70,21 @@
 	[request start];
     self.error = [request error];
     NSError *theError;    
-    NSString *writeableFile = [self pathForFile:cacheFilename];
+
 #ifdef LOG_NETWORK
     NSLog(@"Stories: '%@'", [request responseString]);
 #endif    
-    [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
-    [self parseStories];
+
+	PivotalStoriesParserDelegate *parserDelegate = [[PivotalStoriesParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedStories:)];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+	[parser setDelegate:parserDelegate];
+	[parser setShouldProcessNamespaces:NO];
+	[parser setShouldReportNamespacePrefixes:NO];
+	[parser setShouldResolveExternalEntities:NO];
+	[parser parse];
+	[parser release];
+	[parserDelegate release];
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	[pool release];    
 }
@@ -107,26 +94,12 @@
 
 
 
-#pragma mark -
-#pragma mark Cached File Methods
-
-- (BOOL)hasCachedDocument {
-#ifdef CACHED_CONTENT	
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    return [fileManager fileExistsAtPath:[self pathForFile:cacheFilename]];
-#else
-	return NO;
-#endif
-}
-
 #pragma mark === Cleanup ===
 
 - (void)dealloc {
     [url release];
     [stories release];
     [project release];
-    [cacheFilename release];
-    [lastUpdated release];
     [super dealloc];
 }
 
