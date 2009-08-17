@@ -29,7 +29,7 @@
     tokenField.text = [defaults valueForKey:kDefaultsApiToken];
     
     [tableFooterView setBackgroundColor:[UIColor clearColor]];
-    self.tableView.tableFooterView = tableFooterView;
+    //self.tableView.tableFooterView = tableFooterView;
     
 }
 
@@ -87,35 +87,40 @@
     
 }
 
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    [alertView release];    
-//    [self retrieveToken:self];
+    NSString *username = [NSString stringWithString:[usernameField text]];
+    NSString *password = [NSString stringWithString:[passwordField text]];    
+
+    [alertView release];    
 }
 
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-
-    NSString *username = [usernameField text];
-    NSString *password = [passwordField text];    
+-(IBAction)retrieveToken:(id)sender; {
     
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     
-    NSString *tokenAddress = [NSString stringWithFormat:kUrlRetrieveToken, username, password];
-
     
-    ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:tokenAddress]] autorelease];
-    [request setUsername:username];
-    [request setPassword:password]; 
-    [request setAllowCompressedResponse:NO];
-    [request setShouldCompressRequestBody:NO];    
-    NSLog(@"URL: %@", [request url]);
+    
+    ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kUrlRetrieveToken]] autorelease];
+    [request setUsername:@"mlussier"];    
+    [request setPassword:@"kjgbu45n"]; 
+    
+    NSLog(@"URL: %@  USERNAME: %@   PASSSORD:  %@", [request url], [request username], [request password]);
     [request start];
+    [request retryWithAuthentication];
     NSLog(@"Result :'%@' '%d'", [request error], [request responseStatusCode]);
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];        
+    
 }
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+  [self retrieveToken:self];    
+    
+}
+
 
 #pragma mark User Defaults methods
 
@@ -139,6 +144,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -4,6 +4,7 @@
 #import "PivotalProject.h"
 #import "PivotalResource.h"
 #import "ASIHTTPRequest.h"
+#import "CommentsController.h"
 
 @implementation StoryDetailViewController
 @synthesize story, project, storyTableView;
@@ -236,6 +237,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ( ( indexPath.section == 1 )  && (indexPath.row == 0)){ 
+		CommentsController *controller = [[CommentsController alloc] initWithComments:self.story.comments];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
+        
+    }
     // Navigation logic may go here. Create and push another view controller.
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];

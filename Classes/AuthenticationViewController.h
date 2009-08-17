@@ -17,7 +17,7 @@
 - (IBAction)saveAuthenticationCredentials:(id)sender;
 - (id)initWithTarget:(id)theTarget andSelector:(SEL)theSelector;
 
--(void)retrieveToken:(id)sender;
+-(IBAction)retrieveToken:(id)sender;
 
 -(IBAction)lookupToken:(id)sender;
 
