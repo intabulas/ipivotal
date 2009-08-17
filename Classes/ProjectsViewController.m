@@ -109,7 +109,7 @@
 	
     ProjectLabelCell *cell = (ProjectLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ProjectLabelCell"];
     if (cell == nil) {
-        cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ProjectLabelCell"] autorelease];
     }
     
     
