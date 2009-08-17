@@ -1,6 +1,6 @@
 
 //#define CACHED_CONTENT
-//#define LOG_NETWORK
+#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory              @"story"
@@ -69,6 +69,8 @@
 #define kUrlAddStory               @"http://www.pivotaltracker.com/services/v2/projects/%d/stories"
 #define kUrlUpdateStory            @"http://www.pivotaltracker.com/services/v2/projects/%d/stories/%d"
 
+#define kUrlAddComment             @"http://www.pivotaltracker.com/services/v2/projects/%d/stories/%d/notes"
+
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"
 
@@ -78,6 +80,7 @@
 #define kXmlStoryStateTransitiionNoEstimate  @"<story><current_state>%@</current_state></story>"
 #define kXmlAddStoryFeature                  @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>"
 #define kXmlAddStory                         @"<story><story_type>%@</story_type><name>%@</name></story>"
+#define kXmlAddComment                       @"<note><text>%@</text></note>"
 
 #define kEmptyString     @""
 

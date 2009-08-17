@@ -3,11 +3,12 @@
 
 @implementation PivotalResource
 
-@synthesize status, error;
+@synthesize status, error, savingStatus;
 
 - (id)init {
 	[super init];
 	self.status = PivotalResourceStatusNotLoaded;
+    self.savingStatus = PivotalResourceStatusNotSaved;
     return self;
 }
 
@@ -17,6 +18,14 @@
 
 - (BOOL)isLoaded {
 	return status == PivotalResourceStatusLoaded;
+}
+
+- (BOOL)isSaving {
+	return savingStatus == PivotalResourceStatusSaving;
+}
+
+- (BOOL)isSaved {
+	return savingStatus ==PivotalResourceStatusSaved;
 }
 
 

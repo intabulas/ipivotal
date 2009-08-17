@@ -9,7 +9,6 @@
 	IBOutlet UITableViewCell *noActivitiesCell;
 }
 
-
 - (id)init;
 - (id)initWithProject:(PivotalProject *)theProject;
 - (IBAction)refresh:(id)sender;

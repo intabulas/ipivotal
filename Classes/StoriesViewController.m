@@ -1,5 +1,4 @@
 #import "StoriesViewController.h"
-#import "StoryViewController.h"
 #import "StoryDetailViewController.h"
 #import "AddStoryViewController.h"
 #import "IterationStoryCell.h"
@@ -120,16 +119,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-//    StoryViewController *controller = [[StoryViewController alloc] initWithStory:[stories.stories objectAtIndex:indexPath.row] andProject:project];
-//    [self.navigationController pushViewController:controller animated:YES];
-//    [controller release];
-
     StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStory:[stories.stories objectAtIndex:indexPath.row] andProject:project];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
-    
-    
 }
 
 
@@ -140,8 +132,7 @@
 }
 
 
-- (IBAction)refresh:(id)sender {
-    
+- (IBAction)refresh:(id)sender {    
     [stories reloadStories];
     [self.storiesTableView reloadData];  
 }

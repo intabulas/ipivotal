@@ -17,7 +17,7 @@
     if ([elementName isEqualToString:kTagStory]) {
         currentStory = [[PivotalStory alloc] init];
 	} else if ([elementName isEqualToString:kTagNote]) {
-        currentNote = [[PivotalNote alloc] init];
+        currentNote = [[PivotalNote alloc] initWithProject:nil andStory:nil];
         handlingNotes = YES;
 	}    
 }

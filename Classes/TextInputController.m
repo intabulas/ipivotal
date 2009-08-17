@@ -27,13 +27,6 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-//// When the user presses return, take focus away from the text field so that the keyboard is dismissed.
-////    if (theTextField == textField) {
-//        [textField resignFirstResponder];
-////        // Invoke the method that changes the greeting.
-////        [self updateString];
-//   // }
-//    return YES;
 }
 
 - (void)viewDidLoad {

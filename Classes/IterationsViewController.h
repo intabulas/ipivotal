@@ -10,6 +10,7 @@
     IBOutlet UIBarButtonItem *doneStoriesButton;
     NSInteger lastIterationType;
 }
+
 @property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
 @property (nonatomic,retain) PivotalProject* project;
 

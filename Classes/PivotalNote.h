@@ -1,6 +1,11 @@
 #import <Foundation/Foundation.h>
+#import "PivotalResource.h"
 
-@interface PivotalNote : NSObject {
+@class PivotalProject, PivotalStory;
+@interface PivotalNote : PivotalResource {
+    PivotalProject *project;
+    PivotalStory *story;    
+    @private
     NSInteger noteId;
     NSString *text;
     NSString *author;
@@ -12,6 +17,9 @@
 @property (nonatomic, retain) NSString *author;
 @property (nonatomic, retain) NSDate *createdAt;
 
-- (id)init;
+-(id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory;
+- (void)saveNote;
+- (NSString *)to_xml;
+
 
 @end

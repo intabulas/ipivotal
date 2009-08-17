@@ -24,7 +24,7 @@
         currentStory = [[PivotalStory alloc] init];
         handlingStory= YES;
     } else if ([elementName isEqualToString:kTagNote]) {
-        currentNote = [[PivotalNote alloc] init];
+        currentNote = [[PivotalNote alloc] initWithProject:nil andStory:nil];
         handlingNotes = YES;
         
 	}
@@ -46,7 +46,7 @@
         currentNote = nil;        
         handlingNotes = NO;                
 	} else if ([elementName isEqualToString:kTagId]) {      
-        if ( handlingStory ) { 
+        if ( handlingStory && !handlingNotes ) { 
             currentStory.storyId = [currentElementValue integerValue];
         } else if ( handlingNotes ) { 
                 currentNote.noteId = [currentElementValue integerValue];            

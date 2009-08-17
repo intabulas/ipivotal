@@ -102,19 +102,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     iPivotalAppDelegate *appdelegate = (iPivotalAppDelegate *)[[UIApplication sharedApplication]delegate];
-    if ( [appdelegate hasNoInternetConnectivity]) return noProjectsCell;
 
-    
+    if ( [appdelegate hasNoInternetConnectivity]) return noProjectsCell;
 	if (!projects.isLoaded ) return loadingProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
 	
-    static NSString *CellIdentifier = kIdentifierImageLabelCell;
-    
-//    ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-//    }
-
     ProjectLabelCell *cell = (ProjectLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ProjectLabelCell"];
     if (cell == nil) {
         cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
@@ -123,15 +115,11 @@
     
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
     [cell.cellLabel setText:pp.name];
-//    cell.image = [UIImage imageNamed:kIconTypeProject];
     	
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	
-    return cell;    
-    
-    
-    
+    return cell;       
 }
 
 
@@ -139,8 +127,7 @@
     PivotalProject *project = [projects.projects objectAtIndex:indexPath.row];
 	IterationsViewController *controller = [[IterationsViewController alloc] initWithProject:project];
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
-    
+	[controller release];    
 }
 
 
