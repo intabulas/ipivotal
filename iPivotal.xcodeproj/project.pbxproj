@@ -34,7 +34,6 @@
 		8C2232311038DA5C00A75012 /* CommentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2232301038DA5C00A75012 /* CommentsController.xib */; };
 		8C2232CA1038DED600A75012 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2232C91038DED600A75012 /* CommentCell.m */; };
 		8C22334E1038E12F00A75012 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C22334D1038E12F00A75012 /* CommentCell.xib */; };
-		8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */; };
 		8C38D14210046B29003BF739 /* ProjectLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C38D14110046B29003BF739 /* ProjectLabelCell.m */; };
 		8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */; };
 		8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
@@ -141,7 +140,6 @@
 		8C2232C81038DED600A75012 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		8C2232C91038DED600A75012 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		8C22334D1038E12F00A75012 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
-		8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryViewController.xib; sourceTree = "<group>"; };
 		8C38D14010046B29003BF739 /* ProjectLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectLabelCell.h; sourceTree = "<group>"; };
 		8C38D14110046B29003BF739 /* ProjectLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectLabelCell.m; sourceTree = "<group>"; };
 		8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "77-ekg.png"; sourceTree = "<group>"; };
@@ -488,7 +486,6 @@
 				8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */,
 				8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */,
 				8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */,
-				8C2A7DBF0FD08012005E00FB /* StoryViewController.xib */,
 				8C70E2290FE3216E0074DE16 /* TextInputController.xib */,
 				8C222B2C103744E500A75012 /* StoryDetailViewController.xib */,
 				8C2232301038DA5C00A75012 /* CommentsController.xib */,
@@ -577,7 +574,6 @@
 				8CA09C080FD04BEA00846DBA /* estimate_unestimated.gif in Resources */,
 				8CA09C0A0FD04BF200846DBA /* bug.png in Resources */,
 				8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */,
-				8C2A7DC00FD08012005E00FB /* StoryViewController.xib in Resources */,
 				8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */,
 				8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */,
 				8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */,
