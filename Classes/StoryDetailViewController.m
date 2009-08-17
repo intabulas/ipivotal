@@ -214,7 +214,16 @@
     if ( section == 0 && row == 2 ) return ownerCell;        
     if ( section == 0 && row == 3 ) return descriptionCell;
     
-    if ( section == 1 && row == 0 ) return commentsCell;        
+    if ( section == 1 && row == 0 ) { 
+        if ( [self.story.comments count] == 0 ) {
+            [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
+            [commentsCell setUserInteractionEnabled:NO];
+        } else {
+            [commentsCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+            [commentsCell setUserInteractionEnabled:YES];                
+        }
+        return commentsCell;        
+    }
     
     static NSString *CellIdentifier = @"Cell";
 
@@ -237,7 +246,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ( ( indexPath.section == 1 )  && (indexPath.row == 0)){ 
+    if ( ( indexPath.section == 1 )  && (indexPath.row == 0) ){ 
 		CommentsController *controller = [[CommentsController alloc] initWithComments:self.story.comments];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];

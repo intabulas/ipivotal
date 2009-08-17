@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="46"/>
 			<integer value="8"/>
+			<integer value="46"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -121,7 +121,7 @@
 							<object class="IBUILabel" id="117052548">
 								<reference key="NSNextResponder" ref="515803612"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{32, 10}, {260, 21}}</string>
+								<string key="NSFrame">{{33, 10}, {260, 21}}</string>
 								<reference key="NSSuperview" ref="515803612"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -143,7 +143,7 @@
 							<object class="IBUIImageView" id="11497547">
 								<reference key="NSNextResponder" ref="515803612"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{9, 13}, {16, 16}}</string>
+								<string key="NSFrame">{{9, 14}, {16, 16}}</string>
 								<reference key="NSSuperview" ref="515803612"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -151,7 +151,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">comment.png</string>
+									<string key="NSResourceName">chat_small.png</string>
 								</object>
 							</object>
 						</object>
