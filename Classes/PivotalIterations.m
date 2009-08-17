@@ -9,14 +9,13 @@
 
 @implementation PivotalIterations
 
-@synthesize url, iterations, cacheFilename, lastUpdated, project, group;
+@synthesize url, iterations, project, group;
 
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
     self.group = kTypeCurrent;
     self.project = theProject;
     self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlIterationTypeList, [self.project projectId], self.group]];
-    self.cacheFilename = [NSString stringWithFormat:kCacheFileIterations, [self.project projectId]];
     return self;
 }
 
@@ -30,7 +29,6 @@
 - (void)reloadInterationForGroup:(NSString*)theGroup {
     self.group = theGroup;
     self.url = [NSURL URLWithString:[NSString stringWithFormat:kUrlIterationTypeList, [self.project projectId], self.group]];
-    self.cacheFilename = [NSString stringWithFormat:kCacheFileIterationsGrouped, [self.project projectId], self.group];
     
     [self loadIterations];
 }
@@ -55,11 +53,7 @@
 
 - (void)loadRecords {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
-//    if ([self hasCachedDocument]) {
-//        self.parseIterations;        
-//    } else {
         self.fetchIterations;
-//    }
     [pool release];    
 }
 
@@ -71,23 +65,6 @@
 	[self performSelectorInBackground:@selector(fetchIterations) withObject:nil];    
 }
 
-- (void)parseIterations {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
-    NSData *feed = [NSData dataWithContentsOfFile:[self pathForFile:cacheFilename]];
-    self.lastUpdated = [self modificationTimeForFile:cacheFilename];
-	PivotalIterationsParserDelegate *parserDelegate = [[PivotalIterationsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedIterations:)];
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:feed];
-	[parser setDelegate:parserDelegate];
-	[parser setShouldProcessNamespaces:NO];
-	[parser setShouldReportNamespacePrefixes:NO];
-	[parser setShouldResolveExternalEntities:NO];
-	[parser parse];
-	[parser release];
-	[parserDelegate release];
-	[pool release];    
-}
-
 - (void)fetchIterations {    
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -96,32 +73,27 @@
 	[request start];
     self.error = [request error];
     NSError *theError;    
-    NSString *writeableFile = [self pathForFile:cacheFilename];
+
+
+	PivotalIterationsParserDelegate *parserDelegate = [[PivotalIterationsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedIterations:)];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+	[parser setDelegate:parserDelegate];
+	[parser setShouldProcessNamespaces:NO];
+	[parser setShouldReportNamespacePrefixes:NO];
+	[parser setShouldResolveExternalEntities:NO];
+	[parser parse];
+	[parser release];
+	[parserDelegate release];
+    
+
 #ifdef LOG_NETWORK    
     NSLog(@"Iterations: '%@'", [request responseString]);
 #endif    
-    [request.responseString writeToFile:writeableFile atomically:YES encoding:NSUTF8StringEncoding  error:&theError];
-    [self parseIterations];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
 	[pool release];    
 }
 
 
-
-
-
-
-#pragma mark -
-#pragma mark Cached File Methods
-
-- (BOOL)hasCachedDocument {
-#ifdef CACHED_CONTENT	
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    return [fileManager fileExistsAtPath:[self pathForFile:cacheFilename]];
-#else
-	return NO;
-#endif
-}
 
 
 #pragma mark === Cleanup ===
@@ -130,8 +102,6 @@
     [url release];
     [group release];
     [iterations release];
-    [cacheFilename release];
-    [lastUpdated release];
     [project release];
     [super dealloc];
     

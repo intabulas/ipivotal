@@ -62,7 +62,6 @@
         PivotalProjects *theProjects = (PivotalProjects *)object;
         if ( theProjects.isLoading) {
         } else {         
-            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [projects.lastUpdated prettyDate]];            
      		[self.projectTableView reloadData];
         }        
 	}    

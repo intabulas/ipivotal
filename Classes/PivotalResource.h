@@ -20,8 +20,4 @@ typedef enum {
 
 +(ASIHTTPRequest *)authenticatedRequestForURL:(NSURL *)theUrl;
 
-- (NSString *)pathForFile:(NSString *)filename;
-- (NSDate *)modificationTimeForFile:(NSString *)filename ;
-
-
 @end

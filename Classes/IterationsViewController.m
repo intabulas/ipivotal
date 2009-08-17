@@ -86,7 +86,6 @@
         PivotalIterations *theIterations = (PivotalIterations *)object;
         if ( theIterations.isLoading) {
         } else {     
-            lastUpdatedLabel.text = [NSString stringWithFormat:kFormatLastUpdated, [iterations.lastUpdated prettyDate]];            
      		[self.iterationTableView reloadData];
         }        
 	}    
