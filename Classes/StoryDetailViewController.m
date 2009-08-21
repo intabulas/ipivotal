@@ -165,13 +165,13 @@
     if ( section == 0 && row == 3 ) return descriptionCell;
     
     if ( section == 1 && row == 0 ) { 
-        if ( [self.story.comments count] == 0 ) {
-            [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
-            [commentsCell setUserInteractionEnabled:NO];
-        } else {
-            [commentsCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-            [commentsCell setUserInteractionEnabled:YES];                
-        }
+//        if ( [self.story.comments count] == 0 ) {
+//            [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
+//            [commentsCell setUserInteractionEnabled:NO];
+//        } else {
+//            [commentsCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+//            [commentsCell setUserInteractionEnabled:YES];                
+//        }
         return commentsCell;        
     }
     
