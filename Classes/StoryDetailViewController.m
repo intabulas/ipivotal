@@ -33,23 +33,23 @@
 
 
 - (IBAction)showActions:(id)sender {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Story Actions" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:kTitleStoryActions delegate:self cancelButtonTitle:kButtonLabelCancel destructiveButtonTitle:nil otherButtonTitles:nil];
 
 
     
     if ( [self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateUnStarted] ) {
-       [actionSheet addButtonWithTitle:@"Edit Story"];
-       [actionSheet addButtonWithTitle:@"Start"];
+       [actionSheet addButtonWithTitle:kButtonLabelEditStory];
+       [actionSheet addButtonWithTitle:kButtonLabelStart];
     } else if ([self.story.currentState hasPrefix:kStateStarted]) {
-       [actionSheet addButtonWithTitle:@"Edit Story"];        
-        [actionSheet addButtonWithTitle:@"Finish"];                
+       [actionSheet addButtonWithTitle:kButtonLabelEditStory];        
+        [actionSheet addButtonWithTitle:kButtonLabelFinish];                
     } else if ([self.story.currentState hasPrefix:kStateFinished]) {
-        [actionSheet addButtonWithTitle:@"Deliver"];                
+        [actionSheet addButtonWithTitle:kButtonLabelDeliver];                
     } else if ([self.story.currentState hasPrefix:kStateDelivered]) {             
-        [actionSheet addButtonWithTitle:@"Accept"];                
-        [actionSheet addButtonWithTitle:@"Reject"];                        
+        [actionSheet addButtonWithTitle:kButtonLabelAccept];                
+        [actionSheet addButtonWithTitle:kButtonLabelReject];                        
     } else if ( [self.story.currentState hasPrefix:kStateRejected] ) {        
-       [actionSheet addButtonWithTitle:@"Restart"];                
+       [actionSheet addButtonWithTitle:kButtonLabelRestart];                
     }
     
 
@@ -70,22 +70,22 @@
         [controller release];
         
         
-	} else if ([actionLabel hasPrefix:@"Start"]) {
+	} else if ([actionLabel hasPrefix:kButtonLabelStart]) {
         [self toggleStoryState: kStateStarted ];
 
-	} else if ([actionLabel hasPrefix:@"Finish"]) {
+	} else if ([actionLabel hasPrefix:kButtonLabelFinish]) {
         [self toggleStoryState: kStateFinished ];
         
-	} else if ([actionLabel hasPrefix:@"Deliver"]) {
+	} else if ([actionLabel hasPrefix:kButtonLabelDeliver]) {
         [self toggleStoryState: kStateDelivered ];
         
-	} else if ([actionLabel hasPrefix:@"Accept"]) {
+	} else if ([actionLabel hasPrefix:kButtonLabelAccept]) {
         [self toggleStoryState: kStateAccepted];
         
-	} else if ([actionLabel hasPrefix:@"Reject"]) {
+	} else if ([actionLabel hasPrefix:kButtonLabelReject]) {
         [self toggleStoryState: kStateRejected];
         
-	} else if ([actionLabel hasPrefix:@"Restart"]) {        
+	} else if ([actionLabel hasPrefix:kButtonLabelRestart]) {        
         [self toggleStoryState: kStateStarted];        
     } else {
         NSLog(@"Unknown Action '%@'", actionLabel);
@@ -113,7 +113,7 @@
     if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
     if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateThreePoints];          
     
-    estimate.text = [NSString stringWithFormat:@"a %@, estimated as %d point(s)", self.story.storyType, self.story.estimate];
+    estimate.text = [NSString stringWithFormat:kLabelStoryEstimation, self.story.storyType, self.story.estimate];
     
     if ( [story.storyType hasPrefix:kMatchBug] ) {    
         typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
@@ -127,7 +127,7 @@
     }    
     
     
-    [commentsLabel setText:[NSString stringWithFormat:@"%d Comments", [self.story.comments count]]];
+    [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
     
     
     self.storyTableView.tableHeaderView = tableHeaderView;

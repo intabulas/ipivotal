@@ -13,7 +13,7 @@
     storyType = kTypeFeature;
     estimate = 0;
     name = kTextStoryNeedsName;
-    description = @"please give this story a description";
+    description = kTextStoryDescription;
     comments = [[NSMutableArray alloc] init];
     return self;
 }

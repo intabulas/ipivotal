@@ -1,6 +1,6 @@
 
 //#define CACHED_CONTENT
-//#define LOG_NETWORK
+#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory              @"story"
@@ -125,11 +125,13 @@
 #define kIconEstimateThreePoints @"estimate_3pt.gif"
 #define kIconEstimateNone        @"estimate_unestimated.gif"
 
+#define kIconCommentSmall        @"chat_small_inverted.png"
+
 #define RGB(r, g, b) [UIColor colorWithRed:r/256.0 green:g/256.0 blue:b/256.0 alpha:1]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/256.0 green:g/256.0 blue:b/256.0 alpha:a]
 
-#define kTextStoryNeedsName       @"please enter a story name"
-
+#define kTextStoryNeedsName        @"please enter a story name"
+#define kTextStoryDescription       @"please give this story a description"
 #define kLabelNoDatesForIteration   @"no dates for this iteration yet"
 #define kLabelLoading               @"Loading, please wait..."
 #define kLabelNoIterations          @"there are no iterations"
@@ -137,7 +139,11 @@
 #define kLabelAddStory              @"Add Story"
 #define kLabelEditStory             @"Story Updated"
 
-
+#define kLabelCommentHeader         @"%@ said %@"
+#define kLabelComments              @"comments"
+#define kLabelDateRange             @"%@ - %@"
+#define kLabelStoryEstimation       @"a %@, estimated as %d point(s)"
+#define kLabelStoryComments         @"%d Comments"
 // Formats
 
 #define kFormatPoints             @"%d Point(s)"
@@ -152,5 +158,16 @@
 #define kIdentifierIterationStoryCell  @"IterationStoryCell"
 
 
+//UIActions
+
+#define kButtonLabelEditStory      @"Edit Story"
+#define kButtonLabelStart          @"Start"
+#define kButtonLabelFinish         @"Finish"
+#define kButtonLabelDeliver        @"Deliver"
+#define kButtonLabelAccept         @"Accept"
+#define kButtonLabelReject         @"Reject"
+#define kButtonLabelRestart        @"Restart"
+#define kButtonLabelCancel         @"Cancel"
+#define kTitleStoryActions         @"Story Actions"
 
 

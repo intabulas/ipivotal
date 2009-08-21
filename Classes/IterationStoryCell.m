@@ -114,7 +114,7 @@
     
         
         if ( [theStory.comments count] > 0 ) {
-            [commentsLabel setText:@"comments"];
+            [commentsLabel setText:kLabelComments];
         }
     
         

@@ -16,7 +16,7 @@
         commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 26.0f, 22.0f)];
         commentImage.backgroundColor = [UIColor clearColor];
         commentImage.contentMode = UIViewContentModeCenter;
-        commentImage.image = [UIImage imageNamed:@"chat_small_inverted.png"];
+        commentImage.image = [UIImage imageNamed:kIconCommentSmall];
         
         commentTitle = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, -10.0f, (self.frame.size.width - 30.0f) , self.frame.size.height)];
 		commentTitle.autoresizingMask = UIViewAutoresizingNone;
@@ -42,7 +42,7 @@
 
 
 - (void)setNote:(PivotalNote *)note {
-    commentTitle.text = [NSString stringWithFormat:@"%@ said %@", note.author, [note.createdAt prettyDate] ];
+    commentTitle.text = [NSString stringWithFormat:kLabelCommentHeader, note.author, [note.createdAt prettyDate] ];
 }
 
 

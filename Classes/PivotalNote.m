@@ -56,8 +56,9 @@
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newcomment dataUsingEncoding:NSUTF8StringEncoding]]];
 	[request start];
-	
+#ifdef LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
+#endif    
     self.savingStatus = PivotalResourceStatusSaved;
     
 	[pool release];

@@ -64,7 +64,9 @@
     self.error = [request error];
     NSError *theError;    
 	PivotalProjectsParserDelegate *parserDelegate = [[PivotalProjectsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedProjects:)];
+#ifdef LOG_NETWORK    
     NSLog(@"%@", [request responseString]);
+#endif
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
 	[parser setDelegate:parserDelegate];
 	[parser setShouldProcessNamespaces:NO];

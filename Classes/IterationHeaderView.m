@@ -40,7 +40,7 @@
     dateFormatter.dateFormat = @"MMMM dd";
     titleLabel.text = [NSString stringWithFormat:kFormatIterationNumber, iteration.iterationId];  
     if ( iteration.startDate && iteration.endDate ) {
-       dateLabel.text = [NSString stringWithFormat:@"%@ - %@", [dateFormatter stringFromDate:iteration.startDate], [dateFormatter stringFromDate:iteration.endDate]];
+       dateLabel.text = [NSString stringWithFormat:kLabelDateRange, [dateFormatter stringFromDate:iteration.startDate], [dateFormatter stringFromDate:iteration.endDate]];
     }
     [dateFormatter release];        
 

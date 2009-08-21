@@ -34,6 +34,7 @@
 		8C2232311038DA5C00A75012 /* CommentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2232301038DA5C00A75012 /* CommentsController.xib */; };
 		8C2232CA1038DED600A75012 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2232C91038DED600A75012 /* CommentCell.m */; };
 		8C22334E1038E12F00A75012 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C22334D1038E12F00A75012 /* CommentCell.xib */; };
+		8C255AA1103F5E2100DEE140 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C255AA0103F5E2100DEE140 /* Localizable.strings */; };
 		8C38D14210046B29003BF739 /* ProjectLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C38D14110046B29003BF739 /* ProjectLabelCell.m */; };
 		8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */; };
 		8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
@@ -142,6 +143,7 @@
 		8C2232C81038DED600A75012 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		8C2232C91038DED600A75012 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		8C22334D1038E12F00A75012 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		8C255A9E103F5E0F00DEE140 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C38D14010046B29003BF739 /* ProjectLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectLabelCell.h; sourceTree = "<group>"; };
 		8C38D14110046B29003BF739 /* ProjectLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectLabelCell.m; sourceTree = "<group>"; };
 		8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "77-ekg.png"; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				8CDB63B30FCF87BD003AC065 /* IBFiles */,
 				8C3FD3B00FCF0A4D004D8DD0 /* Images */,
 				8D1107310486CEB800E47090 /* Info.plist */,
+				8C255AA0103F5E2100DEE140 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				8C5BC43E1039ABB40005A028 /* chat.png in Resources */,
 				8C5BC43F1039ABB40005A028 /* chat_small.png in Resources */,
 				8C5BC8901039FEB50005A028 /* chat_small_inverted.png in Resources */,
+				8C255AA1103F5E2100DEE140 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +667,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C255AA0103F5E2100DEE140 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C255A9E103F5E0F00DEE140 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
