@@ -73,6 +73,7 @@
 
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"
+#define kResourceSavingStatusKeyPath @"savingStatus"
 
 
 

@@ -4,6 +4,7 @@
 #import "PivotalStory.h"
 #import "PivotalProject.h"
 #import "CommentHeaderView.h"
+#import "AddCommentController.h"
 
 @implementation CommentsController
 
@@ -113,15 +114,18 @@
 #pragma mark Add Comments
 
 -(void)composeReply:(id)sender {
-    
+
     PivotalNote *note = [[PivotalNote alloc] initWithProject:project
                                                     andStory:story];
+    AddCommentController *controller = [[AddCommentController alloc] initWithNote:note];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
     
-    note.text = @"Mark wasnt Here";
-    [note saveNote];
-    [note release];
     
 }
+
+
+
 
 @end
 
