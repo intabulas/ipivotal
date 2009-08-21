@@ -3,6 +3,7 @@
 #import "CommentCell.h"
 #import "PivotalStory.h"
 #import "PivotalProject.h"
+#import "CommentHeaderView.h"
 
 @implementation CommentsController
 
@@ -52,17 +53,20 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return [comments count];
-    return 1;
+    return [comments count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [comments count];
+    return 1;
 }
 
-
+- (UIView *)tableView: (UITableView *)tableView viewForHeaderInSection: (NSInteger)section {
+     CommentHeaderView* headerView = [[[CommentHeaderView alloc] initWithFrame:CGRectMake(0, 0, commentTableView.bounds.size.width, 40)] autorelease];   
+     [headerView setNote:[comments objectAtIndex:section]];
+     return headerView; 
+}
 
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 //    PivotalNote *note = [comments objectAtIndex:section];
@@ -81,11 +85,12 @@
         cell = commentCell;
     }
     
-    PivotalNote *note = (PivotalNote *)[comments objectAtIndex:indexPath.row];
+    PivotalNote *note = (PivotalNote *)[comments objectAtIndex:indexPath.section];
     
     [cell setComment:note];
     // Set up the cell...
 	
+    
     return cell;
 }
 
@@ -95,8 +100,10 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 103.0f;
+	return 75.0f;
 }
+
+
 
 - (void)dealloc {
     [super dealloc];

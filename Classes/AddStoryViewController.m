@@ -11,10 +11,19 @@
 
 @synthesize story, editingDictionary;
 
+- (id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory {
+    [self initWithProject:theProject];
+    [self.story release];
+    self.story = theStory;
+    self.story.storyType = [self.story.storyType capitalizedString];
+    editing = YES;    
+    return self;
+}
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
     project = theProject;
     self.story = [[PivotalStory alloc] init];
+    editing = NO;
     return self;
 }
 
@@ -34,17 +43,30 @@
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
-    NSString *urlString = [NSString stringWithFormat:kUrlAddStory, project.projectId];                            
+    NSString *urlString;
+    if ( editing ) {
+        urlString = [NSString stringWithFormat:kUrlUpdateStory, project.projectId, story.storyId];                            
+    } else {
+        urlString = [NSString stringWithFormat:kUrlAddStory, project.projectId];                            
+    }
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
     NSString *newstory = [self.story to_xml];
+    if (editing) {
+        [request setRequestMethod:@"PUT"];
+    }
+    
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
     [request start];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kLabelAddStory message:@"Story has been placed in the Icebox. \n\nIt may take a minute or two for it to show up in the list (api lag)" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+    UIAlertView *alert;
+    if ( editing ) {
+        alert = [[UIAlertView alloc] initWithTitle:kLabelEditStory message:@"Story has been updated.\n\nYou may need to refresh the views to have the changes appear" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+    } else {
+       alert = [[UIAlertView alloc] initWithTitle:kLabelAddStory message:@"Story has been placed in the Icebox. \n\nIt may take a minute or two for it to show up in the list (api lag)" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+    }
     [alert show];
     [alert release];        
     
@@ -62,15 +84,34 @@
         editingDictionary = [[NSMutableDictionary alloc] init];        
        [editingDictionary setObject:kTypeFeature forKey:kKeyType];
        [editingDictionary setObject:kDefaultStoryTitle forKey:kKeyStoryName];
-       [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:kKeyEstimate];        
+       [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:kKeyEstimate];    
+        
+        if ( editing ) {
+            self.title = @"Editing Story";
+            [editingDictionary setObject:self.story.storyType forKey:kKeyType];
+            [editingDictionary setObject:self.story.name forKey:kKeyStoryName];
+            [editingDictionary setObject:[NSNumber numberWithInteger:self.story.estimate] forKey:kKeyEstimate];        
+            
+        }        
+        
+        
     }
     
-    story.name          = (NSString *)[editingDictionary valueForKey:kKeyStoryName];
-    story.storyType          = [editingDictionary valueForKey:kKeyType];
-    NSNumber *estimateNumber = [editingDictionary valueForKey:kKeyEstimate];
-    story.estimate = [estimateNumber integerValue];
-    
-    self.title = kLabelAddStory;
+        
+//    if ( editing ) {
+//        self.title = @"Editing Story";
+//        [editingDictionary setObject:self.story.storyType forKey:kKeyType];
+//        [editingDictionary setObject:self.story.name forKey:kKeyStoryName];
+//        [editingDictionary setObject:[NSNumber numberWithInteger:self.story.estimate] forKey:kKeyEstimate];        
+//        
+//     } else {
+         
+         self.story.name          = (NSString *)[editingDictionary valueForKey:kKeyStoryName];
+         self.story.storyType          = [editingDictionary valueForKey:kKeyType];
+         NSNumber *estimateNumber = [editingDictionary valueForKey:kKeyEstimate];
+         self.story.estimate = [estimateNumber integerValue];
+          self.title = kLabelAddStory;
+//        }
     
     [storyTableView reloadData];
     
@@ -90,7 +131,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return  @"Add a New Story" ;
+    return  ( editing ) ? @"Edit Existing Story" :  @"Add a New Story" ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

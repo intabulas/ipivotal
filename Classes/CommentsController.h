@@ -5,6 +5,8 @@
 
     IBOutlet UITableView *commentTableView;
     IBOutlet CommentCell *commentCell;
+    IBOutlet UIView *commentHeaderView;
+    IBOutlet UILabel *commentHeaderLabel;
     PivotalStory *story;
     PivotalProject *project;
     NSArray *comments;

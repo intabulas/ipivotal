@@ -10,7 +10,7 @@
 
 
 @implementation PivotalNote
-@synthesize noteId, text, author, createdAt;
+@synthesize noteId, text, author, createdAt, visualHeight;
 
 -(id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory {
     [super init];

@@ -12,11 +12,17 @@
     return self;
 }
 
+-(CGFloat)getHeight {
+ return   commentText.bounds.size.height;
+}
+
 - (void)setComment:(PivotalNote *)anComment {
 	[comment release];
 	comment = [anComment retain];    
     commentText.text = comment.text;
-    fromLabel.text = [NSString stringWithFormat:@"%@ said %@", comment.author, [comment.createdAt prettyDate] ];
+    [commentText sizeThatFits:commentText.bounds.size];
+    anComment.visualHeight = commentText.bounds.size.height;
+    
 }
 
 

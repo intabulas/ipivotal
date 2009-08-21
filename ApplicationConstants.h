@@ -1,6 +1,6 @@
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK
+//#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory              @"story"
@@ -135,6 +135,7 @@
 #define kLabelNoIterations          @"there are no iterations"
 #define kLabelNoStories             @"there are no stories"
 #define kLabelAddStory              @"Add Story"
+#define kLabelEditStory             @"Story Updated"
 
 
 // Formats

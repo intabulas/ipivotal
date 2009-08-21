@@ -4,9 +4,9 @@
 @interface CommentCell : UITableViewCell {
    PivotalNote *comment;
     IBOutlet UITextView *commentText;
-    IBOutlet UILabel *fromLabel;
 }
 
 @property (nonatomic,retain) PivotalNote *comment;
 
+-(CGFloat)getHeight;
 @end

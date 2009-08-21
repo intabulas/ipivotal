@@ -5,6 +5,7 @@
 #import "PivotalResource.h"
 #import "ASIHTTPRequest.h"
 #import "CommentsController.h"
+#import "AddStoryViewController.h"
 
 @implementation StoryDetailViewController
 @synthesize story, project, storyTableView;
@@ -34,9 +35,13 @@
 - (IBAction)showActions:(id)sender {
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Story Actions" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
 
+
+    
     if ( [self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateUnStarted] ) {
-        [actionSheet addButtonWithTitle:@"Start"];
+       [actionSheet addButtonWithTitle:@"Edit Story"];
+       [actionSheet addButtonWithTitle:@"Start"];
     } else if ([self.story.currentState hasPrefix:kStateStarted]) {
+       [actionSheet addButtonWithTitle:@"Edit Story"];        
         [actionSheet addButtonWithTitle:@"Finish"];                
     } else if ([self.story.currentState hasPrefix:kStateFinished]) {
         [actionSheet addButtonWithTitle:@"Deliver"];                
@@ -47,8 +52,7 @@
        [actionSheet addButtonWithTitle:@"Restart"];                
     }
     
-    
-    
+
 	[actionSheet showInView:self.view.window];
 	[actionSheet release];
 }
@@ -58,8 +62,15 @@
     NSString *actionLabel =  [actionSheet buttonTitleAtIndex:buttonIndex];
     
 
-    
-	if ([actionLabel hasPrefix:@"Start"]) {
+    if ([actionLabel hasPrefix:@"Edit Story"]) {
+        NSLog(@"Edit Story");
+
+        AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project andStory:story];
+        [self.navigationController pushViewController:controller animated:YES];
+        [controller release];
+        
+        
+	} else if ([actionLabel hasPrefix:@"Start"]) {
         [self toggleStoryState: kStateStarted ];
 
 	} else if ([actionLabel hasPrefix:@"Finish"]) {

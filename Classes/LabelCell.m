@@ -7,7 +7,7 @@
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         
-        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 10.0f, self.contentView.frame.size.height)];
+        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 0.0f, self.contentView.frame.size.height)];
 		cellLabel.autoresizingMask = UIViewAutoresizingNone;
 		cellLabel.backgroundColor = [UIColor clearColor];
 		cellLabel.highlightedTextColor = [UIColor whiteColor];

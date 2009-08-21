@@ -10,12 +10,14 @@
     NSString *text;
     NSString *author;
     NSDate   *createdAt;
+    CGFloat visualHeight;
 }
 
 @property (nonatomic, readwrite) NSInteger noteId;
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *author;
 @property (nonatomic, retain) NSDate *createdAt;
+@property (nonatomic, readwrite) CGFloat visualHeight;
 
 -(id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory;
 - (void)saveNote;
