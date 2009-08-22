@@ -8,10 +8,7 @@
 	IBOutlet UIActivityIndicatorView *activityView;
 	IBOutlet UIButton *saveButton;
 	IBOutlet UIView *tableFooterView;
-    
-    
     PivotalNote *note;
-
 }
 
 -(id)initWithNote:(PivotalNote *)theNote;

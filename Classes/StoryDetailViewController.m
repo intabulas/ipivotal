@@ -31,6 +31,12 @@
     [super dealloc];
 }   
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
+    
+    
+}
 
 - (IBAction)showActions:(id)sender {
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:kTitleStoryActions delegate:self cancelButtonTitle:kButtonLabelCancel destructiveButtonTitle:nil otherButtonTitles:nil];

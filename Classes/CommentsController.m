@@ -29,6 +29,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [commentTableView reloadData];
+    [commentTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:(story.comments.count - 1 )] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -121,7 +122,6 @@
 
     PivotalNote *note = [[[PivotalNote alloc] initWithProject:project
                                                     andStory:story] autorelease];
-    
     [story.comments addObject:note];
     AddCommentController *controller = [[AddCommentController alloc] initWithNote:note];
     [self.navigationController pushViewController:controller animated:YES];
