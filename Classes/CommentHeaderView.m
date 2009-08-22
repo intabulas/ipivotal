@@ -10,15 +10,15 @@
         
         
        // [self setBackgroundColor: [UIColor colorWithRed:154.0/255.0 green:154.0/255.0 blue:154.0/255.0 alpha:1.0]];
-        [self setBackgroundColor: [UIColor colorWithRed:76.0/255.0 green:76.0/255.0 blue:76.0/255.0 alpha:1.0]];
-
+//        [self setBackgroundColor: [UIColor colorWithRed:76.0/255.0 green:76.0/255.0 blue:76.0/255.0 alpha:1.0]];
+        [self setBackgroundColor:[UIColor blackColor]];
         
         commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 26.0f, 22.0f)];
         commentImage.backgroundColor = [UIColor clearColor];
         commentImage.contentMode = UIViewContentModeCenter;
         commentImage.image = [UIImage imageNamed:kIconCommentSmall];
         
-        commentTitle = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, -10.0f, (self.frame.size.width - 30.0f) , self.frame.size.height)];
+        commentTitle = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, -15.0f, (self.frame.size.width - 30.0f) , self.frame.size.height)];
 		commentTitle.autoresizingMask = UIViewAutoresizingNone;
 		commentTitle.backgroundColor = [UIColor clearColor];
 		commentTitle.highlightedTextColor = [UIColor whiteColor];

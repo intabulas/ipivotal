@@ -69,7 +69,7 @@
 }
 
 - (UIView *)tableView: (UITableView *)tableView viewForHeaderInSection: (NSInteger)section {
-     CommentHeaderView* headerView = [[[CommentHeaderView alloc] initWithFrame:CGRectMake(0, 0, commentTableView.bounds.size.width, 40)] autorelease];   
+     CommentHeaderView* headerView = [[[CommentHeaderView alloc] initWithFrame:CGRectMake(0, 0, commentTableView.bounds.size.width, 50)] autorelease];   
      [headerView setNote:[comments objectAtIndex:section]];
      return headerView; 
 }
@@ -106,7 +106,24 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 75.0f;
+    
+    UIFont *font = [commentTextView font];
+    if ( !font ) {
+        font = [UIFont systemFontOfSize:13];
+    }
+    
+    PivotalNote *note = (PivotalNote *)[comments objectAtIndex:indexPath.section];
+
+    
+    CGSize detailTextSize = [note.text sizeWithFont:font
+                             constrainedToSize:CGSizeMake(320.0f, CGFLOAT_MAX)
+                             lineBreakMode:UILineBreakModeWordWrap];
+
+    return detailTextSize.height + 25.0f;    
+    
+    
+    
+//	return 75.0f;
 }
 
 

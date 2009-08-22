@@ -1,6 +1,6 @@
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK
+//#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory              @"story"
@@ -97,6 +97,8 @@
 
 
 #define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'UTC'"
+//#define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'Z'"
+
 #define kDateFormatActivity  @"MM/dd/yyyy hh:mm a"
 // Cache File Formats
 #define kCacheFileProjects           @"projects.xml"
