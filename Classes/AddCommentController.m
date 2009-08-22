@@ -18,6 +18,11 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [commentBody becomeFirstResponder];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,22 +37,27 @@
 	if ([keyPath isEqualToString:kResourceSavingStatusKeyPath]) {
 		if (note.isSaving) return;
 		if ( note.isSaved) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Comment Added" message:@"Still working on Refres code" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Comment Added" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[alert show];
 			[alert release];
 		} else if (note.error) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request error" message:@"There was a problem adding your comment" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request error" message:@"There was a problem adding your comment" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[alert show];
 			[alert release];
 		}
         
         saveButton.enabled = YES;
 		[activityView stopAnimating];
+        
+
 
 	}
 }
 
-
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated:YES];            
+    
+}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -67,6 +77,7 @@
 	saveButton.enabled = NO;
 	[activityView startAnimating];
 	[note saveNote];
+
 }
 
 

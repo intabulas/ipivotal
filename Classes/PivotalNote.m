@@ -2,6 +2,7 @@
 #import "ASIHTTPRequest.h"
 #import "PivotalStory.h"
 #import "PivotalProject.h"
+#import "PivotalNoteParserDelegate.h"
 
 @interface PivotalNote ()
 - (void)sendCommentDataToURL:(NSURL *)theURL;
@@ -59,10 +60,37 @@
 #ifdef LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif    
+    
+   	PivotalNoteParserDelegate *parserDelegate = [[PivotalNoteParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedNote:)];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+	[parser setDelegate:parserDelegate];
+	[parser setShouldProcessNamespaces:NO];
+	[parser setShouldReportNamespacePrefixes:NO];
+	[parser setShouldResolveExternalEntities:NO];
+	[parser parse];
+	[parser release];
+	[parserDelegate release]; 
+    
     self.savingStatus = PivotalResourceStatusSaved;
     
 	[pool release];
 }
 
-
+- (void)loadedNote:(id)theResult {
+	if ([theResult isKindOfClass:[NSError class]]) {
+		self.error = theResult;
+		self.status = PivotalResourceStatusNotLoaded;
+	} else {
+		//self. = theResult;
+        NSArray *notes = theResult;
+        PivotalNote *tmpNote = [notes objectAtIndex:0];
+        
+        self.noteId = tmpNote.noteId;
+        self.text = tmpNote.text;
+        self.author = tmpNote.author;
+        self.createdAt = tmpNote.createdAt;
+        
+		self.status = PivotalResourceStatusLoaded;
+	}
+}
 @end

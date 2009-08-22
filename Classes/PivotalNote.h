@@ -22,6 +22,5 @@
 -(id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory;
 - (void)saveNote;
 - (NSString *)to_xml;
-
-
+- (void)loadedNote:(id)theResult;
 @end

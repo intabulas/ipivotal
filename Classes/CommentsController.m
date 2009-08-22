@@ -26,6 +26,10 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [commentTableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -115,8 +119,10 @@
 
 -(void)composeReply:(id)sender {
 
-    PivotalNote *note = [[PivotalNote alloc] initWithProject:project
-                                                    andStory:story];
+    PivotalNote *note = [[[PivotalNote alloc] initWithProject:project
+                                                    andStory:story] autorelease];
+    
+    [story.comments addObject:note];
     AddCommentController *controller = [[AddCommentController alloc] initWithNote:note];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];

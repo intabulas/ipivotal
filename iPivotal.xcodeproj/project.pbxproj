@@ -37,6 +37,7 @@
 		8C255AA1103F5E2100DEE140 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C255AA0103F5E2100DEE140 /* Localizable.strings */; };
 		8C255AC7103F605100DEE140 /* AddCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C255AC6103F605100DEE140 /* AddCommentController.m */; };
 		8C255AC9103F606C00DEE140 /* AddComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C255AC8103F606C00DEE140 /* AddComment.xib */; };
+		8C255C51103F7D0300DEE140 /* PivotalNoteParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C255C50103F7D0300DEE140 /* PivotalNoteParserDelegate.m */; };
 		8C38D14210046B29003BF739 /* ProjectLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C38D14110046B29003BF739 /* ProjectLabelCell.m */; };
 		8C3E6DEB0FF9C183005BCC4E /* 77-ekg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */; };
 		8C3FD3B40FCF0A84004D8DD0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
@@ -149,6 +150,8 @@
 		8C255AC5103F605100DEE140 /* AddCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCommentController.h; sourceTree = "<group>"; };
 		8C255AC6103F605100DEE140 /* AddCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCommentController.m; sourceTree = "<group>"; };
 		8C255AC8103F606C00DEE140 /* AddComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddComment.xib; sourceTree = "<group>"; };
+		8C255C4F103F7D0300DEE140 /* PivotalNoteParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalNoteParserDelegate.h; sourceTree = "<group>"; };
+		8C255C50103F7D0300DEE140 /* PivotalNoteParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalNoteParserDelegate.m; sourceTree = "<group>"; };
 		8C38D14010046B29003BF739 /* ProjectLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectLabelCell.h; sourceTree = "<group>"; };
 		8C38D14110046B29003BF739 /* ProjectLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectLabelCell.m; sourceTree = "<group>"; };
 		8C3E6DEA0FF9C183005BCC4E /* 77-ekg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "77-ekg.png"; sourceTree = "<group>"; };
@@ -456,6 +459,8 @@
 				8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */,
 				8CA09D0C0FD05FB500846DBA /* PivotalStoriesParserDelegate.h */,
 				8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */,
+				8C255C4F103F7D0300DEE140 /* PivotalNoteParserDelegate.h */,
+				8C255C50103F7D0300DEE140 /* PivotalNoteParserDelegate.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				8C2232CA1038DED600A75012 /* CommentCell.m in Sources */,
 				8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */,
 				8C255AC7103F605100DEE140 /* AddCommentController.m in Sources */,
+				8C255C51103F7D0300DEE140 /* PivotalNoteParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

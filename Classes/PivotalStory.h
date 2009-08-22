@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
+#import "PivotalResource.h"
 
 
-@interface PivotalStory : NSObject {
+@class PivotalProject;
+@interface PivotalStory : PivotalResource {
     NSInteger storyId;
     NSString *storyType;
     NSURL    *url;
@@ -14,6 +16,7 @@
     NSDate  *createdAt;
     NSDate  *acceptedAt;
     NSMutableArray *comments;
+    PivotalProject *project;
 }
 
 @property (nonatomic, readwrite) NSInteger storyId;
@@ -29,8 +32,11 @@
 @property (nonatomic, retain) NSDate  *acceptedAt;
 @property (nonatomic, retain) NSMutableArray  *comments;
 - (id)init;
-
+- (id)initWithStoryId:(NSInteger)theId;
+- (id)initWithStoryId:(NSInteger)theId andProject:(PivotalProject *)theProject;
 - (NSString *)to_xml;
+
+- (void)loadStory;
 
 @end
 

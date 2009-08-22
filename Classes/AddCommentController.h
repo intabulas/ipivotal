@@ -2,7 +2,7 @@
 
 @class PivotalNote;
 
-@interface AddCommentController : UITableViewController <UITextFieldDelegate> {
+@interface AddCommentController : UITableViewController <UITextFieldDelegate,UIAlertViewDelegate> {
     IBOutlet UITextView *commentBody;
     IBOutlet UITableViewCell *commentCell;
 	IBOutlet UIActivityIndicatorView *activityView;

@@ -1,5 +1,5 @@
 #import "PivotalStory.h"
-
+#import "PivotalProject.h"
 
 @implementation PivotalStory
 
@@ -18,7 +18,22 @@
     return self;
 }
 
+- (id)initWithStoryId:(NSInteger)theId {
+    [self init];
+    storyId = theId;
+    return self;
+}
+
+- (id)initWithStoryId:(NSInteger)theId andProject:(PivotalProject *)theProject {
+  [self initWithStoryId:theId];
+    project = [theProject retain];
+  return self;
+}
+
 - (void)dealloc {
+    if ( project != nil )  {
+        [project release];
+    }
     [comments release];
     [storyType release];
     [url release];
@@ -39,6 +54,32 @@
         return [NSString stringWithFormat:kXmlAddStory, [storyType lowercaseString], name];    
     }
 }
+
+
+- (void)loadStory {
+	if (self.isSaving) return;
+	NSString *saveURLString = [NSString stringWithFormat:kUrlUpdateStory,project.projectId, self.storyId];
+	NSURL *saveURL = [NSURL URLWithString:saveURLString];
+	self.error = nil;
+	self.savingStatus = PivotalResourceStatusSaving;
+	[self performSelectorInBackground:@selector(retrieveContentFromURL:) withObject:saveURL];
+}
+
+
+- (void)retrieveContentFromURL:(NSURL *)theURL {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:theURL];
+    [request setRequestMethod:@"GET"];    
+    [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
+	[request start];
+#ifdef LOG_NETWORK	
+    NSLog(@"%@", [request responseString]);
+#endif    
+    self.savingStatus = PivotalResourceStatusSaved;
+    
+	[pool release];
+}
+
 
 
 @end
