@@ -44,7 +44,7 @@
 							<object class="IBUITextView" id="713334577">
 								<reference key="NSNextResponder" ref="424937051"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{7, 0}, {307, 74}}</string>
+								<string key="NSFrame">{{7, 0}, {307, 119}}</string>
 								<reference key="NSSuperview" ref="424937051"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -63,7 +63,7 @@
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits"/>
 							</object>
 						</object>
-						<string key="NSFrameSize">{320, 79}</string>
+						<string key="NSFrameSize">{320, 119}</string>
 						<reference key="NSSuperview" ref="50827957"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="354859727">
 							<int key="NSColorSpace">3</int>
@@ -75,7 +75,7 @@
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 80}</string>
+				<string key="NSFrameSize">{320, 120}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor" id="817947166">
 					<int key="NSColorSpace">1</int>
@@ -203,7 +203,7 @@
 					<string>{{372, 801}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>CommentCell</string>
-					<string>{{372, 731}, {320, 80}}</string>
+					<string>{{372, 691}, {320, 120}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>

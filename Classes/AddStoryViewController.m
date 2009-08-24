@@ -57,7 +57,7 @@
     }
     
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
-    [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
+    [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
     [request start];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
@@ -148,7 +148,7 @@
     if (  row == 0 ) {
         LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
         if (cell == nil) {
-            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell];
+            cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] autorelease];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
@@ -159,7 +159,7 @@
     if ( row == 1 ) {
         ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierImageLabelCell];
         if (cell == nil) {
-            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierImageLabelCell];
+            cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierImageLabelCell] autorelease];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;      
@@ -183,7 +183,7 @@
     if ( row == 2 ) {
         ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierImageLabelCell];
         if (cell == nil) {
-            cell = [[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierImageLabelCell];
+            cell = [[[ImageLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierImageLabelCell] autorelease];
         }
         [cell setContentMode:UIViewContentModeBottom];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -202,7 +202,7 @@
     if (  row == 3  ) {  /// 4 if there is assignment
         LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
         if (cell == nil) {
-            cell = [[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] ;
+            cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] autorelease] ;
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
@@ -222,6 +222,7 @@
         [editingDictionary setValue:story.name forKey:kKeyStoryName];
         
         [self.navigationController pushViewController:controller animated:YES];
+        [controller release];
         
     }
             
@@ -232,6 +233,7 @@
         controller.editingItem = editingDictionary;
         [editingDictionary setValue:story.storyType forKey:kKeyType];
         [self.navigationController pushViewController:controller animated:YES];
+        [controller release];
     }
     
 //    if( indexPath.row == 2 && [story.storyType hasPrefix:kTypeFeature]) {
@@ -243,6 +245,7 @@
         controller.editingItem = editingDictionary;
         [editingDictionary setValue:[NSNumber numberWithInteger:story.estimate] forKey:kKeyEstimate];
         [self.navigationController pushViewController:controller animated:YES];
+        [controller release];
     }
     
     return indexPath;

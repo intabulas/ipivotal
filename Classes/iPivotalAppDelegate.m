@@ -35,6 +35,7 @@
         //show an alert to let the user know that they can't connect...
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Unavailable" message:@"PT Cruiser requires an active network connection to communicate with Pivotal Tracker\n\n Please try again when an internet connection is available" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Exit", nil];
         [alert show];
+        [alert release];
     } else {
     }
 }

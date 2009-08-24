@@ -116,7 +116,7 @@
 
     
     CGSize detailTextSize = [note.text sizeWithFont:font
-                             constrainedToSize:CGSizeMake(320.0f, CGFLOAT_MAX)
+                             constrainedToSize:CGSizeMake(310.0f, CGFLOAT_MAX)
                              lineBreakMode:UILineBreakModeWordWrap];
 
     return detailTextSize.height + 25.0f;    

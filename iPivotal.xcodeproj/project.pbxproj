@@ -11,7 +11,6 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		8C026B260FDC9829002CFEE0 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026B250FDC9829002CFEE0 /* LabelCell.m */; };
 		8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */; };
 		8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */; };
@@ -62,6 +61,7 @@
 		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
+		8C99682010422BD90079345A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C99681F10422BD90079345A /* CoreGraphics.framework */; };
 		8CA098F60FCFB4A600846DBA /* IterationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA098F50FCFB4A600846DBA /* IterationsViewController.m */; };
 		8CA098F80FCFB4B900846DBA /* IterationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */; };
 		8CA099030FCFB62900846DBA /* PivotalIterations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA099020FCFB62900846DBA /* PivotalIterations.m */; };
@@ -107,7 +107,6 @@
 		1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iPivotalAppDelegate.m; path = Classes/iPivotalAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iPivotal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPivotal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* iPivotal_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPivotal_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C026B240FDC9829002CFEE0 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
@@ -186,6 +185,7 @@
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
 		8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStoryViewController.xib; sourceTree = "<group>"; };
+		8C99681F10422BD90079345A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8CA098F40FCFB4A600846DBA /* IterationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationsViewController.h; sourceTree = "<group>"; };
 		8CA098F50FCFB4A600846DBA /* IterationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationsViewController.m; sourceTree = "<group>"; };
 		8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IterationsViewController.xib; sourceTree = "<group>"; };
@@ -257,10 +257,10 @@
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				8C3FD3CA0FCF0BBD004D8DD0 /* CFNetwork.framework in Frameworks */,
 				8C3FD3CE0FCF0BC5004D8DD0 /* libz.1.2.3.dylib in Frameworks */,
 				8C7C5F3E10155C5B002A4C52 /* SystemConfiguration.framework in Frameworks */,
+				8C99682010422BD90079345A /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,12 +329,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C99681F10422BD90079345A /* CoreGraphics.framework */,
 				8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */,
 				8C3FD3C90FCF0BBD004D8DD0 /* CFNetwork.framework */,
 				8C3FD3CD0FCF0BC5004D8DD0 /* libz.1.2.3.dylib */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				288765070DF74369002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -738,7 +738,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "958BE20A-C63D-478E-97A1-E86C03B4094B";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Distribution;
 		};
@@ -768,7 +768,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -782,7 +782,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "958BE20A-C63D-478E-97A1-E86C03B4094B";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};

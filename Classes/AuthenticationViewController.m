@@ -82,6 +82,7 @@
     passwordField.secureTextEntry = YES;
     
     [alert show];
+    [alert release];
     
     
     
