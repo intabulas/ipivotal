@@ -57,7 +57,7 @@
     }
     
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
-    [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
+    [request setPostBody:[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]];
     [request start];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
