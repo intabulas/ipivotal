@@ -30,6 +30,8 @@
 #define kTagText               @"text"
 #define kTagNotedAt            @"noted_at"
 #define kTagTask               @"task"
+#define kTagPosition           @"position"
+#define kTagComplete           @"complete"
 
 #define kDefaultsApiToken @"apiToken"
 
