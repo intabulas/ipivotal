@@ -16,6 +16,7 @@
     NSDate  *createdAt;
     NSDate  *acceptedAt;
     NSMutableArray *comments;
+    NSMutableArray *tasks;    
     PivotalProject *project;
 }
 
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSDate  *createdAt;
 @property (nonatomic, retain) NSDate  *acceptedAt;
 @property (nonatomic, retain) NSMutableArray  *comments;
+@property (nonatomic, retain) NSMutableArray  *tasks;
 - (id)init;
 - (id)initWithStoryId:(NSInteger)theId;
 - (id)initWithStoryId:(NSInteger)theId andProject:(PivotalProject *)theProject;
