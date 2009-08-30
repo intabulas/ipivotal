@@ -10,6 +10,7 @@
 	dateFormatter = [[NSDateFormatter alloc] init];
 	dateFormatter.dateFormat = kDateFormatUTC;
     handlingNotes = NO;
+    handlingTasks = NO;
 }
 
 
@@ -19,7 +20,10 @@
 	} else if ([elementName isEqualToString:kTagNote]) {
         currentNote = [[PivotalNote alloc] initWithProject:nil andStory:nil];
         handlingNotes = YES;
-	}    
+	} else if ([elementName isEqualToString:kTagTask]) {
+        handlingTasks = YES;
+    }
+        
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
@@ -32,9 +36,13 @@
         [currentNote release];
         currentNote = nil;        
         handlingNotes = NO;        
+    } else if ([elementName isEqualToString:kTagTask]) {
+        handlingNotes = NO;                
 	} else if ([elementName isEqualToString:kTagId]) {             
         if ( handlingNotes ) { 
             currentNote.noteId = [currentElementValue integerValue];
+        } if ( handlingTasks ) {
+            
         } else {
             currentStory.storyId = [currentElementValue integerValue];
         }                

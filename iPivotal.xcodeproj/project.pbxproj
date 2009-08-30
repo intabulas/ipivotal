@@ -62,6 +62,7 @@
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
 		8C99682010422BD90079345A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C99681F10422BD90079345A /* CoreGraphics.framework */; };
+		8C9E3EA6104B35210033A3F0 /* PivotalTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E3EA5104B35210033A3F0 /* PivotalTask.m */; };
 		8CA098F60FCFB4A600846DBA /* IterationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA098F50FCFB4A600846DBA /* IterationsViewController.m */; };
 		8CA098F80FCFB4B900846DBA /* IterationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */; };
 		8CA099030FCFB62900846DBA /* PivotalIterations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA099020FCFB62900846DBA /* PivotalIterations.m */; };
@@ -186,6 +187,8 @@
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
 		8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStoryViewController.xib; sourceTree = "<group>"; };
 		8C99681F10422BD90079345A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8C9E3EA4104B35210033A3F0 /* PivotalTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalTask.h; sourceTree = "<group>"; };
+		8C9E3EA5104B35210033A3F0 /* PivotalTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalTask.m; sourceTree = "<group>"; };
 		8CA098F40FCFB4A600846DBA /* IterationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationsViewController.h; sourceTree = "<group>"; };
 		8CA098F50FCFB4A600846DBA /* IterationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationsViewController.m; sourceTree = "<group>"; };
 		8CA098F70FCFB4B900846DBA /* IterationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IterationsViewController.xib; sourceTree = "<group>"; };
@@ -442,6 +445,8 @@
 				8CA0990B0FCFB70600846DBA /* PivotalStories.m */,
 				8C222A3C1036669D00A75012 /* PivotalNote.h */,
 				8C222A3D1036669D00A75012 /* PivotalNote.m */,
+				8C9E3EA4104B35210033A3F0 /* PivotalTask.h */,
+				8C9E3EA5104B35210033A3F0 /* PivotalTask.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -679,6 +684,7 @@
 				8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */,
 				8C255AC7103F605100DEE140 /* AddCommentController.m in Sources */,
 				8C255C51103F7D0300DEE140 /* PivotalNoteParserDelegate.m in Sources */,
+				8C9E3EA6104B35210033A3F0 /* PivotalTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

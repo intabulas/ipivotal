@@ -11,7 +11,7 @@
 
 
 @implementation PivotalNote
-@synthesize noteId, text, author, createdAt, visualHeight;
+@synthesize noteId, text, author, createdAt;
 
 -(id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory {
     [super init];
@@ -52,10 +52,13 @@
 - (void)sendCommentDataToURL:(NSURL *)theURL {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:theURL];
+#ifdef LOG_NETWORK	
+    NSLog(@"URL: '%@'", theURL);
+#endif
     
     NSString *newcomment = [self to_xml];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
-    [request setPostBody:[[NSMutableData alloc] initWithData:[newcomment dataUsingEncoding:NSUTF8StringEncoding]]];
+    [request setPostBody:[[[NSMutableData alloc] initWithData:[newcomment dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
 	[request start];
 #ifdef LOG_NETWORK	
     NSLog(@"%@", [request responseString]);

@@ -37,7 +37,7 @@
 	if ([keyPath isEqualToString:kResourceSavingStatusKeyPath]) {
 		if (note.isSaving) return;
 		if ( note.isSaved) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Comment Added" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Comment Added" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[alert show];
 			[alert release];
 		} else if (note.error) {

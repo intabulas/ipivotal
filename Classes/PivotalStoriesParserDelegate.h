@@ -10,6 +10,7 @@
     PivotalStory     *currentStory;
     PivotalNote      *currentNote;
     BOOL handlingNotes;
+    BOOL handlingTasks;
     
 }
 
