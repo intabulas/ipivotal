@@ -43,11 +43,11 @@
         [currentTask release];
         currentTask = nil;        
         
-        handlingNotes = NO;                
+        handlingTasks = NO;                
 	} else if ([elementName isEqualToString:kTagId]) {             
         if ( handlingNotes ) { 
             currentNote.noteId = [currentElementValue integerValue];
-        } if ( handlingTasks ) {
+        } else if ( handlingTasks ) {
             currentTask.taskId  = [currentElementValue integerValue];
         } else {
             currentStory.storyId = [currentElementValue integerValue];
