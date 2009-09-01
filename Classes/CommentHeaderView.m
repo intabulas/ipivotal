@@ -11,7 +11,7 @@
         
        // [self setBackgroundColor: [UIColor colorWithRed:154.0/255.0 green:154.0/255.0 blue:154.0/255.0 alpha:1.0]];
 //        [self setBackgroundColor: [UIColor colorWithRed:76.0/255.0 green:76.0/255.0 blue:76.0/255.0 alpha:1.0]];
-        [self setBackgroundColor:[UIColor blackColor]];
+        [self setBackgroundColor:[UIColor grayColor]];
         
         commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 26.0f, 22.0f)];
         commentImage.backgroundColor = [UIColor clearColor];
