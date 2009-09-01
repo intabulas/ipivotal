@@ -71,7 +71,6 @@
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
 	[request start];
     self.error = [request error];
-    NSError *theError;    
 
 
 	PivotalIterationsParserDelegate *parserDelegate = [[PivotalIterationsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedIterations:)];

@@ -35,7 +35,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"My Projects";
+    self.navigationItem.title = @"Projects";
 }
 
 - (void)reloadProjects {

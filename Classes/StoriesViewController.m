@@ -55,6 +55,7 @@
         PivotalStories *theStories = (PivotalStories *)object;
         if ( theStories.isLoading) {
         } else {         
+
      		[self.storiesTableView reloadData];
         }        
 	}    

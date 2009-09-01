@@ -69,6 +69,8 @@
 
 - (void)setStory:(PivotalStory *)theStory {
      
+        NSLog(@"%@", theStory);
+    
         statusLabel.textColor = [UIColor blackColor];
         storyLabel.textColor = [UIColor blackColor];
     
@@ -115,6 +117,8 @@
         
         if ( [theStory.comments count] > 0 ) {
             [commentsLabel setText:kLabelComments];
+        } else {
+            [commentsLabel setText:@""];
         }
     
         

@@ -69,7 +69,6 @@
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
 	[request start];
     self.error = [request error];
-    NSError *theError;    
 
 #ifdef LOG_NETWORK
     NSLog(@"Stories: '%@'", [request responseString]);

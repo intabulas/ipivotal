@@ -62,7 +62,6 @@
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
 	[request start];
     self.error = [request error];
-    NSError *theError;    
 	PivotalProjectsParserDelegate *parserDelegate = [[PivotalProjectsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedProjects:)];
 #ifdef LOG_NETWORK    
     NSLog(@"%@", [request responseString]);
