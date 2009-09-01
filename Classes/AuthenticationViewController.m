@@ -29,7 +29,7 @@
     tokenField.text = [defaults valueForKey:kDefaultsApiToken];
     
     [tableFooterView setBackgroundColor:[UIColor clearColor]];
-    //self.tableView.tableFooterView = tableFooterView;
+    self.tableView.tableFooterView = tableFooterView;
     
 }
 
@@ -104,13 +104,9 @@
     
     
     
-    ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kUrlRetrieveToken]] autorelease];
-    [request setUsername:@"mlussier"];    
-    [request setPassword:@"kjgbu45n"]; 
-    
+    ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kUrlRetrieveToken]] autorelease];    
     NSLog(@"URL: %@  USERNAME: %@   PASSSORD:  %@", [request url], [request username], [request password]);
     [request start];
-    [request retryWithAuthentication];
     NSLog(@"Result :'%@' '%d'", [request error], [request responseStatusCode]);
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];        
