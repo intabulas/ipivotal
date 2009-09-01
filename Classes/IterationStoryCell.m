@@ -20,24 +20,24 @@
                 storyLabel.autoresizingMask = UIViewAutoresizingNone;
                 storyLabel.backgroundColor = [UIColor clearColor];
                 storyLabel.highlightedTextColor = [UIColor whiteColor];
-                storyLabel.font = [UIFont  systemFontOfSize:13.0f];
+                storyLabel.font = [UIFont  systemFontOfSize:14.0f];
                 storyLabel.textColor = [UIColor blackColor];
                 storyLabel.textAlignment = UITextAlignmentLeft;
         
                 
-                statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(31.0f, 23.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
+                statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(31.0f, 30.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
                 statusLabel.autoresizingMask = UIViewAutoresizingNone;
                 statusLabel.backgroundColor = [UIColor clearColor];
                 statusLabel.highlightedTextColor = [UIColor whiteColor];
-                statusLabel.font = [UIFont  systemFontOfSize:12.0f];
+                statusLabel.font = [UIFont  systemFontOfSize:13.0f];
                 statusLabel.textColor = [UIColor blackColor];
                 statusLabel.textAlignment = UITextAlignmentLeft;
 
-                commentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(230.0f, 23.0f, (self.contentView.frame.size.width - 10.0f) , 15.0f)];
+                commentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(230.0f, 30.0f, (self.contentView.frame.size.width - 10.0f) , 15.0f)];
                 commentsLabel.autoresizingMask = UIViewAutoresizingNone;
                 commentsLabel.backgroundColor = [UIColor clearColor];
                 commentsLabel.highlightedTextColor = [UIColor whiteColor];
-                commentsLabel.font = [UIFont  systemFontOfSize:12.0f];
+                commentsLabel.font = [UIFont  systemFontOfSize:13.0f];
                 commentsLabel.textColor = [UIColor blackColor];
                 commentsLabel.textAlignment = UITextAlignmentLeft;
             

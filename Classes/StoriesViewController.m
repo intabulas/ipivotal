@@ -117,6 +117,9 @@
 	return cell;    
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50.0f;    
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStory:[stories.stories objectAtIndex:indexPath.row] andProject:project];
