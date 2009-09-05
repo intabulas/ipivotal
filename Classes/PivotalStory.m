@@ -25,9 +25,9 @@
     return self;
 }
 
-- (NSString *)description {
-    return [NSString stringWithFormat:@"<PivotalStory name:'%@' comments:'%d' tasks:'%d'>", name, [comments count], [tasks count]];
-}
+//- (NSString *)description {
+//    return [NSString stringWithFormat:@"<PivotalStory name:'%@' comments:'%d' tasks:'%d'>", name, [comments count], [tasks count]];
+//}
 
 - (id)initWithStoryId:(NSInteger)theId andProject:(PivotalProject *)theProject {
   [self initWithStoryId:theId];

@@ -5,12 +5,20 @@
 
 @implementation CommentCell
 @synthesize comment;
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         // Initialization code
     }
     return self;
-}
+}    
+
+//- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
+//    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+//        // Initialization code
+//    }
+//    return self;
+//}
 
 -(CGFloat)getHeight {
  return   commentText.bounds.size.height;
