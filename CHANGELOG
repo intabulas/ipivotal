@@ -1,0 +1,2 @@
+- Al activity is SSL
+- removed UIAlertDialog that was showing the "Add Story" message on state transition

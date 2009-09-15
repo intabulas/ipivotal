@@ -184,12 +184,12 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 1; //2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
     if ( indexPath.row == 0 ) return tokenCell;
-    if ( indexPath.row == 1) return sslCell;    
+    //if ( indexPath.row == 1) return sslCell;    
     return nil;
 }
 

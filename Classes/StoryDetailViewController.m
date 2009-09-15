@@ -272,10 +272,10 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kLabelAddStory message:@"Story has been placed in the Icebox. \n\nIt may take a minute or two for it to show up in the list (api lag)" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
-    [alert show];
-    [alert release];        
-    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Story has been placed in the Icebox. \n\nIt may take a minute or two for it to show up in the list (api lag)" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+//    [alert show];
+//    [alert release];        
+//    
     
 }
 
