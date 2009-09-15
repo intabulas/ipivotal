@@ -107,9 +107,9 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iPivotalAppDelegate.h; path = Classes/iPivotalAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iPivotalAppDelegate.m; path = Classes/iPivotalAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* iPivotal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPivotal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* PTCruiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTCruiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28A0AB4B0D9B1048005BE974 /* iPivotal_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPivotal_Prefix.pch; sourceTree = "<group>"; };
+		28A0AB4B0D9B1048005BE974 /* PTCruiser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTCruiser_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C026B240FDC9829002CFEE0 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
 		8C026B250FDC9829002CFEE0 /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* iPivotal.app */,
+				1D6058910D05DD3D006BFB54 /* PTCruiser.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 				8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
-				28A0AB4B0D9B1048005BE974 /* iPivotal_Prefix.pch */,
+				28A0AB4B0D9B1048005BE974 /* PTCruiser_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -554,9 +554,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* iPivotal */ = {
+		1D6058900D05DD3D006BFB54 /* PTCruiser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iPivotal" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PTCruiser" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -566,9 +566,9 @@
 			);
 			dependencies = (
 			);
-			name = iPivotal;
+			name = PTCruiser;
 			productName = iPivotal;
-			productReference = 1D6058910D05DD3D006BFB54 /* iPivotal.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* PTCruiser.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -576,14 +576,14 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPivotal" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PTCruiser" */;
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* iPivotal */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* iPivotal */,
+				1D6058900D05DD3D006BFB54 /* PTCruiser */,
 			);
 		};
 /* End PBXProject section */
@@ -718,9 +718,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iPivotal_Prefix.pch;
+				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = iPivotal;
+				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "393643DA-E171-4782-A31C-6DEFBE945F38";
 			};
 			name = Debug;
@@ -733,9 +733,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iPivotal_Prefix.pch;
+				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = iPivotal;
+				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "393643DA-E171-4782-A31C-6DEFBE945F38";
 			};
 			name = Release;
@@ -762,9 +762,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mark Lussier";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iPivotal_Prefix.pch;
+				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = iPivotal;
+				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "45F5F235-405B-431F-9468-07EAD8E41412";
 			};
 			name = Distribution;
@@ -801,7 +801,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iPivotal" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PTCruiser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -811,7 +811,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPivotal" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PTCruiser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

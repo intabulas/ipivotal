@@ -113,7 +113,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if ( editingDictionary == nil ) {
-        editingDictionary = [[NSMutableDictionary alloc] init];        
+       editingDictionary = [[NSMutableDictionary alloc] init];        
        [editingDictionary setObject:kTypeFeature forKey:kKeyType];
        [editingDictionary setObject:kDefaultStoryTitle forKey:kKeyStoryName];
        [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:kKeyEstimate];    
@@ -130,20 +130,13 @@
     }
     
         
-//    if ( editing ) {
-//        self.title = @"Editing Story";
-//        [editingDictionary setObject:self.story.storyType forKey:kKeyType];
-//        [editingDictionary setObject:self.story.name forKey:kKeyStoryName];
-//        [editingDictionary setObject:[NSNumber numberWithInteger:self.story.estimate] forKey:kKeyEstimate];        
-//        
-//     } else {
-         
-         self.story.name          = (NSString *)[editingDictionary valueForKey:kKeyStoryName];
-         self.story.storyType          = [editingDictionary valueForKey:kKeyType];
-         NSNumber *estimateNumber = [editingDictionary valueForKey:kKeyEstimate];
-         self.story.estimate = [estimateNumber integerValue];
-          self.title = kLabelAddStory;
-//        }
+    self.story.name           = (NSString *)[editingDictionary valueForKey:kKeyStoryName];
+    self.story.storyType      = [editingDictionary valueForKey:kKeyType];
+
+    NSNumber *estimateNumber  = [editingDictionary valueForKey:kKeyEstimate];
+
+    self.story.estimate       = [estimateNumber integerValue];
+    self.title = kLabelAddStory;
     
     [storyTableView reloadData];
     
