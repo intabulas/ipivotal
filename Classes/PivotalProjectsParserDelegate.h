@@ -37,6 +37,7 @@
 @interface PivotalProjectsParserDelegate : PivotalResourceParserDelegate {
     @private
     PivotalProject *currentProject;    
+    BOOL handlingMembership;
 }
 
 @end

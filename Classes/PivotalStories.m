@@ -32,6 +32,8 @@
 
 #import "PivotalStories.h"
 #import "PivotalStoriesParserDelegate.h"
+#import "PSProgressHUD.h"
+#import "iPivotalAppDelegate.h"
 
 @interface PivotalStories ()
 - (void)fetchStories;
@@ -99,6 +101,9 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
+
+
+    
 	[request start];
     self.error = [request error];
 
