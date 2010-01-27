@@ -112,7 +112,7 @@
 	ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:theURL];
     [request setRequestMethod:@"GET"];    
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
-	[request start];
+	[request startSynchronous];
 #ifdef LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif    

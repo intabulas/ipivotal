@@ -103,7 +103,7 @@
 
 
     
-	[request start];
+	[request startSynchronous];
     self.error = [request error];
 
 #ifdef LOG_NETWORK

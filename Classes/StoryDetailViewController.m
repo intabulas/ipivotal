@@ -268,7 +268,7 @@
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
-    [request start];
+    [request startSynchronous];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];    
     

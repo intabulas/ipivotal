@@ -103,19 +103,23 @@
     NSLog(@"%@", [request responseString]);
 #endif   
 	
-	PivotalTokenParserDelegate *parserDelegate = [[PivotalTokenParserDelegate alloc] initWithTarget:self andSelector:@selector(parsedToken:)];
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
-	[parser setDelegate:parserDelegate];
-	[parser setShouldProcessNamespaces:NO];
-	[parser setShouldReportNamespacePrefixes:NO];
-	[parser setShouldResolveExternalEntities:NO];
-	[parser parse];
-	[parser release];
-	[parserDelegate release];
-	
-	
-	
-	
+	if ( success ) {
+   	  PivotalTokenParserDelegate *parserDelegate = [[PivotalTokenParserDelegate alloc] initWithTarget:self andSelector:@selector(parsedToken:)];
+      NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+	  [parser setDelegate:parserDelegate];
+	  [parser setShouldProcessNamespaces:NO];
+	  [parser setShouldReportNamespacePrefixes:NO];
+	  [parser setShouldResolveExternalEntities:NO];
+	  [parser parse];  
+	  [parser release];
+  	  [parserDelegate release];
+	} else {
+		UIAlertView *alert;
+		alert = [[UIAlertView alloc] initWithTitle:@"Authentication Failed" message:@"The username and/or password you provided are invalid. \nPlease try again." delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+		[alert show];
+		[alert release];        
+		
+	}
 	
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];        
@@ -125,6 +129,14 @@
 
 - (void)parsedToken:(id)theResult {
     if ( [theResult isKindOfClass:[NSError class]]) {
+		
+		UIAlertView *alert;
+		alert = [[UIAlertView alloc] initWithTitle:@"Problem Retrieving API Token" message:@"There was a problem retrieving your API Token from Pivotal Tracker. \n\nPlease try again, or check that your credentials are valid" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+		[alert show];
+		[alert release];        
+		
+		
+		
     } else {
 #ifdef LOG_NETWORK		
 		NSLog(@"token is '%@'", [theResult objectAtIndex:0]);

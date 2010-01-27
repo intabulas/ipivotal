@@ -100,7 +100,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
-	[request start];
+	[request startSynchronous];
     self.error = [request error];
 #ifdef LOG_NETWORK    
     NSLog(@"Activities: '%@'", [request responseString]);

@@ -101,7 +101,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
-	[request start];
+	[request startSynchronous];
     self.error = [request error];
 
 

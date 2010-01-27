@@ -91,7 +91,7 @@
     NSString *newcomment = [self to_xml];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newcomment dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
-	[request start];
+	[request startSynchronous];
 #ifdef LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif    

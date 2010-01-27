@@ -92,11 +92,11 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
-	[request start];
+	[request startSynchronous];
     self.error = [request error];
 	PivotalProjectsParserDelegate *parserDelegate = [[PivotalProjectsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedProjects:)];
 #ifdef LOG_NETWORK    
-    NSLog(@"%@", [request responseString]);
+    NSLog(@" Response: '%@'", [request responseString]);
 #endif
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
 	[parser setDelegate:parserDelegate];
