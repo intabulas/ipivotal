@@ -1,0 +1,3 @@
+To Myself
+
+Renamed Info.plist Identifier that was rolled back com.intabulas.${PRODUCT_NAME:identifier}
