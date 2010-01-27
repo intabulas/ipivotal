@@ -63,6 +63,10 @@
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
 		8C7C5F3E10155C5B002A4C52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */; };
 		8C7C5F6210155D49002A4C52 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C5F6110155D49002A4C52 /* Reachability.m */; };
+		8C81C1111110AC6300378558 /* chat_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1101110AC6300378558 /* chat_medium.png */; };
+		8C81C1131110AC7F00378558 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1121110AC7F00378558 /* tag.png */; };
+		8C81C1181110ACE800378558 /* map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1171110ACE800378558 /* map-marker.png */; };
+		8C81C1361110AF4F00378558 /* storyheader.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1351110AF4F00378558 /* storyheader.png */; };
 		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
@@ -198,6 +202,10 @@
 		8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8C7C5F6010155D49002A4C52 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8C7C5F6110155D49002A4C52 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8C81C1101110AC6300378558 /* chat_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_medium.png; sourceTree = "<group>"; };
+		8C81C1121110AC7F00378558 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		8C81C1171110ACE800378558 /* map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-marker.png"; sourceTree = "<group>"; };
+		8C81C1351110AF4F00378558 /* storyheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storyheader.png; sourceTree = "<group>"; };
 		8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionListViewController.xib; sourceTree = "<group>"; };
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
@@ -552,6 +560,10 @@
 		8CDB64590FCF8D3C003AC065 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8C81C1351110AF4F00378558 /* storyheader.png */,
+				8C81C1171110ACE800378558 /* map-marker.png */,
+				8C81C1121110AC7F00378558 /* tag.png */,
+				8C81C1101110AC6300378558 /* chat_medium.png */,
 				8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */,
 				8C5BC43C1039ABB40005A028 /* chat.png */,
 				8C5BC43D1039ABB40005A028 /* chat_small.png */,
@@ -650,6 +662,10 @@
 				8C5BC8901039FEB50005A028 /* chat_small_inverted.png in Resources */,
 				8C255AA1103F5E2100DEE140 /* Localizable.strings in Resources */,
 				8C255AC9103F606C00DEE140 /* AddComment.xib in Resources */,
+				8C81C1111110AC6300378558 /* chat_medium.png in Resources */,
+				8C81C1131110AC7F00378558 /* tag.png in Resources */,
+				8C81C1181110ACE800378558 /* map-marker.png in Resources */,
+				8C81C1361110AF4F00378558 /* storyheader.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
