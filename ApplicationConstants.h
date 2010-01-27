@@ -95,6 +95,7 @@
 
 #define kPivotalTrackerHost        @"www.apple.com"
 #define kUrlRetrieveToken          @"https://www.pivotaltracker.com/services/v3/tokens/active"
+//#define kUrlRetrieveToken          @"https://www.pivotaltracker.com/services/v3/tokens/active?username=%@\&password=%@"
 #define kUrlProjectList            @"https://www.pivotaltracker.com/services/v3/projects"
 #define kUrlIterationList          @"https://www.pivotaltracker.com/services/v3/projects/%d/iterations"    
 #define kUrlIterationTypeList      @"https://www.pivotaltracker.com/services/v3/projects/%d/iterations/%@"

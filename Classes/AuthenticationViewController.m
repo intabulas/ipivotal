@@ -61,7 +61,7 @@
     tokenField.text = [defaults valueForKey:kDefaultsApiToken];
     
     [tableFooterView setBackgroundColor:[UIColor clearColor]];
-//    self.tableView.tableFooterView = tableFooterView;
+    self.tableView.tableFooterView = tableFooterView;
     
 }
 
@@ -131,6 +131,34 @@
 - (void)authenticationNeededForRequest:(ASIHTTPRequest *)request {
     NSLog(@"DOH");
 }
+//-(IBAction)retrieveToken:(id)sender; {
+//    
+//   // [self lookupToken:sender];
+//	
+//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//		
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
+//    
+//	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//	NSString *urlString = [NSString stringWithFormat:kUrlRetrieveToken, @"mlussier", @"kjgbu45n"];
+//	ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]] autorelease];
+//
+//#ifdef LOG_NETWORK
+//	NSLog( @"Curl Test:  curl -H \"X-TrackerToken: %@\" -X GET %@", @"SDD", [NSURL URLWithString:kUrlRetrieveToken] );
+//#endif
+//		
+//    [request start];
+//    NSLog(@"Result :'%@' '%d'", [request error], [request responseStatusCode]);
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+//    [pool release];        
+//    
+//}
+//
+//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+//  [self retrieveToken:self];    
+//    
+//}
+
 -(IBAction)retrieveToken:(id)sender; {
     
     
@@ -138,22 +166,21 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     
     NSURLCredentialStorage *storage = [NSURLCredentialStorage sharedCredentialStorage];
-//    [storage credentialsForProtectionSpace:<#(NSURLProtectionSpace *)space#>
+	//    [storage credentialsForProtectionSpace:<#(NSURLProtectionSpace *)space#>
     
     ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kUrlRetrieveToken]] autorelease];  
-    [request setUsername:@"mlussier"];
-    [request setPassword:@"kjgbu45"];
-    [request setUseSessionPersistance:YES];
-    NSLog(@"URL: %@  USERNAME: %@   PASSSORD:  %@", [request url], [request username], [request password]);
+
+    [request setShouldPresentAuthenticationDialog:YES];
+	[request setUseSessionPersistance:NO];
     [request start];
     NSLog(@"Result :'%@' '%d'", [request error], [request responseStatusCode]);
+	
+#ifdef LOG_NETWORK	
+    NSLog(@"%@", [request responseString]);
+#endif   
+	
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];        
-    
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-  [self retrieveToken:self];    
     
 }
 

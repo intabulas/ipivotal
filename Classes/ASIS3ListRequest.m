@@ -1,6 +1,6 @@
 //
 //  ASIS3ListRequest.m
-//  Mac
+//  Part of ASIHTTPRequest -> http://allseeing-i.com/ASIHTTPRequest
 //
 //  Created by Ben Copsey on 13/07/2009.
 //  Copyright 2009 All-Seeing Interactive. All rights reserved.
@@ -24,6 +24,7 @@ static NSDateFormatter *dateFormatter = nil;
 + (void)initialize
 {
 	dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
 	[dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'.000Z'"];
 }
@@ -121,6 +122,18 @@ static NSDateFormatter *dateFormatter = nil;
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
 	[self setCurrentContent:[[self currentContent] stringByAppendingString:string]];
+}
+
+#pragma mark NSCopying
+
+- (id)copyWithZone:(NSZone *)zone
+{
+	ASIS3ListRequest *newRequest = [super copyWithZone:zone];
+	[newRequest setPrefix:[self prefix]];
+	[newRequest setMarker:[self marker]];
+	[newRequest setMaxResultCount:[self maxResultCount]];
+	[newRequest setDelimiter:[self path]];
+	return newRequest;
 }
 
 

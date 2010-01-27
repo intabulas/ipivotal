@@ -1,6 +1,6 @@
 //
 //  ASIS3BucketObject.h
-//  Mac
+//  Part of ASIHTTPRequest -> http://allseeing-i.com/ASIHTTPRequest
 //
 //  Created by Ben Copsey on 13/07/2009.
 //  Copyright 2009 All-Seeing Interactive. All rights reserved.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @class ASIS3Request;
 
-@interface ASIS3BucketObject : NSObject {
+@interface ASIS3BucketObject : NSObject <NSCopying> {
 	
 	// The bucket this object belongs to
 	NSString *bucket;
