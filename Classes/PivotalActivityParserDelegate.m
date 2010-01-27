@@ -68,7 +68,7 @@
 
 		
 		
-	} else if ([elementName isEqualToString:kTagStory]) {              
+	} else if ([elementName isEqualToString:kTagName]) {              
         currentActivity.story = currentElementValue;
 	} else if ([elementName isEqualToString:kTagDescription]) {                      
         currentActivity.description = currentElementValue;

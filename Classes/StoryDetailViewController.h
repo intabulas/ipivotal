@@ -40,6 +40,8 @@
     @private    
     IBOutlet UITableView *storyTableView;
     IBOutlet UIView *tableHeaderView;
+    IBOutlet UITableViewCell *tasksCell;	
+    IBOutlet UITableViewCell *attachmentsCell;
     IBOutlet UITableViewCell *commentsCell;
     IBOutlet UITableViewCell *ownerCell;
     IBOutlet UITableViewCell *requestorCell;
@@ -51,6 +53,9 @@
     IBOutlet UITextView *storyDescription;    
     IBOutlet UILabel *storyName;
     IBOutlet UILabel *commentsLabel;
+    IBOutlet UILabel *tasksLabel;	
+	IBOutlet UILabel *attachmentsLabel;
+	
 
     IBOutlet UILabel *estimate;
     IBOutlet UIImageView *typeIcon;

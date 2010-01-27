@@ -182,6 +182,8 @@
 #define kLabelDateRange             @"%@ - %@"
 #define kLabelStoryEstimation       @"a %@, estimated as %d point(s)"
 #define kLabelStoryComments         @"%d Comments"
+#define kLabelStoryAttachments      @"%d Attachments"
+#define kLabelStoryTasks            @"%d Tasks"
 // Formats
 
 #define kFormatPoints             @"%d Point(s)"

@@ -108,7 +108,7 @@
     activityLabel.text = activityText;
 		
 	NSString *prettyDate = [theActivity.occuredAt prettyDate];
-	statusLabel.text = [NSString stringWithFormat:@"%@ / %d", prettyDate, theActivity.projectId];
+	statusLabel.text = [NSString stringWithFormat:@"%@", prettyDate];
     storyLabel.text = theActivity.story;
 }
 

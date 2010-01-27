@@ -65,6 +65,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
+	[attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryAttachments, [self.story.attachments count]]];
+    [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
     
     
 }
@@ -165,7 +167,8 @@
     
     
     [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
-    
+    [attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.attachments count]]];
+    [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
     
     self.storyTableView.tableHeaderView = tableHeaderView;
 
@@ -186,7 +189,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return (section == 0) ? 4 : 1;
+	return (section == 0) ? 4 : 3;
 }
 
 
@@ -200,17 +203,20 @@
     if ( section == 0 && row == 1 ) return requestorCell;    
     if ( section == 0 && row == 2 ) return ownerCell;        
     if ( section == 0 && row == 3 ) return descriptionCell;
-    
-    if ( section == 1 && row == 0 ) { 
-//        if ( [self.story.comments count] == 0 ) {
-//            [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
-//            [commentsCell setUserInteractionEnabled:NO];
-//        } else {
-//            [commentsCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-//            [commentsCell setUserInteractionEnabled:YES];                
-//        }
-        return commentsCell;        
-    }
+    if ( section == 1 && row == 0 ) return commentsCell;
+    if ( section == 1 && row == 1 ) return attachmentsCell;	
+	if ( section == 1 && row == 2 ) return tasksCell;	
+	
+//    if ( section == 1 && row == 0 ) { 
+////        if ( [self.story.comments count] == 0 ) {
+////            [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
+////            [commentsCell setUserInteractionEnabled:NO];
+////        } else {
+////            [commentsCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+////            [commentsCell setUserInteractionEnabled:YES];                
+////        }
+//        return commentsCell;        
+//    }
     
     static NSString *CellIdentifier = @"Cell";
 
@@ -229,7 +235,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return  (indexPath.section == 0 && indexPath.row == 3) ? 60.0f : 44.0f;
+	return  (indexPath.section == 0 && indexPath.row == 3) ? 60.0f : 40.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
