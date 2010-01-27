@@ -46,6 +46,7 @@
     NSString *requestedBy;
     NSString *owner;
     NSDate  *createdAt;
+    NSDate *updatedAt;
     NSDate  *acceptedAt;
 	NSString *lighthouseUrl;
 	NSInteger lighthouseId;
@@ -66,6 +67,7 @@
 @property (nonatomic, retain) NSString *requestedBy;
 @property (nonatomic, retain) NSString *owner;
 @property (nonatomic, retain) NSDate  *createdAt;
+@property (nonatomic, retain) NSDate  *updatedAt;
 @property (nonatomic, retain) NSDate  *acceptedAt;
 @property (nonatomic, retain) NSMutableArray  *comments;
 @property (nonatomic, retain) NSMutableArray  *tasks;

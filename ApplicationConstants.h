@@ -14,6 +14,7 @@
 #define kTagRequestedBy             @"requested_by"
 #define kTagOwnedBy                 @"owned_by"
 #define kTagCreatedAt               @"created_at"
+#define kTagUpdatedAt               @"updated_at"
 #define kTagAcceptedAt              @"accepted_at"
 #define kTagProject                 @"project"
 #define kTagIterationLength         @"iteration_length"

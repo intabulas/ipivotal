@@ -56,7 +56,10 @@
     IBOutlet UILabel *tasksLabel;	
 	IBOutlet UILabel *attachmentsLabel;
 	
-
+    IBOutlet UITableViewCell *createdAtCell;
+	IBOutlet UILabel *createdAtLabel;    
+    IBOutlet UITableViewCell *updatedAtCell;
+	IBOutlet UILabel *updatedAtLabel;       
     IBOutlet UILabel *estimate;
     IBOutlet UIImageView *typeIcon;
     IBOutlet UIImageView *estimateIcon;

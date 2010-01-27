@@ -170,6 +170,9 @@
     [attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.attachments count]]];
     [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
     
+    
+    [createdAtLabel setText:[self.story.createdAt prettyDate]];
+    [updatedAtLabel setText:[self.story.updatedAt prettyDate]];    
     self.storyTableView.tableHeaderView = tableHeaderView;
 
     
@@ -183,13 +186,19 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return (section == 0) ? 4 : 3;
+    if ( section == 0) {
+        return 4;
+    } else if (section == 1 ) {
+        return 3;
+    } else {
+        return 2;
+    }
 }
 
 
@@ -206,7 +215,10 @@
     if ( section == 1 && row == 0 ) return commentsCell;
     if ( section == 1 && row == 1 ) return attachmentsCell;	
 	if ( section == 1 && row == 2 ) return tasksCell;	
-	
+
+    if ( section == 2 && row == 0 ) return createdAtCell;	
+    if ( section == 2 && row == 1 ) return updatedAtCell;	    
+    
 //    if ( section == 1 && row == 0 ) { 
 ////        if ( [self.story.comments count] == 0 ) {
 ////            [commentsCell setAccessoryType:UITableViewCellAccessoryNone];

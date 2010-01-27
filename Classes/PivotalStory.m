@@ -35,7 +35,7 @@
 
 @implementation PivotalStory
 
-@synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt, comments, tasks, attachments, lighthouseId, lighthouseUrl;
+@synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt, comments, tasks, attachments, lighthouseId, lighthouseUrl, updatedAt;
 
 #pragma mark -
 #pragma mark Cleanup Methods
@@ -83,6 +83,7 @@
     [requestedBy release];
     [owner release];
     [createdAt release];
+    [updatedAt release];
     [acceptedAt release];    
 	[lighthouseUrl  release];
     [super dealloc];

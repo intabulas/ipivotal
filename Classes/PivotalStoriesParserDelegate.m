@@ -138,7 +138,13 @@
         } else {
             currentStory.createdAt = [dateFormatter dateFromString:currentElementValue];
         }
-
+	} else if ([elementName isEqualToString:kTagUpdatedAt]) {  
+        if ( handlingTasks ) {
+        } else {
+            currentStory.updatedAt = [dateFormatter dateFromString:currentElementValue];
+        }
+        
+        
    	} else if ([elementName isEqualToString:kTagLighthouseUrl]) {  
 		currentStory.lighthouseUrl = currentElementValue;
    	} else if ([elementName isEqualToString:kTagLighthouseId]) {  
