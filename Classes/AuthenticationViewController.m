@@ -99,11 +99,13 @@
 	[request startSynchronous];
 	BOOL success = [request authenticationRetryCount] == 1;	
 	
+	NSError *error = [request error];
+	
 #ifdef LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif   
 	
-	if ( success ) {
+	if ( !error ) {
    	  PivotalTokenParserDelegate *parserDelegate = [[PivotalTokenParserDelegate alloc] initWithTarget:self andSelector:@selector(parsedToken:)];
       NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
 	  [parser setDelegate:parserDelegate];
