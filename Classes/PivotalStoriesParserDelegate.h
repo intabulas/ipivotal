@@ -34,15 +34,18 @@
 #import "PivotalResourceParserDelegate.h"
 #import "PivotalStory.h"
 
-@class PivotalNote, PivotalTask;
+@class PivotalNote, PivotalTask, PivotalAttachment;
 @interface PivotalStoriesParserDelegate : PivotalResourceParserDelegate {
 @private
     NSDateFormatter *dateFormatter;
     PivotalStory     *currentStory;
     PivotalNote      *currentNote;
     PivotalTask      *currentTask;
+	PivotalAttachment *currentAttachment;
+	
     BOOL handlingNotes;
     BOOL handlingTasks;
+	BOOL handlingAttachments;
     
 }
 

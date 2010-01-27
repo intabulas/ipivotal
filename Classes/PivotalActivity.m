@@ -35,18 +35,18 @@
 
 @implementation PivotalActivity
 
-@synthesize activityId, project, story, description, author, when;
+@synthesize activityId, version, occuredAt, projectId, description, author, eventType, story;
 
 - (id)init {
     [super init];
     return self;
 }
 - (void)dealloc {
-    [project release];
     [story release];
     [description release];
     [author release];
-    [when release];
+    [occuredAt release];
+	[eventType release];
     [super dealloc];
 }
 

@@ -78,6 +78,11 @@
     [request setShouldCompressRequestBody:NO];
 #endif    
     [request addRequestHeader:kTrackerTokenHeader value:token];
+	
+#ifdef LOG_NETWORK
+	NSLog( @"Curl Test:  curl -H \"X-TrackerToken: %@\" -X GET %@", token, theURL );
+#endif
+	
     return request;
 }
 

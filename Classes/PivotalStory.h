@@ -37,7 +37,7 @@
 @class PivotalProject;
 @interface PivotalStory : PivotalResource {
     NSInteger storyId;
-    NSString *storyType;
+    NSString *storyType;	
     NSURL    *url;
     NSInteger estimate;
     NSString *currentState;
@@ -47,8 +47,12 @@
     NSString *owner;
     NSDate  *createdAt;
     NSDate  *acceptedAt;
+	NSString *lighthouseUrl;
+	NSInteger lighthouseId;
+	
     NSMutableArray *comments;
-    NSMutableArray *tasks;    
+    NSMutableArray *tasks; 
+	NSMutableArray *attachments;
     PivotalProject *project;
 }
 
@@ -65,6 +69,12 @@
 @property (nonatomic, retain) NSDate  *acceptedAt;
 @property (nonatomic, retain) NSMutableArray  *comments;
 @property (nonatomic, retain) NSMutableArray  *tasks;
+@property (nonatomic, retain) NSMutableArray  *attachments;
+@property (nonatomic, retain) NSString *lighthouseUrl;
+@property (nonatomic, readwrite) NSInteger lighthouseId;
+
+
+
 - (id)init;
 - (id)initWithStoryId:(NSInteger)theId;
 - (id)initWithStoryId:(NSInteger)theId andProject:(PivotalProject *)theProject;

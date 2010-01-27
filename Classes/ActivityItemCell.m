@@ -107,8 +107,8 @@
     [activityText replaceOccurrencesOfString:@"\"" withString:@" " options:NSLiteralSearch range:NSMakeRange(0,[activityText length])];
     activityLabel.text = activityText;
 		
-	NSString *prettyDate = [theActivity.when prettyDate];
-	statusLabel.text = [NSString stringWithFormat:@"%@ / %@", prettyDate, theActivity.project];
+	NSString *prettyDate = [theActivity.occuredAt prettyDate];
+	statusLabel.text = [NSString stringWithFormat:@"%@ / %d", prettyDate, theActivity.projectId];
     storyLabel.text = theActivity.story;
 }
 

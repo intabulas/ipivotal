@@ -55,16 +55,23 @@
         currentActivity = nil;        
 	} else if ([elementName isEqualToString:kTagId]) {      
         currentActivity.activityId = [currentElementValue integerValue];
-	} else if ([elementName isEqualToString:kTagProject]) {              
-        currentActivity.project = currentElementValue;
+	} else if ([elementName isEqualToString:kTagOccuredAt]) {  
+        currentActivity.occuredAt = [dateFormatter dateFromString:currentElementValue];
+	} else if ([elementName isEqualToString:kTagVersion]) {  
+        currentActivity.version = [currentElementValue integerValue];
+	} else if ([elementName isEqualToString:kTagEventType]) {  
+        currentActivity.eventType = currentElementValue;
+	} else if ([elementName isEqualToString:kTagAuthor]) {                      
+        currentActivity.author = currentElementValue;
+	} else if ([elementName isEqualToString:kTagProjectId]) {              
+        currentActivity.projectId = [currentElementValue integerValue];
+
+		
+		
 	} else if ([elementName isEqualToString:kTagStory]) {              
         currentActivity.story = currentElementValue;
 	} else if ([elementName isEqualToString:kTagDescription]) {                      
         currentActivity.description = currentElementValue;
-	} else if ([elementName isEqualToString:kTagAuthor]) {                      
-        currentActivity.author = currentElementValue;
-	} else if ([elementName isEqualToString:kTagWhen]) {  
-        currentActivity.when = [dateFormatter dateFromString:currentElementValue];
 	} 
     
 	[currentElementValue release];

@@ -48,8 +48,18 @@
 #define kTagTitle                       @"title" // integrations
 #define kTagInitials                    @"initials" // membership
 #define kTagEmail                       @"email" // membership
-
 #define kTagLastActivityAt              @"last_activity_at" // project
+#define kTagOccuredAt                   @"occured_at"
+#define kTagVersion                     @"version" //activity 
+#define kTagEventType                   @"event_type" //activity 
+#define kTagProjectId                   @"project_id"
+#define kTagLighthouseId                @"lighthouse_id"
+#define kTagLighthouseUrl               @"lighthouse_url"
+#define kTagAttachment                  @"attachment"
+#define kTagFilename                    @"filename"
+#define kTagUploadedBy                  @"uploaded_by"
+#define kTagUploadedAt                  @"uploaded_at"
+
 
 
 #define kBooleanTrue    @"true"

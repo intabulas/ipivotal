@@ -51,6 +51,7 @@
 		8C50D61A0FE1A86300F41900 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C50D6190FE1A86300F41900 /* Entitlements.plist */; };
 		8C5619AC110FE6BF00AF33DC /* PivotalMembership.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */; };
 		8C561A04110FE9BE00AF33DC /* PivotalIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */; };
+		8C561A79110FF6E900AF33DC /* PivotalAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A78110FF6E900AF33DC /* PivotalAttachment.m */; };
 		8C5BC43E1039ABB40005A028 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43C1039ABB40005A028 /* chat.png */; };
 		8C5BC43F1039ABB40005A028 /* chat_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43D1039ABB40005A028 /* chat_small.png */; };
 		8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BC7E01039F9710005A028 /* CommentHeaderView.m */; };
@@ -176,6 +177,8 @@
 		8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalMembership.m; sourceTree = "<group>"; };
 		8C561A02110FE9BE00AF33DC /* PivotalIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalIntegration.h; sourceTree = "<group>"; };
 		8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalIntegration.m; sourceTree = "<group>"; };
+		8C561A77110FF6E900AF33DC /* PivotalAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalAttachment.h; sourceTree = "<group>"; };
+		8C561A78110FF6E900AF33DC /* PivotalAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalAttachment.m; sourceTree = "<group>"; };
 		8C5BC43C1039ABB40005A028 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		8C5BC43D1039ABB40005A028 /* chat_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_small.png; sourceTree = "<group>"; };
 		8C5BC7DF1039F9710005A028 /* CommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentHeaderView.h; sourceTree = "<group>"; };
@@ -462,6 +465,8 @@
 				8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */,
 				8C561A02110FE9BE00AF33DC /* PivotalIntegration.h */,
 				8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */,
+				8C561A77110FF6E900AF33DC /* PivotalAttachment.h */,
+				8C561A78110FF6E900AF33DC /* PivotalAttachment.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -703,6 +708,7 @@
 				8C5C0018104DCB4200C3A534 /* ASIAuthenticationDialog.m in Sources */,
 				8C5619AC110FE6BF00AF33DC /* PivotalMembership.m in Sources */,
 				8C561A04110FE9BE00AF33DC /* PivotalIntegration.m in Sources */,
+				8C561A79110FF6E900AF33DC /* PivotalAttachment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

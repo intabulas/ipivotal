@@ -35,19 +35,30 @@
 
 @interface PivotalActivity : NSObject {
 	NSInteger activityId;
-	NSString *project;
-	NSString *story;
+	NSInteger version;
+	NSDate   *occuredAt;
+	NSString *eventType;
+	NSString *author;	
+	NSInteger projectId;
 	NSString *description;
-	NSString *author;
-	NSDate   *when;
+	
+	NSString *story;
+	
+
+
+	
+
  
 }
 
 @property (nonatomic,readwrite) NSInteger activityId;
-@property (nonatomic,retain) NSString *project;
-@property (nonatomic,retain) NSString *story;
-@property (nonatomic,retain) NSString *description;
+@property (nonatomic,readwrite) NSInteger version;
+@property (nonatomic,retain) NSString *eventType;
+@property (nonatomic,retain) NSDate   *occuredAt;
 @property (nonatomic,retain) NSString *author;
-@property (nonatomic,retain) NSDate   *when;
+@property (nonatomic,readwrite) NSInteger projectId;
+@property (nonatomic,retain) NSString *description;
+
+@property (nonatomic,retain) NSString *story;
 
 @end

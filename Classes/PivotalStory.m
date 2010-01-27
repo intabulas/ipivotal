@@ -35,7 +35,7 @@
 
 @implementation PivotalStory
 
-@synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt, comments, tasks;
+@synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt, comments, tasks, attachments, lighthouseId, lighthouseUrl;
 
 #pragma mark -
 #pragma mark Cleanup Methods
@@ -48,6 +48,7 @@
     description = kTextStoryDescription;
     comments = [[NSMutableArray alloc] init];
     tasks = [[NSMutableArray alloc] init];
+	attachments = [[NSMutableArray alloc] init];
     return self;
 }
 
@@ -73,6 +74,7 @@
     }
     [comments release]; comments = nil;
     [tasks release]; tasks = nil;
+	[attachments release]; attachments = nil;
     [storyType release];
     [url release];
     [currentState release];
@@ -82,6 +84,7 @@
     [owner release];
     [createdAt release];
     [acceptedAt release];    
+	[lighthouseUrl  release];
     [super dealloc];
 }
 
