@@ -49,7 +49,7 @@
 #define kTagInitials                    @"initials" // membership
 #define kTagEmail                       @"email" // membership
 #define kTagLastActivityAt              @"last_activity_at" // project
-#define kTagOccuredAt                   @"occured_at"
+#define kTagOccuredAt                   @"occurred_at"
 #define kTagVersion                     @"version" //activity 
 #define kTagEventType                   @"event_type" //activity 
 #define kTagProjectId                   @"project_id"

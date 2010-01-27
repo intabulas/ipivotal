@@ -38,7 +38,7 @@
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	[super parserDidStartDocument:parser];
 	dateFormatter = [[NSDateFormatter alloc] init];
-	dateFormatter.dateFormat = kDateFormatActivity;
+	dateFormatter.dateFormat = kDateFormatUTC;
 }
 
 
