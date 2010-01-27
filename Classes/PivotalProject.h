@@ -39,6 +39,18 @@
     NSInteger iterationLength;
     NSString *weekStartDay;
     NSString *pointScale;
+	NSString *velocityScheme;
+	NSInteger currentVelocity;
+	NSInteger initialVelocity;
+	NSInteger numberDoneIterations;
+	BOOL      allowsAttachments;
+	BOOL      publicProject;
+	BOOL      useHttps;
+	BOOL      estimateBugsAndChores;
+	BOOL      commitMode;
+	NSMutableArray *members;
+	NSMutableArray *integrations;
+	NSDate *lastActivityAt;
 }
 
 @property (nonatomic, retain) NSString *name;
@@ -46,5 +58,22 @@
 @property (nonatomic, retain) NSString *pointScale;
 @property (nonatomic, readwrite) NSInteger  projectId;
 @property (nonatomic, readwrite) NSInteger iterationLength;
+@property (nonatomic, retain) NSString *velocityScheme;
+@property (nonatomic, readwrite) NSInteger currentVelocity;
+@property (nonatomic, readwrite) NSInteger initialVelocity;
+@property (nonatomic, readwrite) NSInteger numberDoneIterations;
+@property (nonatomic, assign) BOOL allowsAttachments;
+@property (nonatomic, assign) BOOL publicProject;
+@property (nonatomic, assign) BOOL useHttps;
+@property (nonatomic, assign) BOOL estimateBugsAndChores;
+@property (nonatomic, assign) BOOL commitMode;
+@property (nonatomic, retain) NSDate *lastActivityAt;
+
+@property (nonatomic, retain) NSMutableArray *members;
+@property (nonatomic, retain) NSMutableArray *integrations;
+
+
+
+
 @end
 

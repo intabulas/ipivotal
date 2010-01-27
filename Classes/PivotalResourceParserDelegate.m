@@ -32,6 +32,7 @@
 
 #import "PivotalResourceParserDelegate.h"
 
+
 @implementation PivotalResourceParserDelegate
 
 - (id)initWithTarget:(id)theTarget andSelector:(SEL)theSelector {

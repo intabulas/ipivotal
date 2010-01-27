@@ -33,11 +33,17 @@
 #import <Foundation/Foundation.h>
 #import "PivotalResourceParserDelegate.h"
 #import "PivotalProject.h"
+#import "PivotalMembership.h"
+#import "PivotalIntegration.h"
 
 @interface PivotalProjectsParserDelegate : PivotalResourceParserDelegate {
     @private
-    PivotalProject *currentProject;    
+    PivotalProject *currentProject; 
+	PivotalMembership *currentMembership;
+	PivotalIntegration *currentIntegration;
+    NSDateFormatter *dateFormatter;	
     BOOL handlingMembership;
+	BOOL handlingIntegration;
 }
 
 @end

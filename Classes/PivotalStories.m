@@ -32,7 +32,6 @@
 
 #import "PivotalStories.h"
 #import "PivotalStoriesParserDelegate.h"
-#import "PSProgressHUD.h"
 #import "iPivotalAppDelegate.h"
 
 @interface PivotalStories ()

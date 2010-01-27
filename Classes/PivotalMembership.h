@@ -30,40 +30,21 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "PivotalProject.h"
+#import <Foundation/Foundation.h>
 
 
-@implementation PivotalProject
-
-@synthesize projectId, name, iterationLength, weekStartDay, pointScale, velocityScheme, initialVelocity, currentVelocity, numberDoneIterations, allowsAttachments,
-            publicProject, useHttps, estimateBugsAndChores, commitMode, members, integrations, lastActivityAt;
-
-- (id)init {
-	[super init];
-	self.allowsAttachments = FALSE;
-	self.publicProject = FALSE;
-	self.useHttps = FALSE;
-	self.estimateBugsAndChores = FALSE;
-	self.commitMode = FALSE;
-	members = [[NSMutableArray alloc] init];
-	integrations  = [[NSMutableArray alloc] init];
-
-
-	
-    return self;
+@interface PivotalMembership : NSObject {
+	NSInteger membershipId;
+	NSString *role;
+	NSString *email;	
+	NSString *memberName;	
+	NSString *initials;	
 }
 
-#pragma mark -
-#pragma mark Cleanup Methods
+@property (nonatomic,readwrite) NSInteger membershipId;
+@property (nonatomic,retain) NSString *role;
+@property (nonatomic,retain) NSString *email;
+@property (nonatomic,retain) NSString *memberName;
+@property (nonatomic,retain) NSString *initials;
 
-- (void)dealloc {
-    [name release];
-    [weekStartDay release];
-    [pointScale release];
-	[velocityScheme release];
-	[members release];
-	[integrations release];
-	[lastActivityAt release];
-    [super dealloc];
-}
 @end

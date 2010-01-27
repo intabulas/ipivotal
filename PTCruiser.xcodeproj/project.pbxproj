@@ -49,6 +49,8 @@
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
 		8C50D61A0FE1A86300F41900 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C50D6190FE1A86300F41900 /* Entitlements.plist */; };
+		8C5619AC110FE6BF00AF33DC /* PivotalMembership.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */; };
+		8C561A04110FE9BE00AF33DC /* PivotalIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */; };
 		8C5BC43E1039ABB40005A028 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43C1039ABB40005A028 /* chat.png */; };
 		8C5BC43F1039ABB40005A028 /* chat_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43D1039ABB40005A028 /* chat_small.png */; };
 		8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BC7E01039F9710005A028 /* CommentHeaderView.m */; };
@@ -170,6 +172,10 @@
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
 		8C50D6190FE1A86300F41900 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		8C5619AA110FE6BF00AF33DC /* PivotalMembership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalMembership.h; sourceTree = "<group>"; };
+		8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalMembership.m; sourceTree = "<group>"; };
+		8C561A02110FE9BE00AF33DC /* PivotalIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalIntegration.h; sourceTree = "<group>"; };
+		8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalIntegration.m; sourceTree = "<group>"; };
 		8C5BC43C1039ABB40005A028 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		8C5BC43D1039ABB40005A028 /* chat_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_small.png; sourceTree = "<group>"; };
 		8C5BC7DF1039F9710005A028 /* CommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentHeaderView.h; sourceTree = "<group>"; };
@@ -452,6 +458,10 @@
 				8C222A3D1036669D00A75012 /* PivotalNote.m */,
 				8C9E3EA4104B35210033A3F0 /* PivotalTask.h */,
 				8C9E3EA5104B35210033A3F0 /* PivotalTask.m */,
+				8C5619AA110FE6BF00AF33DC /* PivotalMembership.h */,
+				8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */,
+				8C561A02110FE9BE00AF33DC /* PivotalIntegration.h */,
+				8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -691,6 +701,8 @@
 				8C255C51103F7D0300DEE140 /* PivotalNoteParserDelegate.m in Sources */,
 				8C9E3EA6104B35210033A3F0 /* PivotalTask.m in Sources */,
 				8C5C0018104DCB4200C3A534 /* ASIAuthenticationDialog.m in Sources */,
+				8C5619AC110FE6BF00AF33DC /* PivotalMembership.m in Sources */,
+				8C561A04110FE9BE00AF33DC /* PivotalIntegration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

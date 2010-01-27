@@ -30,40 +30,17 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "PivotalProject.h"
+#import <Foundation/Foundation.h>
 
 
-@implementation PivotalProject
-
-@synthesize projectId, name, iterationLength, weekStartDay, pointScale, velocityScheme, initialVelocity, currentVelocity, numberDoneIterations, allowsAttachments,
-            publicProject, useHttps, estimateBugsAndChores, commitMode, members, integrations, lastActivityAt;
-
-- (id)init {
-	[super init];
-	self.allowsAttachments = FALSE;
-	self.publicProject = FALSE;
-	self.useHttps = FALSE;
-	self.estimateBugsAndChores = FALSE;
-	self.commitMode = FALSE;
-	members = [[NSMutableArray alloc] init];
-	integrations  = [[NSMutableArray alloc] init];
-
-
-	
-    return self;
+@interface PivotalIntegration : NSObject {
+	NSInteger integrationId;
+	NSString *title;
+	BOOL active;	
 }
 
-#pragma mark -
-#pragma mark Cleanup Methods
+@property (nonatomic,readwrite) NSInteger integrationId;
+@property (nonatomic,retain) NSString *title;
+@property (nonatomic,assign) BOOL active;
 
-- (void)dealloc {
-    [name release];
-    [weekStartDay release];
-    [pointScale release];
-	[velocityScheme release];
-	[members release];
-	[integrations release];
-	[lastActivityAt release];
-    [super dealloc];
-}
 @end

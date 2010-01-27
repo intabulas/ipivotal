@@ -38,14 +38,21 @@
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	[super parserDidStartDocument:parser];
+	dateFormatter = [[NSDateFormatter alloc] init];
+	dateFormatter.dateFormat = kDateFormatUTC;	
     handlingMembership = NO;
+	handlingIntegration = NO;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
 	if ([elementName isEqualToString:kTagProject]) {
 		currentProject = [[PivotalProject alloc] init];
     } else if ([elementName isEqualToString:kTagMembership]) {
+		currentMembership = [[PivotalMembership alloc] init];
         handlingMembership = YES;
+    } else if ([elementName isEqualToString:kTagIntegration]) {
+		currentIntegration = [[PivotalIntegration alloc] init];
+        handlingIntegration = YES;		
     }
 }
 
@@ -55,20 +62,71 @@
 		[currentProject release];
 		currentProject = nil;
         handlingMembership = NO;
+	} else if ([elementName isEqualToString:kTagMembership]) {
+		[currentProject.members addObject:currentMembership];
+		[currentMembership release];
+		currentMembership = nil;
+		handlingMembership = NO;
+
+	} else if ([elementName isEqualToString:kTagIntegration]) {
+		[currentProject.integrations addObject:currentIntegration];
+		[currentIntegration release];
+		currentIntegration = nil;
+		handlingIntegration = NO;
+		
+		
 	} else if ([elementName isEqualToString:kTagId]) {  
         if (handlingMembership ) {
-        } else {
-        currentProject.projectId = [currentElementValue integerValue];
+			currentMembership.membershipId = [currentElementValue integerValue];
+        } else if (handlingIntegration){
+			currentIntegration.integrationId = [currentElementValue integerValue];
+		} else {
+          currentProject.projectId = [currentElementValue integerValue];
         }
 	} else if ([elementName isEqualToString:kTagIterationLength]) {      
         currentProject.iterationLength = [currentElementValue integerValue];
 	} else if ([elementName isEqualToString:kTagName]) {        
         if (handlingMembership ) {
+			currentMembership.memberName = currentElementValue;
         } else {        
           currentProject.name  = currentElementValue;        
         }
+
+	} else if ([elementName isEqualToString:kTagLastActivityAt]) {					
+		currentProject.lastActivityAt =  [dateFormatter dateFromString:currentElementValue];         
+	} else if ([elementName isEqualToString:kTagTitle] && handlingIntegration) {			
+		currentIntegration.title =currentElementValue;
+	} else if ([elementName isEqualToString:kTagActive] && handlingIntegration) {			
+		[currentIntegration setActive:[currentElementValue isEqualToString:kBooleanTrue]];		
+	} else if ([elementName isEqualToString:kTagRole] && handlingMembership) {	
+		currentMembership.role = currentElementValue;
+	} else if ([elementName isEqualToString:kTagEmail] && handlingMembership) {	
+		currentMembership.email = currentElementValue;
+	} else if ([elementName isEqualToString:kTagInitials] && handlingMembership) {	
+		currentMembership.initials = currentElementValue;
+	} else if ([elementName isEqualToString:kTagNumberOfDoneInterations]) {
+		currentProject.numberDoneIterations = [currentElementValue integerValue];		
+	} else if ([elementName isEqualToString:kTagCurrentVelocity]) {
+		currentProject.currentVelocity = [currentElementValue integerValue];
+	} else if ([elementName isEqualToString:kTagInitialVelocity]) {		
+		currentProject.initialVelocity= [currentElementValue integerValue];
+	} else if ([elementName isEqualToString:kTagVelocityScheme]) {
+		currentProject.velocityScheme = currentElementValue;
 	} else if ([elementName isEqualToString:kTagWeekStartDay]) {        
         currentProject.weekStartDay  = currentElementValue;        
+	} else if ([elementName isEqualToString:kTagAllowsAttachments]) {     
+   		[currentProject setAllowsAttachments:[currentElementValue isEqualToString:kBooleanTrue]];		
+	} else if ([elementName isEqualToString:kTagPublic]) {     
+   		[currentProject setPublicProject:[currentElementValue isEqualToString:kBooleanTrue]];		
+	} else if ([elementName isEqualToString:kTagUseHttps]) {     
+   		[currentProject setUseHttps:[currentElementValue isEqualToString:kBooleanTrue]];				
+	} else if ([elementName isEqualToString:kTagBugAndChoresAreEstimatable]) {     
+   		[currentProject setEstimateBugsAndChores:[currentElementValue isEqualToString:kBooleanTrue]];				
+		
+	} else if ([elementName isEqualToString:kTagCommitMode]) {     
+   		[currentProject setCommitMode:[currentElementValue isEqualToString:kBooleanTrue]];				
+		
+		
 	} else if ([elementName isEqualToString:kTagpPointScale]) {        
         currentProject.pointScale  = currentElementValue;        
 	} 
@@ -87,6 +145,9 @@
 
 - (void)dealloc {
 	[currentProject release];
+	[currentMembership release];
+	[currentIntegration release];
+	[dateFormatter release];
     [super dealloc];
 }
 
