@@ -1,3 +1,5 @@
+
+
 //
 //	Copyright (c) 2008-2009, Mark Lussier
 //	http://github.com/intabulas/ipivotal
@@ -30,29 +32,38 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <UIKit/UIKit.h>
+#import "PivotalTokenParserDelegate.h"
 
-@class ASIHTTPRequest;
-@interface AuthenticationViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate> {
-	id target;
-	SEL selector;    
-    IBOutlet UITextField *usernameField;
-	IBOutlet UITextField *passwordField;
-	IBOutlet UINavigationBar *settingsHeader;
-    IBOutlet UITableViewCell *usernamCell;
-    IBOutlet UITableViewCell *passwordCell;	
-    
-	
-	
-    IBOutlet UIView *tableFooterView;
+@implementation PivotalTokenParserDelegate
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+	[super parserDidStartDocument:parser];
 }
 
-- (void)parsedToken:(id)theResult;
 
-- (IBAction)saveAuthenticationCredentials:(id)sender;
-- (id)initWithTarget:(id)theTarget andSelector:(SEL)theSelector;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
+}
 
--(IBAction)retrieveToken:(id)sender;
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([elementName isEqualToString:@"guid"]) {
+        [resources addObject:currentElementValue];
+	}     
+	[currentElementValue release];
+	currentElementValue = nil;
+}
 
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+	[super parserDidEndDocument:parser];
+}
+
+#pragma mark -
+#pragma mark Cleanup
+
+- (void)dealloc {
+    [super dealloc];
+}
 
 @end
+
+

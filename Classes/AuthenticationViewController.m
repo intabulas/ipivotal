@@ -32,6 +32,8 @@
 
 #import "AuthenticationViewController.h"
 #import "ASIHTTPRequest.h"
+#import "PivotalTokenParserDelegate.h"
+
 
 @implementation AuthenticationViewController
 
@@ -40,16 +42,14 @@
 	target = theTarget;
 	selector = theSelector;
     self.tableView.tableHeaderView = settingsHeader;
-	tokenField.delegate = self;
-	
+	usernameField.delegate = self;
+	passwordField.delegate = self;	
 	return self;
 }
 
 - (void)dealloc {
-    [tokenCell release];
-    [sslCell release];    
-    [tokenField release];
-    [sslField release];     
+    [usernamCell release];
+    [passwordCell release];    
     [settingsHeader release];
     [super dealloc];
 }
@@ -58,7 +58,6 @@
     [super viewDidLoad];
     
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    tokenField.text = [defaults valueForKey:kDefaultsApiToken];
     
     [tableFooterView setBackgroundColor:[UIColor clearColor]];
     self.tableView.tableFooterView = tableFooterView;
@@ -68,7 +67,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [tokenField becomeFirstResponder];
+    [usernameField becomeFirstResponder];
     
 }
 
@@ -85,103 +84,63 @@
 }
 
 
-#pragma mark  UIAlertViewDelegate Stuff
-
--(IBAction)lookupToken:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Lookup API Token" 
-                          message:@"Lookup Pivotal Tracker API Token"
-                          delegate:self
-                          cancelButtonTitle:@"Cancel" 
-                          otherButtonTitles:@"Lookup", nil];
-    
-    [alert addTextFieldWithValue:@"" label:@"Username"];
-    [alert addTextFieldWithValue:@"" label:@"Password"];    
-    
-    usernameField = [alert textFieldAtIndex:0];
-    usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    usernameField.keyboardType = UIKeyboardTypeAlphabet;
-    usernameField.keyboardAppearance = UIKeyboardAppearanceAlert;
-    usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
-
-    passwordField = [alert textFieldAtIndex:1];
-    passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    passwordField.keyboardType = UIKeyboardTypeAlphabet;
-    passwordField.keyboardAppearance = UIKeyboardAppearanceAlert;
-    passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
-    passwordField.secureTextEntry = YES;
-    
-    [alert show];
-    [alert release];
-    
-    
-    
-}
-
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSString *username = [NSString stringWithString:[usernameField text]];
-    NSString *password = [NSString stringWithString:[passwordField text]];    
-
-    [alertView release];    
-}
-
-- (void)authenticationNeededForRequest:(ASIHTTPRequest *)request {
-    NSLog(@"DOH");
-}
-//-(IBAction)retrieveToken:(id)sender; {
-//    
-//   // [self lookupToken:sender];
-//	
-//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-//		
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
-//    
-//	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//	NSString *urlString = [NSString stringWithFormat:kUrlRetrieveToken, @"mlussier", @"kjgbu45n"];
-//	ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlString]] autorelease];
-//
-//#ifdef LOG_NETWORK
-//	NSLog( @"Curl Test:  curl -H \"X-TrackerToken: %@\" -X GET %@", @"SDD", [NSURL URLWithString:kUrlRetrieveToken] );
-//#endif
-//		
-//    [request start];
-//    NSLog(@"Result :'%@' '%d'", [request error], [request responseStatusCode]);
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
-//    [pool release];        
-//    
-//}
-//
-//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-//  [self retrieveToken:self];    
-//    
-//}
-
 -(IBAction)retrieveToken:(id)sender; {
     
     
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	 NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     
-    NSURLCredentialStorage *storage = [NSURLCredentialStorage sharedCredentialStorage];
-	//    [storage credentialsForProtectionSpace:<#(NSURLProtectionSpace *)space#>
-    
-    ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kUrlRetrieveToken]] autorelease];  
-
-    [request setShouldPresentAuthenticationDialog:YES];
-	[request setUseSessionPersistance:NO];
-    [request start];
-    NSLog(@"Result :'%@' '%d'", [request error], [request responseStatusCode]);
+	
+	
+	ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:kUrlRetrieveToken]] autorelease];
+	[request setUsername:[usernameField text]];
+	[request setPassword:[passwordField text]];
+	[request setShouldPresentCredentialsBeforeChallenge:YES];
+	[request startSynchronous];
+	BOOL success = [request authenticationRetryCount] == 1;	
 	
 #ifdef LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif   
 	
+	PivotalTokenParserDelegate *parserDelegate = [[PivotalTokenParserDelegate alloc] initWithTarget:self andSelector:@selector(parsedToken:)];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+	[parser setDelegate:parserDelegate];
+	[parser setShouldProcessNamespaces:NO];
+	[parser setShouldReportNamespacePrefixes:NO];
+	[parser setShouldResolveExternalEntities:NO];
+	[parser parse];
+	[parser release];
+	[parserDelegate release];
+	
+	
+	
+	
+	
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [pool release];        
     
+}
+
+
+- (void)parsedToken:(id)theResult {
+    if ( [theResult isKindOfClass:[NSError class]]) {
+    } else {
+#ifdef LOG_NETWORK		
+		NSLog(@"token is '%@'", [theResult objectAtIndex:0]);
+#endif		
+		NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+		NSString *tokenkey = [theResult objectAtIndex:0];
+		NSString *token_value = [tokenkey stringByTrimmingCharactersInSet:trimSet];
+		if (![token_value isEqualToString:kEmptyString]) {
+			NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+			[defaults setValue:token_value forKey:kDefaultsApiToken];
+			[defaults synchronize];
+			[target performSelector:selector];
+		}   		
+		
+		
+    }
 }
 
 
@@ -191,7 +150,7 @@
 - (IBAction)saveAuthenticationCredentials:(id)sender {
     
 	NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-	NSString *token_value = [tokenField.text stringByTrimmingCharactersInSet:trimSet];
+	NSString *token_value = [usernameField.text stringByTrimmingCharactersInSet:trimSet];
 	if (![token_value isEqualToString:kEmptyString]) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		[defaults setValue:token_value forKey:kDefaultsApiToken];
@@ -211,18 +170,19 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1; //2;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
-    if ( indexPath.row == 0 ) return tokenCell;
-    //if ( indexPath.row == 1) return sslCell;    
+    if ( indexPath.row == 0 ) return usernamCell;
+    if ( indexPath.row == 1) return passwordCell;    
     return nil;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
+
 
 
 @end

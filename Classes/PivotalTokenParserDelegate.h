@@ -30,29 +30,13 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "PivotalActivities.h"
+#import "PivotalActivity.h"
+#import "PivotalResourceParserDelegate.h"
 
-@class ASIHTTPRequest;
-@interface AuthenticationViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate> {
-	id target;
-	SEL selector;    
-    IBOutlet UITextField *usernameField;
-	IBOutlet UITextField *passwordField;
-	IBOutlet UINavigationBar *settingsHeader;
-    IBOutlet UITableViewCell *usernamCell;
-    IBOutlet UITableViewCell *passwordCell;	
-    
-	
-	
-    IBOutlet UIView *tableFooterView;
+@interface PivotalTokenParserDelegate : PivotalResourceParserDelegate {
+@private
 }
-
-- (void)parsedToken:(id)theResult;
-
-- (IBAction)saveAuthenticationCredentials:(id)sender;
-- (id)initWithTarget:(id)theTarget andSelector:(SEL)theSelector;
-
--(IBAction)retrieveToken:(id)sender;
-
 
 @end
