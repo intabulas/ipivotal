@@ -36,8 +36,8 @@
 
 @synthesize textField;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         textField = [[UITextField alloc] initWithFrame:CGRectMake(10.0f, 13.0f, self.contentView.frame.size.width - 40.0f, self.contentView.frame.size.height - 10.0f)];
         textField.borderStyle = UITextBorderStyleNone;

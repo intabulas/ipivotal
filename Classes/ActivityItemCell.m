@@ -1,5 +1,5 @@
 //
-//	Copyright (c) 2008-2009, Mark Lussier
+//	Copyright (c) 2008-2010 Mark Lussier
 //	http://github.com/intabulas/ipivotal
 //	All rights reserved.
 //
@@ -39,8 +39,8 @@
 
 @synthesize activityLabel, statusLabel, activity, typeImage, storyLabel;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-	if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 20.0f, 20.0f, 20.0f)];
         typeImage.backgroundColor = [UIColor clearColor];

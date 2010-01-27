@@ -56,9 +56,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     [tableFooterView setBackgroundColor:[UIColor clearColor]];
     self.tableView.tableFooterView = tableFooterView;
     
@@ -97,7 +94,7 @@
 	[request setPassword:[passwordField text]];
 	[request setShouldPresentCredentialsBeforeChallenge:YES];
 	[request startSynchronous];
-	BOOL success = [request authenticationRetryCount] == 1;	
+//	BOOL success = [request authenticationRetryCount] == 1;	
 	
 	NSError *error = [request error];
 	

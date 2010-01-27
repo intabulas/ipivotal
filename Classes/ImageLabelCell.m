@@ -38,8 +38,8 @@
 
 @synthesize cellImage, cellLabel;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         
         cellImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 7.0f, 30.0f, 30.0f)];
