@@ -37,6 +37,7 @@
 #import "ASIHTTPRequest.h"
 #import "CommentsController.h"
 #import "AddStoryViewController.h"
+#import "NSDate+Nibware.h"
 
 @implementation StoryDetailViewController
 @synthesize story, project, storyTableView;
@@ -169,6 +170,23 @@
     [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
     [attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.attachments count]]];
     [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
+    
+    
+    if ( [self.story.attachments count] < 1 ) {
+        [attachmentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [attachmentsCell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+    if ( [self.story.comments count] < 1 ) {
+        [commentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+    if ( [self.story.tasks count] < 1 ) {
+        [tasksCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [tasksCell setAccessoryType:UITableViewCellAccessoryNone]  ;      
+    }
+    
     
     
     [createdAtLabel setText:[self.story.createdAt prettyDate]];

@@ -42,6 +42,9 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [self setAccessoryType:UITableViewCellAccessoryNone]; 
+        
         typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 20.0f, 20.0f, 20.0f)];
         typeImage.backgroundColor = [UIColor clearColor];
 		typeImage.image = [UIImage  imageNamed:kIconActivity];

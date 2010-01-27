@@ -40,6 +40,10 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [self setAccessoryType:UITableViewCellAccessoryNone];        
+        
         cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(34.0f, 0.0f, (self.contentView.frame.size.width - 26.0f), self.contentView.frame.size.height)];
         cellLabel.autoresizingMask = UIViewAutoresizingNone;
         cellLabel.backgroundColor = [UIColor clearColor];

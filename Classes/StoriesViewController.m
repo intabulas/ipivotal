@@ -155,9 +155,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStory:[stories.stories objectAtIndex:indexPath.row] andProject:project];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
+    if ( stories.isLoaded && stories.stories.count > 0 ) {
+      StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStory:[stories.stories objectAtIndex:indexPath.row] andProject:project];
+      [self.navigationController pushViewController:controller animated:YES];
+      [controller release];
+    }
 }
 
 

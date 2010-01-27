@@ -1,6 +1,6 @@
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK
+//#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory                   @"story"
@@ -185,6 +185,8 @@
 #define kLabelStoryComments         @"%d Comments"
 #define kLabelStoryAttachments      @"%d Attachments"
 #define kLabelStoryTasks            @"%d Tasks"
+
+#define kLableProjectActivity       @"last activity %@"
 // Formats
 
 #define kFormatPoints             @"%d Point(s)"

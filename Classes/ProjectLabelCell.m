@@ -34,20 +34,31 @@
 
 @implementation ProjectLabelCell
 
-@synthesize cellLabel;
+@synthesize cellLabel, lastUpdated;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
-        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 10.0f, self.contentView.frame.size.height)];
+        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 10.0f, self.contentView.frame.size.height - 15.0f)];
 		cellLabel.autoresizingMask = UIViewAutoresizingNone;
 		cellLabel.backgroundColor = [UIColor clearColor];
 		cellLabel.highlightedTextColor = [UIColor whiteColor];
 		cellLabel.font = [UIFont  boldSystemFontOfSize:17.0f];
 		cellLabel.textColor = [UIColor blackColor];
 		cellLabel.textAlignment = UITextAlignmentLeft;
+
+        lastUpdated = [[UILabel alloc] initWithFrame:CGRectMake(11.0f, 18.0f, self.contentView.frame.size.width - 11.0f, self.contentView.frame.size.height - 18.0f)];
+		lastUpdated.autoresizingMask = UIViewAutoresizingNone;
+		lastUpdated.backgroundColor = [UIColor clearColor];
+		lastUpdated.highlightedTextColor = [UIColor whiteColor];
+		lastUpdated.font = [UIFont  systemFontOfSize:10.0f];
+		lastUpdated.textColor = [UIColor grayColor];
+		lastUpdated.textAlignment = UITextAlignmentLeft;
+        [lastUpdated setText:@"last updated: "];
+        
         
         [self.contentView addSubview:cellLabel];
+        [self.contentView addSubview:lastUpdated];        
         
     }
     return self;
@@ -60,6 +71,14 @@
 }
 
 
+- (void)setUpdated:(NSString*)text {
+    lastUpdated.text = text;
+}
+
+- (NSString*)updated {
+    return lastUpdated.text;
+}
+
 - (void)setText:(NSString*)text {
 	cellLabel.text = text;
 }
@@ -71,6 +90,7 @@
 
 - (void)dealloc {
     [cellLabel release];
+    [lastUpdated release];
     [super dealloc];
 }
 

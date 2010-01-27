@@ -147,6 +147,7 @@
     
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
     [cell.cellLabel setText:pp.name];
+    [cell.lastUpdated setText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]]];
     	
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -155,11 +156,13 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
-    PivotalProject *project = [projects.projects objectAtIndex:indexPath.row];
-	IterationsViewController *controller = [[IterationsViewController alloc] initWithProject:project];
-	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath { 
+    if ( projects.isLoaded && projects.projects.count > 0 ) {
+       PivotalProject *project = [projects.projects objectAtIndex:indexPath.row];
+	   IterationsViewController *controller = [[IterationsViewController alloc] initWithProject:project];  
+	   [self.navigationController pushViewController:controller animated:YES];
+  	   [controller release];    
+    }
 }
 
 

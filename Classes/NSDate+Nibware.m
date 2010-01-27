@@ -11,8 +11,8 @@
 
 @implementation NSDate (Nibware)
 
-- (NSString*) prettyDateWithReference:(NSDate*)reference
-{
+- (NSString*) prettyDateWithReference:(NSDate*)reference {
+
     float diff = [reference timeIntervalSinceDate:self];
     float day_diff = floor(diff / 86400);
 
@@ -37,9 +37,8 @@
     return [self description];
 }
 
-- (NSString*) prettyDate
-{
-    return [self prettyDateWithReference:[NSDate date]];
+- (NSString*) prettyDate {
+        return [self prettyDateWithReference:[NSDate date]];    
 }
     
 

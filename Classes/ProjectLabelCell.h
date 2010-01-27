@@ -34,9 +34,11 @@
 
 @interface ProjectLabelCell : UITableViewCell {
 @private 
-    UILabel* cellLabel;
+    UILabel *cellLabel;
+    UILabel *lastUpdated;
 }
 
 @property (nonatomic,readonly) UILabel* cellLabel;
+@property (nonatomic,readonly) UILabel* lastUpdated;
 
 @end
