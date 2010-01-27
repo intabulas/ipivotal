@@ -1,6 +1,6 @@
 
 //
-//	Copyright (c) 2008-2009, Mark Lussier
+//	Copyright (c) 2008-2010, Mark Lussier
 //	http://github.com/intabulas/ipivotal
 //	All rights reserved.
 //
