@@ -86,6 +86,7 @@
 }
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
+    
 
     [[Reachability sharedReachability] setHostName:kPivotalTrackerHost];
     [[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
@@ -123,9 +124,14 @@
     NSString *token = [defaults valueForKey:kDefaultsApiToken];
     
     if ( !token ) {
+        if ( projectsController != nil ) {
+           [projectsController hideHeadsUpDisplay];
+        }
 		[self presentLogin];
 	} else {
-        if (self.loginController) [navigationController dismissModalViewControllerAnimated:YES];
+        if (self.loginController) {
+            [navigationController dismissModalViewControllerAnimated:YES];
+        }
         [projectsController reloadProjects];
 	}
 }

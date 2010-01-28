@@ -33,8 +33,10 @@
 #import <UIKit/UIKit.h>
 #import "PivotalActivities.h"
 #import "PivotalProject.h"
+#import "MBProgressHUD.h"
 
-@interface ActivityViewController : UITableViewController {
+@interface ActivityViewController : UITableViewController <MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
 	PivotalActivities *activities;
     PivotalProject *project;
 	IBOutlet UITableViewCell *loadingActivitiesCell;

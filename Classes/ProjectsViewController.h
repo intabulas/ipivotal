@@ -36,6 +36,7 @@
 
 @interface ProjectsViewController : UIViewController <UITableViewDelegate, MBProgressHUDDelegate> {  
     MBProgressHUD *HUD;
+    BOOL hudDisplayed;
     IBOutlet UITableView *projectTableView;
     IBOutlet UITableViewCell *loadingProjectsCell;
     IBOutlet UITableViewCell *noProjectsCell;
@@ -44,11 +45,14 @@
 
 @property (nonatomic,retain) IBOutlet UITableView *projectTableView;
 
+@property (nonatomic,assign) BOOL hudDisplayed;
+
 - (IBAction)logout:(id)sender;
 - (IBAction)refresh:(id)sender;
 - (IBAction)refreshProjectList:(id)sender;
 - (IBAction)recentActivity:(id)sender;
 
+- (void)hideHeadsUpDisplay;
 
 - (void)loadProjects;
 - (void)reloadProjects;

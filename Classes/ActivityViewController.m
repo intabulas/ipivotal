@@ -34,6 +34,7 @@
 #import "ActivityItemCell.h"
 #import "PivotalProject.h"
 #import "NSDate+Nibware.h"
+#import "MBProgressHUD.h"
 
 @implementation ActivityViewController
 
@@ -65,9 +66,21 @@
     activities = [[PivotalActivities alloc] initWithProject:project];
 	[activities addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
 
-	if ( !activities.isLoaded) [ activities loadActivities];
+	if ( !activities.isLoaded) {  
+        [self displayHUD];
+        [activities loadActivities];
+    }
 }
 
+- (void)displayHUD {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    NSLog(@"%@", window);
+    HUD = [[MBProgressHUD alloc] initWithWindow:window];
+    [window addSubview:HUD];
+    HUD.delegate = self;
+    [HUD setLabelText:@"Loading"];
+    [HUD  showUsingAnimation:YES];    
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -79,7 +92,8 @@
     if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
         PivotalActivities *theActivities = (PivotalActivities *)object;
         if ( theActivities.isLoading) {
-        } else {         
+        } else {      
+            [HUD hideUsingAnimation:YES];
      		[self.tableView reloadData];
         }        
 	}    
@@ -90,6 +104,13 @@
 }
 
 - (IBAction)refresh:(id)sender {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    NSLog(@"%@", window);
+    HUD = [[MBProgressHUD alloc] initWithWindow:window];
+    [window addSubview:HUD];
+    HUD.delegate = self;
+    [HUD setLabelText:@"Loading"];
+    [HUD  showUsingAnimation:YES];    
     [activities reloadActivities];
     [self.tableView reloadData];   	
 }
@@ -139,6 +160,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 60.0f;
+}
+
+
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)hudWasHidden {
+    // Remove HUD from screen when the HUD was hidded
+    [HUD removeFromSuperview];
+    [HUD release];
 }
 
 @end

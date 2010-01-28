@@ -38,11 +38,11 @@
 #import "iPivotalAppDelegate.h"
 #import "ActivityViewController.h"
 #import "NSDate+Nibware.h"
-//#import "MBProgressHUD.h"
+#import "MBProgressHUD.h"
 
 @implementation ProjectsViewController
 
-@synthesize projectTableView;
+@synthesize projectTableView, hudDisplayed;
 
 - (void)dealloc {
     [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
@@ -63,16 +63,32 @@
     projects = [[PivotalProjects alloc] init];
     [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
     
+
+}
+
+- (void)displayHUD {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    NSLog(@"%@", window);
+    HUD = [[MBProgressHUD alloc] initWithWindow:window];
+    [window addSubview:HUD];
+    HUD.delegate = self;
+    [HUD setLabelText:@"Loading Projects"];
+    hudDisplayed = YES;
+    [HUD  showUsingAnimation:YES];    
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationItem.title = @"Projects";
+//	if ( !projects.isLoaded) {  
+//        [self displayHUD];
+//        [projects loadProjects];
+//    }    
 }
 - (IBAction)refreshProjectList:(id)sender; {}
-- (void)reloadProjects {
 
+- (void)reloadProjects {
 	[projects reloadProjects];
 }
 
@@ -95,7 +111,10 @@
     
         if ( theProjects.isLoading) {
         } else {         
-//            [HUD hideUsingAnimation:YES];
+            if ( hudDisplayed ) {
+              [HUD hideUsingAnimation:YES];
+               hudDisplayed = NO;
+            }
      		[self.projectTableView reloadData];
 
         }        
@@ -115,13 +134,7 @@
 
 
 - (IBAction)refresh:(id)sender {
-//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//    NSLog(@"%@", window);
-//    HUD = [[MBProgressHUD alloc] initWithWindow:window];
-//    [window addSubview:HUD];
-//    HUD.delegate = self;
-//    [HUD setLabelText:@"Loading"];
-//    [HUD  showUsingAnimation:YES];
+    [self displayHUD];
     [projects  reloadProjects];
     [self.projectTableView reloadData];     
 }
@@ -147,6 +160,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    if ( !projects.isLoaded && !self.hudDisplayed) { [self displayHUD]; } 
+    
     iPivotalAppDelegate *appdelegate = (iPivotalAppDelegate *)[[UIApplication sharedApplication]delegate];
 
     if ( [appdelegate hasNoInternetConnectivity]) return noProjectsCell;
@@ -179,13 +194,21 @@
     }
 }
 
+- (void)hideHeadsUpDisplay {
+    if ( hudDisplayed ) {
+      hudDisplayed = NO;
+      [HUD hide:NO];
+    }
+}
+
 #pragma mark -
 #pragma mark MBProgressHUDDelegate methods
 
 - (void)hudWasHidden {
-//    // Remove HUD from screen when the HUD was hidded
-//    [HUD removeFromSuperview];
-//    [HUD release];
+    // Remove HUD from screen when the HUD was hidded
+    hudDisplayed = NO;
+    [HUD removeFromSuperview];
+    [HUD release];
 }
 
 
