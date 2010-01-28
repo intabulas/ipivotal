@@ -199,6 +199,7 @@
 #define kIdentifierCenteredCell        @"CenteredLabelCell"
 #define kIdentifierActivityLabelCell   @"ActivityLabelCell"
 #define kIdentifierIterationStoryCell  @"IterationStoryCell"
+#define kIdentifierPlaceholderCell     @"PlaceholderCell"
 
 
 //UIActions

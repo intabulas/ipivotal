@@ -37,6 +37,7 @@
 #import "CenteredLabelCell.h"
 #import "ActivityLabelCell.h"
 #import "NSDate+Nibware.h"
+#import "PlaceholderCell.h"
 
 
 @implementation StoriesViewController
@@ -66,7 +67,10 @@
     
     stories = [[PivotalStories alloc] initWithProject:project andType:storyType];
     [stories addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
-    if ( !stories.isLoaded) [stories loadStories];
+    if ( !stories.isLoaded) { 
+        [self showHUD];
+        [stories loadStories];
+    }
     
 }
 
@@ -79,7 +83,10 @@
 
 
 - (void)loadStories {
-    if ( !stories.isLoaded ) [stories loadStories];    
+    if ( !stories.isLoaded ) {
+        [self showHUD];
+        [stories loadStories];    
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -87,7 +94,7 @@
         PivotalStories *theStories = (PivotalStories *)object;
         if ( theStories.isLoading) {
         } else {         
-
+            [self hideHUD]; 
      		[self.storiesTableView reloadData];
         }        
 	}    
@@ -117,12 +124,16 @@
     
     NSInteger row = indexPath.row;
     
+    if ( !stories.isLoaded && !self.isHudDisplayed) { 
+        [self showHUD]; 
+    } 
+
+    
     if ( stories.isLoading) { 
-        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityLabelCell];
+        PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
         if (cell == nil) {
-            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityLabelCell] autorelease];
+            cell = [[[PlaceholderCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierPlaceholderCell] autorelease];
         }
-        [cell.activityView startAnimating];
         return  cell;
         
     }
@@ -170,7 +181,8 @@
 }
 
 
-- (IBAction)refresh:(id)sender {    
+- (IBAction)refresh:(id)sender {  
+    [self showHUD];
     [stories reloadStories];
     [self.storiesTableView reloadData];  
 }

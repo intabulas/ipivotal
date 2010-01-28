@@ -43,6 +43,7 @@
 #import "CenteredLabelCell.h"
 #import "ActivityViewController.h"
 #import "NSDate+Nibware.h"
+#import "PlaceholderCell.h"
 
 @implementation IterationsViewController
 
@@ -71,7 +72,10 @@
     
     iterations = [[PivotalIterations alloc] initWithProject:self.project];
     [iterations addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
-    if ( !iterations.isLoaded) [iterations loadIterations];
+    if ( !iterations.isLoaded) { 
+        [self showHUD];
+        [iterations loadIterations];
+    }
     
 }
 
@@ -93,6 +97,7 @@
     if ( iterations.isLoaded ) {
     NSInteger selectedIndex = ((UISegmentedControl*)sender).selectedSegmentIndex;
         lastIterationType = selectedIndex;
+        [self showHUD];
     if ( selectedIndex == 0 ) {
         [iterations reloadInterationForGroup:kTypeDone];
     } else if ( selectedIndex == 1 ) {
@@ -104,7 +109,10 @@
 }
 
 - (void)loadIterations {
-    if ( !iterations.isLoaded ) [iterations loadIterations];    
+    if ( !iterations.isLoaded ) {
+        [self showHUD];
+        [iterations loadIterations];    
+    }
 }
 
 
@@ -113,6 +121,7 @@
         PivotalIterations *theIterations = (PivotalIterations *)object;
         if ( theIterations.isLoading) {
         } else {     
+            [self hideHUD];
      		[self.iterationTableView reloadData];
         }        
 	}    
@@ -125,7 +134,7 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    
+    [self showHUD];
     [iterations reloadIterations];
     [self.iterationTableView reloadData];  
 }
@@ -154,6 +163,8 @@
     NSInteger row = indexPath.row;
     NSInteger section = indexPath.section;
     
+    if ( !iterations.isLoaded && !self.isHudDisplayed) { [self showHUD]; } 
+
     
     if ( iterations.isLoaded && iterations.iterations.count == 0 ) {
         CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierCenteredCell];
@@ -164,14 +175,23 @@
 
         return  cell;        
     }
+//    if ( !iterations.isLoaded) { 
+//        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityLabelCell];
+//        if (cell == nil) {
+//            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityLabelCell] autorelease];
+//        }
+//        [cell.cellLabel setText:kLabelLoading];
+//        [cell.activityView startAnimating];
+//        
+//        return  cell;
+//        
+//    }    
+
     if ( !iterations.isLoaded) { 
-        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityLabelCell];
+        PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
         if (cell == nil) {
-            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityLabelCell] autorelease];
+            cell = [[[PlaceholderCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierPlaceholderCell] autorelease];
         }
-        [cell.cellLabel setText:kLabelLoading];
-        [cell.activityView startAnimating];
-        
         return  cell;
         
     }    

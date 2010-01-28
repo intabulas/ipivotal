@@ -46,5 +46,6 @@
 - (id)init;
 - (id)initWithProject:(PivotalProject *)theProject;
 - (IBAction)refresh:(id)sender;
+- (void)displayHUD;
 
 @end

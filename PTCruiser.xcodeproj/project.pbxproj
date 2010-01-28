@@ -102,6 +102,8 @@
 		8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */; };
 		8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */; };
 		8CCEB6E41111E2AF00284B81 /* UITableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */; };
+		8CD5BA14111232DA004B4553 /* AbstractHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5BA13111232DA004B4553 /* AbstractHUDViewController.m */; };
+		8CD5BA4B11123531004B4553 /* PlaceholderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5BA4A11123531004B4553 /* PlaceholderCell.m */; };
 		8CDB633B0FCF5685003AC065 /* PivotalResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB633A0FCF5685003AC065 /* PivotalResource.m */; };
 		8CDB63430FCF58B9003AC065 /* PivotalProjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63420FCF58B9003AC065 /* PivotalProjects.m */; };
 		8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */; };
@@ -263,6 +265,10 @@
 		8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationHeaderView.m; sourceTree = "<group>"; };
 		8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewCellContentView.m; sourceTree = "<group>"; };
 		8CCEB6E31111E2AF00284B81 /* UITableViewCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellContentView.h; sourceTree = "<group>"; };
+		8CD5BA12111232DA004B4553 /* AbstractHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractHUDViewController.h; sourceTree = "<group>"; };
+		8CD5BA13111232DA004B4553 /* AbstractHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractHUDViewController.m; sourceTree = "<group>"; };
+		8CD5BA4911123531004B4553 /* PlaceholderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderCell.h; sourceTree = "<group>"; };
+		8CD5BA4A11123531004B4553 /* PlaceholderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderCell.m; sourceTree = "<group>"; };
 		8CDB63390FCF5685003AC065 /* PivotalResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalResource.h; sourceTree = "<group>"; };
 		8CDB633A0FCF5685003AC065 /* PivotalResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalResource.m; sourceTree = "<group>"; };
 		8CDB63410FCF58B9003AC065 /* PivotalProjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProjects.h; sourceTree = "<group>"; };
@@ -462,6 +468,8 @@
 				8C22322E1038DA4800A75012 /* CommentsController.m */,
 				8C255AC5103F605100DEE140 /* AddCommentController.h */,
 				8C255AC6103F605100DEE140 /* AddCommentController.m */,
+				8CD5BA12111232DA004B4553 /* AbstractHUDViewController.h */,
+				8CD5BA13111232DA004B4553 /* AbstractHUDViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -558,6 +566,8 @@
 				8C2232C91038DED600A75012 /* CommentCell.m */,
 				8C5BC7DF1039F9710005A028 /* CommentHeaderView.h */,
 				8C5BC7E01039F9710005A028 /* CommentHeaderView.m */,
+				8CD5BA4911123531004B4553 /* PlaceholderCell.h */,
+				8CD5BA4A11123531004B4553 /* PlaceholderCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -761,6 +771,8 @@
 				8C561DB6111011B200AF33DC /* PivotalTokenParserDelegate.m in Sources */,
 				8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */,
 				8CCEB6E41111E2AF00284B81 /* UITableViewCellContentView.m in Sources */,
+				8CD5BA14111232DA004B4553 /* AbstractHUDViewController.m in Sources */,
+				8CD5BA4B11123531004B4553 /* PlaceholderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -102,8 +102,6 @@
 
 - (void)setStory:(PivotalStory *)theStory {
      
-        NSLog(@"%@", theStory);
-    
         statusLabel.textColor = [UIColor blackColor];
         storyLabel.textColor = [UIColor blackColor];
     

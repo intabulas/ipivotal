@@ -106,10 +106,6 @@
 	[request startSynchronous];
     self.error = [request error];
 
-#ifdef LOG_NETWORK
-    NSLog(@"Stories: '%@'", [request responseString]);
-#endif    
-
 	PivotalStoriesParserDelegate *parserDelegate = [[PivotalStoriesParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedStories:)];
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
 	[parser setDelegate:parserDelegate];

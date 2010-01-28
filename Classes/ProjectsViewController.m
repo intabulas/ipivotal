@@ -68,23 +68,18 @@
 
 - (void)displayHUD {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    NSLog(@"%@", window);
     HUD = [[MBProgressHUD alloc] initWithWindow:window];
     [window addSubview:HUD];
     HUD.delegate = self;
     [HUD setLabelText:@"Loading Projects"];
     hudDisplayed = YES;
-    [HUD  showUsingAnimation:YES];    
+    [HUD  show:YES];    
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationItem.title = @"Projects";
-//	if ( !projects.isLoaded) {  
-//        [self displayHUD];
-//        [projects loadProjects];
-//    }    
 }
 - (IBAction)refreshProjectList:(id)sender; {}
 
@@ -111,10 +106,7 @@
     
         if ( theProjects.isLoading) {
         } else {         
-            if ( hudDisplayed ) {
-              [HUD hideUsingAnimation:YES];
-               hudDisplayed = NO;
-            }
+            [self hideHeadsUpDisplay];
      		[self.projectTableView reloadData];
 
         }        
@@ -197,7 +189,7 @@
 - (void)hideHeadsUpDisplay {
     if ( hudDisplayed ) {
       hudDisplayed = NO;
-      [HUD hide:NO];
+      [HUD hide:YES];
     }
 }
 

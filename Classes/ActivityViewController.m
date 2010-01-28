@@ -74,12 +74,11 @@
 
 - (void)displayHUD {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    NSLog(@"%@", window);
     HUD = [[MBProgressHUD alloc] initWithWindow:window];
     [window addSubview:HUD];
     HUD.delegate = self;
     [HUD setLabelText:@"Loading"];
-    [HUD  showUsingAnimation:YES];    
+    [HUD  show:YES];    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -93,7 +92,7 @@
         PivotalActivities *theActivities = (PivotalActivities *)object;
         if ( theActivities.isLoading) {
         } else {      
-            [HUD hideUsingAnimation:YES];
+            [HUD hide:YES];
      		[self.tableView reloadData];
         }        
 	}    
@@ -105,12 +104,11 @@
 
 - (IBAction)refresh:(id)sender {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    NSLog(@"%@", window);
     HUD = [[MBProgressHUD alloc] initWithWindow:window];
     [window addSubview:HUD];
     HUD.delegate = self;
     [HUD setLabelText:@"Loading"];
-    [HUD  showUsingAnimation:YES];    
+    [HUD  show:YES];    
     [activities reloadActivities];
     [self.tableView reloadData];   	
 }

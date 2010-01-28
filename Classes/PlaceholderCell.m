@@ -30,32 +30,25 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <UIKit/UIKit.h>
-#import "PivotalProject.h"
-#import "PivotalIterations.h"
-#import "AbstractHUDViewController.h"
+#import "PlaceholderCell.h"
 
-@interface IterationsViewController :  AbstractHUDViewController <UITableViewDelegate>  {
-    @private
-    PivotalProject *project;
-    PivotalIterations *iterations;
-    IBOutlet UITableView *iterationTableView;    
-    IBOutlet UIBarButtonItem *doneStoriesButton;
-    NSInteger lastIterationType;
+@implementation PlaceholderCell
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    }
+    return self;
 }
 
-@property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
-@property (nonatomic,retain) PivotalProject* project;
 
-- (id)initWithProject:(PivotalProject *)theProject;
-- (IBAction)refresh:(id)sender;
-- (void)loadIterations;
+- (void)dealloc {
+    [super dealloc];
+}
 
--(IBAction)showDoneStories:(id)sender;
--(IBAction)showIceboxStories:(id)sender;
--(IBAction)addStory:(id)sender;
--(IBAction)projectActivity:(id)sender;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+}
 
-- (void) iterationTypeChanged:(id)sender;
+
 
 @end
+

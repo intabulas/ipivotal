@@ -103,8 +103,6 @@
     
 
     if ([actionLabel hasPrefix:@"Edit Story"]) {
-        NSLog(@"Edit Story");
-
         AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project andStory:story];
         [self.navigationController pushViewController:controller animated:YES];
         [controller release];
