@@ -32,8 +32,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PivotalProjects.h"
+#import "MBProgressHUD.h"
 
-@interface ProjectsViewController : UIViewController <UITableViewDelegate> {    
+@interface ProjectsViewController : UIViewController <UITableViewDelegate, MBProgressHUDDelegate> {  
+    MBProgressHUD *HUD;
     IBOutlet UITableView *projectTableView;
     IBOutlet UITableViewCell *loadingProjectsCell;
     IBOutlet UITableViewCell *noProjectsCell;
@@ -44,6 +46,7 @@
 
 - (IBAction)logout:(id)sender;
 - (IBAction)refresh:(id)sender;
+- (IBAction)refreshProjectList:(id)sender;
 - (IBAction)recentActivity:(id)sender;
 
 

@@ -101,6 +101,7 @@
 		8CC0E79410047A2800C7F6CB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC0E79310047A2800C7F6CB /* Default.png */; };
 		8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */; };
 		8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */; };
+		8CCEB6E41111E2AF00284B81 /* UITableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */; };
 		8CDB633B0FCF5685003AC065 /* PivotalResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB633A0FCF5685003AC065 /* PivotalResource.m */; };
 		8CDB63430FCF58B9003AC065 /* PivotalProjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63420FCF58B9003AC065 /* PivotalProjects.m */; };
 		8CDB63460FCF5D69003AC065 /* PivotalResourceParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB63450FCF5D69003AC065 /* PivotalResourceParserDelegate.m */; };
@@ -260,6 +261,8 @@
 		8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelCell.m; sourceTree = "<group>"; };
 		8CCB37030FD9721400AEEE0E /* IterationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationHeaderView.h; sourceTree = "<group>"; };
 		8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationHeaderView.m; sourceTree = "<group>"; };
+		8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewCellContentView.m; sourceTree = "<group>"; };
+		8CCEB6E31111E2AF00284B81 /* UITableViewCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellContentView.h; sourceTree = "<group>"; };
 		8CDB63390FCF5685003AC065 /* PivotalResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalResource.h; sourceTree = "<group>"; };
 		8CDB633A0FCF5685003AC065 /* PivotalResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalResource.m; sourceTree = "<group>"; };
 		8CDB63410FCF58B9003AC065 /* PivotalProjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProjects.h; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */,
 				8C6BB35111110D09008B5D56 /* MBProgressHUD */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
@@ -460,6 +464,15 @@
 				8C255AC6103F605100DEE140 /* AddCommentController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */ = {
+			isa = PBXGroup;
+			children = (
+				8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */,
+				8CCEB6E31111E2AF00284B81 /* UITableViewCellContentView.h */,
+			);
+			name = "3.2 SDK Hack";
 			sourceTree = "<group>";
 		};
 		8CDB632C0FCF4FF0003AC065 /* Domain */ = {
@@ -747,6 +760,7 @@
 				8C561BA2111000BB00AF33DC /* ASIAuthenticationDialog.m in Sources */,
 				8C561DB6111011B200AF33DC /* PivotalTokenParserDelegate.m in Sources */,
 				8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */,
+				8CCEB6E41111E2AF00284B81 /* UITableViewCellContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

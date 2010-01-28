@@ -38,6 +38,7 @@
 #import "iPivotalAppDelegate.h"
 #import "ActivityViewController.h"
 #import "NSDate+Nibware.h"
+//#import "MBProgressHUD.h"
 
 @implementation ProjectsViewController
 
@@ -69,8 +70,9 @@
     [super viewWillAppear:animated];
     self.navigationItem.title = @"Projects";
 }
-
+- (IBAction)refreshProjectList:(id)sender; {}
 - (void)reloadProjects {
+
 	[projects reloadProjects];
 }
 
@@ -88,10 +90,14 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
+         
         PivotalProjects *theProjects = (PivotalProjects *)object;
+    
         if ( theProjects.isLoading) {
         } else {         
+//            [HUD hideUsingAnimation:YES];
      		[self.projectTableView reloadData];
+
         }        
 	}    
 }
@@ -107,9 +113,17 @@
 	[appdelegate authenticate];
 }
 
+
 - (IBAction)refresh:(id)sender {
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    NSLog(@"%@", window);
+//    HUD = [[MBProgressHUD alloc] initWithWindow:window];
+//    [window addSubview:HUD];
+//    HUD.delegate = self;
+//    [HUD setLabelText:@"Loading"];
+//    [HUD  showUsingAnimation:YES];
     [projects  reloadProjects];
-    [self.projectTableView reloadData];    
+    [self.projectTableView reloadData];     
 }
 
 - (IBAction)recentActivity:(id)sender {
@@ -165,6 +179,14 @@
     }
 }
 
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)hudWasHidden {
+//    // Remove HUD from screen when the HUD was hidded
+//    [HUD removeFromSuperview];
+//    [HUD release];
+}
 
 
 @end
