@@ -40,7 +40,6 @@
     PivotalProject *project;
     PivotalIterations *iterations;
     IBOutlet UITableView *iterationTableView;    
-    IBOutlet UIBarButtonItem *doneStoriesButton;
     NSInteger lastIterationType;
 }
 
@@ -51,9 +50,9 @@
 - (IBAction)refresh:(id)sender;
 - (void)loadIterations;
 
--(IBAction)showDoneStories:(id)sender;
 -(IBAction)showIceboxStories:(id)sender;
 -(IBAction)addStory:(id)sender;
+-(IBAction)showProjectInformation:(id)sender;
 -(IBAction)projectActivity:(id)sender;
 
 - (void) iterationTypeChanged:(id)sender;

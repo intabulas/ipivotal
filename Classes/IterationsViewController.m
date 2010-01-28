@@ -59,7 +59,6 @@
 - (void)dealloc {
     [iterations  removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [project release];
-    [doneStoriesButton release];
     [iterations release];
     [super dealloc];
 }
@@ -241,13 +240,18 @@
     return 40.0f;
 }
 
--(IBAction)showDoneStories:(id)sender {
-    StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:kTypeDone];
-   [self.navigationController pushViewController:controller animated:YES];
-   [controller release];
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ( iterations.isLoaded && iterations.iterations.count > 0 ) {
+        PivotalIteration *iteration = [iterations.iterations objectAtIndex:indexPath.section];
+        StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStory:[iteration.stories objectAtIndex:indexPath.row] andProject:project];
+        
+        [self.navigationController pushViewController:controller animated:YES];
+        [controller release];
+    }
 }
 
+
+#pragma mark Actions
 
 -(IBAction)showIceboxStories:(id)sender {
     StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:kTypeIcebox];
@@ -269,19 +273,11 @@
     [controller release];        
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ( iterations.isLoaded && iterations.iterations.count > 0 ) {
-      PivotalIteration *iteration = [iterations.iterations objectAtIndex:indexPath.section];
-      StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStory:[iteration.stories objectAtIndex:indexPath.row] andProject:project];
-
-      [self.navigationController pushViewController:controller animated:YES];
-      [controller release];
-    }
+-(IBAction)showProjectInformation:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Project Information" message:@"This feature is still not implemented" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
+    [alert show];
+    [alert release];
 }
-
-
-
 
 @end
 
