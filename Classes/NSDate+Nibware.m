@@ -15,9 +15,10 @@
 
     float diff = [reference timeIntervalSinceDate:self];
     float day_diff = floor(diff / 86400);
-
+    
     if (day_diff <= 0) {
-        if (diff < 60) return @"just now";
+        //if (diff < 60) return @"just now";
+        if (diff < 60) return @"recently";        
         if (diff < 120) return @"1 minute ago";
         if (diff < 3600) return [NSString stringWithFormat:@"%d minutes ago", (int)floor( diff / 60 )];
         if (diff < 7200) return @"1 hour ago";
@@ -38,7 +39,7 @@
 }
 
 - (NSString*) prettyDate {
-        return [self prettyDateWithReference:[NSDate date]];    
+        return [self prettyDateWithReference:[NSDate date]];
 }
     
 

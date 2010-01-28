@@ -807,7 +807,7 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "45F5F235-405B-431F-9468-07EAD8E41412";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "958BE20A-C63D-478E-97A1-E86C03B4094B";
 			};
 			name = Distribution;
 		};

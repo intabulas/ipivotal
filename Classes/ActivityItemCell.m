@@ -37,7 +37,7 @@
 
 
 
-@synthesize activityLabel, statusLabel, activity, typeImage, storyLabel;
+@synthesize activityLabel, statusLabel, activity, storyLabel; //, typeImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -45,11 +45,11 @@
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self setAccessoryType:UITableViewCellAccessoryNone]; 
         
-        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 20.0f, 20.0f, 20.0f)];
-        typeImage.backgroundColor = [UIColor clearColor];
-		typeImage.image = [UIImage  imageNamed:kIconActivity];
-
-		storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 18.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
+//        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 20.0f, 20.0f, 20.0f)];
+//        typeImage.backgroundColor = [UIColor clearColor];
+//		typeImage.image = [UIImage  imageNamed:kIconActivity];
+//
+		storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 18.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
 		storyLabel.autoresizingMask = UIViewAutoresizingNone;
 		storyLabel.backgroundColor = [UIColor clearColor];
 		storyLabel.highlightedTextColor = [UIColor whiteColor];
@@ -59,7 +59,7 @@
         
         
         
-		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 2.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
+		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 2.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
 		activityLabel.autoresizingMask = UIViewAutoresizingNone;
 		activityLabel.backgroundColor = [UIColor clearColor];
 		activityLabel.highlightedTextColor = [UIColor whiteColor];
@@ -68,7 +68,7 @@
 		activityLabel.textAlignment = UITextAlignmentLeft;
         
 		
-		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, 38.0f, (self.contentView.frame.size.width - 55.0f) , 15.0f)];
+		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 38.0f, (self.contentView.frame.size.width - 55.0f) , 15.0f)];
 		statusLabel.autoresizingMask = UIViewAutoresizingNone;
 		statusLabel.backgroundColor = [UIColor clearColor];
 		statusLabel.highlightedTextColor = [UIColor whiteColor];
@@ -81,7 +81,7 @@
 		UIView* backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectZero ] autorelease ];
 		self.backgroundView = backgroundView;
 		
-		[self.contentView addSubview:typeImage];
+//		[self.contentView addSubview:typeImage];
         [self.contentView addSubview:storyLabel];
 		[self.contentView addSubview:activityLabel];        
 		[self.contentView addSubview:statusLabel];                
@@ -93,6 +93,7 @@
 
 
 - (void)dealloc {
+//    [typeImage release];
 	[activityLabel release];
     [storyLabel release];
 	[statusLabel release];    

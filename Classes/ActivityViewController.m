@@ -120,6 +120,13 @@
         cell = [[[ActivityItemCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     [cell setActivity:[activities.activities objectAtIndex:indexPath.row]];
+//    
+//    if ((indexPath.row % 2) == 0) {
+//         cell.backgroundView.backgroundColor = [UIColor greenColor];
+//    } else {
+//         cell.backgroundView.backgroundColor = [UIColor clearColor];        
+//    }
+    
     //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
