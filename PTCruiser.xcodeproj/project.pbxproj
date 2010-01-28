@@ -58,6 +58,7 @@
 		8C5BC43F1039ABB40005A028 /* chat_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43D1039ABB40005A028 /* chat_small.png */; };
 		8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BC7E01039F9710005A028 /* CommentHeaderView.m */; };
 		8C5BC8901039FEB50005A028 /* chat_small_inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */; };
+		8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */; };
 		8C70E2270FE320FB0074DE16 /* TextInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E2260FE320FB0074DE16 /* TextInputController.m */; };
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
@@ -194,6 +195,8 @@
 		8C5BC7DF1039F9710005A028 /* CommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentHeaderView.h; sourceTree = "<group>"; };
 		8C5BC7E01039F9710005A028 /* CommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentHeaderView.m; sourceTree = "<group>"; };
 		8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_small_inverted.png; sourceTree = "<group>"; };
+		8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		8C6BB35511110D2C008B5D56 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8C70E2250FE320FB0074DE16 /* TextInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputController.h; sourceTree = "<group>"; };
 		8C70E2260FE320FB0074DE16 /* TextInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputController.m; sourceTree = "<group>"; };
 		8C70E2290FE3216E0074DE16 /* TextInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputController.xib; sourceTree = "<group>"; };
@@ -297,6 +300,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C6BB35111110D09008B5D56 /* MBProgressHUD */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8CA098F30FCFB47A00846DBA /* Controllers */,
@@ -418,6 +422,15 @@
 				8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */,
 			);
 			name = Lists;
+			sourceTree = "<group>";
+		};
+		8C6BB35111110D09008B5D56 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */,
+				8C6BB35511110D2C008B5D56 /* MBProgressHUD.h */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		8CA098F30FCFB47A00846DBA /* Controllers */ = {
@@ -733,6 +746,7 @@
 				8C561BA1111000BB00AF33DC /* ASIFormDataRequest.m in Sources */,
 				8C561BA2111000BB00AF33DC /* ASIAuthenticationDialog.m in Sources */,
 				8C561DB6111011B200AF33DC /* PivotalTokenParserDelegate.m in Sources */,
+				8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
