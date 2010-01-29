@@ -49,17 +49,17 @@
 //        typeImage.backgroundColor = [UIColor clearColor];
 //		typeImage.image = [UIImage  imageNamed:kIconActivity];
 //
-		storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 18.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
-		storyLabel.autoresizingMask = UIViewAutoresizingNone;
-		storyLabel.backgroundColor = [UIColor clearColor];
-		storyLabel.highlightedTextColor = [UIColor whiteColor];
-		storyLabel.font = [UIFont  systemFontOfSize:12.0f];
-		storyLabel.textColor = [UIColor blackColor];
-		storyLabel.textAlignment = UITextAlignmentLeft;
+//		storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 18.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
+//		storyLabel.autoresizingMask = UIViewAutoresizingNone;
+//		storyLabel.backgroundColor = [UIColor clearColor];
+//		storyLabel.highlightedTextColor = [UIColor whiteColor];
+//		storyLabel.font = [UIFont  systemFontOfSize:12.0f];
+//		storyLabel.textColor = [UIColor blackColor];
+//		storyLabel.textAlignment = UITextAlignmentLeft;
         
         
         
-		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 2.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
+		activityLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 2.0f, (self.contentView.frame.size.width - 15.0f) , 25.0f)];
 		activityLabel.autoresizingMask = UIViewAutoresizingNone;
 		activityLabel.backgroundColor = [UIColor clearColor];
 		activityLabel.highlightedTextColor = [UIColor whiteColor];
@@ -67,8 +67,8 @@
 		activityLabel.textColor = [UIColor blackColor];
 		activityLabel.textAlignment = UITextAlignmentLeft;
         
-		
-		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 38.0f, (self.contentView.frame.size.width - 55.0f) , 15.0f)];
+        // was 38
+		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 22.0f, (self.contentView.frame.size.width - 15.0f) , 15.0f)];
 		statusLabel.autoresizingMask = UIViewAutoresizingNone;
 		statusLabel.backgroundColor = [UIColor clearColor];
 		statusLabel.highlightedTextColor = [UIColor whiteColor];
@@ -82,7 +82,7 @@
 		self.backgroundView = backgroundView;
 		
 //		[self.contentView addSubview:typeImage];
-        [self.contentView addSubview:storyLabel];
+//        [self.contentView addSubview:storyLabel];
 		[self.contentView addSubview:activityLabel];        
 		[self.contentView addSubview:statusLabel];                
 		
