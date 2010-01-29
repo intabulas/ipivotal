@@ -30,37 +30,34 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "ProjectLabelCell.h"
+#import "TitleLabelCell.h"
 
-@implementation ProjectLabelCell
+@implementation TitleLabelCell
 
-@synthesize cellLabel, lastUpdated;
+@synthesize titleLabel, contentLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 0.0f, self.contentView.frame.size.height)];
+		titleLabel.autoresizingMask = UIViewAutoresizingNone;
+		titleLabel.backgroundColor = [UIColor clearColor];
+		titleLabel.highlightedTextColor = [UIColor whiteColor];
+		titleLabel.font = [UIFont  boldSystemFontOfSize:14.0f];
+		titleLabel.textColor = [UIColor blackColor];
+		titleLabel.textAlignment = UITextAlignmentLeft;
 
-        cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 10.0f, self.contentView.frame.size.height - 15.0f)];
-		cellLabel.autoresizingMask = UIViewAutoresizingNone;
-		cellLabel.backgroundColor = [UIColor clearColor];
-		cellLabel.highlightedTextColor = [UIColor whiteColor];
-		cellLabel.font = [UIFont  boldSystemFontOfSize:17.0f];
-		cellLabel.textColor = [UIColor blackColor];
-		cellLabel.textAlignment = UITextAlignmentLeft;
-
-        lastUpdated = [[UILabel alloc] initWithFrame:CGRectMake(11.0f, 18.0f, self.contentView.frame.size.width - 11.0f, self.contentView.frame.size.height - 18.0f)];
-		lastUpdated.autoresizingMask = UIViewAutoresizingNone;
-		lastUpdated.backgroundColor = [UIColor clearColor];
-		lastUpdated.highlightedTextColor = [UIColor whiteColor];
-		lastUpdated.font = [UIFont  systemFontOfSize:10.0f];
-		lastUpdated.textColor = [UIColor grayColor];
-		lastUpdated.textAlignment = UITextAlignmentLeft;
-        [lastUpdated setText:@"last updated: "];
+        contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.contentView.frame.size.width - 45.0f, self.contentView.frame.size.height)];
+		contentLabel.autoresizingMask = UIViewAutoresizingNone;
+		contentLabel.backgroundColor = [UIColor clearColor];
+		contentLabel.highlightedTextColor = [UIColor whiteColor];
+		contentLabel.font = [UIFont  systemFontOfSize:14.0f];
+		contentLabel.textColor = [UIColor blackColor];
+		contentLabel.textAlignment = UITextAlignmentRight;
         
         
-        [self.contentView addSubview:cellLabel];
-        [self.contentView addSubview:lastUpdated];        
+        [self.contentView addSubview:titleLabel];
+        [self.contentView addSubview:contentLabel];        
         
     }
     return self;
@@ -73,26 +70,18 @@
 }
 
 
-- (void)setUpdated:(NSString*)text {
-    lastUpdated.text = text;
-}
-
-- (NSString*)updated {
-    return lastUpdated.text;
-}
-
-- (void)setText:(NSString*)text {
-	cellLabel.text = text;
-}
-
-- (NSString*)text {
-	return cellLabel.text;
-}
+//- (void)setText:(NSString*)text {
+//	cellLabel.text = text;
+//}
+//
+//- (NSString*)text {
+//	return cellLabel.text;
+//}
 
 
 - (void)dealloc {
-    [cellLabel release];
-    [lastUpdated release];
+    [contentLabel release];
+    [titleLabel release];
     [super dealloc];
 }
 

@@ -45,6 +45,7 @@
 #import "NSDate+Nibware.h"
 #import "PlaceholderCell.h"
 
+
 @implementation IterationsViewController
 
 @synthesize iterationTableView, project;
@@ -273,11 +274,6 @@
     [controller release];        
 }
 
--(IBAction)showProjectInformation:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Project Information" message:@"This feature is still not implemented" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
-    [alert show];
-    [alert release];
-}
 
 @end
 

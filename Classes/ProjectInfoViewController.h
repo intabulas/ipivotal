@@ -31,29 +31,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PivotalProject.h"
-#import "PivotalIterations.h"
-#import "AbstractHUDViewController.h"
 
-@interface IterationsViewController :  AbstractHUDViewController <UITableViewDelegate>  {
-    @private
+@class PivotalProject;
+@interface ProjectInfoViewController : UIViewController  <UITableViewDelegate>  {
     PivotalProject *project;
-    PivotalIterations *iterations;
-    IBOutlet UITableView *iterationTableView;    
-    NSInteger lastIterationType;
+    @private    
+    IBOutlet UITableView *projectTableView;    
+
 }
 
-@property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
-@property (nonatomic,retain) PivotalProject* project;
-
 - (id)initWithProject:(PivotalProject *)theProject;
-- (IBAction)refresh:(id)sender;
-- (void)loadIterations;
 
--(IBAction)showIceboxStories:(id)sender;
--(IBAction)addStory:(id)sender;
--(IBAction)projectActivity:(id)sender;
+@property (nonatomic,retain) PivotalProject *project;
+@property (nonatomic,retain) IBOutlet UITableView *projectTableView;
 
-- (void) iterationTypeChanged:(id)sender;
 
 @end

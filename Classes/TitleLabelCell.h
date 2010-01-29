@@ -1,3 +1,4 @@
+
 //
 //	Copyright (c) 2008-2010, Mark Lussier
 //	http://github.com/intabulas/ipivotal
@@ -31,29 +32,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PivotalProject.h"
-#import "PivotalIterations.h"
-#import "AbstractHUDViewController.h"
 
-@interface IterationsViewController :  AbstractHUDViewController <UITableViewDelegate>  {
-    @private
-    PivotalProject *project;
-    PivotalIterations *iterations;
-    IBOutlet UITableView *iterationTableView;    
-    NSInteger lastIterationType;
+@interface TitleLabelCell : UITableViewCell {
+@private 
+    UILabel *titleLabel;
+    UILabel *contentLabel;
 }
 
-@property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
-@property (nonatomic,retain) PivotalProject* project;
+@property (nonatomic,readonly) UILabel *titleLabel;
+@property (nonatomic,readonly) UILabel *contentLabel;
 
-- (id)initWithProject:(PivotalProject *)theProject;
-- (IBAction)refresh:(id)sender;
-- (void)loadIterations;
 
--(IBAction)showIceboxStories:(id)sender;
--(IBAction)addStory:(id)sender;
--(IBAction)projectActivity:(id)sender;
-
-- (void) iterationTypeChanged:(id)sender;
+//- (void)setTitleText:(NSString *)text;
+//- (void)setContentText:(NSString *)text;
 
 @end

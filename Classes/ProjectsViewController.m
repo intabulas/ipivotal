@@ -39,6 +39,7 @@
 #import "ActivityViewController.h"
 #import "NSDate+Nibware.h"
 #import "MBProgressHUD.h"
+#import "ProjectInfoViewController.h"
 
 @implementation ProjectsViewController
 
@@ -170,7 +171,7 @@
     [cell.cellLabel setText:pp.name];
     [cell.lastUpdated setText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]]];
     	
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	
     return cell;       
@@ -185,6 +186,19 @@
   	   [controller release];    
     }
 }
+
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    if ( projects.isLoaded && projects.projects.count > 0 ) {
+        PivotalProject *project = [projects.projects objectAtIndex:indexPath.row];
+        ProjectInfoViewController *controller = [[ProjectInfoViewController alloc] initWithProject:project];  
+        [self.navigationController pushViewController:controller animated:YES];
+        [controller release];    
+    }
+}
+
+
+
 
 - (void)hideHeadsUpDisplay {
     if ( hudDisplayed ) {
