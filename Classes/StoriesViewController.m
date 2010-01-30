@@ -64,18 +64,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
-    
-    
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStory:)];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
-	storiesTableView = [[EGOTableViewPullRefresh alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    
+    CGRect viewFrame = self.view.bounds;
+    viewFrame.size.height = viewFrame.size.height - 89;
+	storiesTableView = [[EGOTableViewPullRefresh alloc] initWithFrame:viewFrame style:UITableViewStylePlain];
 	storiesTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	storiesTableView.dataSource = self;
 	storiesTableView.delegate = storiesTableView;
-	[self.view addSubview:storiesTableView];    
+	[self.view addSubview:storiesTableView];  
+
+    
+	//create toolbar using new
+//    toolbar = [UIToolbar new];
+//    toolbar.barStyle = UIBarStyleDefault;
+//    [toolbar sizeToFit];
+//    toolbar.frame = CGRectMake(160, 438, 320, 44);    
+//
+//     
+//    UIBarButtonItem *addStoryButton = [[UIBarButtonItem alloc] initWithTitle:@"Add Story" style:UIBarButtonItemStyleBordered target:nil action:@selector(addStory:)];
+//    NSArray *items = [NSArray arrayWithObject:addStoryButton];
+//    [addStoryButton release];
+//    [toolbar setItems: items animated:NO];
+
+    
+    [self.view addSubview:toolbar];
+    
     
     
     stories = [[PivotalStories alloc] initWithProject:project andType:storyType];

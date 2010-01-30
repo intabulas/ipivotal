@@ -40,11 +40,13 @@
 @private
     PivotalProject *project;
     PivotalStories *stories;
+    UIToolbar *toolbar; 
     NSString *storyType;
     IBOutlet EGOTableViewPullRefresh *storiesTableView;    
 }
 
 @property (nonatomic,retain) IBOutlet EGOTableViewPullRefresh *storiesTableView;
+@property (nonatomic,retain) IBOutlet UIToolbar *toolbar; 
 
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType;
 - (IBAction)refresh:(id)sender;
