@@ -35,10 +35,12 @@
 #import "PivotalStory.h"
 #import "AbstractHUDViewController.h"
 
-@interface AddStoryViewController : AbstractHUDViewController <UITableViewDelegate> {
+@interface AddStoryViewController : AbstractHUDViewController <UITableViewDelegate, UITextFieldDelegate> {
     PivotalProject *project;
     PivotalStory* story;
     NSMutableDictionary *editingDictionary;
+    IBOutlet UITableViewCell *storyNameCell;
+    IBOutlet UITextField *textField;
     id activeField;
     IBOutlet UITableView *storyTableView;       
     BOOL editing;

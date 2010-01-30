@@ -51,6 +51,7 @@
     editing = YES;    
     return self;
 }
+
 - (id)initWithProject:(PivotalProject *)theProject {
     [super init];
     project = theProject;
@@ -63,16 +64,21 @@
     [editingDictionary release];
     [story release];
     [storyTableView release];
+    [textField release];
+    [storyNameCell release];
     [super dealloc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveStory:)];
+    [storyNameCell setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
 - (void) saveStory:(id)sender {
 
+    self.story.name = textField.text;
+    
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [self showHUDWithLabel:@"Saving"];        
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
@@ -121,7 +127,7 @@
     }
     
         
-    self.story.name           = (NSString *)[editingDictionary valueForKey:kKeyStoryName];
+    self.story.name           = textField.text;
     self.story.storyType      = [editingDictionary valueForKey:kKeyType];
 
     NSNumber *estimateNumber  = [editingDictionary valueForKey:kKeyEstimate];
@@ -130,7 +136,7 @@
     self.title = kLabelAddStory;
     
     [storyTableView reloadData];
-    
+//    [textField becomeFirstResponder];
 }
 
 
@@ -162,14 +168,15 @@
     NSInteger row = indexPath.row;    
     
     if (  row == 0 ) {
-        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
-        if (cell == nil) {
-            cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] autorelease];
-        }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        [cell.cellLabel setText:self.story.name];
-        return  cell;        
+        return storyNameCell;
+//        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
+//        if (cell == nil) {
+//            cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] autorelease];
+//        }
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+//        [cell.cellLabel setText:self.story.name];
+//        return  cell;        
     }
     
     if ( row == 1 ) {
@@ -231,16 +238,6 @@
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        TextInputController *controller = [[TextInputController alloc] initWithTitle:@"Story Name"];
-
-        controller.editingItem = editingDictionary;
-        [editingDictionary setValue:story.name forKey:kKeyStoryName];
-        
-        [self.navigationController pushViewController:controller animated:YES];
-        [controller release];
-        
-    }
             
     if (indexPath.row == 1) {
         ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:kKeyType andTitle:@"Story Type"];
@@ -267,6 +264,12 @@
     return indexPath;
 }
 
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+	[textField resignFirstResponder];
+	return YES;
+}
 
 
 @end
