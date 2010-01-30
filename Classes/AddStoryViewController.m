@@ -46,6 +46,7 @@
     [self initWithProject:theProject];
     [self.story release];
     self.story = theStory;
+    
     self.story.storyType = [self.story.storyType capitalizedString];
     editing = YES;    
     return self;
@@ -117,6 +118,7 @@
         
         if ( editing ) {
             self.title = @"Editing Story";
+            [textField setText:self.story.name];
             [editingDictionary setObject:self.story.storyType forKey:kKeyType];
             [editingDictionary setObject:self.story.name forKey:kKeyStoryName];
             [editingDictionary setObject:[NSNumber numberWithInteger:self.story.estimate] forKey:kKeyEstimate];        

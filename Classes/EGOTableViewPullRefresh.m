@@ -26,6 +26,7 @@
 
 #import "EGOTableViewPullRefresh.h"
 #import "EGORefreshTableHeaderView.h"
+#import "AddStoryViewController.h"
 
 #define kReleaseToReloadStatus 0
 #define kPullToReloadStatus 1
@@ -91,6 +92,18 @@
 	refreshHeaderView = nil;
     [super dealloc];
 }
+
+
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return [self.superview heightForRowAtIndexPath:indexPath];
+//}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [self.superview performSelector:@selector(didSelectRowAtIndexPath:) withObject:indexPath];
+//  [(AddStoryViewController*)self.superview  didSelectRowAtIndexPath:indexPath];
+}
+
 
 
 @end
