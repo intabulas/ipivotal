@@ -37,7 +37,6 @@
 #import "ListSelectionController.h"
 #import "ASIHTTPRequest.h"
 #import "PivotalResource.h"
-#import "TextInputController.h"
 
 @implementation AddStoryViewController
 
@@ -73,6 +72,7 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveStory:)];
     [storyNameCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [textField becomeFirstResponder];
 }
 
 - (void) saveStory:(id)sender {
