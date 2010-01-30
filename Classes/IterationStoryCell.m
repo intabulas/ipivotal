@@ -58,11 +58,11 @@
                 storyLabel.textAlignment = UITextAlignmentLeft;
         
                 
-                statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(31.0f, 30.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
+                statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(31.0f, 28.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
                 statusLabel.autoresizingMask = UIViewAutoresizingNone;
                 statusLabel.backgroundColor = [UIColor clearColor];
                 statusLabel.highlightedTextColor = [UIColor whiteColor];
-                statusLabel.font = [UIFont  systemFontOfSize:13.0f];
+                statusLabel.font = [UIFont  systemFontOfSize:12.0f];
                 statusLabel.textColor = [UIColor blackColor];
                 statusLabel.textAlignment = UITextAlignmentLeft;
 

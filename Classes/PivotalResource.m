@@ -67,7 +67,7 @@
 }
 
 
-#pragma mark === HTTP Authentication Methods ===
+#pragma mark === Pivotal Tracker Authenticated Request ===
 
 +(ASIHTTPRequest *)authenticatedRequestForURL:(NSURL *)theURL {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -80,7 +80,7 @@
     [request addRequestHeader:kTrackerTokenHeader value:token];
 	
 #ifdef LOG_NETWORK
-	NSLog( @"if I CURLd => curl -H \"X-TrackerToken: %@\" -X GET %@", token, theURL );
+	NSLog( @"if I CURLd it would be 'curl -H \"X-TrackerToken: %@\" -X GET %@'", token, theURL );
 #endif
 	
     return request;

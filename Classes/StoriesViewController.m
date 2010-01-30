@@ -38,6 +38,7 @@
 #import "ActivityLabelCell.h"
 #import "NSDate+Nibware.h"
 #import "PlaceholderCell.h"
+#import "EGOTableViewPullRefresh.h"
 
 
 @implementation StoriesViewController
@@ -65,6 +66,18 @@
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     
+    
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	storiesTableView = [[EGOTableViewPullRefresh alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+	storiesTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	storiesTableView.dataSource = self;
+	storiesTableView.delegate = storiesTableView;
+	[self.view addSubview:storiesTableView];    
+    
+    
     stories = [[PivotalStories alloc] initWithProject:project andType:storyType];
     [stories addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
     if ( !stories.isLoaded) { 
@@ -84,7 +97,7 @@
 
 - (void)loadStories {
     if ( !stories.isLoaded ) {
-        [self showHUD];
+//        [self showHUD];
         [stories loadStories];    
     }
 }
@@ -96,6 +109,11 @@
         } else {         
             [self hideHUD]; 
      		[self.storiesTableView reloadData];
+            if ( storiesTableView.reloading ) {
+               [storiesTableView dataSourceDidFinishLoadingNewData];
+            }
+            
+            
         }        
 	}    
 }
@@ -124,9 +142,9 @@
     
     NSInteger row = indexPath.row;
     
-    if ( !stories.isLoaded && !self.isHudDisplayed) { 
-        [self showHUD]; 
-    } 
+ //   if ( !stories.isLoaded && !self.isHudDisplayed) { 
+//        [self showHUD]; 
+//    } 
 
     
     if ( stories.isLoading) { 
@@ -182,12 +200,20 @@
 
 
 - (IBAction)refresh:(id)sender {  
-    [self showHUD];
+//    [self showHUD];
     [stories reloadStories];
-    [self.storiesTableView reloadData];  
+  //  [self.storiesTableView reloadData];  
+ 
+}
+
+- (void)reloadTableViewDataSource{
+	[self performSelector:@selector(refresh:) withObject:nil afterDelay:3.0];
 }
 
 
+- (void)doneLoadingTableViewData{
+	[storiesTableView dataSourceDidFinishLoadingNewData];
+}
 
 @end
 

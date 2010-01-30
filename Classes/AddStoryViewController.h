@@ -33,8 +33,9 @@
 #import <UIKit/UIKit.h>
 #import "PivotalProject.h"
 #import "PivotalStory.h"
+#import "AbstractHUDViewController.h"
 
-@interface AddStoryViewController : UIViewController <UITableViewDelegate, UIAlertViewDelegate> {
+@interface AddStoryViewController : AbstractHUDViewController <UITableViewDelegate> {
     PivotalProject *project;
     PivotalStory* story;
     NSMutableDictionary *editingDictionary;

@@ -72,8 +72,9 @@
 }
 
 - (void) saveStory:(id)sender {
-    
+
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [self showHUDWithLabel:@"Saving"];        
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     NSString *urlString;
     if ( editing ) {
@@ -92,23 +93,13 @@
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]autorelease]];
     [request startSynchronous];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+    [self hideHUD];
     [pool release];    
-    UIAlertView *alert;
-    if ( editing ) {
-        alert = [[UIAlertView alloc] initWithTitle:kLabelEditStory message:@"Story has been updated.\n\nYou may need to refresh the views to have the changes appear" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
-    } else {
-       alert = [[UIAlertView alloc] initWithTitle:kLabelAddStory message:@"Story has been placed in the Icebox. \n\nIt may take a minute or two for it to show up in the list (api lag)" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
-    }
-    [alert show];
-    [alert release];        
-    
-}
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popViewControllerAnimated:YES];    
 
+    
 }
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

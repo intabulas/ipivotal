@@ -72,7 +72,7 @@
     HUD = [[MBProgressHUD alloc] initWithWindow:window];
     [window addSubview:HUD];
     HUD.delegate = self;
-    [HUD setLabelText:@"Loading Projects"];
+    [HUD setLabelText:@"Loading"];
     hudDisplayed = YES;
     [HUD  show:YES];    
 }

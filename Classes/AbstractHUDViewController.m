@@ -19,7 +19,7 @@
 - (void)hideHUD {
     if ( isHudDisplayed ) {
         isHudDisplayed = NO;
-        [hudDisplay hide:YES];
+        [hudDisplay hide:NO];
     }
 }
 
