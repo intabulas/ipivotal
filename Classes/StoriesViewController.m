@@ -113,7 +113,7 @@
 
 - (void)loadStories {
     if ( !stories.isLoaded ) {
-//        [self showHUD];
+       [self showHUD];
         [stories loadStories];    
     }
 }
@@ -211,7 +211,7 @@
 
 
 - (IBAction)refresh:(id)sender {  
-//    [self showHUD];
+    [self showHUD];
     [stories reloadStories];
   //  [self.storiesTableView reloadData];  
  
