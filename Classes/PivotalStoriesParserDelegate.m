@@ -143,8 +143,8 @@
         } else {
             currentStory.updatedAt = [dateFormatter dateFromString:currentElementValue];
         }
-        
-        
+	} else if ([elementName isEqualToString:kTagLabels]) {      
+        currentStory.labels =  [NSMutableArray arrayWithArray:[currentElementValue componentsSeparatedByString:@","]];   
    	} else if ([elementName isEqualToString:kTagLighthouseUrl]) {  
 		currentStory.lighthouseUrl = currentElementValue;
    	} else if ([elementName isEqualToString:kTagLighthouseId]) {  

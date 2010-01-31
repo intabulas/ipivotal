@@ -114,6 +114,8 @@
 		currentProject.velocityScheme = currentElementValue;
 	} else if ([elementName isEqualToString:kTagWeekStartDay]) {        
         currentProject.weekStartDay  = currentElementValue;        
+	} else if ([elementName isEqualToString:kTagLabels]) {      
+        currentProject.labels =  [NSMutableArray arrayWithArray:[currentElementValue componentsSeparatedByString:@","]];   
 	} else if ([elementName isEqualToString:kTagAllowsAttachments]) {     
    		[currentProject setAllowsAttachments:[currentElementValue isEqualToString:kBooleanTrue]];		
 	} else if ([elementName isEqualToString:kTagPublic]) {     

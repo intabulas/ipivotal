@@ -113,6 +113,8 @@
         currentStory.acceptedAt = [dateFormatter dateFromString:currentElementValue];        
     } else if ([elementName isEqualToString:kTagText]) {          
         currentNote.text = currentElementValue;
+	} else if ([elementName isEqualToString:kTagLabels]) {      
+        currentStory.labels =  [NSMutableArray arrayWithArray:[currentElementValue componentsSeparatedByString:@","]];   
 	} else if ([elementName isEqualToString:kTagAuthor]) {          
         currentNote.author = currentElementValue;
 	} else if ([elementName isEqualToString:kTagNotedAt]) {          

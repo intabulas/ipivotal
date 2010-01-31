@@ -50,6 +50,7 @@
 	BOOL      commitMode;
 	NSMutableArray *members;
 	NSMutableArray *integrations;
+    NSMutableArray *labels;
 	NSDate *lastActivityAt;
 }
 
@@ -71,7 +72,7 @@
 
 @property (nonatomic, retain) NSMutableArray *members;
 @property (nonatomic, retain) NSMutableArray *integrations;
-
+@property (nonatomic, retain) NSMutableArray *labels;
 
 
 

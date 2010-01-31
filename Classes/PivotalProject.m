@@ -36,7 +36,7 @@
 @implementation PivotalProject
 
 @synthesize projectId, name, iterationLength, weekStartDay, pointScale, velocityScheme, initialVelocity, currentVelocity, numberDoneIterations, allowsAttachments,
-            publicProject, useHttps, estimateBugsAndChores, commitMode, members, integrations, lastActivityAt;
+            publicProject, useHttps, estimateBugsAndChores, commitMode, members, integrations, labels, lastActivityAt;
 
 - (id)init {
 	[super init];
@@ -47,7 +47,7 @@
 	self.commitMode = FALSE;
 	members = [[NSMutableArray alloc] init];
 	integrations  = [[NSMutableArray alloc] init];
-
+	labels  = [[NSMutableArray alloc] init];
 
 	
     return self;
@@ -64,6 +64,7 @@
 	[members release];
 	[integrations release];
 	[lastActivityAt release];
+    [labels release];
     [super dealloc];
 }
 @end

@@ -1,6 +1,6 @@
 
 //#define CACHED_CONTENT
-//#define LOG_NETWORK
+#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory                   @"story"
@@ -26,6 +26,7 @@
 #define kTagFinish                  @"finish"
 #define kTagAuthor                  @"author"
 #define kTagWhen                    @"when"
+#define kTagLabels                  @"labels"
 #define kTagActivity                @"activity"
 #define kTagNote                    @"note"
 #define kTagText                    @"text"
