@@ -34,7 +34,7 @@
 #import "PivotalStories.h"
 #import "AbstractHUDViewController.h"
 
-@class PivotalProject;
+@class PivotalProject, PivotalStory;
 
 @interface StoriesViewController :  AbstractHUDViewController <UITableViewDelegate, UITableViewDataSource>  {
 @private
@@ -52,5 +52,9 @@
 - (IBAction)refresh:(id)sender;
 - (void)loadStories;
 - (IBAction)addStory:(id)sender;
+
+- (void)edit:(id)sender;
+- (void)cancel:(id)sender;
+- (void)deleteStory:(PivotalStory *)deleteStory;
 
 @end

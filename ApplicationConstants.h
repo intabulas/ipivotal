@@ -105,7 +105,9 @@
 #define kUrlIceboxStories          @"https://www.pivotaltracker.com/services/v3/projects/%d/stories?filter=current_state:unscheduled"
 #define kUrlAddStory               @"https://www.pivotaltracker.com/services/v3/projects/%d/stories"
 #define kUrlUpdateStory            @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d"
+#define kUrlDeleteStory            @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d"
 #define kUrlAddComment             @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d/notes"
+
 
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"

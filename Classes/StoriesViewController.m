@@ -65,7 +65,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
@@ -211,6 +211,50 @@
 }
 
 
+
+#pragma mark Editing
+
+- (void)edit:(id)sender {
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(cancel:)] autorelease];    
+    [self.storiesTableView setEditing:TRUE animated:YES];
+}
+- (void)cancel:(id)sender {
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)] autorelease];    
+    [self.storiesTableView setEditing:FALSE animated:YES];
+}
+
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+ 
+        PivotalStory *story = [stories.stories objectAtIndex:indexPath.row];
+        [self deleteStory:story];
+        
+    } 
+}
+
+- (void)deleteStory:(PivotalStory *)deleteStory {
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [self showHUDWithLabel:@"Deleting Story"];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
+    NSString *urlString = [NSString stringWithFormat:kUrlDeleteStory, project.projectId, deleteStory.storyId];                            
+	NSURL *followingURL = [NSURL URLWithString:urlString];    
+    ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
+    [request setRequestMethod:@"DELETE"];
+    [request startSynchronous];
+#ifdef LOG_NETWORK    
+    NSLog(@" Response: '%@'", [request responseString]);
+#endif
+    NSError *error = [request error];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+    [self hideHUD];
+    [pool release];        
+    [self refresh:self];    
+
+}
 
 @end
 
