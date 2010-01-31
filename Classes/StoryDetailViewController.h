@@ -71,6 +71,7 @@
 - (IBAction)showActions:(id)sender;
 - (id)initWithStory:(PivotalStory *)theStory andProject:(PivotalProject *)theProject;
 - (void)toggleStoryState:(NSString *)newState ;
+- (void)displayStory;
 
 @property (nonatomic,retain) PivotalStory* story;
 @property (nonatomic,retain) PivotalProject *project;

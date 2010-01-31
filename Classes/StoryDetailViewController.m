@@ -38,6 +38,7 @@
 #import "CommentsController.h"
 #import "AddStoryViewController.h"
 #import "NSDate+Nibware.h"
+#import "PivotalStoriesParserDelegate.h"
 
 @implementation StoryDetailViewController
 @synthesize story, project, storyTableView;
@@ -137,60 +138,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActions:)];
 
+    [self displayStory];
     
-    [storyState setText:self.story.currentState];
-    [storyRequestor setText:self.story.requestedBy];
-    [storyOwner setText:self.story.owner];
-    storyDescription.text = self.story.description;
-    [storyName setText:self.story.name];
-    
-    if ( self.story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateOnePoint];
-    if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
-    if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateThreePoints];          
-    
-    estimate.text = [NSString stringWithFormat:kLabelStoryEstimation, self.story.storyType, self.story.estimate];
-    
-    if ( [story.storyType hasPrefix:kMatchBug] ) {    
-        typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
-    } else if ( [self.story.storyType hasPrefix:kMatchFeature] ) {
-        typeIcon.image = [UIImage imageNamed:kIconTypeFeature];
-    } else if ( [self.story.storyType hasPrefix:kMatchChore] ) {
-        typeIcon.image = [UIImage imageNamed:kIconTypeChore];        
-    } else if ( [self.story.storyType hasPrefix:kMatchRelease] ) {
-        typeIcon.image = [UIImage imageNamed:kIconTypeRelease];
-        
-    }    
-    
-    
-    [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
-    [attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.attachments count]]];
-    [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
-    
-    
-    if ( [self.story.attachments count] < 1 ) {
-        [attachmentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [attachmentsCell setAccessoryType:UITableViewCellAccessoryNone];
-    }
-    
-    if ( [self.story.comments count] < 1 ) {
-        [commentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
-    }
-    
-    if ( [self.story.tasks count] < 1 ) {
-        [tasksCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [tasksCell setAccessoryType:UITableViewCellAccessoryNone]  ;      
-    }
-    
-    
-    
-    [createdAtLabel setText:[self.story.createdAt prettyDate]];
-    [updatedAtLabel setText:[self.story.updatedAt prettyDate]];    
     self.storyTableView.tableHeaderView = tableHeaderView;
-
     
 }
 
@@ -305,10 +257,87 @@
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
     [request startSynchronous];
+#ifdef LOG_NETWORK    
+    NSLog(@" Response: '%@'", [request responseString]);
+#endif
+    NSError *error = [request error];
+    if ( !error ) {    
+  	  PivotalStoriesParserDelegate *parserDelegate = [[PivotalStoriesParserDelegate alloc] initWithTarget:self andSelector:@selector(storyChanged:)]; 
+	  NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+	  [parser setDelegate:parserDelegate];
+	  [parser setShouldProcessNamespaces:NO];
+	  [parser setShouldReportNamespacePrefixes:NO];
+	  [parser setShouldResolveExternalEntities:NO];
+	  [parser parse];
+	  [parser release];
+	  [parserDelegate release];    
+    }
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [self hideHUD];
     [pool release];    
 }
+
+- (void)storyChanged:(id)theResult {
+    if ( [theResult isKindOfClass:[NSError class]]) {
+    } else {
+        self.story = [theResult objectAtIndex:0];
+        [self displayStory];
+    }
+}
+
+- (void)displayStory {
+    
+    [storyState setText:self.story.currentState];
+    [storyRequestor setText:self.story.requestedBy];
+    [storyOwner setText:self.story.owner];
+    storyDescription.text = self.story.description;
+    [storyName setText:self.story.name];
+    
+    if ( self.story.estimate == 1 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateOnePoint];
+    if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
+    if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateThreePoints];          
+    
+    estimate.text = [NSString stringWithFormat:kLabelStoryEstimation, self.story.storyType, self.story.estimate];
+    
+    if ( [story.storyType hasPrefix:kMatchBug] ) {    
+        typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
+    } else if ( [self.story.storyType hasPrefix:kMatchFeature] ) {
+        typeIcon.image = [UIImage imageNamed:kIconTypeFeature];
+    } else if ( [self.story.storyType hasPrefix:kMatchChore] ) {
+        typeIcon.image = [UIImage imageNamed:kIconTypeChore];        
+    } else if ( [self.story.storyType hasPrefix:kMatchRelease] ) {
+        typeIcon.image = [UIImage imageNamed:kIconTypeRelease];
+        
+    }    
+    
+    
+    [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
+    [attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.attachments count]]];
+    [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
+    
+    
+    if ( [self.story.attachments count] < 1 ) {
+        [attachmentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [attachmentsCell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+    if ( [self.story.comments count] < 1 ) {
+        [commentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+    if ( [self.story.tasks count] < 1 ) {
+        [tasksCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [tasksCell setAccessoryType:UITableViewCellAccessoryNone]  ;      
+    }
+    
+    
+    
+    [createdAtLabel setText:[self.story.createdAt prettyDate]];
+    [updatedAtLabel setText:[self.story.updatedAt prettyDate]];    
+    
+}
+
 
 @end
 
