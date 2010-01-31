@@ -69,9 +69,9 @@
 	if ([keyPath isEqualToString:kResourceSavingStatusKeyPath]) {
 		if (note.isSaving) return;
 		if ( note.isSaved) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Your comment has been added to this story" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-			[alert show];
-			[alert release];
+//			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Your comment has been added to this story" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//			[alert show];
+//			[alert release];
 		} else if (note.error) {
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request error" message:@"There was a problem adding your comment" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[alert show];

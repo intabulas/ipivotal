@@ -285,6 +285,8 @@
 
 - (void)toggleStoryState:(NSString *)newState {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [self showHUD];
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     NSString *urlString = [NSString stringWithFormat:kUrlUpdateStory, self.project.projectId, self.story.storyId];                            
 	NSURL *followingURL = [NSURL URLWithString:urlString];    
@@ -304,18 +306,8 @@
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
     [request startSynchronous];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+    [self hideHUD];
     [pool release];    
-    
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Story has been placed in the Icebox. \n\nIt may take a minute or two for it to show up in the list (api lag)" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
-//    [alert show];
-//    [alert release];        
-//    
-    
-}
-
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self.navigationController popViewControllerAnimated:YES];            
 }
 
 @end

@@ -38,12 +38,11 @@
 #import "ActivityLabelCell.h"
 #import "NSDate+Nibware.h"
 #import "PlaceholderCell.h"
-#import "EGOTableViewPullRefresh.h"
 
 
 @implementation StoriesViewController
 
-@synthesize storiesTableView;
+@synthesize toolbar, storiesTableView;
 
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType {
     [super init];
@@ -64,20 +63,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStory:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
     
-    CGRect viewFrame = self.view.bounds;
-    viewFrame.size.height = viewFrame.size.height - 89;
-	storiesTableView = [[EGOTableViewPullRefresh alloc] initWithFrame:viewFrame style:UITableViewStylePlain];
-	storiesTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	storiesTableView.dataSource = self;
-	storiesTableView.delegate = storiesTableView;
-	[self.view addSubview:storiesTableView];  
-
-    
+//    CGRect viewFrame = self.view.bounds;
+//    viewFrame.size.height = viewFrame.size.height - 89;
+//	storiesTableView = [[EGOTableViewPullRefresh alloc] initWithFrame:viewFrame style:UITableViewStylePlain];
+//	storiesTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//	storiesTableView.dataSource = self;
+//	storiesTableView.delegate = storiesTableView;
+//	[self.view addSubview:storiesTableView];  
+//
+//    
 	//create toolbar using new
 //    toolbar = [UIToolbar new];
 //    toolbar.barStyle = UIBarStyleDefault;
@@ -91,7 +90,7 @@
 //    [toolbar setItems: items animated:NO];
 
     
-    [self.view addSubview:toolbar];
+//    [self.view addSubview:toolbar];
     
     
     
@@ -126,11 +125,6 @@
         } else {         
             [self hideHUD]; 
      		[self.storiesTableView reloadData];
-            if ( storiesTableView.reloading ) {
-               [storiesTableView dataSourceDidFinishLoadingNewData];
-            }
-            
-            
         }        
 	}    
 }
@@ -223,14 +217,7 @@
  
 }
 
-- (void)reloadTableViewDataSource{
-	[self performSelector:@selector(refresh:) withObject:nil afterDelay:3.0];
-}
 
-
-- (void)doneLoadingTableViewData{
-	[storiesTableView dataSourceDidFinishLoadingNewData];
-}
 
 @end
 

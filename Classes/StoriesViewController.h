@@ -34,7 +34,7 @@
 #import "PivotalStories.h"
 #import "AbstractHUDViewController.h"
 
-@class PivotalProject, EGOTableViewPullRefresh;
+@class PivotalProject;
 
 @interface StoriesViewController :  AbstractHUDViewController <UITableViewDelegate, UITableViewDataSource>  {
 @private
@@ -42,18 +42,15 @@
     PivotalStories *stories;
     UIToolbar *toolbar; 
     NSString *storyType;
-    IBOutlet EGOTableViewPullRefresh *storiesTableView;    
+    IBOutlet UITableView  *storiesTableView;    
 }
 
-@property (nonatomic,retain) IBOutlet EGOTableViewPullRefresh *storiesTableView;
+@property (nonatomic,retain) IBOutlet UITableView *storiesTableView;
 @property (nonatomic,retain) IBOutlet UIToolbar *toolbar; 
 
 - (id)initWithProject:(PivotalProject *)theProject andType:(NSString *)theType;
 - (IBAction)refresh:(id)sender;
 - (void)loadStories;
 - (IBAction)addStory:(id)sender;
-
-- (void)reloadTableViewDataSource;
-- (void)doneLoadingTableViewData;
 
 @end

@@ -79,6 +79,8 @@
 - (void) saveStory:(id)sender {
 
     self.story.name = textField.text;
+    [textField resignFirstResponder];
+
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [self showHUDWithLabel:@"Saving"];        

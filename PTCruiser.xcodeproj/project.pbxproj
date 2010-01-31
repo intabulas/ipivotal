@@ -57,8 +57,6 @@
 		8C587FEB111496E600C24B7A /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C587FE8111496E600C24B7A /* whiteArrow.png */; };
 		8C587FEC111496E600C24B7A /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C587FE9111496E600C24B7A /* blueArrow.png */; };
 		8C587FED111496E600C24B7A /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C587FEA111496E600C24B7A /* blackArrow.png */; };
-		8C587FF31114970700C24B7A /* EGOTableViewPullRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C587FEF1114970700C24B7A /* EGOTableViewPullRefresh.m */; };
-		8C587FF41114970700C24B7A /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C587FF11114970700C24B7A /* EGORefreshTableHeaderView.m */; };
 		8C5BC43E1039ABB40005A028 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43C1039ABB40005A028 /* chat.png */; };
 		8C5BC43F1039ABB40005A028 /* chat_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43D1039ABB40005A028 /* chat_small.png */; };
 		8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BC7E01039F9710005A028 /* CommentHeaderView.m */; };
@@ -204,10 +202,6 @@
 		8C587FE8111496E600C24B7A /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		8C587FE9111496E600C24B7A /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
 		8C587FEA111496E600C24B7A /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
-		8C587FEF1114970700C24B7A /* EGOTableViewPullRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOTableViewPullRefresh.m; sourceTree = "<group>"; };
-		8C587FF01114970700C24B7A /* EGOTableViewPullRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOTableViewPullRefresh.h; sourceTree = "<group>"; };
-		8C587FF11114970700C24B7A /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
-		8C587FF21114970700C24B7A /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		8C5BC43C1039ABB40005A028 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		8C5BC43D1039ABB40005A028 /* chat_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_small.png; sourceTree = "<group>"; };
 		8C5BC7DF1039F9710005A028 /* CommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentHeaderView.h; sourceTree = "<group>"; };
@@ -329,7 +323,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8C587FEE111496ED00C24B7A /* EGOTableViewPullRefresh */,
 				8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */,
 				8C6BB35111110D09008B5D56 /* MBProgressHUD */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
@@ -465,17 +458,6 @@
 				8C587FEA111496E600C24B7A /* blackArrow.png */,
 			);
 			name = "EGOTableViewPullRefresh Images";
-			sourceTree = "<group>";
-		};
-		8C587FEE111496ED00C24B7A /* EGOTableViewPullRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				8C587FEF1114970700C24B7A /* EGOTableViewPullRefresh.m */,
-				8C587FF01114970700C24B7A /* EGOTableViewPullRefresh.h */,
-				8C587FF11114970700C24B7A /* EGORefreshTableHeaderView.m */,
-				8C587FF21114970700C24B7A /* EGORefreshTableHeaderView.h */,
-			);
-			name = EGOTableViewPullRefresh;
 			sourceTree = "<group>";
 		};
 		8C6BB35111110D09008B5D56 /* MBProgressHUD */ = {
@@ -825,8 +807,6 @@
 				8CD5BA4B11123531004B4553 /* PlaceholderCell.m in Sources */,
 				8CD5BB4B1112514C004B4553 /* TitleLabelCell.m in Sources */,
 				8CD5BB5711125246004B4553 /* ProjectInfoViewController.m in Sources */,
-				8C587FF31114970700C24B7A /* EGOTableViewPullRefresh.m in Sources */,
-				8C587FF41114970700C24B7A /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

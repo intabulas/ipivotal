@@ -32,9 +32,10 @@
 
 
 #import <UIKit/UIKit.h>
+#import "AbstractHUDViewController.h"
 
 @class PivotalStory, PivotalProject;
-@interface StoryDetailViewController : UIViewController <UITableViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
+@interface StoryDetailViewController : AbstractHUDViewController <UITableViewDelegate, UIActionSheetDelegate> {
     PivotalStory *story;
     PivotalProject *project;
     @private    
