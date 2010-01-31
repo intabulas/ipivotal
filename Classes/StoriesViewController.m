@@ -56,6 +56,8 @@
     [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [storyType release];
     [stories release];
+    [toolbar release];
+    [storiesTableView release];
     [super dealloc];
 }
 
@@ -153,20 +155,13 @@
     
     NSInteger row = indexPath.row;
     
- //   if ( !stories.isLoaded && !self.isHudDisplayed) { 
-//        [self showHUD]; 
-//    } 
-
-    
     if ( stories.isLoading) { 
         PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
         if (cell == nil) {
             cell = [[[PlaceholderCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierPlaceholderCell] autorelease];
         }
-        return  cell;
-        
-    }
-    
+        return  cell;        
+    }    
     
     if ( stories.stories.count == 0 ) { 
         CenteredLabelCell *cell = (CenteredLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierCenteredCell];
@@ -213,8 +208,6 @@
 - (IBAction)refresh:(id)sender {  
     [self showHUD];
     [stories reloadStories];
-  //  [self.storiesTableView reloadData];  
- 
 }
 
 
