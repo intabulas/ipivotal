@@ -121,6 +121,7 @@
 #define kXmlAddStoryFeature                  @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>"
 #define kXmlAddStory                         @"<story><story_type>%@</story_type><name>%@</name></story>"
 #define kXmlAddComment                       @"<note><text>%@</text></note>"
+#define kXmlAddTask                          @"<task><description>%@</description></task>"
 
 #define kEmptyString     @""
 

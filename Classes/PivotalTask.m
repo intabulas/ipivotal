@@ -60,6 +60,9 @@
 }
 
 
+- (NSString *)to_xml {
+   return [NSString stringWithFormat:kXmlAddTask, description];    
+}
 
 
 @end

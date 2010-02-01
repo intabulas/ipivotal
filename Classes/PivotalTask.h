@@ -52,5 +52,6 @@
 @property (nonatomic, retain) NSDate *createdAt;
 
 -(id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory;
+- (NSString *)to_xml;
 
 @end
