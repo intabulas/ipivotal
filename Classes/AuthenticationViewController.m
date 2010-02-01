@@ -141,11 +141,13 @@
 		NSLog(@"token is '%@'", [theResult objectAtIndex:0]);
 #endif		
 		NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-		NSString *tokenkey = [theResult objectAtIndex:0];
+		NSString *myId = [theResult objectAtIndex:1];
+        NSString *tokenkey = [theResult objectAtIndex:0];
 		NSString *token_value = [tokenkey stringByTrimmingCharactersInSet:trimSet];
 		if (![token_value isEqualToString:kEmptyString]) {
 			NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 			[defaults setValue:token_value forKey:kDefaultsApiToken];
+            [defaults setValue:myId forKey:kDefaultsMyId];
 			[defaults synchronize];
 			[target performSelector:selector];
 		}   		

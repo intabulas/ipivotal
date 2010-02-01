@@ -37,6 +37,7 @@
 #import "ListSelectionController.h"
 #import "ASIHTTPRequest.h"
 #import "PivotalResource.h"
+#import "PivotalMembership.h"
 
 @implementation AddStoryViewController
 
@@ -57,6 +58,7 @@
     project = theProject;
     self.story = [[PivotalStory alloc] init];
     editing = NO;
+    
     return self;
 }
 
@@ -116,6 +118,7 @@
        editingDictionary = [[NSMutableDictionary alloc] init];        
        [editingDictionary setObject:kTypeFeature forKey:kKeyType];
        [editingDictionary setObject:kDefaultStoryTitle forKey:kKeyStoryName];
+       [editingDictionary setObject:@"please select owner" forKey:kKeyOwned];
        [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:kKeyEstimate];    
         
         if ( editing ) {
@@ -124,14 +127,14 @@
             [editingDictionary setObject:self.story.storyType forKey:kKeyType];
             [editingDictionary setObject:self.story.name forKey:kKeyStoryName];
             [editingDictionary setObject:[NSNumber numberWithInteger:self.story.estimate] forKey:kKeyEstimate];        
-            
+            [editingDictionary setObject:self.story.owner forKey:kKeyOwned]; 
         }        
         
         
     }
     
-        
     self.story.name           = textField.text;
+    self.story.owner          = [editingDictionary valueForKey:kKeyOwned];
     self.story.storyType      = [editingDictionary valueForKey:kKeyType];
 
     NSNumber *estimateNumber  = [editingDictionary valueForKey:kKeyEstimate];
@@ -163,7 +166,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return 5;  // if we have assignment 
 //    return 4;  // if we have description
-    return 3;    
+    return 4;    
 }
 
 
@@ -233,7 +236,7 @@
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        [cell.cellLabel setText:@"please enter a description"];    
+        [cell.cellLabel setText:story.owner];    
         return  cell;        
     }    
     
@@ -264,6 +267,21 @@
         [self.navigationController pushViewController:controller animated:YES];
         [controller release];
     }
+    if( indexPath.row == 3 ) {
+        
+        ListSelectionController *controller = [[ListSelectionController alloc] initWithKey:kKeyOwned andTitle:@"Story Owner"];
+        
+        NSMutableArray *members = [[NSMutableArray alloc]init];
+        for (PivotalMembership *themember in project.members) {
+            [members addObject:[themember memberName]];
+        }    
+        controller.listItems = members;
+        
+        controller.editingItem = editingDictionary;
+        [editingDictionary setValue:story.owner forKey:kKeyOwned];
+        [self.navigationController pushViewController:controller animated:YES];
+        [controller release];
+    }    
     
     return indexPath;
 }

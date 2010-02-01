@@ -48,6 +48,10 @@
     if ([elementName isEqualToString:@"guid"]) {
         [resources addObject:currentElementValue];
 	}     
+    if ([elementName isEqualToString:@"id"]) {
+        [resources addObject:currentElementValue];
+	}     
+    
 	[currentElementValue release];
 	currentElementValue = nil;
 }

@@ -68,6 +68,7 @@
 #define kBooleanFalse   @"false"
 
 #define kDefaultsApiToken @"apiToken"
+#define kDefaultsMyId     @"MyId"
 
 #define kTrackerTokenHeader @"X-TrackerToken"
 
@@ -118,8 +119,8 @@
 
 #define kXmlStoryStateTransitiion            @"<story><current_state>%@</current_state><estimate type=\"Integer\">%d</estimate></story>"
 #define kXmlStoryStateTransitiionNoEstimate  @"<story><current_state>%@</current_state></story>"
-#define kXmlAddStoryFeature                  @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate></story>"
-#define kXmlAddStory                         @"<story><story_type>%@</story_type><name>%@</name></story>"
+#define kXmlAddStoryFeature                  @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate><owned_by>%@</owned_by></story>"
+#define kXmlAddStory                         @"<story><story_type>%@</story_type><name>%@</name><owned_by>%@</owned_by></story>"
 #define kXmlAddComment                       @"<note><text>%@</text></note>"
 #define kXmlAddTask                          @"<task><description>%@</description></task>"
 
@@ -134,7 +135,7 @@
 #define kKeyType        @"Type"
 #define kKeyStoryName   @"StoryName"
 #define kKeyEstimate    @"Estimate"
-
+#define kKeyOwned       @"Owned"
 
 #define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'UTC'"
 //#define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'Z'"

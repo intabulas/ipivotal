@@ -31,7 +31,7 @@
 //
 
 #import "PivotalProject.h"
-
+#import "PivotalMembership.h"
 
 @implementation PivotalProject
 
@@ -67,4 +67,25 @@
     [labels release];
     [super dealloc];
 }
+
+
+#pragma mark 
+#pragma mark === Find Member By Id ===
+#pragma mark 
+
+- (PivotalMembership*) memberForId:(NSInteger)memberId {
+    PivotalMembership *foundMember;
+    
+    for (PivotalMembership *themember in self.members) {
+        if ( themember.membershipId == memberId ) {
+           foundMember = themember;
+            break;
+        }
+    }    
+    return foundMember;    
+    
+}
+
+
 @end
+

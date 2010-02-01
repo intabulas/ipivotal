@@ -32,7 +32,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+@class PivotalMembership;
 @interface PivotalProject : NSObject {
     NSInteger projectId;
     NSString *name;
@@ -74,7 +74,7 @@
 @property (nonatomic, retain) NSMutableArray *integrations;
 @property (nonatomic, retain) NSMutableArray *labels;
 
-
+- (PivotalMembership*) memberForId:(NSInteger)memberId ;
 
 @end
 

@@ -95,9 +95,9 @@
 
 - (NSString *)to_xml {
     if ([storyType hasPrefix:kTypeFeature]) {
-        return [NSString stringWithFormat:kXmlAddStoryFeature, [storyType lowercaseString], name, estimate];            
+        return [NSString stringWithFormat:kXmlAddStoryFeature, [storyType lowercaseString], name, estimate, owner];            
     } else {
-        return [NSString stringWithFormat:kXmlAddStory, [storyType lowercaseString], name];    
+        return [NSString stringWithFormat:kXmlAddStory, [storyType lowercaseString], name, owner];    
     }
 }
 
