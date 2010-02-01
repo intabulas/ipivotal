@@ -62,6 +62,7 @@
 		8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BC7E01039F9710005A028 /* CommentHeaderView.m */; };
 		8C5BC8901039FEB50005A028 /* chat_small_inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */; };
 		8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */; };
+		8C6F513911176093002E7F69 /* ProjectMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F513811176093002E7F69 /* ProjectMemberCell.m */; };
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
 		8C762C7B111497F600A1FA85 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C762C7A111497F600A1FA85 /* QuartzCore.framework */; };
@@ -209,6 +210,8 @@
 		8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_small_inverted.png; sourceTree = "<group>"; };
 		8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8C6BB35511110D2C008B5D56 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		8C6F513711176093002E7F69 /* ProjectMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMemberCell.h; sourceTree = "<group>"; };
+		8C6F513811176093002E7F69 /* ProjectMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMemberCell.m; sourceTree = "<group>"; };
 		8C70E2290FE3216E0074DE16 /* TextInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputController.xib; sourceTree = "<group>"; };
 		8C70E22C0FE321F30074DE16 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		8C70E22D0FE321F30074DE16 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
@@ -596,6 +599,8 @@
 				8CD5BA4A11123531004B4553 /* PlaceholderCell.m */,
 				8CD5BB491112514C004B4553 /* TitleLabelCell.h */,
 				8CD5BB4A1112514C004B4553 /* TitleLabelCell.m */,
+				8C6F513711176093002E7F69 /* ProjectMemberCell.h */,
+				8C6F513811176093002E7F69 /* ProjectMemberCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -807,6 +812,7 @@
 				8CD5BA4B11123531004B4553 /* PlaceholderCell.m in Sources */,
 				8CD5BB4B1112514C004B4553 /* TitleLabelCell.m in Sources */,
 				8CD5BB5711125246004B4553 /* ProjectInfoViewController.m in Sources */,
+				8C6F513911176093002E7F69 /* ProjectMemberCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,6 +34,7 @@
 #import "PivotalProject.h"
 #import "TitleLabelCell.h"
 #import "NSDate+Nibware.h"
+#import "ProjectMemberCell.h"
 
 @implementation ProjectInfoViewController
 @synthesize project, projectTableView;
@@ -76,17 +77,17 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   return 15;
+    return  (section == 0 ) ?  15 :  self.project.members.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Project Detail Information";
+    return ( section == 0 ) ? @"Project Detail Information" : @"Project Members";
 }
 
 // Customize the appearance of table view cells.
@@ -95,50 +96,63 @@
     NSInteger row = indexPath.row; 
     NSInteger section = indexPath.section;
     
-    
-    TitleLabelCell *cell = (TitleLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"TitleLabelCell"];
-    if (cell == nil) {
-        cell = [[[TitleLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TitleLabelCell"] autorelease];
-    }
+    if ( section == 0 ) {
+      TitleLabelCell *cell = (TitleLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"TitleLabelCell"];
+      if (cell == nil) {
+          cell = [[[TitleLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TitleLabelCell"] autorelease];
+      }
   
-    if ( section == 0 && row ==  0 ) { cell.titleLabel.text = @"Name";                cell.contentLabel.text = project.name; }
-    if ( section == 0 && row ==  1 ) { cell.titleLabel.text = @"Id";                  cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.projectId]; }    
-    if ( section == 0 && row ==  2 ) { cell.titleLabel.text = @"Iteration Length";    cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.iterationLength]; }    
-    if ( section == 0 && row ==  3 ) { cell.titleLabel.text = @"Week Start";          cell.contentLabel.text = project.weekStartDay; }    
-    if ( section == 0 && row ==  4 ) { cell.titleLabel.text = @"Point Scale";         cell.contentLabel.text = project.pointScale; }    
-    if ( section == 0 && row ==  5 ) { cell.titleLabel.text = @"Velocity Scheme";     cell.contentLabel.text = project.velocityScheme; }    
-    if ( section == 0 && row ==  6 ) { cell.titleLabel.text = @"Current Velocity";    cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.currentVelocity]; }    
-    if ( section == 0 && row ==  7 ) { cell.titleLabel.text = @"Initial Velocity";    cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.initialVelocity]; }   
-    if ( section == 0 && row ==  8 ) { cell.titleLabel.text = @"Done Iterations";     cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.numberDoneIterations]; }    
+      if ( section == 0 && row ==  0 ) { cell.titleLabel.text = @"Name";                cell.contentLabel.text = project.name; }
+      if ( section == 0 && row ==  1 ) { cell.titleLabel.text = @"Id";                  cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.projectId]; }    
+      if ( section == 0 && row ==  2 ) { cell.titleLabel.text = @"Iteration Length";    cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.iterationLength]; }    
+      if ( section == 0 && row ==  3 ) { cell.titleLabel.text = @"Week Start";          cell.contentLabel.text = project.weekStartDay; }    
+      if ( section == 0 && row ==  4 ) { cell.titleLabel.text = @"Point Scale";         cell.contentLabel.text = project.pointScale; }    
+      if ( section == 0 && row ==  5 ) { cell.titleLabel.text = @"Velocity Scheme";     cell.contentLabel.text = project.velocityScheme; }    
+      if ( section == 0 && row ==  6 ) { cell.titleLabel.text = @"Current Velocity";    cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.currentVelocity]; }    
+      if ( section == 0 && row ==  7 ) { cell.titleLabel.text = @"Initial Velocity";    cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.initialVelocity]; }   
+      if ( section == 0 && row ==  8 ) { cell.titleLabel.text = @"Done Iterations";     cell.contentLabel.text = [NSString stringWithFormat:@"%d", project.numberDoneIterations]; }    
     
     
     
-    if ( section == 0 && row ==  9 ) { 
-        cell.titleLabel.text = @"Allows Attachments"; 
-        cell.contentLabel.text = project.allowsAttachments ? @"YES" : @"NO";
-    }    
-    if ( section == 0 && row == 10 ) { 
-        cell.titleLabel.text = @"Public";                    
-        cell.contentLabel.text = project.publicProject ? @"YES" : @"NO";
-    }    
-    if ( section == 0 && row == 11 ) {
-        cell.titleLabel.text = @"Use HTTPS?";                
-        cell.contentLabel.text = project.useHttps ? @"YES" : @"NO";
-    } 
-    if ( section == 0 && row == 12 ) {
-        cell.titleLabel.text = @"Estimate Bugs/Chores";          
-        cell.contentLabel.text = project.estimateBugsAndChores ? @"YES" : @"NO";
-    }    
-    if ( section == 0 && row == 13 ) {
-        cell.titleLabel.text = @"Commit Mode";               
-        cell.contentLabel.text = project.commitMode ? @"YES" : @"NO";
-    }    
-    if ( row == 14 ) {
-        cell.titleLabel.text = @"Last Activity";             
-        cell.contentLabel.text = [project.lastActivityAt prettyDate];
-    }    
+      if ( section == 0 && row ==  9 ) { 
+          cell.titleLabel.text = @"Allows Attachments"; 
+          cell.contentLabel.text = project.allowsAttachments ? @"YES" : @"NO";
+      }    
+      if ( section == 0 && row == 10 ) { 
+          cell.titleLabel.text = @"Public";                    
+          cell.contentLabel.text = project.publicProject ? @"YES" : @"NO";
+      }    
+      if ( section == 0 && row == 11 ) {
+          cell.titleLabel.text = @"Use HTTPS?";                
+          cell.contentLabel.text = project.useHttps ? @"YES" : @"NO";
+      } 
+      if ( section == 0 && row == 12 ) {
+          cell.titleLabel.text = @"Estimate Bugs/Chores";          
+          cell.contentLabel.text = project.estimateBugsAndChores ? @"YES" : @"NO";
+      }    
+      if ( section == 0 && row == 13 ) {
+          cell.titleLabel.text = @"Commit Mode";               
+          cell.contentLabel.text = project.commitMode ? @"YES" : @"NO";
+      }    
+      if ( row == 14 ) {
+          cell.titleLabel.text = @"Last Activity";             
+          cell.contentLabel.text = [project.lastActivityAt prettyDate];
+      }    
+        
+      return cell;  
+    } else {
+        ProjectMemberCell *cell = (ProjectMemberCell*)[tableView dequeueReusableCellWithIdentifier:@"ProjectMemberCell"];
+        if (cell == nil) {
+            cell = [[[ProjectMemberCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ProjectMemberCell"] autorelease];
+        }        
+        PivotalMembership *member = [self.project.members objectAtIndex:row];
+        [cell setMembership:member];
+        return cell;
+    }
     
-    return  cell;
+    
+    
+    return  nil;
   
 }
 

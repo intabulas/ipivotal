@@ -29,32 +29,17 @@
 //	OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-
 #import <UIKit/UIKit.h>
-#import "PivotalProject.h"
-#import "PivotalIterations.h"
-#import "AbstractHUDViewController.h"
 
-@interface IterationsViewController :  AbstractHUDViewController <UITableViewDelegate>  {
-    @private
-    PivotalProject *project;
-    PivotalIterations *iterations;
-    IBOutlet UITableView *iterationTableView;    
-    NSInteger lastIterationType;
+@class PivotalMembership;
+@interface ProjectMemberCell : UITableViewCell {
+    PivotalMembership *membership;
+@private    
+    IBOutlet UILabel *memberName;    
+    IBOutlet UILabel *role;
 }
 
-@property (nonatomic,retain) IBOutlet UITableView *iterationTableView;
-@property (nonatomic,retain) PivotalProject* project;
+@property (nonatomic,retain) PivotalMembership *membership;
 
-- (id)initWithProject:(PivotalProject *)theProject;
-- (IBAction)refresh:(id)sender;
-- (void)loadIterations;
-
--(IBAction)showIceboxStories:(id)sender;
--(IBAction)addStory:(id)sender;
--(IBAction)projectActivity:(id)sender;
-- (IBAction)edit:(id)sender ;
-
-- (void) iterationTypeChanged:(id)sender;
 
 @end
