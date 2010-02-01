@@ -274,6 +274,45 @@
     [controller release];        
 }
 
+- (void)deleteStory:(PivotalStory *)deleteStory {
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [self showHUDWithLabel:@"Deleting Story"];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
+    NSString *urlString = [NSString stringWithFormat:kUrlDeleteStory, project.projectId, deleteStory.storyId];                            
+	NSURL *followingURL = [NSURL URLWithString:urlString];    
+    ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
+    [request setRequestMethod:@"DELETE"];
+    [request startSynchronous];
+#ifdef LOG_NETWORK    
+    NSLog(@" Response: '%@'", [request responseString]);
+#endif
+    NSError *error = [request error];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+    [self hideHUD];
+    [pool release];        
+    [self refresh:self];    
+    
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        PivotalIteration *iteration = [iterations.iterations objectAtIndex:indexPath.section];
+        PivotalStory *story = [iteration.stories objectAtIndex:indexPath.row];
+        [self deleteStory:story];
+        
+    } 
+}
+
+- (void)edit:(id)sender {
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(cancel:)] autorelease];    
+    [self.iterationTableView setEditing:TRUE animated:YES];
+}
+- (void)cancel:(id)sender {
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)] autorelease];    
+    [self.iterationTableView setEditing:FALSE animated:YES];
+}
 
 @end
 
