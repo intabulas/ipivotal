@@ -149,7 +149,7 @@
         if ( [theStory.comments count] > 0 ) {
             [commentsLabel setText:kLabelComments];
         } else {
-            [commentsLabel setText:@""];
+            [commentsLabel setText:kEmptyString];
         }
     
         

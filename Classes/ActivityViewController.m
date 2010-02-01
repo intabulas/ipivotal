@@ -77,13 +77,13 @@
     HUD = [[MBProgressHUD alloc] initWithWindow:window];
     [window addSubview:HUD];
     HUD.delegate = self;
-    [HUD setLabelText:@"Loading"];
+    [HUD setLabelText:kLabelLoading];
     [HUD  show:YES];    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"Activity";
+    self.navigationItem.title = kLabelActivity;
 }
 
 
@@ -107,7 +107,7 @@
     HUD = [[MBProgressHUD alloc] initWithWindow:window];
     [window addSubview:HUD];
     HUD.delegate = self;
-    [HUD setLabelText:@"Loading"];
+    [HUD setLabelText:kLabelLoading];
     [HUD  show:YES];    
     [activities reloadActivities];
     [self.tableView reloadData];   	
@@ -130,13 +130,10 @@
 	
 	if ( !activities.isLoaded) return loadingActivitiesCell;
 	if ( activities.isLoaded && activities.activities.count == 0 ) return noActivitiesCell;
-	
-	
-    static NSString *CellIdentifier = @"ActivityItemCell";
-    
-    ActivityItemCell *cell = (ActivityItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    ActivityItemCell *cell = (ActivityItemCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityItemCell];
     if (cell == nil) {
-        cell = [[[ActivityItemCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ActivityItemCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityItemCell] autorelease];
     }
     [cell setActivity:[activities.activities objectAtIndex:indexPath.row]];
 //    

@@ -82,7 +82,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"Iterations";
+    self.navigationItem.title = kLabelIterations;
     
     UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:kTypeDone, kTypeCurrent, kTypeBacklog, nil]] autorelease];
     [segmentedControl addTarget:self action:@selector(iterationTypeChanged:) forControlEvents:UIControlEventValueChanged];
@@ -277,7 +277,7 @@
 - (void)deleteStory:(PivotalStory *)deleteStory {
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    [self showHUDWithLabel:@"Deleting Story"];
+    [self showHUDWithLabel:kLabelDeletingStory];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     NSString *urlString = [NSString stringWithFormat:kUrlDeleteStory, project.projectId, deleteStory.storyId];                            

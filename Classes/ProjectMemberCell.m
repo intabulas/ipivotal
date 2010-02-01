@@ -65,8 +65,8 @@
 
 
 - (void)setMembership:(PivotalMembership *)theMember {
-    [memberName setText:[NSString stringWithFormat:@"%@ (%@)", theMember.memberName, theMember.initials]];
-    [role   setText:[NSString stringWithFormat:@"Role: %@", theMember.role]];        
+    [memberName setText:[NSString stringWithFormat:kFormatMemberCellNameIntitials, theMember.memberName, theMember.initials]];
+    [role   setText:[NSString stringWithFormat:kFormatMemberCellRole, theMember.role]];        
     
 }
 

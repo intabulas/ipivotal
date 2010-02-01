@@ -5,6 +5,7 @@
 
 #define kTagStory                   @"story"
 #define kTagId                      @"id"
+#define kTagGuid                    @"guid"
 #define kTagStoryType               @"story_type"
 #define kTagUrl                     @"url"
 #define kTagEstimate                @"estimate"
@@ -125,7 +126,12 @@
 #define kXmlAddTask                          @"<task><description>%@</description></task>"
 
 #define kEmptyString     @""
+#define kComma          @","
+#define kFormatNumber    @"%d"
+#define kFormatObject    @"%@"
 
+#define kLabelYes        @"YES"
+#define kLabelNo        @"NO"
 
 #define kHttpContentType     @"Content-type"
 #define kHttpMimeTypeXml     @"application/xml"
@@ -139,6 +145,9 @@
 
 #define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'UTC'"
 //#define kDateFormatUTC       @"yyyy/MM/dd HH:mm:ss 'Z'"
+
+
+#define kDateFormatItertion   @"MMMM dd"
 
 #define kDateFormatActivity  @"MM/dd/yyyy hh:mm a"
 // Cache File Formats
@@ -177,11 +186,11 @@
 #define kTextStoryNeedsName        @"please enter a story name"
 #define kTextStoryDescription       @"please give this story a description"
 #define kLabelNoDatesForIteration   @"no dates for this iteration yet"
-#define kLabelLoading               @"Loading, please wait..."
+#define kLabelLoadingProgress       @"Loading, please wait..."
 #define kLabelNoIterations          @"there are no iterations"
 #define kLabelNoStories             @"there are no stories"
 #define kLabelAddStory              @"Add Story"
-#define kLabelEditStory             @"Story Updated"
+
 
 #define kLabelCommentHeader         @"%@ said %@"
 #define kLabelComments              @"comments"
@@ -192,11 +201,48 @@
 #define kLabelStoryTasks            @"%d Tasks"
 
 #define kLableProjectActivity       @"last activity %@"
+#define kLabelLastUpdated           @"last updated: "
+
+
+#define kLabelName                  @"Name"
+#define kLabelId                    @"Id"
+#define kLabelIterationLength       @"Iteration Length"
+#define kLabelWeekStart             @"Week Start"
+#define kLabelPointScale            @"Point Scale"
+#define kLabelVelocityScheme        @"Velocity Scheme"
+#define kLabelCurrentVelocity       @"Current Velocity"
+#define kLabelInitialVelocity       @"Initial Velocity"
+#define kLabelDoneIterations        @"Done Iterations"
+#define kLabelAllowsAttachments     @"Allows Attachments"
+#define kLabelPublic                @"Public"
+#define kLabelUseHttps              @"User HTTPS"
+#define kLabelEstimateBugsChores    @"Estimate Bugs/Chores"
+#define kLabelCommitMode            @"Commit Mode"
+#define kLabelLastActivity          @"Last Activity"
+
+#define kLabelLoading               @"Loading"
+#define kLabelAddComment            @"Add Comment"
+#define kLabelActivity              @"Activity"
+#define kLabelEditStory             @"Edit Story"
+#define kLabelSaving                @"Saving"
+#define kLabelEditingStory          @"Editing Story"
+#define kLabelSetOwner              @"please select owner"
+#define kLabelEditExisting          @"Edit Existing Story"
+#define kLabelAddNewStory           @"Add a New Story" 
+#define kLabelInformation           @"Information"
+#define kLabelProjectDetailInfo     @"Project Detail Information"
+#define kLabelProjectMembers        @"Project Members"
+#define kLabelDeletingStory         @"Deleting Story"
+#define kLabelProjects              @"Projects"
+#define kLabelIterations            @"Iterations"
+#define kLabelComment               @"Comments"
 // Formats
 
 #define kFormatPoints             @"%d Point(s)"
 #define kFormatIterationNumber    @"Iteration %d"
 
+#define kFormatMemberCellRole           @"Role: %@"
+#define kFormatMemberCellNameIntitials  @"%@ (%@)"
 // Cells
 
 #define kIdentifierLabelCell           @"LabelCell"
@@ -205,6 +251,12 @@
 #define kIdentifierActivityLabelCell   @"ActivityLabelCell"
 #define kIdentifierIterationStoryCell  @"IterationStoryCell"
 #define kIdentifierPlaceholderCell     @"PlaceholderCell"
+#define kIdentifierProjectMemberCell   @"ProjectMemberCell"
+#define kIdentifierTitleLabelCell      @"TitleLabelCell"
+#define kIdentifierCommentCell         @"CommentCell"
+#define kIdentifierActivityItemCell    @"ActivityItemCell"
+#define kIdentifierCell                @"Cell"
+#define kIdentifierProjectLabelCell    @"ProjectLabelCell"
 
 
 //UIActions

@@ -51,7 +51,7 @@
         cellLabel.font = [UIFont  systemFontOfSize:17.0f];
         cellLabel.textColor = [UIColor blackColor];
         cellLabel.textAlignment = UITextAlignmentLeft;
-        [cellLabel setText:kLabelLoading];
+        [cellLabel setText:kLabelLoadingProgress];
     
         activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(6.0f, 13.0f, 20.0f, 20.0f)];
         activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;

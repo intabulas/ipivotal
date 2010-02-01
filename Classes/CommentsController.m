@@ -72,7 +72,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(composeReply:)];
 
     
-    [self setTitle:@"Comments"];
+    [self setTitle:kLabelComment];
 
 }
 
@@ -117,11 +117,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    static NSString *CellIdentifier = @"CommentCell";
+    static NSString *CellIdentifier = kIdentifierCommentCell;
     
     CommentCell *cell = (CommentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"CommentCell" owner:self options:nil];        
+		[[NSBundle mainBundle] loadNibNamed:kIdentifierCommentCell owner:self options:nil];        
         cell = commentCell;
     }
     

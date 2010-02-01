@@ -36,7 +36,7 @@
 
 - (void)showHUD {
     if (!isHudDisplayed) {
-       [self showHUDWithLabel:@"Loading"];
+       [self showHUDWithLabel:kLabelLoading];
     }
 }
 

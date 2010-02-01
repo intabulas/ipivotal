@@ -69,7 +69,7 @@
 
 - (void)setIteration:(PivotalIteration*)iteration {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"MMMM dd";
+    dateFormatter.dateFormat = kDateFormatItertion;
     titleLabel.text = [NSString stringWithFormat:kFormatIterationNumber, iteration.iterationId];  
     if ( iteration.startDate && iteration.endDate ) {
        dateLabel.text = [NSString stringWithFormat:kLabelDateRange, [dateFormatter stringFromDate:iteration.startDate], [dateFormatter stringFromDate:iteration.endDate]];

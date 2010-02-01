@@ -45,10 +45,10 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([elementName isEqualToString:@"guid"]) {
+    if ([elementName isEqualToString:kTagGuid]) {
         [resources addObject:currentElementValue];
 	}     
-    if ([elementName isEqualToString:@"id"]) {
+    if ([elementName isEqualToString:kTagId]) {
         [resources addObject:currentElementValue];
 	}     
     

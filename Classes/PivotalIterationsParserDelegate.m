@@ -114,7 +114,7 @@
     } else if ([elementName isEqualToString:kTagText]) {          
         currentNote.text = currentElementValue;
 	} else if ([elementName isEqualToString:kTagLabels]) {      
-        currentStory.labels =  [NSMutableArray arrayWithArray:[currentElementValue componentsSeparatedByString:@","]];   
+        currentStory.labels =  [NSMutableArray arrayWithArray:[currentElementValue componentsSeparatedByString:kComma]];   
 	} else if ([elementName isEqualToString:kTagAuthor]) {          
         currentNote.author = currentElementValue;
 	} else if ([elementName isEqualToString:kTagNotedAt]) {          

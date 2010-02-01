@@ -103,7 +103,7 @@
     NSString *actionLabel =  [actionSheet buttonTitleAtIndex:buttonIndex];
     
 
-    if ([actionLabel hasPrefix:@"Edit Story"]) {
+    if ([actionLabel hasPrefix:kLabelEditStory]) {
         AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project andStory:story];
         [self.navigationController pushViewController:controller animated:YES];
         [controller release];
@@ -198,14 +198,9 @@
 //        return commentsCell;        
 //    }
     
-    static NSString *CellIdentifier = @"Cell";
-
-    
-    
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kIdentifierCell];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kIdentifierCell] autorelease];
     }
     
     // Set up the cell...

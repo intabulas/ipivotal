@@ -44,7 +44,7 @@
 
 
 -(id)initWithNote:(PivotalNote *)theNote {
-    [super initWithNibName:@"AddComment" bundle:nil];
+    [super initWithNibName:@"CommentsController" bundle:nil];
 	note = [theNote retain];
     return self;    
 }
@@ -58,7 +58,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Add Comment";
+    self.title = kLabelAddComment;
 	self.tableView.tableFooterView = tableFooterView;    
     [note addObserver:self forKeyPath:kResourceSavingStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
 

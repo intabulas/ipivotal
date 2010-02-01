@@ -85,7 +85,7 @@
 
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    [self showHUDWithLabel:@"Saving"];        
+    [self showHUDWithLabel:kLabelSaving];        
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
     NSString *urlString;
     if ( editing ) {
@@ -118,11 +118,11 @@
        editingDictionary = [[NSMutableDictionary alloc] init];        
        [editingDictionary setObject:kTypeFeature forKey:kKeyType];
        [editingDictionary setObject:kDefaultStoryTitle forKey:kKeyStoryName];
-       [editingDictionary setObject:@"please select owner" forKey:kKeyOwned];
+       [editingDictionary setObject:kLabelSetOwner forKey:kKeyOwned];
        [editingDictionary setObject:[NSNumber numberWithInteger:0] forKey:kKeyEstimate];    
         
         if ( editing ) {
-            self.title = @"Editing Story";
+            self.title = kLabelEditingStory;
             [textField setText:self.story.name];
             [editingDictionary setObject:self.story.storyType forKey:kKeyType];
             [editingDictionary setObject:self.story.name forKey:kKeyStoryName];
@@ -160,7 +160,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return  ( editing ) ? @"Edit Existing Story" :  @"Add a New Story" ;
+    return  ( editing ) ? kLabelEditExisting :  kLabelAddNewStory ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

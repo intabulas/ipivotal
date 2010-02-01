@@ -41,7 +41,7 @@
 - (void)setIteration:(PivotalIteration *)anIteration {
 	[iteration release];
 	iteration = [anIteration retain];
-	name.text = [NSString stringWithFormat:@"%d", iteration.iterationNumber];
+	name.text = [NSString stringWithFormat:kFormatNumber, iteration.iterationNumber];
     dateRange.text = kEmptyString;
 }
 

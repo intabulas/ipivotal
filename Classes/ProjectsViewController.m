@@ -72,7 +72,7 @@
     HUD = [[MBProgressHUD alloc] initWithWindow:window];
     [window addSubview:HUD];
     HUD.delegate = self;
-    [HUD setLabelText:@"Loading"];
+    [HUD setLabelText:kLabelLoading];
     hudDisplayed = YES;
     [HUD  show:YES];    
 }
@@ -80,7 +80,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"Projects";
+    self.navigationItem.title = kLabelProjects;
 }
 - (IBAction)refreshProjectList:(id)sender; {}
 
@@ -161,9 +161,9 @@
 	if (!projects.isLoaded ) return loadingProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
 	
-    ProjectLabelCell *cell = (ProjectLabelCell*)[tableView dequeueReusableCellWithIdentifier:@"ProjectLabelCell"];
+    ProjectLabelCell *cell = (ProjectLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierProjectLabelCell];
     if (cell == nil) {
-        cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"ProjectLabelCell"] autorelease];
+        cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierProjectLabelCell] autorelease];
     }
     
     
