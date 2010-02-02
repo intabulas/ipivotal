@@ -326,13 +326,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */,
-				8C6BB35111110D09008B5D56 /* MBProgressHUD */,
-				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
-				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
+				8CB92D361117DCE1005F20AE /* Third Party */,
 				8CA098F30FCFB47A00846DBA /* Controllers */,
 				8CDB632C0FCF4FF0003AC065 /* Domain */,
-				8CDB632D0FCF4FF7003AC065 /* Parsers */,
 				8CDB63AE0FCF86A9003AC065 /* Views */,
 			);
 			path = Classes;
@@ -503,6 +499,17 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		8CB92D361117DCE1005F20AE /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
+				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
+				8C6BB35111110D09008B5D56 /* MBProgressHUD */,
+				8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
 		8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +522,7 @@
 		8CDB632C0FCF4FF0003AC065 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				8CDB632D0FCF4FF7003AC065 /* Parsers */,
 				8CBBB4A20FF9531700A32C37 /* PivotalActivities.h */,
 				8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */,
 				8CBBB4A50FF9532100A32C37 /* PivotalActivity.h */,
