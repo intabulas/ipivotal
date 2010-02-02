@@ -159,10 +159,6 @@
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return  ( editing ) ? kLabelEditExisting :  kLabelAddNewStory ;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return 5;  // if we have assignment 
 //    return 4;  // if we have description
