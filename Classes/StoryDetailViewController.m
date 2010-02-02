@@ -307,7 +307,7 @@
     
     
     [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
-    [attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.attachments count]]];
+    [attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryAttachments, [self.story.attachments count]]];
     [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
     
     

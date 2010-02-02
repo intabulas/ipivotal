@@ -50,11 +50,11 @@
         commentImage.contentMode = UIViewContentModeCenter;
         commentImage.image = [UIImage imageNamed:kIconCommentSmall];
         
-        commentTitle = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, -15.0f, (self.frame.size.width - 30.0f) , self.frame.size.height)];
+        commentTitle = [[UILabel alloc] initWithFrame:CGRectMake(30.0f, -17.0f, (self.frame.size.width - 30.0f) , self.frame.size.height)];
 		commentTitle.autoresizingMask = UIViewAutoresizingNone;
 		commentTitle.backgroundColor = [UIColor clearColor];
 		commentTitle.highlightedTextColor = [UIColor whiteColor];
-		commentTitle.font = [UIFont  systemFontOfSize:12.0f];
+		commentTitle.font = [UIFont  boldSystemFontOfSize:12.0f];
 		commentTitle.textColor = [UIColor whiteColor];
 		commentTitle.textAlignment = UITextAlignmentLeft;
         

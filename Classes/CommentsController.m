@@ -103,7 +103,7 @@
 }
 
 - (UIView *)tableView: (UITableView *)tableView viewForHeaderInSection: (NSInteger)section {
-     CommentHeaderView* headerView = [[[CommentHeaderView alloc] initWithFrame:CGRectMake(0, 0, commentTableView.bounds.size.width, 50)] autorelease];   
+     CommentHeaderView* headerView = [[[CommentHeaderView alloc] initWithFrame:CGRectMake(0, 0, commentTableView.bounds.size.width, 55)] autorelease];   
      [headerView setNote:[comments objectAtIndex:section]];
      return headerView; 
 }
