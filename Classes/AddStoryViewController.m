@@ -38,6 +38,7 @@
 #import "ASIHTTPRequest.h"
 #import "PivotalResource.h"
 #import "PivotalMembership.h"
+#import "LabelInputCell.h"
 
 @implementation AddStoryViewController
 
@@ -226,13 +227,14 @@
     
 
     if (  row == 3  ) {  /// 4 if there is assignment
-        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
+        LabelInputCell *cell = (LabelInputCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelInputCell];
         if (cell == nil) {
-            cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] autorelease] ;
+            cell = [[[LabelInputCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelInputCell] autorelease] ;
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-        [cell.cellLabel setText:story.owner];    
+        [cell.cellLabel setText:@"Owner:"];    
+        [cell.cellValue setText:story.owner];            
         return  cell;        
     }    
     

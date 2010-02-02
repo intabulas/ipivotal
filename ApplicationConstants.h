@@ -246,6 +246,7 @@
 // Cells
 
 #define kIdentifierLabelCell           @"LabelCell"
+#define kIdentifierLabelInputCell      @"LabelInputCell"
 #define kIdentifierImageLabelCell      @"ImageLabelCell"
 #define kIdentifierCenteredCell        @"CenteredLabelCell"
 #define kIdentifierActivityLabelCell   @"ActivityLabelCell"

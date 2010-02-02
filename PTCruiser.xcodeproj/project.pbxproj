@@ -96,6 +96,7 @@
 		8CA09CEA0FD05B1300846DBA /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09CE90FD05B1300846DBA /* StoriesViewController.m */; };
 		8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */; };
 		8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */; };
+		8CB92D5F1117DF9F005F20AE /* LabelInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB92D5E1117DF9F005F20AE /* LabelInputCell.m */; };
 		8CBBB4A40FF9531700A32C37 /* PivotalActivities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */; };
 		8CBBB4A70FF9532100A32C37 /* PivotalActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A60FF9532100A32C37 /* PivotalActivity.m */; };
 		8CBBB4AA0FF953BC00A32C37 /* PivotalActivityParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A90FF953BC00A32C37 /* PivotalActivityParserDelegate.m */; };
@@ -258,6 +259,8 @@
 		8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesViewController.xib; sourceTree = "<group>"; };
 		8CA09D0C0FD05FB500846DBA /* PivotalStoriesParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalStoriesParserDelegate.h; sourceTree = "<group>"; };
 		8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalStoriesParserDelegate.m; sourceTree = "<group>"; };
+		8CB92D5D1117DF9F005F20AE /* LabelInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelInputCell.h; sourceTree = "<group>"; };
+		8CB92D5E1117DF9F005F20AE /* LabelInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelInputCell.m; sourceTree = "<group>"; };
 		8CBBB4A20FF9531700A32C37 /* PivotalActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalActivities.h; sourceTree = "<group>"; };
 		8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalActivities.m; sourceTree = "<group>"; };
 		8CBBB4A50FF9532100A32C37 /* PivotalActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalActivity.h; sourceTree = "<group>"; };
@@ -609,6 +612,8 @@
 				8CD5BB4A1112514C004B4553 /* TitleLabelCell.m */,
 				8C6F513711176093002E7F69 /* ProjectMemberCell.h */,
 				8C6F513811176093002E7F69 /* ProjectMemberCell.m */,
+				8CB92D5D1117DF9F005F20AE /* LabelInputCell.h */,
+				8CB92D5E1117DF9F005F20AE /* LabelInputCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -821,6 +826,7 @@
 				8CD5BB4B1112514C004B4553 /* TitleLabelCell.m in Sources */,
 				8CD5BB5711125246004B4553 /* ProjectInfoViewController.m in Sources */,
 				8C6F513911176093002E7F69 /* ProjectMemberCell.m in Sources */,
+				8CB92D5F1117DF9F005F20AE /* LabelInputCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
