@@ -127,8 +127,12 @@
             [textField setText:self.story.name];
             [editingDictionary setObject:self.story.storyType forKey:kKeyType];
             [editingDictionary setObject:self.story.name forKey:kKeyStoryName];
-            [editingDictionary setObject:[NSNumber numberWithInteger:self.story.estimate] forKey:kKeyEstimate];        
-            [editingDictionary setObject:self.story.owner forKey:kKeyOwned]; 
+            [editingDictionary setObject:[NSNumber numberWithInteger:self.story.estimate] forKey:kKeyEstimate];  
+            if ( [self.story.owner length] != 0 ) {
+               [editingDictionary setObject:self.story.owner forKey:kKeyOwned]; 
+            } else {
+                [editingDictionary setObject:kLabelSetOwner forKey:kKeyOwned];
+            }
         }        
         
         
