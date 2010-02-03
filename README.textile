@@ -1,4 +1,6 @@
-h1. iPivotal v0.83
+h1. iPivotal v1.6
+
+*current shipping version on iTunes appstore is 1.5*
 
 … is a iPhone and iPod Touch app for Pivotal Tracker.
 
