@@ -2,3 +2,4 @@
 - removed UIAlertDialog that was showing the "Add Story" message on state transition
 - added HUD progress display
 - added support for setting story owner
+- added member support
