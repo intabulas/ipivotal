@@ -12,11 +12,12 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="16"/>
-			<integer value="33"/>
-			<integer value="62"/>
-			<integer value="46"/>
 			<integer value="73"/>
+			<integer value="62"/>
+			<integer value="33"/>
+			<integer value="22"/>
+			<integer value="16"/>
+			<integer value="46"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -434,7 +435,7 @@
 				<string key="IBUIReuseIdentifier">StoryOwnerCell</string>
 			</object>
 			<object class="IBUITableViewCell" id="600735624">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -446,7 +447,7 @@
 							<object class="IBUITextView" id="841108522">
 								<reference key="NSNextResponder" ref="741218890"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{2, -4}, {320, 60}}</string>
+								<string key="NSFrame">{{6, -6}, {300, 60}}</string>
 								<reference key="NSSuperview" ref="741218890"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -475,7 +476,8 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</object>
-				<string key="NSFrame">{{0, 200}, {320, 60}}</string>
+				<string key="NSFrameSize">{320, 60}</string>
+				<reference key="NSSuperview"/>
 				<reference key="IBUIBackgroundColor" ref="570115077"/>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -533,7 +535,7 @@
 							<object class="IBUILabel" id="456552107">
 								<reference key="NSNextResponder" ref="1066519850"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{33, 8}, {260, 21}}</string>
+								<string key="NSFrame">{{33, 7}, {260, 21}}</string>
 								<reference key="NSSuperview" ref="1066519850"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
