@@ -40,9 +40,29 @@
 #import "NSDate+Nibware.h"
 #import "PivotalStoriesParserDelegate.h"
 
-@implementation StoryDetailViewController
-@synthesize story, project, storyTableView, actionToolbar;
 
+@interface StoryDetailViewController ()
+- (void)displayStory;
+@end
+
+@implementation StoryDetailViewController
+@synthesize story, project, stories, storyTableView, actionToolbar;
+
+- (id)initWithStories:(NSArray *)theStories andIndex:(NSUInteger)theIndex {
+	[super initWithNibName:@"StoryDetailViewController" bundle:nil];
+    self.stories = theStories;
+    currentIndex = theIndex;
+    self.story = [stories objectAtIndex:currentIndex];
+    return self;
+    
+}
+
+- (id)initWithStories:(NSArray *)theStories andIndex:(NSUInteger)theIndex andProject:(PivotalProject *)theProject {
+    [self initWithStories:theStories andIndex:theIndex];
+    self.project = project;
+    return self;
+    
+}
 
 - (id)initWithStory:(PivotalStory *)theStory {
 	[super initWithNibName:@"StoryDetailViewController" bundle:nil];
@@ -51,11 +71,11 @@
     return self;
 }
 
-- (id)initWithStory:(PivotalStory *)theStory andProject:(PivotalProject *)theProject {
-    [self initWithStory:theStory];
-    self.project = theProject;
-    return self;
-}
+//- (id)initWithStory:(PivotalStory *)theStory andProject:(PivotalProject *)theProject {
+//    [self initWithStory:theStory];
+//    self.project = theProject;
+//    return self;
+//}
 
 - (void)dealloc {
     [project release]; 
@@ -142,10 +162,18 @@
 }
 
 
+#pragma mark  ==
+- (IBAction)segmentChanged:(UISegmentedControl *)segmentedControl {
+	currentIndex += (segmentedControl.selectedSegmentIndex == 0) ? -1 : 1;
+	self.story = [stories objectAtIndex:currentIndex];
+	[self displayStory];
+}
+#pragma mark ===
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActions:)];
+    self.navigationItem.rightBarButtonItem = controlItem;
     [self displayStory];    
     self.storyTableView.tableHeaderView = tableHeaderView;
 }
@@ -334,10 +362,15 @@
     
     
     [createdAtLabel setText:[self.story.createdAt prettyDate]];
-    [updatedAtLabel setText:[self.story.updatedAt prettyDate]];    
+    [updatedAtLabel setText:[self.story.updatedAt prettyDate]]; 
+    
+	[navigationControl setEnabled:(currentIndex > 0) forSegmentAtIndex:0];
+	[navigationControl setEnabled:(currentIndex < [stories count]-1) forSegmentAtIndex:1];
+    
     
 }
 
+#pragma mark ===
 
 @end
 

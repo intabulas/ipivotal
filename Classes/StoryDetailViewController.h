@@ -37,8 +37,12 @@
 @class PivotalStory, PivotalProject;
 @interface StoryDetailViewController : AbstractHUDViewController <UITableViewDelegate> {
     PivotalStory *story;
+    NSArray *stories;
     PivotalProject *project;
+	NSUInteger currentIndex;    
     @private    
+	IBOutlet UISegmentedControl *navigationControl;
+	IBOutlet UIBarButtonItem *controlItem;        
     IBOutlet UITableView *storyTableView;
     IBOutlet UIView *tableHeaderView;
     IBOutlet UITableViewCell *tasksCell;	
@@ -70,10 +74,11 @@
     
 }
 
+- (id)initWithStories:(NSArray *)theStories andIndex:(NSUInteger)theIndex;
+- (id)initWithStories:(NSArray *)theStories andIndex:(NSUInteger)theIndex andProject:(PivotalProject *)theProject;
+
 - (id)initWithStory:(PivotalStory *)theStory;
-- (id)initWithStory:(PivotalStory *)theStory andProject:(PivotalProject *)theProject;
 - (void)toggleStoryState:(NSString *)newState ;
-- (void)displayStory;
 
 - (void)editStory:(id)sender;
 - (void)startStory:(id)sender;
@@ -83,8 +88,11 @@
 - (void)rejectStory:(id)sender;
 - (void)restartStory:(id)sender;
 
+- (IBAction)segmentChanged:(UISegmentedControl *)segmentedControl;
+
 
 @property (nonatomic,retain) PivotalStory* story;
+@property (nonatomic,retain) NSArray* stories;
 @property (nonatomic,retain) PivotalProject *project;
 @property (nonatomic,retain) IBOutlet UITableView *storyTableView;
 @property (nonatomic,retain) IBOutlet UIToolbar *actionToolbar;

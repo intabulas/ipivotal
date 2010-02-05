@@ -121,6 +121,8 @@
 		8CDB9C190FD9DBCA008B53D4 /* IterationStoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9C180FD9DBCA008B53D4 /* IterationStoryCell.m */; };
 		8CDB9CD50FD9EA03008B53D4 /* CenteredLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */; };
 		8CDB9DED0FD9F05E008B53D4 /* ActivityLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */; };
+		8CF6169C111CC76D002C315C /* ToolbarDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169A111CC76D002C315C /* ToolbarDown.png */; };
+		8CF6169D111CC76D002C315C /* ToolbarUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169B111CC76D002C315C /* ToolbarUp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -305,6 +307,8 @@
 		8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenteredLabelCell.m; sourceTree = "<group>"; };
 		8CDB9DEB0FD9F05E008B53D4 /* ActivityLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLabelCell.h; sourceTree = "<group>"; };
 		8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLabelCell.m; sourceTree = "<group>"; };
+		8CF6169A111CC76D002C315C /* ToolbarDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarDown.png; sourceTree = "<group>"; };
+		8CF6169B111CC76D002C315C /* ToolbarUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarUp.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -400,6 +404,8 @@
 		8C3FD3B00FCF0A4D004D8DD0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8CF6169A111CC76D002C315C /* ToolbarDown.png */,
+				8CF6169B111CC76D002C315C /* ToolbarUp.png */,
 				8C587FE7111496C500C24B7A /* EGOTableViewPullRefresh Images */,
 				8CC0E79310047A2800C7F6CB /* Default.png */,
 				8CDB64590FCF8D3C003AC065 /* Icons */,
@@ -761,6 +767,8 @@
 				8C587FEB111496E600C24B7A /* whiteArrow.png in Resources */,
 				8C587FEC111496E600C24B7A /* blueArrow.png in Resources */,
 				8C587FED111496E600C24B7A /* blackArrow.png in Resources */,
+				8CF6169C111CC76D002C315C /* ToolbarDown.png in Resources */,
+				8CF6169D111CC76D002C315C /* ToolbarUp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
