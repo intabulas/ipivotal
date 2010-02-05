@@ -35,7 +35,7 @@
 #import "AbstractHUDViewController.h"
 
 @class PivotalStory, PivotalProject;
-@interface StoryDetailViewController : AbstractHUDViewController <UITableViewDelegate, UIActionSheetDelegate> {
+@interface StoryDetailViewController : AbstractHUDViewController <UITableViewDelegate> {
     PivotalStory *story;
     PivotalProject *project;
     @private    
@@ -65,17 +65,28 @@
     IBOutlet UIImageView *typeIcon;
     IBOutlet UIImageView *estimateIcon;
     
+    IBOutlet UIToolbar *actionToolbar;
+    
+    
 }
 
 - (id)initWithStory:(PivotalStory *)theStory;
-- (IBAction)showActions:(id)sender;
 - (id)initWithStory:(PivotalStory *)theStory andProject:(PivotalProject *)theProject;
 - (void)toggleStoryState:(NSString *)newState ;
 - (void)displayStory;
 
+- (void)editStory:(id)sender;
+- (void)startStory:(id)sender;
+- (void)finishStory:(id)sender;
+- (void)deliverStory:(id)sender;
+- (void)acceptStory:(id)sender;
+- (void)rejectStory:(id)sender;
+- (void)restartStory:(id)sender;
+
+
 @property (nonatomic,retain) PivotalStory* story;
 @property (nonatomic,retain) PivotalProject *project;
 @property (nonatomic,retain) IBOutlet UITableView *storyTableView;
-
+@property (nonatomic,retain) IBOutlet UIToolbar *actionToolbar;
 
 @end

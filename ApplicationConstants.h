@@ -263,13 +263,13 @@
 //UIActions
 
 #define kButtonLabelEditStory      @"Edit Story"
-#define kButtonLabelStart          @"Start"
-#define kButtonLabelFinish         @"Finish"
-#define kButtonLabelDeliver        @"Deliver"
-#define kButtonLabelAccept         @"Accept"
-#define kButtonLabelReject         @"Reject"
-#define kButtonLabelRestart        @"Restart"
+#define kButtonLabelStart          @"Start Story"
+#define kButtonLabelFinish         @"Finish Story"
+#define kButtonLabelDeliver        @"Deliver Story"
+#define kButtonLabelAccept         @"Accept Story"
+#define kButtonLabelReject         @"Reject Reject"
+#define kButtonLabelRestart        @"Restart Story"
 #define kButtonLabelCancel         @"Cancel"
-#define kTitleStoryActions         @"Story Actions"
+#define kLabelStoryDetails         @"Story Details"
 
 

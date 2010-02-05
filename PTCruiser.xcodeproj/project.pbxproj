@@ -330,9 +330,9 @@
 			isa = PBXGroup;
 			children = (
 				8CB92D361117DCE1005F20AE /* Third Party */,
+				8CF614FA111C8EA3002C315C /* Pivotal API */,
 				8CA098F30FCFB47A00846DBA /* Controllers */,
-				8CDB632C0FCF4FF0003AC065 /* Domain */,
-				8CDB63AE0FCF86A9003AC065 /* Views */,
+				8CDB63AE0FCF86A9003AC065 /* Views & Cells */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -525,7 +525,6 @@
 		8CDB632C0FCF4FF0003AC065 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				8CDB632D0FCF4FF7003AC065 /* Parsers */,
 				8CBBB4A20FF9531700A32C37 /* PivotalActivities.h */,
 				8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */,
 				8CBBB4A50FF9532100A32C37 /* PivotalActivity.h */,
@@ -579,7 +578,7 @@
 			name = Parsers;
 			sourceTree = "<group>";
 		};
-		8CDB63AE0FCF86A9003AC065 /* Views */ = {
+		8CDB63AE0FCF86A9003AC065 /* Views & Cells */ = {
 			isa = PBXGroup;
 			children = (
 				8CBBB65E0FF9696800A32C37 /* ActivityItemCell.h */,
@@ -615,7 +614,7 @@
 				8CD5BB491112514C004B4553 /* TitleLabelCell.h */,
 				8CD5BB4A1112514C004B4553 /* TitleLabelCell.m */,
 			);
-			name = Views;
+			name = "Views & Cells";
 			sourceTree = "<group>";
 		};
 		8CDB63B30FCF87BD003AC065 /* IBFiles */ = {
@@ -666,6 +665,15 @@
 				8CDB645A0FCF8D45003AC065 /* lightbulb.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		8CF614FA111C8EA3002C315C /* Pivotal API */ = {
+			isa = PBXGroup;
+			children = (
+				8CDB632C0FCF4FF0003AC065 /* Domain */,
+				8CDB632D0FCF4FF7003AC065 /* Parsers */,
+			);
+			name = "Pivotal API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

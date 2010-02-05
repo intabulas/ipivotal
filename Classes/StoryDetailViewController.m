@@ -41,7 +41,7 @@
 #import "PivotalStoriesParserDelegate.h"
 
 @implementation StoryDetailViewController
-@synthesize story, project, storyTableView;
+@synthesize story, project, storyTableView, actionToolbar;
 
 
 - (id)initWithStory:(PivotalStory *)theStory {
@@ -60,9 +60,42 @@
 - (void)dealloc {
     [project release]; 
     [story release];
+    [actionToolbar release];
     [storyTableView release];
     [super dealloc];
 }   
+
+- (void) updateActions {
+    NSMutableArray *buttonItems = [[NSMutableArray alloc] init];
+    
+     [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
+    
+    if ( [self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateUnStarted] ) {
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelEditStory style:UIBarButtonItemStyleBordered target:self action:@selector(editStory:)]];
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelStart     style:UIBarButtonItemStyleBordered target:self action:@selector(startStory:)]];        
+    } else  if ([self.story.currentState hasPrefix:kStateStarted]) {        
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelEditStory style:UIBarButtonItemStyleBordered target:self action:@selector(editStory:)]];
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelFinish    style:UIBarButtonItemStyleBordered target:self action:@selector(finishStory:)]];
+    } else if ([self.story.currentState hasPrefix:kStateFinished]) {
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelDeliver   style:UIBarButtonItemStyleBordered target:self action:@selector(deliverStory:)]];
+        
+    } else if ([self.story.currentState hasPrefix:kStateDelivered]) {   
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelAccept    style:UIBarButtonItemStyleBordered target:self action:@selector(acceptStory:)]];
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelReject    style:UIBarButtonItemStyleBordered target:self action:@selector(rejectStory:)]];
+    } else if ( [self.story.currentState hasPrefix:kStateRejected] ) {        
+        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelRestart   style:UIBarButtonItemStyleBordered target:self action:@selector(restartStory:)]];
+        
+    }
+     [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
+    
+    if ( buttonItems.count > 0 ) { [self.actionToolbar setItems:buttonItems]; }
+    
+    [buttonItems release];    
+}
+- (void)viewWillAppear:(BOOL)animated { 
+    [self.navigationItem setTitle:kLabelStoryDetails];
+   [self updateActions];
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -70,80 +103,51 @@
 	[attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryAttachments, [self.story.attachments count]]];
     [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
     
-    
 }
 
-- (IBAction)showActions:(id)sender {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:kTitleStoryActions delegate:self cancelButtonTitle:kButtonLabelCancel destructiveButtonTitle:nil otherButtonTitles:nil];
 
 
-    
-    if ( [self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateUnStarted] ) {
-       [actionSheet addButtonWithTitle:kButtonLabelEditStory];
-       [actionSheet addButtonWithTitle:kButtonLabelStart];
-    } else if ([self.story.currentState hasPrefix:kStateStarted]) {
-       [actionSheet addButtonWithTitle:kButtonLabelEditStory];        
-        [actionSheet addButtonWithTitle:kButtonLabelFinish];                
-    } else if ([self.story.currentState hasPrefix:kStateFinished]) {
-        [actionSheet addButtonWithTitle:kButtonLabelDeliver];                
-    } else if ([self.story.currentState hasPrefix:kStateDelivered]) {             
-        [actionSheet addButtonWithTitle:kButtonLabelAccept];                
-        [actionSheet addButtonWithTitle:kButtonLabelReject];                        
-    } else if ( [self.story.currentState hasPrefix:kStateRejected] ) {        
-       [actionSheet addButtonWithTitle:kButtonLabelRestart];                
-    }
-    
+#pragma mark === Toolbar Actions ===
 
-	[actionSheet showInView:self.view.window];
-	[actionSheet release];
+- (void)editStory:(id)sender {
+    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project andStory:story];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];    
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    
-    NSString *actionLabel =  [actionSheet buttonTitleAtIndex:buttonIndex];
-    
-
-    if ([actionLabel hasPrefix:kLabelEditStory]) {
-        AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project andStory:story];
-        [self.navigationController pushViewController:controller animated:YES];
-        [controller release];
-        
-        
-	} else if ([actionLabel hasPrefix:kButtonLabelStart]) {
-        [self toggleStoryState: kStateStarted ];
-
-	} else if ([actionLabel hasPrefix:kButtonLabelFinish]) {
-        [self toggleStoryState: kStateFinished ];
-        
-	} else if ([actionLabel hasPrefix:kButtonLabelDeliver]) {
-        [self toggleStoryState: kStateDelivered ];
-        
-	} else if ([actionLabel hasPrefix:kButtonLabelAccept]) {
-        [self toggleStoryState: kStateAccepted];
-        
-	} else if ([actionLabel hasPrefix:kButtonLabelReject]) {
-        [self toggleStoryState: kStateRejected];
-        
-	} else if ([actionLabel hasPrefix:kButtonLabelRestart]) {        
-        [self toggleStoryState: kStateStarted];        
-    } else {
-        NSLog(@"Unknown Action '%@'", actionLabel);
-    }
-    
-    
-    
+- (void)startStory:(id)sender {
+    [self toggleStoryState: kStateStarted ];
 }
+
+- (void)finishStory:(id)sender {
+    [self toggleStoryState: kStateFinished ];
+}
+
+
+- (void)deliverStory:(id)sender {
+      [self toggleStoryState: kStateDelivered ];
+}
+
+
+- (void)acceptStory:(id)sender {
+    [self toggleStoryState: kStateAccepted];
+}
+
+- (void)rejectStory:(id)sender {
+    [self toggleStoryState: kStateRejected];
+}
+
+- (void)restartStory:(id)sender {
+    [self toggleStoryState: kStateStarted];
+}
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActions:)];
-
-    [self displayStory];
-    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActions:)];
+    [self displayStory];    
     self.storyTableView.tableHeaderView = tableHeaderView;
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -268,6 +272,7 @@
 	  [parserDelegate release];    
     }
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+    [self updateActions];
     [self hideHUD];
     [pool release];    
 }
