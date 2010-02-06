@@ -59,7 +59,7 @@
 
 - (id)initWithStories:(NSArray *)theStories andIndex:(NSUInteger)theIndex andProject:(PivotalProject *)theProject {
     [self initWithStories:theStories andIndex:theIndex];
-    self.project = project;
+    self.project = theProject;
     return self;
     
 }
@@ -130,7 +130,7 @@
 #pragma mark === Toolbar Actions ===
 
 - (void)editStory:(id)sender {
-    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:project andStory:story];
+    AddStoryViewController *controller = [[AddStoryViewController alloc] initWithProject:self.project andStory:self.story];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];    
 }
@@ -367,6 +367,7 @@
 	[navigationControl setEnabled:(currentIndex > 0) forSegmentAtIndex:0];
 	[navigationControl setEnabled:(currentIndex < [stories count]-1) forSegmentAtIndex:1];
     
+    [self updateActions];
     
 }
 
