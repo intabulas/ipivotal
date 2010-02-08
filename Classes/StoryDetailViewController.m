@@ -313,6 +313,8 @@
     }
 }
 
+
+#pragma mark == Display Story Detail ==
 - (void)displayStory {
     
     [storyState setText:self.story.currentState];

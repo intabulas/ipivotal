@@ -119,6 +119,8 @@
         currentNote.author = currentElementValue;
 	} else if ([elementName isEqualToString:kTagNotedAt]) {          
         currentNote.createdAt =  [dateFormatter dateFromString:currentElementValue];         
+	} else if ([elementName isEqualToString:kTagUpdatedAt]) {  
+        currentStory.updatedAt = [dateFormatter dateFromString:currentElementValue];
 	} 
 	[currentElementValue release];
 	currentElementValue = nil;
