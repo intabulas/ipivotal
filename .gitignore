@@ -3,6 +3,7 @@ build/*
 *.pbxuser
 *.mode1v3
 *.perspectivev3
+slurper_config.yml
 # osx noise
 .DS_Store
 profile
