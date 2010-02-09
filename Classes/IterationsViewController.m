@@ -174,18 +174,7 @@
         [cell.cellLabel setText:kLabelNoIterations];
 
         return  cell;        
-    }
-//    if ( !iterations.isLoaded) { 
-//        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityLabelCell];
-//        if (cell == nil) {
-//            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityLabelCell] autorelease];
-//        }
-//        [cell.cellLabel setText:kLabelLoading];
-//        [cell.activityView startAnimating];
-//        
-//        return  cell;
-//        
-//    }    
+    } 
 
     if ( !iterations.isLoaded) { 
         PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];

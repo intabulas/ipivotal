@@ -166,7 +166,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return 5;  // if we have assignment 
-//    return 4;  // if we have description
     return 4;    
 }
 
@@ -175,17 +174,7 @@
     
     NSInteger row = indexPath.row;    
     
-    if (  row == 0 ) {
-        return storyNameCell;
-//        LabelCell *cell = (LabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierLabelCell];
-//        if (cell == nil) {
-//            cell = [[[LabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierLabelCell] autorelease];
-//        }
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
-//        [cell.cellLabel setText:self.story.name];
-//        return  cell;        
-    }
+    if (  row == 0 ) { return storyNameCell; }
     
     if ( row == 1 ) {
         ImageLabelCell *cell = (ImageLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierImageLabelCell];

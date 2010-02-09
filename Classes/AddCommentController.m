@@ -68,20 +68,17 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:kResourceSavingStatusKeyPath]) {
 		if (note.isSaving) return;
-		if ( note.isSaved) {
-//			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Your comment has been added to this story" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//			[alert show];
-//			[alert release];
+		if (note.isSaved) {
+  		   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Your comment has been added to this story" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		   [alert show];
+		   [alert release];
 		} else if (note.error) {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request error" message:@"There was a problem adding your comment" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-			[alert show];
-			[alert release];
-		}
-        
+		   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request error" message:@"There was a problem adding your comment" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		   [alert show];
+		   [alert release];
+		}        
         saveButton.enabled = YES;
 		[activityView stopAnimating];
-        
-
 
 	}
 }
@@ -92,15 +89,10 @@
 }
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
 
 

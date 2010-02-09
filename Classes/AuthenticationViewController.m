@@ -94,8 +94,6 @@
 	[request setPassword:[passwordField text]];
 	[request setShouldPresentCredentialsBeforeChallenge:YES];
 	[request startSynchronous];
-//	BOOL success = [request authenticationRetryCount] == 1;	
-	
 	NSError *error = [request error];
 	
 #ifdef LOG_NETWORK	
@@ -127,15 +125,11 @@
 
 
 - (void)parsedToken:(id)theResult {
-    if ( [theResult isKindOfClass:[NSError class]]) {
-		
+    if ( [theResult isKindOfClass:[NSError class]]) {		
 		UIAlertView *alert;
 		alert = [[UIAlertView alloc] initWithTitle:@"Problem Retrieving API Token" message:@"There was a problem retrieving your API Token from Pivotal Tracker. \n\nPlease try again, or check that your credentials are valid" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
 		[alert show];
 		[alert release];        
-		
-		
-		
     } else {
 #ifdef LOG_NETWORK		
 		NSLog(@"token is '%@'", [theResult objectAtIndex:0]);
@@ -150,15 +144,12 @@
             [defaults setValue:myId forKey:kDefaultsMyId];
 			[defaults synchronize];
 			[target performSelector:selector];
-		}   		
-		
-		
+		}   						
     }
 }
 
 
 #pragma mark User Defaults methods
-
 
 - (IBAction)saveAuthenticationCredentials:(id)sender {
     
