@@ -35,6 +35,8 @@
 #import "PivotalIteration.h"
 #import "PivotalNote.h"
 #import "PivotalStory.h"
+#import "PivotalAttachment.h"
+#import "PivotalTask.h"
 
 
 @implementation PivotalIterationsParserDelegate
@@ -45,6 +47,8 @@
 	dateFormatter.dateFormat = kDateFormatUTC;
     handlingStory = NO;
     handlingNotes = NO;
+    handlingAttachments = NO;
+    handlingTasks = NO;
 }
 
 
@@ -56,9 +60,15 @@
         handlingStory= YES;
     } else if ([elementName isEqualToString:kTagNote]) {
         currentNote = [[PivotalNote alloc] initWithProject:nil andStory:nil];
-        handlingNotes = YES;
-        
-	}
+        handlingNotes = YES;        
+	} else if ([elementName isEqualToString:kTagTask]) {
+        currentTask = [[PivotalTask alloc] initWithProject:nil andStory:nil];
+        handlingTasks = YES;
+	} else if ([elementName isEqualToString:kTagAttachment]) {
+        currentAttachment = [[PivotalAttachment alloc] init];
+        handlingAttachments = YES;
+		
+    }    
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
@@ -74,16 +84,31 @@
     } else if ([elementName isEqualToString:kTagNote]) {
         [currentStory.comments addObject:currentNote];
         [currentNote release];
-        currentNote = nil;        
-        handlingNotes = NO;                
+        currentNote = nil;                
+        handlingNotes = NO;       
+    } else if ([elementName isEqualToString:kTagTask]) {
+        [currentStory.tasks addObject:currentTask];
+        [currentTask release];
+        currentTask = nil;        
+        
+        handlingTasks = NO;                
+    } else if ([elementName isEqualToString:kTagAttachment]) {
+        [currentStory.attachments addObject:currentAttachment];
+        [currentAttachment release];
+        currentAttachment = nil;        
+        handlingAttachments = NO;           
 	} else if ([elementName isEqualToString:kTagId]) {      
-        if ( handlingStory && !handlingNotes ) { 
+        if ( handlingNotes ) { 
+            currentNote.noteId = [currentElementValue integerValue];
+        } else if ( handlingTasks ) {
+            currentTask.taskId  = [currentElementValue integerValue];
+        } else if ( handlingAttachments) {
+            currentAttachment.attachmentId  = [currentElementValue integerValue];
+        } else if (handlingStory) {
             currentStory.storyId = [currentElementValue integerValue];
-        } else if ( handlingNotes ) { 
-                currentNote.noteId = [currentElementValue integerValue];            
         } else {
-           currentIteration.iterationId = [currentElementValue integerValue];
-        }
+            currentIteration.iterationId = [currentElementValue integerValue]; 
+        }                           
 	} else if ([elementName isEqualToString:kTagNumber]) {      
         currentIteration.iterationNumber = [currentElementValue integerValue];
 	} else if ([elementName isEqualToString:kTagStart]) {             
@@ -100,7 +125,13 @@
 	} else if ([elementName isEqualToString:kTagCurrentState]) {                      
         currentStory.currentState = currentElementValue;
 	} else if ([elementName isEqualToString:kTagDescription]) {
-        currentStory.description = currentElementValue;
+        if ( handlingTasks ) {        
+            currentTask.description = currentElementValue;
+        } else if (handlingAttachments) {  			
+			currentAttachment.description = currentElementValue;
+        } else {
+            currentStory.description = currentElementValue;
+        }                
 	} else if ([elementName isEqualToString:kTagName]) {
         currentStory.name = currentElementValue;
 	} else if ([elementName isEqualToString:kTagRequestedBy]) {
@@ -108,8 +139,12 @@
    	} else if ([elementName isEqualToString:kTagOwnedBy]) {         
         currentStory.owner = currentElementValue;
 	} else if ([elementName isEqualToString:kTagCreatedAt]) {  
-        currentStory.createdAt = [dateFormatter dateFromString:currentElementValue];
-	} else if ([elementName isEqualToString:kTagAcceptedAt]) {  
+        if ( handlingTasks ) {
+            currentTask.createdAt = [dateFormatter dateFromString:currentElementValue];
+        } else {
+            currentStory.createdAt = [dateFormatter dateFromString:currentElementValue];
+        }	    
+    } else if ([elementName isEqualToString:kTagAcceptedAt]) {  
         currentStory.acceptedAt = [dateFormatter dateFromString:currentElementValue];        
     } else if ([elementName isEqualToString:kTagText]) {          
         currentNote.text = currentElementValue;
@@ -120,7 +155,10 @@
 	} else if ([elementName isEqualToString:kTagNotedAt]) {          
         currentNote.createdAt =  [dateFormatter dateFromString:currentElementValue];         
 	} else if ([elementName isEqualToString:kTagUpdatedAt]) {  
-        currentStory.updatedAt = [dateFormatter dateFromString:currentElementValue];
+        if ( handlingTasks ) {
+        } else {
+            currentStory.updatedAt = [dateFormatter dateFromString:currentElementValue];
+        }
 	} 
 	[currentElementValue release];
 	currentElementValue = nil;
