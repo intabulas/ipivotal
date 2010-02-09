@@ -88,25 +88,25 @@
 - (void) updateActions {
     NSMutableArray *buttonItems = [[NSMutableArray alloc] init];
     
-     [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
+     [buttonItems addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
     
     if ( [self.story.currentState hasPrefix:kStateUnScheduled] ||  [self.story.currentState hasPrefix:kStateUnStarted] ) {
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelEditStory style:UIBarButtonItemStyleBordered target:self action:@selector(editStory:)]];
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelStart     style:UIBarButtonItemStyleBordered target:self action:@selector(startStory:)]];        
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelEditStory style:UIBarButtonItemStyleBordered target:self action:@selector(editStory:)] autorelease]];
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelStart     style:UIBarButtonItemStyleBordered target:self action:@selector(startStory:)] autorelease]];        
     } else  if ([self.story.currentState hasPrefix:kStateStarted]) {        
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelEditStory style:UIBarButtonItemStyleBordered target:self action:@selector(editStory:)]];
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelFinish    style:UIBarButtonItemStyleBordered target:self action:@selector(finishStory:)]];
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelEditStory style:UIBarButtonItemStyleBordered target:self action:@selector(editStory:)] autorelease]];
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelFinish    style:UIBarButtonItemStyleBordered target:self action:@selector(finishStory:)] autorelease]];
     } else if ([self.story.currentState hasPrefix:kStateFinished]) {
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelDeliver   style:UIBarButtonItemStyleBordered target:self action:@selector(deliverStory:)]];
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelDeliver   style:UIBarButtonItemStyleBordered target:self action:@selector(deliverStory:)] autorelease]];
         
     } else if ([self.story.currentState hasPrefix:kStateDelivered]) {   
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelAccept    style:UIBarButtonItemStyleBordered target:self action:@selector(acceptStory:)]];
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelReject    style:UIBarButtonItemStyleBordered target:self action:@selector(rejectStory:)]];
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelAccept    style:UIBarButtonItemStyleBordered target:self action:@selector(acceptStory:)] autorelease]];
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelReject    style:UIBarButtonItemStyleBordered target:self action:@selector(rejectStory:)] autorelease]];
     } else if ( [self.story.currentState hasPrefix:kStateRejected] ) {        
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithTitle:kButtonLabelRestart   style:UIBarButtonItemStyleBordered target:self action:@selector(restartStory:)]];
+        [buttonItems addObject:[[[UIBarButtonItem alloc] initWithTitle:kButtonLabelRestart   style:UIBarButtonItemStyleBordered target:self action:@selector(restartStory:)] autorelease]];
         
     }
-     [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
+     [buttonItems addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
     
     if ( buttonItems.count > 0 ) { [self.actionToolbar setItems:buttonItems]; }
     
