@@ -404,12 +404,12 @@
 		8C3FD3B00FCF0A4D004D8DD0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8CC0E79310047A2800C7F6CB /* Default.png */,
+				8C3FD3B20FCF0A84004D8DD0 /* Icon.png */,
 				8CF6169A111CC76D002C315C /* ToolbarDown.png */,
 				8CF6169B111CC76D002C315C /* ToolbarUp.png */,
 				8C587FE7111496C500C24B7A /* EGOTableViewPullRefresh Images */,
-				8CC0E79310047A2800C7F6CB /* Default.png */,
 				8CDB64590FCF8D3C003AC065 /* Icons */,
-				8C3FD3B20FCF0A84004D8DD0 /* Icon.png */,
 			);
 			name = Images;
 			path = ../ipivotal/Images;
