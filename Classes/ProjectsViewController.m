@@ -40,6 +40,7 @@
 #import "NSDate+Nibware.h"
 #import "MBProgressHUD.h"
 #import "ProjectInfoViewController.h"
+#import "PlaceholderCell.h"
 
 @implementation ProjectsViewController
 
@@ -48,7 +49,6 @@
 - (void)dealloc {
     [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [projects release]; projects = nil;
-    [loadingProjectsCell release]; loadingProjectsCell = nil;
     [noProjectsCell release]; noProjectsCell = nil;
     [projectTableView release]; projectTableView = nil;
     [super dealloc];
@@ -158,13 +158,21 @@
     iPivotalAppDelegate *appdelegate = (iPivotalAppDelegate *)[[UIApplication sharedApplication]delegate];
 
     if ( [appdelegate hasNoInternetConnectivity]) return noProjectsCell;
-	if (!projects.isLoaded ) return loadingProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
 	
     ProjectLabelCell *cell = (ProjectLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierProjectLabelCell];
     if (cell == nil) {
         cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierProjectLabelCell] autorelease];
     }
+    
+    if ( !projects.isLoaded) { 
+        PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
+        if (cell == nil) {
+            cell = [[[PlaceholderCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierPlaceholderCell] autorelease];
+        }
+        return  cell;
+        
+    }        
     
     
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];

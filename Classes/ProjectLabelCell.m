@@ -56,7 +56,7 @@
 		lastUpdated.font = [UIFont  systemFontOfSize:10.0f];
 		lastUpdated.textColor = [UIColor grayColor];
 		lastUpdated.textAlignment = UITextAlignmentLeft;
-        [lastUpdated setText:kLabelLastUpdated];
+        [lastUpdated setText:kEmptyString];
         
         
         [self.contentView addSubview:cellLabel];
