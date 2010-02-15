@@ -43,10 +43,10 @@
     return self;
 }
 - (void)dealloc {
-    [role release];
-	[memberName release];
-	[email release];
-	[initials release];	 
+    [role release]; role = nil;
+	[memberName release]; memberName = nil;
+	[email release]; email = nil;
+	[initials release];	 initials = nil;
     [super dealloc];
 }
 

@@ -93,10 +93,10 @@
 
 
 - (void)dealloc {
-//    [typeImage release];
-	[activityLabel release];
-    [storyLabel release];
-	[statusLabel release];    
+//    [typeImage release]; typeImage = nil;
+	[activityLabel release]; activityLabel = nil;
+    [storyLabel release]; storyLabel = nil;
+	[statusLabel release]; statusLabel = nil;
 	[super dealloc];
 }
 

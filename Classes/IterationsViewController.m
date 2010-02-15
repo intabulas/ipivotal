@@ -59,8 +59,8 @@
 
 - (void)dealloc {
     [iterations  removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [project release];
-    [iterations release];
+    [project release]; project = nil;
+    [iterations release]; iterations = nil;
     [super dealloc];
 }
 

@@ -50,10 +50,10 @@
 }
 
 - (void)dealloc {
-	[loadingActivitiesCell release];
-	[noActivitiesCell release];
+	[loadingActivitiesCell release]; loadingActivitiesCell = nil;
+	[noActivitiesCell release]; noActivitiesCell = nil;
 	[activities removeObserver:self forKeyPath:kResourceStatusKeyPath];
-	[activities release];
+	[activities release]; activities = nil;
     [super dealloc];
 }
 

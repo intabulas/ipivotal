@@ -175,9 +175,9 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-	[currentIteration release];
-    [currentStory release];
-	[dateFormatter release];
+	[currentIteration release]; currentIteration = nil;
+    [currentStory release]; currentStory = nil;
+	[dateFormatter release]; dateFormatter = nil;
     [super dealloc];
 }
 

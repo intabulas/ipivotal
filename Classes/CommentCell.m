@@ -71,7 +71,7 @@
 
 
 - (void)dealloc {
-    [commentText release];
+    [commentText release]; commentText = nil;
     [super dealloc];
 }
 

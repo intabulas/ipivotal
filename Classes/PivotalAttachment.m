@@ -43,10 +43,10 @@
     return self;
 }
 - (void)dealloc {
-	[filename release];
-	[description release];
-	[uploadedBy release];
-	[uploadedAt release];
+	[filename release]; filename = nil;
+	[description release]; description = nil;
+	[uploadedBy release]; uploadedBy = nil;
+	[uploadedAt release]; uploadedAt = nil;
     [super dealloc];
 }
 

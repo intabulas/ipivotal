@@ -44,7 +44,7 @@
     return self;
 }
 - (void)dealloc {
-    [title release];
+    [title release]; title = nil;
     [super dealloc];
 }
 

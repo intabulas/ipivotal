@@ -62,7 +62,7 @@
 
 
 - (void) dealloc {
-	[error release];
+	[error release]; error = nil;
 	[super dealloc];
 }
 

@@ -64,11 +64,11 @@
 }
 
 - (void)dealloc {
-    [editingDictionary release];
-    [story release];
-    [storyTableView release];
-    [textField release];
-    [storyNameCell release];
+    [editingDictionary release]; editingDictionary = nil;
+    [story release]; story = nil;
+    [storyTableView release]; storyTableView = nil;
+    [textField release]; textField = nil;
+    [storyNameCell release]; storyNameCell = nil;
     [super dealloc];
 }
 

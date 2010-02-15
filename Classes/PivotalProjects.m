@@ -117,8 +117,8 @@
 #pragma mark === Cleanup ===
 
 - (void)dealloc {
-    [url release];
-    [projects release];
+    [url release]; url = nil;
+    [projects release]; projects = nil;
     [super dealloc];
 }
 

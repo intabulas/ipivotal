@@ -80,8 +80,8 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-    [currentNote release];
-	[dateFormatter release];
+    [currentNote release]; currentNote = nil;
+	[dateFormatter release]; dateFormatter = nil;
     [super dealloc];
 }
 

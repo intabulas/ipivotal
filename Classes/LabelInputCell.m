@@ -85,8 +85,8 @@
 
 
 - (void)dealloc {
-    [cellLabel release];
-    [cellValue release];
+    [cellLabel release]; cellLabel = nil;
+    [cellValue release]; cellValue = nil;
     [super dealloc];
 }
 

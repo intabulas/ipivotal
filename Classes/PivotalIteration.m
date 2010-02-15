@@ -46,9 +46,9 @@
 
 - (void)dealloc {
     
-    [startDate release];
-    [endDate release];    
-    [stories release];
+    [startDate release]; startDate = nil;
+    [endDate release]; endDate = nil;
+    [stories release]; stories = nil;
     [super dealloc];
     
 }

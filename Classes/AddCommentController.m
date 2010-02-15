@@ -38,7 +38,7 @@
 @implementation AddCommentController
 
 - (void)dealloc {
-    [note release];
+    [note release]; note = nil;
     [super dealloc];
 }
 

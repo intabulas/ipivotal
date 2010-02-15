@@ -129,10 +129,10 @@
 #pragma mark === Cleanup ===
 
 - (void)dealloc {
-    [url release];
-    [group release];
-    [iterations release];
-    [project release];
+    [url release]; url = nil;
+    [group release]; group = nil;
+    [iterations release]; iterations = nil;
+    [project release]; project = nil;
     [super dealloc];
     
 }

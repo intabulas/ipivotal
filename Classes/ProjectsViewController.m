@@ -47,10 +47,10 @@
 
 - (void)dealloc {
     [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [projects release];
-    [loadingProjectsCell release];
-    [noProjectsCell release];
-    [projectTableView release];
+    [projects release]; projects = nil;
+    [loadingProjectsCell release]; loadingProjectsCell = nil;
+    [noProjectsCell release]; noProjectsCell = nil;
+    [projectTableView release]; projectTableView = nil;
     [super dealloc];
 }
 

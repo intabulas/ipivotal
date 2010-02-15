@@ -158,10 +158,10 @@
 
 
 - (void)dealloc {
-        [typeImage release];
-        [estimateImage release];
-        [storyLabel release];
-        [statusLabel release];    
+        [typeImage release]; typeImage = nil;
+        [estimateImage release]; estimateImage = nil;
+        [storyLabel release]; storyLabel = nil;
+        [statusLabel release]; statusLabel = nil;
         [super dealloc];
 }
 

@@ -79,9 +79,9 @@
 
 
 - (void)dealloc {
-    [memberName release];
-    [role release];
-    [membership  release];
+    [memberName release]; memberName = nil;
+    [role release]; role = nil;
+    [membership  release]; membership = nil;
     [super dealloc];
 }
 

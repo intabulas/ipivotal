@@ -79,8 +79,8 @@
 
 
 - (void)dealloc {
-    [commentTitle release];
-    [commentImage release];
+    [commentTitle release]; commentTitle = nil;
+    [commentImage release]; commentImage = nil;
     [super dealloc];
 }
 

@@ -66,8 +66,8 @@
 
 
 - (void)dealloc {
-    [cellLabel release];
-    [activityView release];
+    [cellLabel release]; cellLabel = nil;
+    [activityView release]; activityView = nil;
     [super dealloc];
 }
 

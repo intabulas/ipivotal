@@ -180,11 +180,11 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-    [currentStory release];
-	[currentNote release];
-	[currentTask release];
-	[currentAttachment release];
-	[dateFormatter release];
+    [currentStory release]; currentStory = nil;
+	[currentNote release]; currentNote = nil;
+	[currentTask release]; currentTask = nil;
+	[currentAttachment release]; currentAttachment = nil;
+	[dateFormatter release]; dateFormatter = nil;
     [super dealloc];
 }
 

@@ -78,10 +78,10 @@
 //}
 
 - (void)dealloc {
-    [project release]; 
-    [story release];
-    [actionToolbar release];
-    [storyTableView release];
+    [project release];  project = nil;
+    [story release]; story = nil;
+    [actionToolbar release]; actionToolbar = nil;
+    [storyTableView release]; storyTableView = nil;
     [super dealloc];
 }   
 

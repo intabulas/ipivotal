@@ -91,8 +91,8 @@
 
 
 - (void)dealloc {
-    [cellLabel release];
-    [lastUpdated release];
+    [cellLabel release]; cellLabel = nil;
+    [lastUpdated release]; lastUpdated = nil;
     [super dealloc];
 }
 

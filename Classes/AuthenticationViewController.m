@@ -48,9 +48,9 @@
 }
 
 - (void)dealloc {
-    [usernamCell release];
-    [passwordCell release];    
-    [settingsHeader release];
+    [usernamCell release]; usernamCell = nil;
+    [passwordCell release]; passwordCell = nil;
+    [settingsHeader release]; settingsHeader = nil;
     [super dealloc];
 }
 
