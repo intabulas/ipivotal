@@ -39,7 +39,6 @@
     MBProgressHUD *HUD;
 	PivotalActivities *activities;
     PivotalProject *project;
-	IBOutlet UITableViewCell *loadingActivitiesCell;
 	IBOutlet UITableViewCell *noActivitiesCell;
 }
 
