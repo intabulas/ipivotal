@@ -133,11 +133,7 @@
     [super didReceiveMemoryWarning]; 
 }
 
-- (IBAction)refresh:(id)sender {
-    [self showHUD];
-    [iterations reloadIterations];
-    [self.iterationTableView reloadData];  
-}
+
 
 #pragma mark Table view methods
 
@@ -241,6 +237,12 @@
 
 
 #pragma mark Actions
+
+- (IBAction)refresh:(id)sender {
+    [self showHUD];
+    [iterations reloadIterations];
+    [self.iterationTableView reloadData];  
+}
 
 -(IBAction)showIceboxStories:(id)sender {
     StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:kTypeIcebox];
