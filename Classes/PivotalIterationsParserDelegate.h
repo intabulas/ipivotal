@@ -33,15 +33,20 @@
 #import <Foundation/Foundation.h>
 #import "PivotalResourceParserDelegate.h"
 
-@class PivotalNote, PivotalStory, PivotalIteration;
+@class PivotalNote, PivotalStory, PivotalIteration, PivotalTask, PivotalAttachment;
 @interface PivotalIterationsParserDelegate : PivotalResourceParserDelegate {
 @private
     BOOL handlingStory;
     BOOL handlingNotes;    
+    BOOL handlingTasks;
+	BOOL handlingAttachments;    
     NSDateFormatter *dateFormatter;
     PivotalIteration *currentIteration;
     PivotalNote      *currentNote;
     PivotalStory     *currentStory;
+    PivotalTask      *currentTask;
+	PivotalAttachment *currentAttachment;
+    
 }
 
 @end

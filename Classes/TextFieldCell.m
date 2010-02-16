@@ -69,7 +69,7 @@
 
 
 - (void)dealloc {
-    [textField release];
+    [textField release]; textField = nil;
     [super dealloc];
 }
 

@@ -146,10 +146,10 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-	[currentProject release];
-	[currentMembership release];
-	[currentIntegration release];
-	[dateFormatter release];
+	[currentProject release]; currentProject = nil;
+	[currentMembership release]; currentMembership = nil;
+	[currentIntegration release]; currentIntegration = nil;
+	[dateFormatter release]; dateFormatter = nil;
     [super dealloc];
 }
 

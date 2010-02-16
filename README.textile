@@ -1,6 +1,6 @@
 h1. iPivotal v1.6
 
-*current shipping version on iTunes appstore is 1.5*
+*current shipping version on iTunes appstore is 1.6*
 
 "Download from AppStore":http://itunes.apple.com/us/app/ptcruiser/id323889807?mt=8
 

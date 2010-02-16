@@ -59,8 +59,8 @@
 
 - (void)dealloc {
     [iterations  removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [project release];
-    [iterations release];
+    [project release]; project = nil;
+    [iterations release]; iterations = nil;
     [super dealloc];
 }
 
@@ -68,7 +68,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     
     iterations = [[PivotalIterations alloc] initWithProject:self.project];
     [iterations addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
@@ -133,11 +133,7 @@
     [super didReceiveMemoryWarning]; 
 }
 
-- (IBAction)refresh:(id)sender {
-    [self showHUD];
-    [iterations reloadIterations];
-    [self.iterationTableView reloadData];  
-}
+
 
 #pragma mark Table view methods
 
@@ -174,18 +170,7 @@
         [cell.cellLabel setText:kLabelNoIterations];
 
         return  cell;        
-    }
-//    if ( !iterations.isLoaded) { 
-//        ActivityLabelCell *cell = (ActivityLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityLabelCell];
-//        if (cell == nil) {
-//            cell = [[[ActivityLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityLabelCell] autorelease];
-//        }
-//        [cell.cellLabel setText:kLabelLoading];
-//        [cell.activityView startAnimating];
-//        
-//        return  cell;
-//        
-//    }    
+    } 
 
     if ( !iterations.isLoaded) { 
         PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
@@ -252,6 +237,12 @@
 
 
 #pragma mark Actions
+
+- (IBAction)refresh:(id)sender {
+    [self showHUD];
+    [iterations reloadIterations];
+    [self.iterationTableView reloadData];  
+}
 
 -(IBAction)showIceboxStories:(id)sender {
     StoriesViewController *controller = [[StoriesViewController alloc] initWithProject:self.project andType:kTypeIcebox];

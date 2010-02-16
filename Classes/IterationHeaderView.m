@@ -80,8 +80,8 @@
 
 
 - (void)dealloc {
-    [titleLabel release];
-    [dateLabel release];
+    [titleLabel release]; titleLabel = nil;
+    [dateLabel release]; dateLabel = nil;
     [super dealloc];
 }
 

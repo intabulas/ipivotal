@@ -55,7 +55,7 @@
 
 
 -(void)dealloc {
-    [text release]; text= nil;
+    [text release]; text = nil;
     [author release]; author = nil;
     [createdAt release]; createdAt = nil;
     [super dealloc];

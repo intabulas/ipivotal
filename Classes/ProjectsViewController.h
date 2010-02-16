@@ -38,7 +38,6 @@
     MBProgressHUD *HUD;
     BOOL hudDisplayed;
     IBOutlet UITableView *projectTableView;
-    IBOutlet UITableViewCell *loadingProjectsCell;
     IBOutlet UITableViewCell *noProjectsCell;
     PivotalProjects *projects;    
 }

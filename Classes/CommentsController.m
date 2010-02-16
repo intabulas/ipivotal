@@ -78,15 +78,10 @@
 
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
 
 
@@ -107,12 +102,6 @@
      [headerView setNote:[comments objectAtIndex:section]];
      return headerView; 
 }
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    PivotalNote *note = [comments objectAtIndex:section];
-//    return [NSString stringWithFormat:@"%@ said", note.author];
-//}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -155,9 +144,7 @@
 
     return detailTextSize.height + 25.0f;    
     
-    
-    
-//	return 75.0f;
+
 }
 
 
@@ -171,8 +158,7 @@
 
 -(void)composeReply:(id)sender {
 
-    PivotalNote *note = [[[PivotalNote alloc] initWithProject:project
-                                                    andStory:story] autorelease];
+    PivotalNote *note = [[[PivotalNote alloc] initWithProject:project andStory:story] autorelease];
     [story.comments addObject:note];
     AddCommentController *controller = [[AddCommentController alloc] initWithNote:note];
     [self.navigationController pushViewController:controller animated:YES];

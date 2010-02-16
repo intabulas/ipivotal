@@ -35,6 +35,7 @@
 #import "PivotalProject.h"
 #import "NSDate+Nibware.h"
 #import "MBProgressHUD.h"
+#import "PlaceholderCell.h"
 
 @implementation ActivityViewController
 
@@ -50,10 +51,9 @@
 }
 
 - (void)dealloc {
-	[loadingActivitiesCell release];
-	[noActivitiesCell release];
+	[noActivitiesCell release]; noActivitiesCell = nil;
 	[activities removeObserver:self forKeyPath:kResourceStatusKeyPath];
-	[activities release];
+	[activities release]; activities = nil;
     [super dealloc];
 }
 
@@ -128,7 +128,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	
-	if ( !activities.isLoaded) return loadingActivitiesCell;
+	if ( !activities.isLoaded) {
+        PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
+        if (cell == nil) {
+            cell = [[[PlaceholderCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierPlaceholderCell] autorelease];
+        }
+        return  cell;         
+    }
+    
 	if ( activities.isLoaded && activities.activities.count == 0 ) return noActivitiesCell;
 
     ActivityItemCell *cell = (ActivityItemCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityItemCell];

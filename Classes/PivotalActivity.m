@@ -42,11 +42,11 @@
     return self;
 }
 - (void)dealloc {
-    [story release];
-    [description release];
-    [author release];
-    [occuredAt release];
-	[eventType release];
+    [story release]; story = nil;
+    [description release]; description = nil;
+    [author release]; author = nil;
+    [occuredAt release]; occuredAt = nil;
+	[eventType release]; eventType = nil;
     [super dealloc];
 }
 

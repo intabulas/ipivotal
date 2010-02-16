@@ -57,14 +57,14 @@
 #pragma mark Cleanup Methods
 
 - (void)dealloc {
-    [name release];
-    [weekStartDay release];
-    [pointScale release];
-	[velocityScheme release];
-	[members release];
-	[integrations release];
-	[lastActivityAt release];
-    [labels release];
+    [name release]; name = nil;
+    [weekStartDay release]; weekStartDay = nil;
+    [pointScale release]; pointScale = nil;
+	[velocityScheme release]; velocityScheme = nil;
+	[members release]; members = nil;
+	[integrations release]; integrations = nil;
+	[lastActivityAt release]; lastActivityAt = nil;
+    [labels release]; labels = nil;
     [super dealloc];
 }
 

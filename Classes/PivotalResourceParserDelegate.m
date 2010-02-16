@@ -109,9 +109,9 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-	[error release];
-	[resources release];
-	[currentElementValue release];
+	[error release]; error = nil;
+	[resources release]; resources = nil;
+	[currentElementValue release]; currentElementValue = nil;
     [super dealloc];
 }
 

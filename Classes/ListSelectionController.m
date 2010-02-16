@@ -45,9 +45,9 @@
 }
 
 - (void)dealloc {
-    [listItems release];
-    [listTableView release];
-    [editingItem  release];
+    [listItems release]; listItems = nil;
+    [listTableView release]; listTableView = nil;
+    [editingItem  release]; editingItem = nil;
     [super dealloc];
 }
 

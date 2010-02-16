@@ -54,10 +54,10 @@
 
 - (void)dealloc {
     [stories  removeObserver:self forKeyPath:kResourceStatusKeyPath];
-    [storyType release];
-    [stories release];
-    [toolbar release];
-    [storiesTableView release];
+    [storyType release]; storyType = nil;
+    [stories release]; stories = nil;
+    [toolbar release]; toolbar = nil;
+    [storiesTableView release]; storiesTableView = nil;
     [super dealloc];
 }
 

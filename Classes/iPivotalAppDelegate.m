@@ -148,7 +148,7 @@
 
 - (void)dealloc {
 	[navigationController release];
-    [toolbar release];
+    [toolbar release]; 
 	[window release];
 	[super dealloc];
 }

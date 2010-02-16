@@ -73,23 +73,23 @@
 
 - (void)dealloc {
     if ( project != nil )  {
-        [project release];
+        [project release]; project = nil;
     }
     [comments release]; comments = nil;
     [tasks release]; tasks = nil;
 	[attachments release]; attachments = nil;
-    [storyType release];
-    [url release];
-    [currentState release];
-    [description release];
-    [name release];
-    [requestedBy release];
-    [owner release];
-    [createdAt release];
-    [updatedAt release];
-    [acceptedAt release];    
-	[lighthouseUrl  release];
-    [labels release];
+    [storyType release]; storyType = nil;
+    [url release]; url = nil;
+    [currentState release]; currentState = nil;
+    [description release]; description = nil;
+    [name release]; name = nil;
+    [requestedBy release]; requestedBy = nil;
+    [owner release]; owner = nil;
+    [createdAt release]; createdAt = nil;
+    [updatedAt release]; updatedAt = nil;
+    [acceptedAt release]; acceptedAt = nil;
+	[lighthouseUrl  release]; lighthouseUrl = nil;
+    [labels release]; labels = nil;
     [super dealloc];
 }
 

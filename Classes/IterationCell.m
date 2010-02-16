@@ -47,10 +47,10 @@
 
 
 - (void)dealloc {
-    [iteration release];    
-    [name release];    
-    [dateRange release]; 
-    [icon release];
+    [iteration release]; iteration = nil;    
+    [name release]; name = nil;
+    [dateRange release]; dateRange = nil;
+    [icon release]; icon = nil;
     [super dealloc];
 }
 

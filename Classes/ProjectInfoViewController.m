@@ -49,8 +49,8 @@
 
 
 - (void)dealloc {
-    [project release];
-    [projectTableView release];
+    [project release]; project = nil;
+    [projectTableView release]; projectTableView = nil;
     [super dealloc];
 }
 

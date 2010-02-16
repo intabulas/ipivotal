@@ -89,8 +89,8 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-    [currentActivity release];
-	[dateFormatter release];
+    [currentActivity release]; currentActivity = nil;
+	[dateFormatter release]; dateFormatter = nil;
     [super dealloc];
 }
 

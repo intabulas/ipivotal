@@ -69,7 +69,7 @@
 }
 
 - (void)dealloc {
-    [cellLabel release];
+    [cellLabel release]; cellLabel = nil;
     [super dealloc];
 }
 
