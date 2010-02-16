@@ -266,6 +266,7 @@
 #define kLabelProjectMembers        @"Project Members"
 #define kLabelDeletingStory         @"Deleting Story"
 #define kLabelProjects              @"Projects"
+#define kLabelDashboard             @"Dashboard"
 #define kLabelIterations            @"Iterations"
 #define kLabelComment               @"Comments"
 // Formats

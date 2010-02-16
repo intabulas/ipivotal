@@ -121,6 +121,11 @@
 		8CDB9C190FD9DBCA008B53D4 /* IterationStoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9C180FD9DBCA008B53D4 /* IterationStoryCell.m */; };
 		8CDB9CD50FD9EA03008B53D4 /* CenteredLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */; };
 		8CDB9DED0FD9F05E008B53D4 /* ActivityLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */; };
+		8CE039D2112B54C800E76306 /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = 8CE039D1112B54C800E76306 /* CHANGELOG */; };
+		8CE039DF112B570400E76306 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE039DC112B570400E76306 /* EGORefreshTableHeaderView.m */; };
+		8CE039E0112B570400E76306 /* PullToRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE039DE112B570400E76306 /* PullToRefreshTableViewController.m */; };
+		8CE039E5112B574900E76306 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE039E4112B574900E76306 /* SoundEffect.m */; };
+		8CE039F7112B577400E76306 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE039F6112B577400E76306 /* AudioToolbox.framework */; };
 		8CF6169C111CC76D002C315C /* ToolbarDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169A111CC76D002C315C /* ToolbarDown.png */; };
 		8CF6169D111CC76D002C315C /* ToolbarUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169B111CC76D002C315C /* ToolbarUp.png */; };
 /* End PBXBuildFile section */
@@ -307,6 +312,14 @@
 		8CDB9CD40FD9EA03008B53D4 /* CenteredLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenteredLabelCell.m; sourceTree = "<group>"; };
 		8CDB9DEB0FD9F05E008B53D4 /* ActivityLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLabelCell.h; sourceTree = "<group>"; };
 		8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLabelCell.m; sourceTree = "<group>"; };
+		8CE039D1112B54C800E76306 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
+		8CE039DB112B570400E76306 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		8CE039DC112B570400E76306 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		8CE039DD112B570400E76306 /* PullToRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshTableViewController.h; sourceTree = "<group>"; };
+		8CE039DE112B570400E76306 /* PullToRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshTableViewController.m; sourceTree = "<group>"; };
+		8CE039E3112B574900E76306 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		8CE039E4112B574900E76306 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		8CE039F6112B577400E76306 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8CF6169A111CC76D002C315C /* ToolbarDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarDown.png; sourceTree = "<group>"; };
 		8CF6169B111CC76D002C315C /* ToolbarUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarUp.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -324,6 +337,7 @@
 				8C7C5F3E10155C5B002A4C52 /* SystemConfiguration.framework in Frameworks */,
 				8C99682010422BD90079345A /* CoreGraphics.framework in Frameworks */,
 				8C762C7B111497F600A1FA85 /* QuartzCore.framework in Frameworks */,
+				8CE039F7112B577400E76306 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +392,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8CE039D1112B54C800E76306 /* CHANGELOG */,
 				8C50D6190FE1A86300F41900 /* Entitlements.plist */,
 				8CDB63B30FCF87BD003AC065 /* IBFiles */,
 				8C3FD3B00FCF0A4D004D8DD0 /* Images */,
@@ -397,6 +412,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				8C762C7A111497F600A1FA85 /* QuartzCore.framework */,
+				8CE039F6112B577400E76306 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -511,6 +527,7 @@
 		8CB92D361117DCE1005F20AE /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				8CE039DA112B56F600E76306 /* PullToRefresh */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				8C6BB35111110D09008B5D56 /* MBProgressHUD */,
@@ -673,6 +690,19 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		8CE039DA112B56F600E76306 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				8CE039E3112B574900E76306 /* SoundEffect.h */,
+				8CE039E4112B574900E76306 /* SoundEffect.m */,
+				8CE039DB112B570400E76306 /* EGORefreshTableHeaderView.h */,
+				8CE039DC112B570400E76306 /* EGORefreshTableHeaderView.m */,
+				8CE039DD112B570400E76306 /* PullToRefreshTableViewController.h */,
+				8CE039DE112B570400E76306 /* PullToRefreshTableViewController.m */,
+			);
+			name = PullToRefresh;
+			sourceTree = "<group>";
+		};
 		8CF614FA111C8EA3002C315C /* Pivotal API */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +799,7 @@
 				8C587FED111496E600C24B7A /* blackArrow.png in Resources */,
 				8CF6169C111CC76D002C315C /* ToolbarDown.png in Resources */,
 				8CF6169D111CC76D002C315C /* ToolbarUp.png in Resources */,
+				8CE039D2112B54C800E76306 /* CHANGELOG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +874,9 @@
 				8CD5BB5711125246004B4553 /* ProjectInfoViewController.m in Sources */,
 				8C6F513911176093002E7F69 /* ProjectMemberCell.m in Sources */,
 				8CB92D5F1117DF9F005F20AE /* LabelInputCell.m in Sources */,
+				8CE039DF112B570400E76306 /* EGORefreshTableHeaderView.m in Sources */,
+				8CE039E0112B570400E76306 /* PullToRefreshTableViewController.m in Sources */,
+				8CE039E5112B574900E76306 /* SoundEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
