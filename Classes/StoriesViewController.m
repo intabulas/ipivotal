@@ -250,6 +250,12 @@
     NSError *error = [request error];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [self hideHUD];
+    if ( error ) {
+        UIAlertView *alert;        
+        alert = [[UIAlertView alloc] initWithTitle:@"Error Deleting Story" message:@"There was a problem deleting this story. Please try again later" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+        [alert show];
+        [alert release];            
+    }
     [pool release];        
     [self refresh:self];    
 
