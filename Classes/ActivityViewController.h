@@ -34,9 +34,9 @@
 #import "PivotalActivities.h"
 #import "PivotalProject.h"
 #import "MBProgressHUD.h"
+#import "PullToRefreshTableViewController.h"
 
-@interface ActivityViewController : UITableViewController <MBProgressHUDDelegate> {
-    MBProgressHUD *HUD;
+@interface ActivityViewController : PullToRefreshTableViewController {
 	PivotalActivities *activities;
     PivotalProject *project;
 	IBOutlet UITableViewCell *noActivitiesCell;
@@ -45,6 +45,5 @@
 - (id)init;
 - (id)initWithProject:(PivotalProject *)theProject;
 - (IBAction)refresh:(id)sender;
-- (void)displayHUD;
 
 @end

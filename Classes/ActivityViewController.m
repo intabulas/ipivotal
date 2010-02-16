@@ -34,7 +34,6 @@
 #import "ActivityItemCell.h"
 #import "PivotalProject.h"
 #import "NSDate+Nibware.h"
-#import "MBProgressHUD.h"
 #import "PlaceholderCell.h"
 
 @implementation ActivityViewController
@@ -61,24 +60,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
+	//self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
 
     activities = [[PivotalActivities alloc] initWithProject:project];
 	[activities addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
 
 	if ( !activities.isLoaded) {  
-        [self displayHUD];
+        [self showReloadAnimationAnimated:NO];
         [activities loadActivities];
     }
-}
-
-- (void)displayHUD {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    [window addSubview:HUD];
-    HUD.delegate = self;
-    [HUD setLabelText:kLabelLoading];
-    [HUD  show:YES];    
+    
+    refreshHeaderView.lastUpdatedDate = [NSDate new];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -91,9 +83,10 @@
     if ([keyPath isEqualToString:kResourceStatusKeyPath]) {
         PivotalActivities *theActivities = (PivotalActivities *)object;
         if ( theActivities.isLoading) {
-        } else {      
-            [HUD hide:YES];
+        } else {                  
      		[self.tableView reloadData];
+			refreshHeaderView.lastUpdatedDate = [NSDate new];
+            [super dataSourceDidFinishLoadingNewData];
         }        
 	}    
 }
@@ -103,14 +96,12 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    [window addSubview:HUD];
-    HUD.delegate = self;
-    [HUD setLabelText:kLabelLoading];
-    [HUD  show:YES];    
     [activities reloadActivities];
     [self.tableView reloadData];   	
+}
+
+- (void)reloadTableViewDataSource {
+	    [activities reloadActivities];
 }
 
 #pragma mark Table view methods
@@ -164,15 +155,6 @@
 	return 45.0f;
 }
 
-
-#pragma mark -
-#pragma mark MBProgressHUDDelegate methods
-
-- (void)hudWasHidden {
-    // Remove HUD from screen when the HUD was hidded
-    [HUD removeFromSuperview];
-    [HUD release];
-}
 
 @end
 
