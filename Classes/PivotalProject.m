@@ -74,16 +74,15 @@
 #pragma mark 
 
 - (PivotalMembership*) memberForId:(NSInteger)memberId {
-    PivotalMembership *foundMember;
+    PivotalMembership *foundMember = nil;
     
     for (PivotalMembership *themember in self.members) {
         if ( themember.membershipId == memberId ) {
            foundMember = themember;
-            break;
+           break;
         }
     }    
-    return foundMember;    
-    
+    return foundMember;        
 }
 
 
