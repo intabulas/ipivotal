@@ -44,7 +44,8 @@
 
 
 -(id)initWithNote:(PivotalNote *)theNote {
-    [super initWithNibName:@"CommentsController" bundle:nil];
+    [super initWithNibName:@"AddComment" bundle:nil];
+
 	note = [theNote retain];
     return self;    
 }
