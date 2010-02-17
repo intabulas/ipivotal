@@ -1,0 +1,5 @@
+v1.8
+
++ Activity View now supports a Tweetie 2 style Pull to Refresh metephor vs a dedicated refresh button
++ FIXED [Issue #17] Trying to add a comment would cause the app to crash
++ Slightly updated UI for the Add Comment view
