@@ -211,6 +211,7 @@
 #define kIconEstimateNone        @"estimate_unestimated.gif"
 
 #define kIconCommentSmall        @"chat_small_inverted.png"
+#define kIconComment             @"story_comment_icon.png"
 
 #define RGB(r, g, b) [UIColor colorWithRed:r/256.0 green:g/256.0 blue:b/256.0 alpha:1]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/256.0 green:g/256.0 blue:b/256.0 alpha:a]

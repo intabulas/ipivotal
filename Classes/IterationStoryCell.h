@@ -40,7 +40,7 @@ PivotalStory *story;
    UIImageView *estimateImage;
    UILabel *storyLabel;
    UILabel *statusLabel;
-   UILabel *commentsLabel;
+   UIImageView *commentImage;
 
 }
 
@@ -48,7 +48,7 @@ PivotalStory *story;
 @property (nonatomic,readonly) UIImageView *estimateImage;
 @property (nonatomic,readonly) UILabel *storyLabel;
 @property (nonatomic,readonly) UILabel *statusLabel;
-@property (nonatomic,readonly) UILabel *commentsLabel;
+@property (nonatomic,readonly) UIImageView *commentImage;
 @property (nonatomic,retain) PivotalStory *story;
 
 @end

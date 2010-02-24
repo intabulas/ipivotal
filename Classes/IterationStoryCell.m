@@ -35,56 +35,48 @@
 
 @implementation IterationStoryCell
 
-@synthesize typeImage, estimateImage, storyLabel, statusLabel, story, commentsLabel;
+@synthesize typeImage, estimateImage, storyLabel, statusLabel, story, commentImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+                
+        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 12.0f, 20.0f, 20.0f)];
+        typeImage.backgroundColor = [UIColor clearColor];
+                
+        estimateImage = [[UIImageView alloc] initWithFrame:CGRectMake(30.0f, 9.0f, 12.0f, 12.0f)];        
+        estimateImage.contentMode =  UIViewContentModeBottom;
+                
+        storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(45.0f, 3.0f, (self.contentView.frame.size.width - 65.0f) , 25.0f)];
+        storyLabel.autoresizingMask = UIViewAutoresizingNone;
+        storyLabel.backgroundColor = [UIColor clearColor];
+        storyLabel.highlightedTextColor = [UIColor whiteColor];
+        storyLabel.font = [UIFont  systemFontOfSize:14.0f];
+        storyLabel.textColor = [UIColor blackColor];
+        storyLabel.textAlignment = UITextAlignmentLeft;
+                        
+        statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 28.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
+        statusLabel.autoresizingMask = UIViewAutoresizingNone;
+        statusLabel.backgroundColor = [UIColor clearColor];
+        statusLabel.highlightedTextColor = [UIColor whiteColor];
+        statusLabel.font = [UIFont  systemFontOfSize:12.0f];
+        statusLabel.textColor = [UIColor blackColor];
+        statusLabel.textAlignment = UITextAlignmentLeft;
 
-        
-                typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 12.0f, 20.0f, 20.0f)];
-                typeImage.backgroundColor = [UIColor clearColor];
-                
-                estimateImage = [[UIImageView alloc] initWithFrame:CGRectMake(30.0f, 9.0f, 12.0f, 12.0f)];        
-                estimateImage.contentMode =  UIViewContentModeBottom;
+        commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(275.0f, 25.0f, 14.0f, 12.0f)];
+        commentImage.image = [UIImage imageNamed:kIconComment];
+        commentImage.backgroundColor = [UIColor clearColor];
+        [commentImage setHidden:TRUE];
 
-        
                 
-                storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(45.0f, 3.0f, (self.contentView.frame.size.width - 65.0f) , 25.0f)];
-                storyLabel.autoresizingMask = UIViewAutoresizingNone;
-                storyLabel.backgroundColor = [UIColor clearColor];
-                storyLabel.highlightedTextColor = [UIColor whiteColor];
-                storyLabel.font = [UIFont  systemFontOfSize:14.0f];
-                storyLabel.textColor = [UIColor blackColor];
-                storyLabel.textAlignment = UITextAlignmentLeft;
-        
-                
-                statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 28.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
-                statusLabel.autoresizingMask = UIViewAutoresizingNone;
-                statusLabel.backgroundColor = [UIColor clearColor];
-                statusLabel.highlightedTextColor = [UIColor whiteColor];
-                statusLabel.font = [UIFont  systemFontOfSize:12.0f];
-                statusLabel.textColor = [UIColor blackColor];
-                statusLabel.textAlignment = UITextAlignmentLeft;
-
-                commentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(230.0f, 30.0f, (self.contentView.frame.size.width - 10.0f) , 15.0f)];
-                commentsLabel.autoresizingMask = UIViewAutoresizingNone;
-                commentsLabel.backgroundColor = [UIColor clearColor];
-                commentsLabel.highlightedTextColor = [UIColor whiteColor];
-                commentsLabel.font = [UIFont  systemFontOfSize:13.0f];
-                commentsLabel.textColor = [UIColor blackColor];
-                commentsLabel.textAlignment = UITextAlignmentLeft;
-            
+        UIView* backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectZero ] autorelease ];
+        self.backgroundView = backgroundView;
                 
                 
-                UIView* backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectZero ] autorelease ];
-                self.backgroundView = backgroundView;
-                
-                
-                [self.contentView addSubview:typeImage];
-                [self.contentView addSubview:estimateImage];        
-                [self.contentView addSubview:storyLabel];        
-                [self.contentView addSubview:statusLabel];      
-                [self.contentView addSubview:commentsLabel];
+        [self.contentView addSubview:typeImage];
+        [self.contentView addSubview:estimateImage];        
+        [self.contentView addSubview:storyLabel];        
+        [self.contentView addSubview:statusLabel];      
+        [self.contentView addSubview:commentImage];
                 
                 
         }
@@ -130,7 +122,7 @@
         estimateImage.image = [UIImage imageNamed: kIconEstimateNone];
         if ( theStory.estimate == 1 ) estimateImage.image = [UIImage imageNamed:kIconEstimateOnePoint];
         if ( theStory.estimate == 2 ) estimateImage.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
-        if ( theStory.estimate == 3 ) estimateImage.image = [UIImage imageNamed: kIconEstimateThreePoints];        
+        if ( theStory.estimate == 3 ) estimateImage.image = [UIImage imageNamed:kIconEstimateThreePoints];        
         
         if ([theStory.storyType hasPrefix:kStateRelease]) estimateImage.image = nil;
     
@@ -146,23 +138,18 @@
         }
     
         
-        if ( [theStory.comments count] > 0 ) {
-            [commentsLabel setText:kLabelComments];
-        } else {
-            [commentsLabel setText:kEmptyString];
-        }
-    
-        
-        [self.backgroundView setBackgroundColor:theColor];
+        [commentImage setHidden:( [theStory.comments count] == 0 )];        
+        [self.backgroundView setBackgroundColor:theColor]; 
 }
 
 
 - (void)dealloc {
-        [typeImage release]; typeImage = nil;
-        [estimateImage release]; estimateImage = nil;
-        [storyLabel release]; storyLabel = nil;
-        [statusLabel release]; statusLabel = nil;
-        [super dealloc];
+    [commentImage release];
+    [typeImage release]; 
+    [estimateImage release];
+    [storyLabel release]; 
+    [statusLabel release]; 
+    [super dealloc];
 }
 
 
