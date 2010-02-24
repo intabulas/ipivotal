@@ -40,6 +40,9 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
+		8C43293F1135C24700FC2B52 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C43293D1135C24700FC2B52 /* TaskViewController.m */; };
+		8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C43293E1135C24700FC2B52 /* TaskViewController.xib */; };
+		8C4329891135C5F600FC2B52 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4329881135C5F600FC2B52 /* TaskCell.m */; };
 		8C50D61A0FE1A86300F41900 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C50D6190FE1A86300F41900 /* Entitlements.plist */; };
 		8C5619AC110FE6BF00AF33DC /* PivotalMembership.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */; };
 		8C561A04110FE9BE00AF33DC /* PivotalIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */; };
@@ -182,6 +185,11 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		8C43293C1135C24700FC2B52 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = ../TaskViewController.h; sourceTree = "<group>"; };
+		8C43293D1135C24700FC2B52 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = ../TaskViewController.m; sourceTree = "<group>"; };
+		8C43293E1135C24700FC2B52 /* TaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
+		8C4329871135C5F600FC2B52 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
+		8C4329881135C5F600FC2B52 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 		8C50D6190FE1A86300F41900 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8C5619AA110FE6BF00AF33DC /* PivotalMembership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalMembership.h; sourceTree = "<group>"; };
 		8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalMembership.m; sourceTree = "<group>"; };
@@ -525,6 +533,8 @@
 				8CA09CE90FD05B1300846DBA /* StoriesViewController.m */,
 				8C222B29103744CE00A75012 /* StoryDetailViewController.h */,
 				8C222B2A103744CE00A75012 /* StoryDetailViewController.m */,
+				8C43293C1135C24700FC2B52 /* TaskViewController.h */,
+				8C43293D1135C24700FC2B52 /* TaskViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -629,6 +639,8 @@
 				8CDB9C180FD9DBCA008B53D4 /* IterationStoryCell.m */,
 				8C026B240FDC9829002CFEE0 /* LabelCell.h */,
 				8C026B250FDC9829002CFEE0 /* LabelCell.m */,
+				8C4329871135C5F600FC2B52 /* TaskCell.h */,
+				8C4329881135C5F600FC2B52 /* TaskCell.m */,
 				8CB92D5D1117DF9F005F20AE /* LabelInputCell.h */,
 				8CB92D5E1117DF9F005F20AE /* LabelInputCell.m */,
 				8CD5BA4911123531004B4553 /* PlaceholderCell.h */,
@@ -663,6 +675,7 @@
 				8C222B2C103744E500A75012 /* StoryDetailViewController.xib */,
 				8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */,
 				8C70E2290FE3216E0074DE16 /* TextInputController.xib */,
+				8C43293E1135C24700FC2B52 /* TaskViewController.xib */,
 			);
 			name = IBFiles;
 			sourceTree = "<group>";
@@ -808,6 +821,7 @@
 				8CE039D2112B54C800E76306 /* CHANGELOG in Resources */,
 				8C870CD5112B72F8001EDF46 /* RefreshArrow.png in Resources */,
 				8CA966FF1135A96C002152EE /* story_comment_icon.png in Resources */,
+				8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,6 +899,8 @@
 				8CE039DF112B570400E76306 /* EGORefreshTableHeaderView.m in Sources */,
 				8CE039E0112B570400E76306 /* PullToRefreshTableViewController.m in Sources */,
 				8CE039E5112B574900E76306 /* SoundEffect.m in Sources */,
+				8C43293F1135C24700FC2B52 /* TaskViewController.m in Sources */,
+				8C4329891135C5F600FC2B52 /* TaskCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

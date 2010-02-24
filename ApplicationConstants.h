@@ -32,7 +32,7 @@
 
 
 //#define CACHED_CONTENT
-//#define LOG_NETWORK
+#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory                   @"story"
@@ -142,7 +142,7 @@
 #define kUrlUpdateStory            @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d"
 #define kUrlDeleteStory            @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d"
 #define kUrlAddComment             @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d/notes"
-
+#define kUrlUpdateTask             @"http://www.pivotaltracker.com/services/v3/projects/%d/stories/%d/tasks/%d"
 
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"
@@ -270,6 +270,7 @@
 #define kLabelDashboard             @"Dashboard"
 #define kLabelIterations            @"Iterations"
 #define kLabelComment               @"Comments"
+#define kLabelTasks                 @"Tasks"
 // Formats
 
 #define kFormatPoints             @"%d Point(s)"

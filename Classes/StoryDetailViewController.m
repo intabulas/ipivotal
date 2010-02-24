@@ -39,6 +39,7 @@
 #import "AddStoryViewController.h"
 #import "NSDate+Nibware.h"
 #import "PivotalStoriesParserDelegate.h"
+#import "TaskViewController.h"
 
 
 @interface StoryDetailViewController ()
@@ -255,6 +256,14 @@
 		[controller release];
         
     }
+    
+    if ( ( indexPath.section == 1 )  && (indexPath.row == 2) ){ 
+		TaskViewController *controller = [[TaskViewController alloc] initWithProject:self.project andStory:self.story];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
+        
+    }
+    
 }
 
 
@@ -353,13 +362,6 @@
         [attachmentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
         [attachmentsCell setAccessoryType:UITableViewCellAccessoryNone];
     }
-    
-    if ( [self.story.tasks count] < 1 ) {
-        [tasksCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [tasksCell setAccessoryType:UITableViewCellAccessoryNone]  ;      
-    }
-    
-    
     
     [createdAtLabel setText:[self.story.createdAt prettyDate]];
     [updatedAtLabel setText:[self.story.updatedAt prettyDate]]; 
