@@ -354,11 +354,6 @@
         [attachmentsCell setAccessoryType:UITableViewCellAccessoryNone];
     }
     
-    if ( [self.story.comments count] < 1 ) {
-        [commentsCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [commentsCell setAccessoryType:UITableViewCellAccessoryNone];
-    }
-    
     if ( [self.story.tasks count] < 1 ) {
         [tasksCell  setSelectionStyle:UITableViewCellSelectionStyleNone];
         [tasksCell setAccessoryType:UITableViewCellAccessoryNone]  ;      
