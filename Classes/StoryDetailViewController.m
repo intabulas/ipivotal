@@ -113,8 +113,10 @@
     [buttonItems release];    
 }
 - (void)viewWillAppear:(BOOL)animated { 
-    [self.navigationItem setTitle:kLabelStoryDetails];
-   [self updateActions];
+    [self.navigationItem setTitle:kLabelStoryDetails]; 
+    [self updateActions];
+    [self displayStory];    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -174,9 +176,10 @@
     [super viewDidLoad];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActions:)];
     self.navigationItem.rightBarButtonItem = controlItem;
-    [self displayStory];    
     self.storyTableView.tableHeaderView = tableHeaderView;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
