@@ -1,3 +1,9 @@
+v1.9
+
++ Stories that have comments use an icon to indicate comments vs the text "comments"
++ Fixed an issue where editing a story would not always update the detailed story view
++ Accidentally built last release for 3.1.2, all released are build against 3.0 now
+
 v1.8
 
 + Activity View now supports a Tweetie 2 style Pull to Refresh metephor vs a dedicated refresh button
