@@ -47,6 +47,7 @@
 @synthesize projectTableView, hudDisplayed;
 
 - (void)dealloc {
+    [newProjectField release];
     [projects removeObserver:self forKeyPath:kResourceStatusKeyPath];
     [projects release]; projects = nil;
     [noProjectsCell release]; noProjectsCell = nil;
@@ -59,12 +60,35 @@
     [super viewDidLoad];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
-
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addProject:)];
    
     projects = [[PivotalProjects alloc] init];
     [projects addObserver:self forKeyPath:kResourceStatusKeyPath options:NSKeyValueObservingOptionNew context:nil];
     
 
+    
+    newProjectField = [[UITextField alloc] initWithFrame:CGRectMake(14, 45, 255, 23)];
+
+	
+	newProjectField.borderStyle = UITextBorderStyleBezel;
+	newProjectField.textColor = [UIColor blackColor];
+	newProjectField.textAlignment = UITextAlignmentCenter;
+	newProjectField.font = [UIFont systemFontOfSize:14.0];
+	newProjectField.placeholder = @"enter project name";
+    
+	newProjectField.backgroundColor = [UIColor whiteColor];
+	newProjectField.autocorrectionType = UITextAutocorrectionTypeNo;	// no auto correction support
+	
+//	emailField.keyboardType = UIKeyboardTypeEmailAddress;	// use the default type input method (entire keyboard)
+	newProjectField.returnKeyType = UIReturnKeyDone;
+//	newProjectField.delegate = self;
+	newProjectField.clearButtonMode = UITextFieldViewModeWhileEditing;	// has a clear 'x' button to the right
+
+    
+    
+    
+    
+    
 }
 
 - (void)displayHUD {
@@ -136,6 +160,20 @@
     ActivityViewController *controller = [[ActivityViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];	
+}
+
+
+- (IBAction)addProject:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Add New Project" message:@"\n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    newProjectField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
+    [newProjectField setBackgroundColor:[UIColor whiteColor]];
+    [newProjectField setPlaceholder:@"enter project name"];
+    [alert addSubview:newProjectField];
+    [alert setTransform:CGAffineTransformMakeTranslation(0.0, 110.0)];
+    [alert show];
+    [alert release];    
+    [newProjectField becomeFirstResponder];
+    
 }
 
 
@@ -225,6 +263,15 @@
     [HUD release];
 }
 
+
+#pragma mark UIAlertViewDelegate Methods
+- (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex{    
+    NSLog(@"%d", (int) buttonIndex);
+    if (buttonIndex == 1) { // OK pushed
+        NSLog(newProjectField.text);
+    } else {
+        // Cancel pushed
+    }}
 
 @end
 

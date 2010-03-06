@@ -34,12 +34,13 @@
 #import "PivotalProjects.h"
 #import "MBProgressHUD.h"
 
-@interface ProjectsViewController : UIViewController <UITableViewDelegate, MBProgressHUDDelegate> {  
+@interface ProjectsViewController : UIViewController <UITableViewDelegate, MBProgressHUDDelegate, UIAlertViewDelegate> {  
     MBProgressHUD *HUD;
     BOOL hudDisplayed;
     IBOutlet UITableView *projectTableView;
     IBOutlet UITableViewCell *noProjectsCell;
     PivotalProjects *projects;    
+    UITextField *newProjectField;
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *projectTableView;
@@ -50,6 +51,7 @@
 - (IBAction)refresh:(id)sender;
 - (IBAction)refreshProjectList:(id)sender;
 - (IBAction)recentActivity:(id)sender;
+- (IBAction)addProject:(id)sender;
 
 - (void)hideHeadsUpDisplay;
 
