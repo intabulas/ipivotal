@@ -143,6 +143,7 @@
 #define kUrlDeleteStory            @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d"
 #define kUrlAddComment             @"https://www.pivotaltracker.com/services/v3/projects/%d/stories/%d/notes"
 #define kUrlUpdateTask             @"http://www.pivotaltracker.com/services/v3/projects/%d/stories/%d/tasks/%d"
+#define kUrlAddProject             @"https://www.pivotaltracker.com/services/v3/projects"
 
 #define kResourceStatusKeyPath @"status"
 #define kResourceErrorKeyPath @"error"
@@ -156,6 +157,7 @@
 #define kXmlAddStory                         @"<story><story_type>%@</story_type><name>%@</name><owned_by>%@</owned_by></story>"
 #define kXmlAddComment                       @"<note><text>%@</text></note>"
 #define kXmlAddTask                          @"<task><description>%@</description></task>"
+#define kXmlAddProject                       @"<project><name>%@</name><iteration_length type=\"integer\">%d</iteration_length></project>"
 
 #define kEmptyString     @""
 #define kComma          @","

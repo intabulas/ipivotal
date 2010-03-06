@@ -266,12 +266,31 @@
 
 #pragma mark UIAlertViewDelegate Methods
 - (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex{    
-    NSLog(@"%d", (int) buttonIndex);
-    if (buttonIndex == 1) { // OK pushed
-        NSLog(newProjectField.text);
-    } else {
-        // Cancel pushed
-    }}
+    if (buttonIndex == 1) { 
+        
+            [newProjectField resignFirstResponder];
+            
+            
+            NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//            [self showHUDWithLabel:kLabelSaving];        
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
+
+            NSURL *followingURL = [NSURL URLWithString:kUrlAddProject];    
+            ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
+            NSString *newProject = [NSString stringWithFormat:kXmlAddProject, newProjectField.text, 2];
+            [request setRequestMethod:@"POST"];
+            [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
+            [request setPostBody:[[[NSMutableData alloc] initWithData:[newProject dataUsingEncoding:NSUTF8StringEncoding]]autorelease]];
+            [request startSynchronous];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+  //          [self hideHUD];
+            [pool release];    
+            
+            [self.navigationController popViewControllerAnimated:YES];    
+        
+        [self refresh:self];
+    }
+}
 
 @end
 
