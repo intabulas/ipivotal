@@ -32,12 +32,14 @@
 
 #import "ProjectInfoViewController.h"
 #import "PivotalProject.h"
-#import "TitleLabelCell.h"
 #import "NSDate+Nibware.h"
-#import "ProjectMemberCell.h"
+#import "DynamicCell.h"
 
 @implementation ProjectInfoViewController
+
 @synthesize project, projectTableView;
+
+static UIFont *boldFont;
 
 
 - (id)initWithProject:(PivotalProject *)theProject {
@@ -75,6 +77,12 @@
     [super viewDidUnload];
 }
 
+- (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
+    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell respondsToSelector:@selector(height)] ? 
+    [[cell performSelector:@selector(height)] floatValue] : 
+    tableView.rowHeight;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -96,63 +104,97 @@
     NSInteger row = indexPath.row; 
     NSInteger section = indexPath.section;
     
-    if ( section == 0 ) {
-      TitleLabelCell *cell = (TitleLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierTitleLabelCell];
-      if (cell == nil) {
-          cell = [[[TitleLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierTitleLabelCell] autorelease];
-      }
-  
-      if ( row ==  0 ) { cell.titleLabel.text = kLabelName;            cell.contentLabel.text = project.name; }
-      if ( row ==  1 ) { cell.titleLabel.text = kLabelId;              cell.contentLabel.text = [NSString stringWithFormat:kFormatNumber, project.projectId]; }    
-      if ( row ==  2 ) { cell.titleLabel.text = kLabelIterationLength; cell.contentLabel.text = [NSString stringWithFormat:kFormatNumber, project.iterationLength]; }    
-      if ( row ==  3 ) { cell.titleLabel.text = kLabelWeekStart;       cell.contentLabel.text = project.weekStartDay; }    
-      if ( row ==  4 ) { cell.titleLabel.text = kLabelPointScale;      cell.contentLabel.text = project.pointScale; }    
-      if ( row ==  5 ) { cell.titleLabel.text = kLabelVelocityScheme;  cell.contentLabel.text = project.velocityScheme; }    
-      if ( row ==  6 ) { cell.titleLabel.text = kLabelCurrentVelocity; cell.contentLabel.text = [NSString stringWithFormat:kFormatNumber, project.currentVelocity]; }    
-      if ( row ==  7 ) { cell.titleLabel.text = kLabelInitialVelocity; cell.contentLabel.text = [NSString stringWithFormat:kFormatNumber, project.initialVelocity]; }   
-      if ( row ==  8 ) { cell.titleLabel.text = kLabelDoneIterations;  cell.contentLabel.text = [NSString stringWithFormat:kFormatNumber, project.numberDoneIterations]; }    
-    
-    
-    
-      if ( row ==  9 ) { 
-          cell.titleLabel.text = kLabelAllowsAttachments; 
-          cell.contentLabel.text = project.allowsAttachments ? kLabelYes : kLabelYes;
-      }    
-      if ( row == 10 ) { 
-          cell.titleLabel.text = kLabelPublic;   
-          cell.contentLabel.text = project.publicProject ? kLabelYes : kLabelYes;
-      }    
-      if ( row == 11 ) {
-          cell.titleLabel.text = kLabelUseHttps;                
-          cell.contentLabel.text = project.useHttps ? kLabelYes : kLabelYes;
-      } 
-      if ( row == 12 ) {
-          cell.titleLabel.text = kLabelEstimateBugsChores;          
-          cell.contentLabel.text = project.estimateBugsAndChores ? kLabelYes : kLabelYes;
-      }    
-      if ( row == 13 ) {
-          cell.titleLabel.text = kLabelCommitMode;               
-          cell.contentLabel.text = project.commitMode ? kLabelYes : kLabelYes;
-      }    
-      if ( row == 14 ) {
-          cell.titleLabel.text = kLabelLastActivity;             
-          cell.contentLabel.text = [project.lastActivityAt prettyDate];
-      }    
-        
-      return cell;  
-    } else {
-        ProjectMemberCell *cell = (ProjectMemberCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierProjectMemberCell];
-        if (cell == nil) {
-            cell = [[[ProjectMemberCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierProjectMemberCell] autorelease];
-        }        
-        PivotalMembership *member = [self.project.members objectAtIndex:row];
-        [cell setMembership:member];
-        return cell;
+    static float defaultFontSize = 13.0;
+    if ( boldFont == nil ) {
+        boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
     }
     
     
+    DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
+    if ( cell == nil ) {
+        cell = [DynamicCell cellWithReuseIdentifier:@"InfoCell"];
+        cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+    }
+    [cell reset];
     
-    return  nil;
+    
+    if ( section == 0 ) {
+        
+      switch(row) {
+              
+          case 0:
+              [cell addLabelWithText:kLabelName];
+              [cell addLabelWithText:project.name andFont:boldFont onNewLine:NO];
+              break;
+          case 1:
+              [cell addLabelWithText:kLabelId];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.projectId] andFont:boldFont onNewLine:NO];
+              break;              
+          case 2: 
+              [cell addLabelWithText:kLabelIterationLength];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.iterationLength] andFont:boldFont onNewLine:NO];
+              break;              
+          case 3: 
+              [cell addLabelWithText:kLabelWeekStart];
+              [cell addLabelWithText:project.weekStartDay andFont:boldFont onNewLine:NO];
+              break;              
+          case 4: 
+              [cell addLabelWithText:kLabelPointScale];
+              [cell addLabelWithText:project.pointScale andFont:boldFont onNewLine:NO];
+              break;              
+          case 5: 
+              [cell addLabelWithText:kLabelVelocityScheme];
+              [cell addLabelWithText:project.velocityScheme andFont:boldFont onNewLine:NO];
+              break;              
+          case 6: 
+              [cell addLabelWithText:kLabelCurrentVelocity];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.currentVelocity] andFont:boldFont onNewLine:NO];
+              break;              
+          case 7: 
+              [cell addLabelWithText:kLabelInitialVelocity];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.initialVelocity] andFont:boldFont onNewLine:NO];               
+              break;              
+          case 8: 
+              [cell addLabelWithText:kLabelDoneIterations];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.numberDoneIterations] andFont:boldFont onNewLine:NO];
+              break;              
+          case 9:
+               [cell addLabelWithText:kLabelAllowsAttachments];
+               [cell addLabelWithText:project.allowsAttachments ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              break;              
+          case 10:
+              [cell addLabelWithText:kLabelPublic];
+              [cell addLabelWithText:project.publicProject ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              break;              
+          case 11:
+              [cell addLabelWithText:kLabelUseHttps];
+              [cell addLabelWithText:project.useHttps ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              break;              
+          case 12:
+              [cell addLabelWithText:kLabelEstimateBugsChores];
+              [cell addLabelWithText:project.estimateBugsAndChores ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              break;              
+          case 13:
+              [cell addLabelWithText:kLabelCommitMode];
+              [cell addLabelWithText:project.commitMode ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              break;              
+          case 14:
+              [cell addLabelWithText:kLabelLastActivity];
+              [cell addLabelWithText:[project.lastActivityAt prettyDate] andFont:boldFont onNewLine:NO];
+              break;              
+      }
+    } else {
+        PivotalMembership *member = (PivotalMembership*)[self.project.members objectAtIndex:row];        
+
+        [cell addLabelWithText:[NSString stringWithFormat:kFormatMemberCellNameIntitials, [member memberName], [member initials]] andFont:boldFont onNewLine: NO];
+        [cell addLabelWithText:[NSString stringWithFormat:kFormatMemberCellRole, [member role]] andFont:[UIFont systemFontOfSize:12.0] onNewLine: YES];
+         
+    }
+    
+    [cell prepare];
+    
+    return  cell;
   
 }
 

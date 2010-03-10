@@ -32,7 +32,7 @@
 
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK
+//#define LOG_NETWORK
 //#ifdef NO_COMPRESS_RESPONSE    
 
 #define kTagStory                   @"story"
@@ -289,7 +289,6 @@
 #define kIdentifierActivityLabelCell   @"ActivityLabelCell"
 #define kIdentifierIterationStoryCell  @"IterationStoryCell"
 #define kIdentifierPlaceholderCell     @"PlaceholderCell"
-#define kIdentifierProjectMemberCell   @"ProjectMemberCell"
 #define kIdentifierTitleLabelCell      @"TitleLabelCell"
 #define kIdentifierCommentCell         @"CommentCell"
 #define kIdentifierActivityItemCell    @"ActivityItemCell"
