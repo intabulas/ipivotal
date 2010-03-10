@@ -65,6 +65,7 @@
 		8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BC7E01039F9710005A028 /* CommentHeaderView.m */; };
 		8C5BC8901039FEB50005A028 /* chat_small_inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */; };
 		8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */; };
+		8C6BF4A0114846970001939F /* DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BF49F114846970001939F /* DynamicCell.m */; };
 		8C6F513911176093002E7F69 /* ProjectMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F513811176093002E7F69 /* ProjectMemberCell.m */; };
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
@@ -228,6 +229,8 @@
 		8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_small_inverted.png; sourceTree = "<group>"; };
 		8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8C6BB35511110D2C008B5D56 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		8C6BF49E114846970001939F /* DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCell.h; sourceTree = "<group>"; };
+		8C6BF49F114846970001939F /* DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCell.m; sourceTree = "<group>"; };
 		8C6F513711176093002E7F69 /* ProjectMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMemberCell.h; sourceTree = "<group>"; };
 		8C6F513811176093002E7F69 /* ProjectMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMemberCell.m; sourceTree = "<group>"; };
 		8C70E2290FE3216E0074DE16 /* TextInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputController.xib; sourceTree = "<group>"; };
@@ -506,6 +509,15 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		8C6BF49C114846880001939F /* DynamicCell */ = {
+			isa = PBXGroup;
+			children = (
+				8C6BF49E114846970001939F /* DynamicCell.h */,
+				8C6BF49F114846970001939F /* DynamicCell.m */,
+			);
+			name = DynamicCell;
+			sourceTree = "<group>";
+		};
 		8CA098F30FCFB47A00846DBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +554,7 @@
 		8CB92D361117DCE1005F20AE /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				8C6BF49C114846880001939F /* DynamicCell */,
 				8CE039DA112B56F600E76306 /* PullToRefresh */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
@@ -901,6 +914,7 @@
 				8CE039E5112B574900E76306 /* SoundEffect.m in Sources */,
 				8C43293F1135C24700FC2B52 /* TaskViewController.m in Sources */,
 				8C4329891135C5F600FC2B52 /* TaskCell.m in Sources */,
+				8C6BF4A0114846970001939F /* DynamicCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
