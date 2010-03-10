@@ -66,6 +66,7 @@
 		8C5BC8901039FEB50005A028 /* chat_small_inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */; };
 		8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */; };
 		8C6BF4A0114846970001939F /* DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BF49F114846970001939F /* DynamicCell.m */; };
+		8C6BF4A5114846FB0001939F /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BF4A4114846FB0001939F /* NSSet+Core.m */; };
 		8C6F513911176093002E7F69 /* ProjectMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F513811176093002E7F69 /* ProjectMemberCell.m */; };
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
@@ -231,6 +232,8 @@
 		8C6BB35511110D2C008B5D56 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8C6BF49E114846970001939F /* DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCell.h; sourceTree = "<group>"; };
 		8C6BF49F114846970001939F /* DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCell.m; sourceTree = "<group>"; };
+		8C6BF4A3114846FB0001939F /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Core.h"; sourceTree = "<group>"; };
+		8C6BF4A4114846FB0001939F /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Core.m"; sourceTree = "<group>"; };
 		8C6F513711176093002E7F69 /* ProjectMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMemberCell.h; sourceTree = "<group>"; };
 		8C6F513811176093002E7F69 /* ProjectMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMemberCell.m; sourceTree = "<group>"; };
 		8C70E2290FE3216E0074DE16 /* TextInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputController.xib; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 		8C3FD3C30FCF0B7C004D8DD0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				8C6BF4A3114846FB0001939F /* NSSet+Core.h */,
+				8C6BF4A4114846FB0001939F /* NSSet+Core.m */,
 				8C3FD3C40FCF0B8B004D8DD0 /* NSDate+Nibware.m */,
 				8C3FD3C50FCF0B8B004D8DD0 /* NSDate+Nibware.h */,
 			);
@@ -915,6 +920,7 @@
 				8C43293F1135C24700FC2B52 /* TaskViewController.m in Sources */,
 				8C4329891135C5F600FC2B52 /* TaskCell.m in Sources */,
 				8C6BF4A0114846970001939F /* DynamicCell.m in Sources */,
+				8C6BF4A5114846FB0001939F /* NSSet+Core.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
