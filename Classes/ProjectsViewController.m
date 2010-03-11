@@ -228,9 +228,7 @@ static UIFont *boldFont;
 
     [cell setPaddingTop:5.0];
     [cell setPaddingBottom:5.0];    
-    
-    NSLog( @"Spacing %d", [cell rowSpacing]);
-    
+        
     UILabel *projectName = [cell addLabelWithText:pp.name andFont:boldFont];
     projectName.highlightedTextColor = [UIColor whiteColor];
 
