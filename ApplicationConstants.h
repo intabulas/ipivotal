@@ -293,7 +293,6 @@
 #define kIdentifierCommentCell         @"CommentCell"
 #define kIdentifierActivityItemCell    @"ActivityItemCell"
 #define kIdentifierCell                @"Cell"
-#define kIdentifierProjectLabelCell    @"ProjectLabelCell"
 
 
 //UIActions

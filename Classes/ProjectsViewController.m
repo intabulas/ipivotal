@@ -34,17 +34,19 @@
 #import "PivotalProject.h"
 #import "IterationsViewController.h"
 #import "ImageLabelCell.h"
-#import "ProjectLabelCell.h"
 #import "iPivotalAppDelegate.h"
 #import "ActivityViewController.h"
 #import "NSDate+Nibware.h"
 #import "MBProgressHUD.h"
 #import "ProjectInfoViewController.h"
 #import "PlaceholderCell.h"
+#import "DynamicCell.h"
 
 @implementation ProjectsViewController
 
 @synthesize projectTableView, hudDisplayed;
+
+static UIFont *boldFont;
 
 - (void)dealloc {
     [newProjectField release];
@@ -197,30 +199,45 @@
 
     if ( [appdelegate hasNoInternetConnectivity]) return noProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
-	
-    ProjectLabelCell *cell = (ProjectLabelCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierProjectLabelCell];
-    if (cell == nil) {
-        cell = [[[ProjectLabelCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierProjectLabelCell] autorelease];
+    
+    
+    
+    static float defaultFontSize = 17.0;
+    if ( boldFont == nil ) {
+        boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
     }
     
-    if ( !projects.isLoaded) { 
-        PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
-        if (cell == nil) {
-            cell = [[[PlaceholderCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierPlaceholderCell] autorelease];
-        }
-        return  cell;
-        
-    }        
     
+    DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
+    if ( cell == nil ) {
+        cell = [DynamicCell cellWithReuseIdentifier:@"InfoCell"];
+        cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
+    }
+    [cell reset];    
     
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
-    [cell.cellLabel setText:pp.name];
-    [cell.lastUpdated setText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]]];
-    	
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-	
+
+    
+    NSLog( @"Spacing %d", [cell rowSpacing]);
+    
+    UILabel *projectName = [cell addLabelWithText:pp.name andFont:boldFont];
+    projectName.highlightedTextColor = [UIColor whiteColor];
+
+    UILabel *updatedLabel = [cell addLabelWithText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]] andFont:[UIFont systemFontOfSize:10.0]];
+    updatedLabel.textColor = [UIColor grayColor];
+    updatedLabel.highlightedTextColor = [UIColor whiteColor];
+
+    [cell prepare];
     return cell;       
+}
+
+- (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
+    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell respondsToSelector:@selector(height)] ? 
+    [[cell performSelector:@selector(height)] floatValue] : 
+    tableView.rowHeight;
 }
 
 
