@@ -200,7 +200,14 @@ static UIFont *boldFont;
     if ( [appdelegate hasNoInternetConnectivity]) return noProjectsCell;
 	if (projects.isLoaded && projects.projects.count == 0) return noProjectsCell;
     
-    
+    if ( !projects.isLoaded) { 
+        PlaceholderCell *cell = (PlaceholderCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierPlaceholderCell];
+        if (cell == nil) {
+            cell = [[[PlaceholderCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierPlaceholderCell] autorelease];
+        }
+        return  cell;
+        
+    }       
     
     static float defaultFontSize = 17.0;
     if ( boldFont == nil ) {
@@ -229,7 +236,8 @@ static UIFont *boldFont;
     updatedLabel.textColor = [UIColor grayColor];
     updatedLabel.highlightedTextColor = [UIColor whiteColor];
 
-    [cell prepare];
+
+    [cell prepare];                             
     return cell;       
 }
 
