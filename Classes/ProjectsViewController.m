@@ -226,6 +226,8 @@ static UIFont *boldFont;
     
     PivotalProject *pp = [projects.projects objectAtIndex: indexPath.row];
 
+    [cell setPaddingTop:5.0];
+    [cell setPaddingBottom:5.0];    
     
     NSLog( @"Spacing %d", [cell rowSpacing]);
     
