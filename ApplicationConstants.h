@@ -291,7 +291,6 @@
 #define kIdentifierPlaceholderCell     @"PlaceholderCell"
 #define kIdentifierTitleLabelCell      @"TitleLabelCell"
 #define kIdentifierCommentCell         @"CommentCell"
-#define kIdentifierActivityItemCell    @"ActivityItemCell"
 #define kIdentifierCell                @"Cell"
 
 

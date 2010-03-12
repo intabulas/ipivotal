@@ -31,12 +31,15 @@
 //
 
 #import "ActivityViewController.h"
-#import "ActivityItemCell.h"
 #import "PivotalProject.h"
 #import "NSDate+Nibware.h"
 #import "PlaceholderCell.h"
+#import "DynamicCell.h"
 
 @implementation ActivityViewController
+
+static UIFont *boldFont;
+
 
 - (id)init {
     [super initWithNibName:@"ActivityViewController" bundle:nil];
@@ -106,6 +109,8 @@
 
 #pragma mark Table view methods
 
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -129,21 +134,38 @@
     
 	if ( activities.isLoaded && activities.activities.count == 0 ) return noActivitiesCell;
 
-    ActivityItemCell *cell = (ActivityItemCell*)[tableView dequeueReusableCellWithIdentifier:kIdentifierActivityItemCell];
-    if (cell == nil) {
-        cell = [[[ActivityItemCell alloc] initWithFrame:CGRectZero reuseIdentifier:kIdentifierActivityItemCell] autorelease];
+    
+    
+    
+    static float defaultFontSize = 12.0;
+    if ( boldFont == nil ) {
+        boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
+    } 
+    
+    
+    DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
+    if ( cell == nil ) {
+        cell = [DynamicCell cellWithReuseIdentifier:@"InfoCell"];
+        cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
     }
-    [cell setActivity:[activities.activities objectAtIndex:indexPath.row]];
-//    
-//    if ((indexPath.row % 2) == 0) {
-//         cell.backgroundView.backgroundColor = [UIColor greenColor];
-//    } else {
-//         cell.backgroundView.backgroundColor = [UIColor clearColor];        
-//    }
+    [cell reset];     
+
+    PivotalActivity *activity = (PivotalActivity*)[activities.activities objectAtIndex:indexPath.row];
     
-    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    NSMutableString *activityText = [[NSMutableString alloc] initWithString:activity.description];
+    [activityText replaceOccurrencesOfString:@"\"" withString:@" " options:NSLiteralSearch range:NSMakeRange(0,[activityText length])];
+	NSString *prettyDate = [activity.occuredAt prettyDate];
     
+    [cell addLabelWithText:activityText];
+    [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont boldSystemFontOfSize:10.0]];
+
+    
+    [cell prepare];
     return cell;
+    
+
 }
 
 
@@ -151,8 +173,11 @@
    // @todo
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 45.0f;
+- (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
+    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell respondsToSelector:@selector(height)] ? 
+    [[cell performSelector:@selector(height)] floatValue] : 
+    tableView.rowHeight;
 }
 
 
