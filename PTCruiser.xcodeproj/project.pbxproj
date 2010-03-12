@@ -107,7 +107,6 @@
 		8CBBB4AA0FF953BC00A32C37 /* PivotalActivityParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A90FF953BC00A32C37 /* PivotalActivityParserDelegate.m */; };
 		8CBBB5160FF957D000A32C37 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB5150FF957D000A32C37 /* ActivityViewController.m */; };
 		8CBBB5180FF957DB00A32C37 /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */; };
-		8CBBB6600FF9696800A32C37 /* ActivityItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */; };
 		8CC0E79410047A2800C7F6CB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC0E79310047A2800C7F6CB /* Default.png */; };
 		8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */; };
 		8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */; };
@@ -289,8 +288,6 @@
 		8CBBB5140FF957D000A32C37 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		8CBBB5150FF957D000A32C37 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
-		8CBBB65E0FF9696800A32C37 /* ActivityItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityItemCell.h; sourceTree = "<group>"; };
-		8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityItemCell.m; sourceTree = "<group>"; };
 		8CC0E79310047A2800C7F6CB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8CCB36060FD9635F00AEEE0E /* ImageLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelCell.h; sourceTree = "<group>"; };
 		8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelCell.m; sourceTree = "<group>"; };
@@ -631,8 +628,6 @@
 		8CDB63AE0FCF86A9003AC065 /* Views & Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8CBBB65E0FF9696800A32C37 /* ActivityItemCell.h */,
-				8CBBB65F0FF9696800A32C37 /* ActivityItemCell.m */,
 				8CDB9DEB0FD9F05E008B53D4 /* ActivityLabelCell.h */,
 				8CDB9DEC0FD9F05E008B53D4 /* ActivityLabelCell.m */,
 				8CDB9CD30FD9EA03008B53D4 /* CenteredLabelCell.h */,
@@ -872,7 +867,6 @@
 				8CBBB4A70FF9532100A32C37 /* PivotalActivity.m in Sources */,
 				8CBBB4AA0FF953BC00A32C37 /* PivotalActivityParserDelegate.m in Sources */,
 				8CBBB5160FF957D000A32C37 /* ActivityViewController.m in Sources */,
-				8CBBB6600FF9696800A32C37 /* ActivityItemCell.m in Sources */,
 				8C7C5F6210155D49002A4C52 /* Reachability.m in Sources */,
 				8C222A3E1036669D00A75012 /* PivotalNote.m in Sources */,
 				8C222B2B103744CE00A75012 /* StoryDetailViewController.m in Sources */,
