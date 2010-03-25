@@ -993,6 +993,7 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384E130B-D7BF-46CB-A236-6516BE5023B4";
 				SDKROOT = iphoneos3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};

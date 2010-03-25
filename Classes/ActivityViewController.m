@@ -35,6 +35,7 @@
 #import "NSDate+Nibware.h"
 #import "PlaceholderCell.h"
 #import "DynamicCell.h"
+#import "PivotalActivity.h"
 
 @implementation ActivityViewController
 
@@ -153,10 +154,14 @@ static UIFont *boldFont;
     [cell reset];     
 
     PivotalActivity *activity = (PivotalActivity*)[activities.activities objectAtIndex:indexPath.row];
-    
     NSMutableString *activityText = [[NSMutableString alloc] initWithString:activity.description];
     [activityText replaceOccurrencesOfString:@"\"" withString:@" " options:NSLiteralSearch range:NSMakeRange(0,[activityText length])];
 	NSString *prettyDate = [activity.occuredAt prettyDate];
+
+#ifdef LOG_CONTENT
+    NSLog(@"[PivotalActivity] Description == %@", activity.description);
+#endif
+    
     
     [cell addLabelWithText:activityText];
     [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont boldSystemFontOfSize:10.0]];
