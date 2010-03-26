@@ -86,6 +86,8 @@
 }
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
+     pivotalManager = [[PivotalManager alloc] init];
+    
     
 
     [[Reachability sharedReachability] setHostName:kPivotalTrackerHost];
@@ -147,6 +149,7 @@
 
 
 - (void)dealloc {
+    [pivotalManager release];
 	[navigationController release];
     [toolbar release]; 
 	[window release];

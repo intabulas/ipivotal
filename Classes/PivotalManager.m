@@ -30,31 +30,48 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <UIKit/UIKit.h>
-#import "AuthenticationViewController.h"
-#import "ProjectsViewController.h"
-#import "Reachability.h"
 #import "PivotalManager.h"
+#import "Reachability.h"
 
-@interface iPivotalAppDelegate : NSObject <UIApplicationDelegate> {
-    IBOutlet UIWindow *window;
-    IBOutlet UINavigationController *navigationController;
-    IBOutlet UIToolbar *toolbar;
-    IBOutlet ProjectsViewController *projectsController;     
-    NetworkStatus internetConnectionStatus;
-    NetworkStatus remoteHostStatus;
-    NetworkStatus localWiFiConnectionStatus;
-    PivotalManager *pivotalManager;
+
+@implementation PivotalManager
+
+@synthesize logLevel;
+
+#pragma mark -
+#pragma mark Static access
+
+static PivotalManager* _main;
++ (PivotalManager*) main { return _main; }
++ (void) setMain:(PivotalManager*) newMain { _main = newMain; }
+
+
+#pragma mark -
+#pragma mark Configuration
+
+- (id) init {
+    if (self = [super init]) {        
+        if (_main == nil) {
+            _main = self;
+        }        
+        logLevel = 1;
+    }
+    return self;
 }
 
-@property (nonatomic, readonly) AuthenticationViewController *loginController;
-@property NetworkStatus internetConnectionStatus;
-@property NetworkStatus remoteHostStatus;
-@property NetworkStatus localWiFiConnectionStatus;
+#pragma mark -
+# pragma mark Alerts
 
-- (BOOL)hasNoInternetConnectivity;
-- (void)reachabilityChanged:(NSNotification *)note;
-- (void)updateStatus;
-- (void)authenticate;
-- (void)initStatus;
++ (void) alertWithError:(NSError*)error {
+    [self alertWithTitle:@"Error" andMessage:[error localizedDescription]];
+}
+
++ (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+
 @end

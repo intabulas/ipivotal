@@ -30,31 +30,22 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <UIKit/UIKit.h>
-#import "AuthenticationViewController.h"
-#import "ProjectsViewController.h"
-#import "Reachability.h"
-#import "PivotalManager.h"
+#import "ASIHTTPRequest.h"
 
-@interface iPivotalAppDelegate : NSObject <UIApplicationDelegate> {
-    IBOutlet UIWindow *window;
-    IBOutlet UINavigationController *navigationController;
-    IBOutlet UIToolbar *toolbar;
-    IBOutlet ProjectsViewController *projectsController;     
-    NetworkStatus internetConnectionStatus;
-    NetworkStatus remoteHostStatus;
-    NetworkStatus localWiFiConnectionStatus;
-    PivotalManager *pivotalManager;
+@interface PivotalManager : NSObject {
+
+    int logLevel;
+    
 }
 
-@property (nonatomic, readonly) AuthenticationViewController *loginController;
-@property NetworkStatus internetConnectionStatus;
-@property NetworkStatus remoteHostStatus;
-@property NetworkStatus localWiFiConnectionStatus;
+@property (nonatomic, assign) int logLevel;
 
-- (BOOL)hasNoInternetConnectivity;
-- (void)reachabilityChanged:(NSNotification *)note;
-- (void)updateStatus;
-- (void)authenticate;
-- (void)initStatus;
++ (PivotalManager*) main;
++ (void) setMain: (PivotalManager*)newMain;
+
+#pragma mark -
+#pragma mark Alerts & Errors
++ (void) alertWithError:(NSError*)error;
++ (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message;
+
 @end

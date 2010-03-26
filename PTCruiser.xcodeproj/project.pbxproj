@@ -101,6 +101,7 @@
 		8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */; };
 		8CA09D0E0FD05FB500846DBA /* PivotalStoriesParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */; };
 		8CA966FF1135A96C002152EE /* story_comment_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA966FE1135A96C002152EE /* story_comment_icon.png */; };
+		8CB1F378115C017F00229C4B /* PivotalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1F377115C017F00229C4B /* PivotalManager.m */; };
 		8CB92D5F1117DF9F005F20AE /* LabelInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB92D5E1117DF9F005F20AE /* LabelInputCell.m */; };
 		8CBBB4A40FF9531700A32C37 /* PivotalActivities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A30FF9531700A32C37 /* PivotalActivities.m */; };
 		8CBBB4A70FF9532100A32C37 /* PivotalActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBB4A60FF9532100A32C37 /* PivotalActivity.m */; };
@@ -277,6 +278,8 @@
 		8CA09D0C0FD05FB500846DBA /* PivotalStoriesParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalStoriesParserDelegate.h; sourceTree = "<group>"; };
 		8CA09D0D0FD05FB500846DBA /* PivotalStoriesParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalStoriesParserDelegate.m; sourceTree = "<group>"; };
 		8CA966FE1135A96C002152EE /* story_comment_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = story_comment_icon.png; sourceTree = "<group>"; };
+		8CB1F376115C017F00229C4B /* PivotalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalManager.h; sourceTree = "<group>"; };
+		8CB1F377115C017F00229C4B /* PivotalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalManager.m; sourceTree = "<group>"; };
 		8CB92D5D1117DF9F005F20AE /* LabelInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelInputCell.h; sourceTree = "<group>"; };
 		8CB92D5E1117DF9F005F20AE /* LabelInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelInputCell.m; sourceTree = "<group>"; };
 		8CBBB4A20FF9531700A32C37 /* PivotalActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalActivities.h; sourceTree = "<group>"; };
@@ -730,6 +733,8 @@
 			children = (
 				8CDB632C0FCF4FF0003AC065 /* Domain */,
 				8CDB632D0FCF4FF7003AC065 /* Parsers */,
+				8CB1F376115C017F00229C4B /* PivotalManager.h */,
+				8CB1F377115C017F00229C4B /* PivotalManager.m */,
 			);
 			name = "Pivotal API";
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				8C4329891135C5F600FC2B52 /* TaskCell.m in Sources */,
 				8C6BF4A0114846970001939F /* DynamicCell.m in Sources */,
 				8C6BF4A5114846FB0001939F /* NSSet+Core.m in Sources */,
+				8CB1F378115C017F00229C4B /* PivotalManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
