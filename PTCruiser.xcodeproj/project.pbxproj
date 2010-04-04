@@ -131,6 +131,7 @@
 		8CE039E0112B570400E76306 /* PullToRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE039DE112B570400E76306 /* PullToRefreshTableViewController.m */; };
 		8CE039E5112B574900E76306 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE039E4112B574900E76306 /* SoundEffect.m */; };
 		8CE039F7112B577400E76306 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE039F6112B577400E76306 /* AudioToolbox.framework */; };
+		8CF5A9D01166D8E6005FA7EF /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5A9CF1166D8E6005FA7EF /* MainWindow-iPad.xib */; };
 		8CF6169C111CC76D002C315C /* ToolbarDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169A111CC76D002C315C /* ToolbarDown.png */; };
 		8CF6169D111CC76D002C315C /* ToolbarUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169B111CC76D002C315C /* ToolbarUp.png */; };
 /* End PBXBuildFile section */
@@ -332,6 +333,7 @@
 		8CE039E3112B574900E76306 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
 		8CE039E4112B574900E76306 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
 		8CE039F6112B577400E76306 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8CF5A9CF1166D8E6005FA7EF /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		8CF6169A111CC76D002C315C /* ToolbarDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarDown.png; sourceTree = "<group>"; };
 		8CF6169B111CC76D002C315C /* ToolbarUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarUp.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				8CF5A9CE1166D8E6005FA7EF /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -728,6 +731,14 @@
 			name = PullToRefresh;
 			sourceTree = "<group>";
 		};
+		8CF5A9CE1166D8E6005FA7EF /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				8CF5A9CF1166D8E6005FA7EF /* MainWindow-iPad.xib */,
+			);
+			name = "Resources-iPad";
+			sourceTree = "<group>";
+		};
 		8CF614FA111C8EA3002C315C /* Pivotal API */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,6 +841,7 @@
 				8C870CD5112B72F8001EDF46 /* RefreshArrow.png in Resources */,
 				8CA966FF1135A96C002152EE /* story_comment_icon.png in Resources */,
 				8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */,
+				8CF5A9D01166D8E6005FA7EF /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +942,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier";
 				COPY_PHASE_STRIP = NO;
@@ -939,7 +952,9 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F7092630-1890-4D68-B8BB-2BBA5CE771EB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E869AAD-BB36-497A-8F74-9AD7D239742F";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -947,6 +962,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier";
 				COPY_PHASE_STRIP = YES;
@@ -955,6 +971,8 @@
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "393643DA-E171-4782-A31C-6DEFBE945F38";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -976,6 +994,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mark Lussier";
 				COPY_PHASE_STRIP = YES;
@@ -984,6 +1003,8 @@
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "168E0D8E-CCE4-4F8F-924C-FB61A35F1023";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
