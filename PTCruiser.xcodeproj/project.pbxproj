@@ -111,7 +111,9 @@
 		8CC0E79410047A2800C7F6CB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC0E79310047A2800C7F6CB /* Default.png */; };
 		8CCB36080FD9635F00AEEE0E /* ImageLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */; };
 		8CCB37050FD9721400AEEE0E /* IterationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */; };
-		8CCEB6E41111E2AF00284B81 /* UITableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */; };
+		8CCC9BE5116936F300F67CB2 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC9BE4116936F300F67CB2 /* Default-Landscape.png */; };
+		8CCC9BE7116936FC00F67CB2 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC9BE6116936FC00F67CB2 /* Default-Portrait.png */; };
+		8CCC9BFC116937B900F67CB2 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC9BFB116937B900F67CB2 /* Icon-ipad.png */; };
 		8CD5BA14111232DA004B4553 /* AbstractHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5BA13111232DA004B4553 /* AbstractHUDViewController.m */; };
 		8CD5BA4B11123531004B4553 /* PlaceholderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5BA4A11123531004B4553 /* PlaceholderCell.m */; };
 		8CD5BB4B1112514C004B4553 /* TitleLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5BB4A1112514C004B4553 /* TitleLabelCell.m */; };
@@ -297,8 +299,9 @@
 		8CCB36070FD9635F00AEEE0E /* ImageLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelCell.m; sourceTree = "<group>"; };
 		8CCB37030FD9721400AEEE0E /* IterationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationHeaderView.h; sourceTree = "<group>"; };
 		8CCB37040FD9721400AEEE0E /* IterationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterationHeaderView.m; sourceTree = "<group>"; };
-		8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewCellContentView.m; sourceTree = "<group>"; };
-		8CCEB6E31111E2AF00284B81 /* UITableViewCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellContentView.h; sourceTree = "<group>"; };
+		8CCC9BE4116936F300F67CB2 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		8CCC9BE6116936FC00F67CB2 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		8CCC9BFB116937B900F67CB2 /* Icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ipad.png"; sourceTree = "<group>"; };
 		8CD5BA12111232DA004B4553 /* AbstractHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractHUDViewController.h; sourceTree = "<group>"; };
 		8CD5BA13111232DA004B4553 /* AbstractHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractHUDViewController.m; sourceTree = "<group>"; };
 		8CD5BA4911123531004B4553 /* PlaceholderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderCell.h; sourceTree = "<group>"; };
@@ -435,6 +438,9 @@
 		8C3FD3B00FCF0A4D004D8DD0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8CCC9BFB116937B900F67CB2 /* Icon-ipad.png */,
+				8CCC9BE6116936FC00F67CB2 /* Default-Portrait.png */,
+				8CCC9BE4116936F300F67CB2 /* Default-Landscape.png */,
 				8CC0E79310047A2800C7F6CB /* Default.png */,
 				8C3FD3B20FCF0A84004D8DD0 /* Icon.png */,
 				8CF6169A111CC76D002C315C /* ToolbarDown.png */,
@@ -561,18 +567,8 @@
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
 				8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */,
 				8C6BB35111110D09008B5D56 /* MBProgressHUD */,
-				8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */,
 			);
 			name = "Third Party";
-			sourceTree = "<group>";
-		};
-		8CCEB6C11111DD8000284B81 /* 3.2 SDK Hack */ = {
-			isa = PBXGroup;
-			children = (
-				8CCEB6E21111E2AF00284B81 /* UITableViewCellContentView.m */,
-				8CCEB6E31111E2AF00284B81 /* UITableViewCellContentView.h */,
-			);
-			name = "3.2 SDK Hack";
 			sourceTree = "<group>";
 		};
 		8CDB632C0FCF4FF0003AC065 /* Domain */ = {
@@ -842,6 +838,9 @@
 				8CA966FF1135A96C002152EE /* story_comment_icon.png in Resources */,
 				8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */,
 				8CF5A9D01166D8E6005FA7EF /* MainWindow-iPad.xib in Resources */,
+				8CCC9BE5116936F300F67CB2 /* Default-Landscape.png in Resources */,
+				8CCC9BE7116936FC00F67CB2 /* Default-Portrait.png in Resources */,
+				8CCC9BFC116937B900F67CB2 /* Icon-ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,7 +906,6 @@
 				8C561BA2111000BB00AF33DC /* ASIAuthenticationDialog.m in Sources */,
 				8C561DB6111011B200AF33DC /* PivotalTokenParserDelegate.m in Sources */,
 				8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */,
-				8CCEB6E41111E2AF00284B81 /* UITableViewCellContentView.m in Sources */,
 				8CD5BA14111232DA004B4553 /* AbstractHUDViewController.m in Sources */,
 				8CD5BA4B11123531004B4553 /* PlaceholderCell.m in Sources */,
 				8CD5BB4B1112514C004B4553 /* TitleLabelCell.m in Sources */,
