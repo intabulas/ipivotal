@@ -9,10 +9,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	  <array>
-     	<string>Icon.png</string>
-    	<string>Icon-ipad.png</string>
-    </array>
+	<array>
+		<string>Icon.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.intabulas.iPivotal</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -29,7 +28,5 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-	<key>NSMainNibFile~ipad</key>
-	<string>MainWindow-iPad</string>
 </dict>
 </plist>
