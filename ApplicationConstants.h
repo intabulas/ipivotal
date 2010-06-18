@@ -32,7 +32,7 @@
 
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK
+//#define LOG_NETWORK
 #define LOG_CONTENT
 //#ifdef NO_COMPRESS_RESPONSE    
 

@@ -39,6 +39,7 @@
 		8C3FD4370FCF1CA7004D8DD0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
 		8C3FD4760FCF285B004D8DD0 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4750FCF285B004D8DD0 /* AuthenticationViewController.xib */; };
 		8C3FD47A0FCF28D2004D8DD0 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */; };
+		8C40FF7C11A2359D00FA7EFA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FF7B11A2359D00FA7EFA /* MBProgressHUD.m */; };
 		8C43293F1135C24700FC2B52 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C43293D1135C24700FC2B52 /* TaskViewController.m */; };
 		8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C43293E1135C24700FC2B52 /* TaskViewController.xib */; };
 		8C4329891135C5F600FC2B52 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4329881135C5F600FC2B52 /* TaskCell.m */; };
@@ -63,7 +64,6 @@
 		8C5BC43F1039ABB40005A028 /* chat_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC43D1039ABB40005A028 /* chat_small.png */; };
 		8C5BC7E11039F9710005A028 /* CommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BC7E01039F9710005A028 /* CommentHeaderView.m */; };
 		8C5BC8901039FEB50005A028 /* chat_small_inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */; };
-		8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */; };
 		8C6BF4A0114846970001939F /* DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BF49F114846970001939F /* DynamicCell.m */; };
 		8C6BF4A5114846FB0001939F /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BF4A4114846FB0001939F /* NSSet+Core.m */; };
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
@@ -186,6 +186,8 @@
 		8C3FD4780FCF28D2004D8DD0 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		8C3FD4790FCF28D2004D8DD0 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
+		8C40FF7A11A2359D00FA7EFA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		8C40FF7B11A2359D00FA7EFA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8C43293C1135C24700FC2B52 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = ../TaskViewController.h; sourceTree = "<group>"; };
 		8C43293D1135C24700FC2B52 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = ../TaskViewController.m; sourceTree = "<group>"; };
 		8C43293E1135C24700FC2B52 /* TaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
@@ -227,8 +229,6 @@
 		8C5BC7DF1039F9710005A028 /* CommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentHeaderView.h; sourceTree = "<group>"; };
 		8C5BC7E01039F9710005A028 /* CommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentHeaderView.m; sourceTree = "<group>"; };
 		8C5BC88F1039FEB50005A028 /* chat_small_inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_small_inverted.png; sourceTree = "<group>"; };
-		8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		8C6BB35511110D2C008B5D56 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8C6BF49E114846970001939F /* DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCell.h; sourceTree = "<group>"; };
 		8C6BF49F114846970001939F /* DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCell.m; sourceTree = "<group>"; };
 		8C6BF4A3114846FB0001939F /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Core.h"; sourceTree = "<group>"; };
@@ -511,8 +511,8 @@
 		8C6BB35111110D09008B5D56 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				8C6BB35411110D2C008B5D56 /* MBProgressHUD.m */,
-				8C6BB35511110D2C008B5D56 /* MBProgressHUD.h */,
+				8C40FF7A11A2359D00FA7EFA /* MBProgressHUD.h */,
+				8C40FF7B11A2359D00FA7EFA /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
 			sourceTree = "<group>";
@@ -905,7 +905,6 @@
 				8C561BA1111000BB00AF33DC /* ASIFormDataRequest.m in Sources */,
 				8C561BA2111000BB00AF33DC /* ASIAuthenticationDialog.m in Sources */,
 				8C561DB6111011B200AF33DC /* PivotalTokenParserDelegate.m in Sources */,
-				8C6BB35611110D2C008B5D56 /* MBProgressHUD.m in Sources */,
 				8CD5BA14111232DA004B4553 /* AbstractHUDViewController.m in Sources */,
 				8CD5BA4B11123531004B4553 /* PlaceholderCell.m in Sources */,
 				8CD5BB4B1112514C004B4553 /* TitleLabelCell.m in Sources */,
@@ -919,6 +918,7 @@
 				8C6BF4A0114846970001939F /* DynamicCell.m in Sources */,
 				8C6BF4A5114846FB0001939F /* NSSet+Core.m in Sources */,
 				8CB1F378115C017F00229C4B /* PivotalManager.m in Sources */,
+				8C40FF7C11A2359D00FA7EFA /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,7 +940,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier";
 				COPY_PHASE_STRIP = NO;
@@ -950,9 +949,6 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E869AAD-BB36-497A-8F74-9AD7D239742F";
-				SDKROOT = iphoneos3.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -960,7 +956,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier";
 				COPY_PHASE_STRIP = YES;
@@ -969,8 +964,6 @@
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "393643DA-E171-4782-A31C-6DEFBE945F38";
-				SDKROOT = iphoneos3.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -978,13 +971,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier (BL537QE4CE)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FFBCC1FD-80FA-4D00-B9DF-36C5BCAF1BC3";
+				VALID_ARCHS = armv6;
 			};
 			name = Distribution;
 		};
@@ -992,7 +986,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mark Lussier";
 				COPY_PHASE_STRIP = YES;
@@ -1001,8 +994,6 @@
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "168E0D8E-CCE4-4F8F-924C-FB61A35F1023";
-				SDKROOT = iphoneos3.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
@@ -1010,15 +1001,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier (BL537QE4CE)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384E130B-D7BF-46CB-A236-6516BE5023B4";
-				SDKROOT = iphoneos3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FFBCC1FD-80FA-4D00-B9DF-36C5BCAF1BC3";
+				VALID_ARCHS = armv6;
 			};
 			name = Debug;
 		};
@@ -1026,13 +1017,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mark Lussier";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier (BL537QE4CE)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "958BE20A-C63D-478E-97A1-E86C03B4094B";
-				SDKROOT = iphoneos3.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FFBCC1FD-80FA-4D00-B9DF-36C5BCAF1BC3";
+				VALID_ARCHS = armv6;
 			};
 			name = Release;
 		};
