@@ -132,7 +132,7 @@
     
     UIFont *font = [commentTextView font];
     if ( !font ) {
-        font = [UIFont systemFontOfSize:13];
+        font = [UIFont systemFontOfSize:14];
     }
     
     PivotalNote *note = (PivotalNote *)[comments objectAtIndex:indexPath.section];

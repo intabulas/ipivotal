@@ -50,7 +50,7 @@
         storyLabel.autoresizingMask = UIViewAutoresizingNone;
         storyLabel.backgroundColor = [UIColor clearColor];
         storyLabel.highlightedTextColor = [UIColor whiteColor];
-        storyLabel.font = [UIFont  systemFontOfSize:14.0f];
+        storyLabel.font = [UIFont  systemFontOfSize:16.0f];
         storyLabel.textColor = [UIColor blackColor];
         storyLabel.textAlignment = UITextAlignmentLeft;
                         
@@ -58,7 +58,7 @@
         statusLabel.autoresizingMask = UIViewAutoresizingNone;
         statusLabel.backgroundColor = [UIColor clearColor];
         statusLabel.highlightedTextColor = [UIColor whiteColor];
-        statusLabel.font = [UIFont  systemFontOfSize:12.0f];
+        statusLabel.font = [UIFont  systemFontOfSize:13.0f];
         statusLabel.textColor = [UIColor blackColor];
         statusLabel.textAlignment = UITextAlignmentLeft;
         NSLog( @"%@", self.contentView);
