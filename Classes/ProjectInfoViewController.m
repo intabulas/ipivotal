@@ -104,7 +104,7 @@ static UIFont *boldFont;
     NSInteger row = indexPath.row; 
     NSInteger section = indexPath.section;
     
-    static float defaultFontSize = 13.0;
+    static float defaultFontSize = 14.0;
     if ( boldFont == nil ) {
         boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
     }
@@ -125,63 +125,63 @@ static UIFont *boldFont;
               
           case 0:
               [cell addLabelWithText:kLabelName];
-              [cell addLabelWithText:project.name andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.name andFont:boldFont onNewLine:NO rightAligned:YES];
               break;
           case 1:
               [cell addLabelWithText:kLabelId];
-              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.projectId] andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.projectId] andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 2: 
               [cell addLabelWithText:kLabelIterationLength];
-              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.iterationLength] andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.iterationLength] andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 3: 
               [cell addLabelWithText:kLabelWeekStart];
-              [cell addLabelWithText:project.weekStartDay andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.weekStartDay andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 4: 
               [cell addLabelWithText:kLabelPointScale];
-              [cell addLabelWithText:project.pointScale andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.pointScale andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 5: 
               [cell addLabelWithText:kLabelVelocityScheme];
-              [cell addLabelWithText:project.velocityScheme andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.velocityScheme andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 6: 
               [cell addLabelWithText:kLabelCurrentVelocity];
-              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.currentVelocity] andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.currentVelocity] andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 7: 
               [cell addLabelWithText:kLabelInitialVelocity];
-              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.initialVelocity] andFont:boldFont onNewLine:NO];               
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.initialVelocity] andFont:boldFont onNewLine:NO rightAligned:YES];               
               break;              
           case 8: 
               [cell addLabelWithText:kLabelDoneIterations];
-              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.numberDoneIterations] andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:[NSString stringWithFormat:kFormatNumber, project.numberDoneIterations] andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 9:
                [cell addLabelWithText:kLabelAllowsAttachments];
-               [cell addLabelWithText:project.allowsAttachments ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+               [cell addLabelWithText:project.allowsAttachments ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 10:
               [cell addLabelWithText:kLabelPublic];
-              [cell addLabelWithText:project.publicProject ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.publicProject ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 11:
               [cell addLabelWithText:kLabelUseHttps];
-              [cell addLabelWithText:project.useHttps ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.useHttps ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 12:
               [cell addLabelWithText:kLabelEstimateBugsChores];
-              [cell addLabelWithText:project.estimateBugsAndChores ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.estimateBugsAndChores ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 13:
               [cell addLabelWithText:kLabelCommitMode];
-              [cell addLabelWithText:project.commitMode ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:project.commitMode ? kLabelYes : kLabelYes andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
           case 14:
               [cell addLabelWithText:kLabelLastActivity];
-              [cell addLabelWithText:[project.lastActivityAt prettyDate] andFont:boldFont onNewLine:NO];
+              [cell addLabelWithText:[project.lastActivityAt prettyDate] andFont:boldFont onNewLine:NO rightAligned:YES];
               break;              
       }
     } else {

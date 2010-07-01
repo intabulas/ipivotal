@@ -228,16 +228,19 @@
     return defaultTextColor;
 }
 
-- (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font onNewLine:(BOOL)newLine {
+- (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font onNewLine:(BOOL)newLine rightAligned:(BOOL)rightalign {
     if (text == nil)
         text = @"";
-
+    
     UILabel* label = (UILabel*) [self viewOfClass:[UILabel class]];
-
+    
     label.lineBreakMode = UILineBreakModeWordWrap;
     label.font = font;
     label.text = text;
     label.textColor = [self defaultTextColor];
+    if ( rightalign ) {
+        label.textAlignment = UITextAlignmentRight;
+    }
     label.backgroundColor = [UIColor clearColor];
     
     // Determine number of newlines in string
@@ -247,6 +250,11 @@
     label.numberOfLines = [countString length];
     
     return (UILabel*) [self addView:label onNewLine:newLine];
+    
+}
+
+- (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font onNewLine:(BOOL)newLine {
+    [self addLabelWithText:text andFont:font onNewLine:newLine rightAligned:NO];
 }
 
 - (UILabel*) addLabelWithText:(NSString*)text {
@@ -256,6 +264,7 @@
 - (UILabel*) addLabelWithText:(NSString*)text onNewLine:(BOOL)newLine {
     return [self addLabelWithText:text andFont:[self defaultFont] onNewLine:newLine];
 }
+
 
 - (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font {
     return [self addLabelWithText:text andFont:font onNewLine:YES];

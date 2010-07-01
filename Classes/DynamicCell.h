@@ -85,6 +85,7 @@
 - (UILabel*) addLabelWithText:(NSString*)text onNewLine:(BOOL)newLine;
 - (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font;
 - (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font onNewLine:(BOOL)newLine;
+- (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font onNewLine:(BOOL)newLine rightAligned:(BOOL)rightalign;
 
 #pragma mark -
 #pragma mark Text Views
