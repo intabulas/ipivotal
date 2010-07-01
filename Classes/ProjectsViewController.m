@@ -212,7 +212,7 @@ static UIFont *boldFont;
         
     }       
     
-    static float defaultFontSize = 17.0;
+    static float defaultFontSize = 18.0;
     if ( boldFont == nil ) {
         boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
     }
@@ -235,7 +235,7 @@ static UIFont *boldFont;
     UILabel *projectName = [cell addLabelWithText:pp.name andFont:boldFont];
     projectName.highlightedTextColor = [UIColor whiteColor];
 
-    UILabel *updatedLabel = [cell addLabelWithText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]] andFont:[UIFont systemFontOfSize:10.0]];
+    UILabel *updatedLabel = [cell addLabelWithText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]] andFont:[UIFont systemFontOfSize:13.0]];
     updatedLabel.textColor = [UIColor grayColor];
     updatedLabel.highlightedTextColor = [UIColor whiteColor];
 
