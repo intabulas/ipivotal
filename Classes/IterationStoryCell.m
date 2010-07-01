@@ -40,13 +40,13 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
                 
-        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 12.0f, 20.0f, 20.0f)];
+        typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 6.0f, 20.0f, 20.0f)];
         typeImage.backgroundColor = [UIColor clearColor];
                 
-        estimateImage = [[UIImageView alloc] initWithFrame:CGRectMake(30.0f, 9.0f, 12.0f, 12.0f)];        
+        estimateImage = [[UIImageView alloc] initWithFrame:CGRectMake(8.0f, 29.0f, 12.0f, 12.0f)];        
         estimateImage.contentMode =  UIViewContentModeBottom;
                 
-        storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(45.0f, 3.0f, (self.contentView.frame.size.width - 65.0f) , 25.0f)];
+        storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 3.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
         storyLabel.autoresizingMask = UIViewAutoresizingNone;
         storyLabel.backgroundColor = [UIColor clearColor];
         storyLabel.highlightedTextColor = [UIColor whiteColor];
