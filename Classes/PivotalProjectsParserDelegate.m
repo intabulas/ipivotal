@@ -88,10 +88,11 @@
 	} else if ([elementName isEqualToString:kTagName]) {        
         if (handlingMembership ) {
 			currentMembership.memberName = currentElementValue;
-        } else {        
+        } else if (handlingIntegration ) {
+            currentIntegration.title = currentElementValue;
+        } else {
           currentProject.name  = currentElementValue;        
         }
-
 	} else if ([elementName isEqualToString:kTagLastActivityAt]) {					
 		currentProject.lastActivityAt =  [dateFormatter dateFromString:currentElementValue];         
 	} else if ([elementName isEqualToString:kTagTitle] && handlingIntegration) {			
