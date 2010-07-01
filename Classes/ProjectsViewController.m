@@ -175,7 +175,6 @@ static UIFont *boldFont;
     [newProjectField setBackgroundColor:[UIColor whiteColor]];
     [newProjectField setPlaceholder:@"enter project name"];
     [alert addSubview:newProjectField];
-    [alert setTransform:CGAffineTransformMakeTranslation(0.0, 110.0)];
     [alert show];
     [alert release];    
     [newProjectField becomeFirstResponder];
