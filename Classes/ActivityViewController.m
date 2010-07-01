@@ -138,7 +138,7 @@ static UIFont *boldFont;
     
     
     
-    static float defaultFontSize = 12.0;
+    static float defaultFontSize = 16.0;
     if ( boldFont == nil ) {
         boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
     } 
@@ -164,7 +164,7 @@ static UIFont *boldFont;
     
     
     [cell addLabelWithText:activityText];
-    [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont boldSystemFontOfSize:10.0]];
+    [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont boldSystemFontOfSize:13.0]];
 
     
     [cell prepare];
