@@ -217,8 +217,8 @@
     if ( section == 0 && row == 2 ) return ownerCell;        
     if ( section == 0 && row == 3 ) return descriptionCell;
     if ( section == 1 && row == 0 ) return commentsCell;
-    if ( section == 1 && row == 1 ) return attachmentsCell;	
-	if ( section == 1 && row == 2 ) return tasksCell;	
+	if ( section == 1 && row == 1 ) return tasksCell;	
+    if ( section == 1 && row == 2 ) return attachmentsCell;	
 
     if ( section == 2 && row == 0 ) return createdAtCell;	
     if ( section == 2 && row == 1 ) return updatedAtCell;	    
