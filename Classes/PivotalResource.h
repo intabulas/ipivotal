@@ -55,7 +55,6 @@ typedef enum {
 
 @property (nonatomic,retain) NSError *error;
 @property (nonatomic, readwrite) PivotalResourceStatus status;
-
 @property (nonatomic, readwrite) PivotalResourceSavingStatus savingStatus;
 
 @property (nonatomic, readonly) BOOL isLoaded;

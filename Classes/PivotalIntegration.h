@@ -31,9 +31,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PivotalObject.h"
 
-
-@interface PivotalIntegration : NSObject {
+@interface PivotalIntegration : PivotalObject {
 	NSInteger integrationId;
 	NSString *title;
 	BOOL active;	

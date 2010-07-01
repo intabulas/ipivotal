@@ -41,6 +41,7 @@
 
 - (id)init {
     stories = [[NSMutableArray alloc] init];
+    resourceType = PivotalResourceIteration;
     return self;
 }
 

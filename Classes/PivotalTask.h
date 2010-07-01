@@ -32,9 +32,10 @@
 
 #import <Foundation/Foundation.h>
 #import "PivotalResource.h"
+#import "PivotalObject.h"
 
 @class PivotalProject, PivotalStory;
-@interface PivotalTask : PivotalResource {
+@interface PivotalTask : PivotalResource <PivotalXMLSerialization> {
     PivotalProject *project;
     PivotalStory *story;    
 @private

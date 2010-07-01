@@ -31,9 +31,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PivotalObject.h"
 
 @class PivotalMembership;
-@interface PivotalProject : NSObject {
+@interface PivotalProject : PivotalObject {
     NSInteger projectId;
     NSString *name;
     NSInteger iterationLength;

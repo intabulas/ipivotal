@@ -32,10 +32,10 @@
 
 #import <Foundation/Foundation.h>
 #import "PivotalResource.h"
-
+#import "PivotalObject.h"
 
 @class PivotalProject;
-@interface PivotalStory : PivotalResource {
+@interface PivotalStory : PivotalResource <PivotalXMLSerialization> {
     NSInteger storyId;
     NSString *storyType;	
     NSURL    *url;

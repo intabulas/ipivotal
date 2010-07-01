@@ -88,7 +88,7 @@
     NSLog(@"URL: '%@'", theURL);
 #endif
     
-    NSString *newcomment = [self to_xml];
+    NSString *newcomment = [self to_Xml];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newcomment dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
 	[request startSynchronous];

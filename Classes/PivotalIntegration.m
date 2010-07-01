@@ -32,7 +32,7 @@
 
 
 #import "PivotalIntegration.h"
-
+#import "PivotalObject.h"
 
 @implementation PivotalIntegration
 
@@ -41,6 +41,9 @@
 - (id)init {
     [super init];
 	self.active = FALSE;
+
+    resourceType = PivotalResourceIntegration;
+    
     return self;
 }
 - (void)dealloc {

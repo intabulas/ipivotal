@@ -31,9 +31,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PivotalObject.h"
 
-
-@interface PivotalMembership : NSObject {
+@interface PivotalMembership : PivotalObject {
 	NSInteger membershipId;
 	NSString *role;
 	NSString *email;	

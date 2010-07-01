@@ -31,9 +31,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PivotalObject.h"
 
-
-@interface PivotalActivity : NSObject {
+@interface PivotalActivity : PivotalObject {
 	NSInteger activityId;
 	NSInteger version;
 	NSDate   *occuredAt;

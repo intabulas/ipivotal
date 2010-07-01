@@ -40,6 +40,7 @@
 
 - (id)init {
     [super init];
+    resourceType = PivotalResourceMembership;
     return self;
 }
 - (void)dealloc {

@@ -59,6 +59,9 @@
     [super dealloc];
 }
 
+- (NSString *)toXml {
+    return [NSString stringWithFormat:kXmlAddTask, description];   
+} 
 
 - (NSString *)to_xml {
    return [NSString stringWithFormat:kXmlAddTask, description];    

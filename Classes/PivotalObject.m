@@ -30,62 +30,18 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "PivotalProject.h"
-#import "PivotalMembership.h"
-
-@implementation PivotalProject
-
-@synthesize projectId, name, iterationLength, weekStartDay, pointScale, velocityScheme, initialVelocity, currentVelocity, numberDoneIterations, allowsAttachments,
-            publicProject, useHttps, estimateBugsAndChores, commitMode, members, integrations, labels, lastActivityAt;
-
-- (id)init {
-	[super init];
-    resourceType = PivotalResourceProject;
-	self.allowsAttachments = FALSE;
-	self.publicProject = FALSE;
-	self.useHttps = FALSE;
-	self.estimateBugsAndChores = FALSE;
-	self.commitMode = FALSE;
-	members = [[NSMutableArray alloc] init];
-	integrations  = [[NSMutableArray alloc] init];
-	labels  = [[NSMutableArray alloc] init];
-
-	
-    return self;
-}
-
-#pragma mark -
-#pragma mark Cleanup Methods
-
-- (void)dealloc {
-    [name release]; name = nil;
-    [weekStartDay release]; weekStartDay = nil;
-    [pointScale release]; pointScale = nil;
-	[velocityScheme release]; velocityScheme = nil;
-	[members release]; members = nil;
-	[integrations release]; integrations = nil;
-	[lastActivityAt release]; lastActivityAt = nil;
-    [labels release]; labels = nil;
-    [super dealloc];
-}
+#import "PivotalObject.h"
 
 
-#pragma mark 
-#pragma mark === Find Member By Id ===
-#pragma mark 
+@implementation PivotalObject
 
-- (PivotalMembership*) memberForId:(NSInteger)memberId {
-    PivotalMembership *foundMember = nil;
-    
-    for (PivotalMembership *themember in self.members) {
-        if ( themember.membershipId == memberId ) {
-           foundMember = themember;
-           break;
-        }
-    }    
-    return foundMember;        
+@synthesize resourceType, isDirty;
+
+#pragma mark Method Stubs
+
+- (NSString*) resourceAsXML {
+  return @"";    
 }
 
 
 @end
-

@@ -31,9 +31,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PivotalObject.h"
 
-
-@interface PivotalIteration : NSObject {
+@interface PivotalIteration : PivotalObject {
     NSInteger iterationId;
     NSInteger iterationNumber;
     NSDate    *startDate;

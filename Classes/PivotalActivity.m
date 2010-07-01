@@ -31,7 +31,7 @@
 //
 
 #import "PivotalActivity.h"
-
+#import "PivotalObject.h"
 
 @implementation PivotalActivity
 
@@ -39,6 +39,7 @@
 
 - (id)init {
     [super init];
+    resourceType = PivotalResourceActivity;
     return self;
 }
 - (void)dealloc {

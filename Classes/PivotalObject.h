@@ -30,62 +30,36 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "PivotalProject.h"
-#import "PivotalMembership.h"
+#import <Foundation/Foundation.h>
 
-@implementation PivotalProject
+@protocol PivotalXMLSerialization
 
-@synthesize projectId, name, iterationLength, weekStartDay, pointScale, velocityScheme, initialVelocity, currentVelocity, numberDoneIterations, allowsAttachments,
-            publicProject, useHttps, estimateBugsAndChores, commitMode, members, integrations, labels, lastActivityAt;
-
-- (id)init {
-	[super init];
-    resourceType = PivotalResourceProject;
-	self.allowsAttachments = FALSE;
-	self.publicProject = FALSE;
-	self.useHttps = FALSE;
-	self.estimateBugsAndChores = FALSE;
-	self.commitMode = FALSE;
-	members = [[NSMutableArray alloc] init];
-	integrations  = [[NSMutableArray alloc] init];
-	labels  = [[NSMutableArray alloc] init];
-
-	
-    return self;
-}
-
-#pragma mark -
-#pragma mark Cleanup Methods
-
-- (void)dealloc {
-    [name release]; name = nil;
-    [weekStartDay release]; weekStartDay = nil;
-    [pointScale release]; pointScale = nil;
-	[velocityScheme release]; velocityScheme = nil;
-	[members release]; members = nil;
-	[integrations release]; integrations = nil;
-	[lastActivityAt release]; lastActivityAt = nil;
-    [labels release]; labels = nil;
-    [super dealloc];
-}
-
-
-#pragma mark 
-#pragma mark === Find Member By Id ===
-#pragma mark 
-
-- (PivotalMembership*) memberForId:(NSInteger)memberId {
-    PivotalMembership *foundMember = nil;
-    
-    for (PivotalMembership *themember in self.members) {
-        if ( themember.membershipId == memberId ) {
-           foundMember = themember;
-           break;
-        }
-    }    
-    return foundMember;        
-}
-
+@required
+- (NSString*)toXml;
 
 @end
 
+
+typedef enum {
+    PivotalResourceActivity    = 0,
+    PivotalResourceAttachment  = 1,    
+    PivotalResourceIntegration = 2,
+    PivotalResourceIteration   = 3,  
+    PivotalResourceMembership  = 4,    
+    PivotalResourceNote        = 5,
+    PivotalResourceProject     = 6,        
+    PivotalResourceStory       = 7,        
+    PivotalResourceTask        = 8,            
+} PivotalResourceType;
+
+
+@interface PivotalObject : NSObject {
+    PivotalResourceType resourceType;
+    BOOL isDirty;
+}
+
+@property (nonatomic, readwrite) PivotalResourceType resourceType;
+@property (nonatomic, readwrite) BOOL isDirty;
+
+
+@end

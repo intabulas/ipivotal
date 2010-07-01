@@ -93,12 +93,17 @@
     [super dealloc];
 }
 
-- (NSString *)to_xml {
+
+- (NSString*)toXml {
     if ([storyType hasPrefix:kTypeFeature]) {
         return [NSString stringWithFormat:kXmlAddStoryFeature, [storyType lowercaseString], name, estimate, owner];            
     } else {
         return [NSString stringWithFormat:kXmlAddStory, [storyType lowercaseString], name, owner];    
-    }
+    }    
+}
+
+- (NSString *)to_xml {
+    return [self toXml];
 }
 
 
