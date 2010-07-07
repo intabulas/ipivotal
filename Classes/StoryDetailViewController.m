@@ -257,7 +257,7 @@
         
     }
     
-    if ( ( indexPath.section == 1 )  && (indexPath.row == 2) ){ 
+    if ( ( indexPath.section == 1 )  && (indexPath.row == 1) ){ 
 		TaskViewController *controller = [[TaskViewController alloc] initWithProject:self.project andStory:self.story];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];
