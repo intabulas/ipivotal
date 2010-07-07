@@ -1271,6 +1271,7 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = "Info copy 2.plist";
 				PRODUCT_NAME = PTCruiser;
+				SDKROOT = iphoneos3.1.3;
 			};
 			name = Debug;
 		};
@@ -1286,6 +1287,7 @@
 				INFOPLIST_FILE = "Info copy 2.plist";
 				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "393643DA-E171-4782-A31C-6DEFBE945F38";
+				SDKROOT = iphoneos3.1.3;
 			};
 			name = Release;
 		};
@@ -1301,6 +1303,7 @@
 				INFOPLIST_FILE = "Info copy 2.plist";
 				PRODUCT_NAME = PTCruiser;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "168E0D8E-CCE4-4F8F-924C-FB61A35F1023";
+				SDKROOT = iphoneos3.1.3;
 			};
 			name = Distribution;
 		};
