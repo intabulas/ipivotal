@@ -1,6 +1,6 @@
-h1. iPivotal v1.6
+h1. iPivotal v1.9
 
-*current shipping version on iTunes appstore is 1.6*
+*current shipping version on iTunes appstore is 1.8*
 
 "Download from AppStore":http://itunes.apple.com/us/app/ptcruiser/id323889807?mt=8
 
@@ -8,3 +8,6 @@ h1. iPivotal v1.6
 … is a iPhone and iPod Touch app for Pivotal Tracker.
 
 Your participation is welcome - feel free to fork, add missing features or "report issues":http://github.com/intabulas/ipivotal/issues :)
+
+
+* We are currently in flux cleaning up a botched Universal App and ensuring 3.1.3 compatability *
