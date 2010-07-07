@@ -106,9 +106,6 @@
 		8C0590F211E4F6B500E5F098 /* PivotalMembership.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */; };
 		8C0590F311E4F6B500E5F098 /* PivotalIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */; };
 		8C0590F411E4F6B500E5F098 /* PivotalAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A78110FF6E900AF33DC /* PivotalAttachment.m */; };
-		8C0590F511E4F6B500E5F098 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B87111000BB00AF33DC /* ASIS3Request.m */; };
-		8C0590F611E4F6B500E5F098 /* ASIS3ListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B89111000BB00AF33DC /* ASIS3ListRequest.m */; };
-		8C0590F711E4F6B500E5F098 /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B8B111000BB00AF33DC /* ASIS3BucketObject.m */; };
 		8C0590F811E4F6B500E5F098 /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B8D111000BB00AF33DC /* ASINSStringAdditions.m */; };
 		8C0590F911E4F6B500E5F098 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B8F111000BB00AF33DC /* ASINetworkQueue.m */; };
 		8C0590FA11E4F6B500E5F098 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B91111000BB00AF33DC /* ASIInputStream.m */; };
@@ -173,9 +170,6 @@
 		8C5619AC110FE6BF00AF33DC /* PivotalMembership.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5619AB110FE6BF00AF33DC /* PivotalMembership.m */; };
 		8C561A04110FE9BE00AF33DC /* PivotalIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */; };
 		8C561A79110FF6E900AF33DC /* PivotalAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561A78110FF6E900AF33DC /* PivotalAttachment.m */; };
-		8C561B9A111000BB00AF33DC /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B87111000BB00AF33DC /* ASIS3Request.m */; };
-		8C561B9B111000BB00AF33DC /* ASIS3ListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B89111000BB00AF33DC /* ASIS3ListRequest.m */; };
-		8C561B9C111000BB00AF33DC /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B8B111000BB00AF33DC /* ASIS3BucketObject.m */; };
 		8C561B9D111000BB00AF33DC /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B8D111000BB00AF33DC /* ASINSStringAdditions.m */; };
 		8C561B9E111000BB00AF33DC /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B8F111000BB00AF33DC /* ASINetworkQueue.m */; };
 		8C561B9F111000BB00AF33DC /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C561B91111000BB00AF33DC /* ASIInputStream.m */; };
@@ -324,12 +318,6 @@
 		8C561A03110FE9BE00AF33DC /* PivotalIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalIntegration.m; sourceTree = "<group>"; };
 		8C561A77110FF6E900AF33DC /* PivotalAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalAttachment.h; sourceTree = "<group>"; };
 		8C561A78110FF6E900AF33DC /* PivotalAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalAttachment.m; sourceTree = "<group>"; };
-		8C561B87111000BB00AF33DC /* ASIS3Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3Request.m; sourceTree = "<group>"; };
-		8C561B88111000BB00AF33DC /* ASIS3Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3Request.h; sourceTree = "<group>"; };
-		8C561B89111000BB00AF33DC /* ASIS3ListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3ListRequest.m; sourceTree = "<group>"; };
-		8C561B8A111000BB00AF33DC /* ASIS3ListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3ListRequest.h; sourceTree = "<group>"; };
-		8C561B8B111000BB00AF33DC /* ASIS3BucketObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3BucketObject.m; sourceTree = "<group>"; };
-		8C561B8C111000BB00AF33DC /* ASIS3BucketObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3BucketObject.h; sourceTree = "<group>"; };
 		8C561B8D111000BB00AF33DC /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINSStringAdditions.m; sourceTree = "<group>"; };
 		8C561B8E111000BB00AF33DC /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINSStringAdditions.h; sourceTree = "<group>"; };
 		8C561B8F111000BB00AF33DC /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
@@ -590,12 +578,6 @@
 		8C3FD3B60FCF0B29004D8DD0 /* ASI HTTP Library */ = {
 			isa = PBXGroup;
 			children = (
-				8C561B87111000BB00AF33DC /* ASIS3Request.m */,
-				8C561B88111000BB00AF33DC /* ASIS3Request.h */,
-				8C561B89111000BB00AF33DC /* ASIS3ListRequest.m */,
-				8C561B8A111000BB00AF33DC /* ASIS3ListRequest.h */,
-				8C561B8B111000BB00AF33DC /* ASIS3BucketObject.m */,
-				8C561B8C111000BB00AF33DC /* ASIS3BucketObject.h */,
 				8C561B8D111000BB00AF33DC /* ASINSStringAdditions.m */,
 				8C561B8E111000BB00AF33DC /* ASINSStringAdditions.h */,
 				8C561B8F111000BB00AF33DC /* ASINetworkQueue.m */,
@@ -1093,9 +1075,6 @@
 				8C5619AC110FE6BF00AF33DC /* PivotalMembership.m in Sources */,
 				8C561A04110FE9BE00AF33DC /* PivotalIntegration.m in Sources */,
 				8C561A79110FF6E900AF33DC /* PivotalAttachment.m in Sources */,
-				8C561B9A111000BB00AF33DC /* ASIS3Request.m in Sources */,
-				8C561B9B111000BB00AF33DC /* ASIS3ListRequest.m in Sources */,
-				8C561B9C111000BB00AF33DC /* ASIS3BucketObject.m in Sources */,
 				8C561B9D111000BB00AF33DC /* ASINSStringAdditions.m in Sources */,
 				8C561B9E111000BB00AF33DC /* ASINetworkQueue.m in Sources */,
 				8C561B9F111000BB00AF33DC /* ASIInputStream.m in Sources */,
@@ -1170,9 +1149,6 @@
 				8C0590F211E4F6B500E5F098 /* PivotalMembership.m in Sources */,
 				8C0590F311E4F6B500E5F098 /* PivotalIntegration.m in Sources */,
 				8C0590F411E4F6B500E5F098 /* PivotalAttachment.m in Sources */,
-				8C0590F511E4F6B500E5F098 /* ASIS3Request.m in Sources */,
-				8C0590F611E4F6B500E5F098 /* ASIS3ListRequest.m in Sources */,
-				8C0590F711E4F6B500E5F098 /* ASIS3BucketObject.m in Sources */,
 				8C0590F811E4F6B500E5F098 /* ASINSStringAdditions.m in Sources */,
 				8C0590F911E4F6B500E5F098 /* ASINetworkQueue.m in Sources */,
 				8C0590FA11E4F6B500E5F098 /* ASIInputStream.m in Sources */,
