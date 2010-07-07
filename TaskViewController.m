@@ -167,7 +167,7 @@
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
     [request setRequestMethod:@"DELETE"];
     [request startSynchronous];
-#ifdef #if LOG_NETWORKWORK    
+#if LOG_NETWORKWORK    
     NSLog(@" Response: '%@'", [request responseString]);
 #endif
     NSError *error = [request error];

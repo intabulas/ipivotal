@@ -79,7 +79,7 @@
 #endif    
     [request addRequestHeader:kTrackerTokenHeader value:token];
 	
-#ifdef LOG_NETWORK
+#if LOG_NETWORK
 	NSLog( @"if I CURLd it would be 'curl -H \"X-TrackerToken: %@\" -X GET %@'", token, theURL );
 #endif
 	

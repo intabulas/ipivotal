@@ -116,7 +116,7 @@
 	[parserDelegate release];
     
 
-#ifdef LOG_NETWORK    
+#if LOG_NETWORK    
     NSLog(@"Iterations: '%@'", [request responseString]);
 #endif    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    

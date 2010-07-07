@@ -102,7 +102,7 @@
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:self.url];
 	[request startSynchronous];
     self.error = [request error];
-#ifdef LOG_NETWORK    
+#if LOG_NETWORK    
     NSLog(@"Activities: '%@'", [request responseString]);
 #endif    
 

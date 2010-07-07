@@ -84,7 +84,7 @@
 - (void)sendCommentDataToURL:(NSURL *)theURL {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:theURL];
-#ifdef LOG_NETWORK	
+#if LOG_NETWORK	
     NSLog(@"URL: '%@'", theURL);
 #endif
     
@@ -92,7 +92,7 @@
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newcomment dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
 	[request startSynchronous];
-#ifdef LOG_NETWORK	
+#if LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif    
     
