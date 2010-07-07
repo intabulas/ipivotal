@@ -104,6 +104,9 @@
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]]autorelease]];
     [request startSynchronous];
+#if LOG_NETWORK    
+    NSLog(@" Response: '%@'", [request responseString]);
+#endif    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
     [self hideHUD];
     [pool release];    
@@ -242,7 +245,7 @@
         controller.listItems = [[NSArray alloc] initWithObjects:kTypeFeature, kTypeBug, kTypeChore, kTypeRelease, nil];
                         
         controller.editingItem = editingDictionary;
-        [editingDictionary setValue:story.storyType forKey:kKeyType];
+        [editingDictionary setValue:self.story.storyType forKey:kKeyType];
         [self.navigationController pushViewController:controller animated:YES];
         [controller release];
     }

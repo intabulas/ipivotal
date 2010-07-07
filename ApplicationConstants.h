@@ -32,7 +32,7 @@
 
 
 //#define CACHED_CONTENT
-//#define LOG_NETWORK
+#define LOG_NETWORK 1
 #define LOG_CONTENT
 //#ifdef NO_COMPRESS_RESPONSE    
 
@@ -156,6 +156,7 @@
 #define kXmlStoryStateTransitiionNoEstimate  @"<story><current_state>%@</current_state></story>"
 #define kXmlAddStoryFeature                  @"<story><story_type>%@</story_type><name>%@</name><estimate type=\"Integer\">%d</estimate><owned_by>%@</owned_by></story>"
 #define kXmlAddStory                         @"<story><story_type>%@</story_type><name>%@</name><owned_by>%@</owned_by></story>"
+#define kXmlAddBugStory                      @"<story><story_type>%@</story_type><name>%@</name><owned_by>%@</owned_by><estimate/></story>"
 #define kXmlAddComment                       @"<note><text>%@</text></note>"
 #define kXmlAddTask                          @"<task><description>%@</description></task>"
 #define kXmlAddProject                       @"<project><name>%@</name><iteration_length type=\"integer\">%d</iteration_length></project>"
@@ -228,16 +229,17 @@
 #define kLabelAddStory              @"Add Story"
 
 
-#define kLabelCommentHeader         @"%@ said %@"
-#define kLabelComments              @"comments"
-#define kLabelDateRange             @"%@ - %@"
-#define kLabelStoryEstimation       @"a %@, estimated as %d point(s)"
-#define kLabelStoryComments         @"%d Comments"
-#define kLabelStoryAttachments      @"%d Attachments"
-#define kLabelStoryTasks            @"%d Tasks"
+#define kLabelCommentHeader               @"%@ said %@"
+#define kLabelComments                    @"comments"
+#define kLabelDateRange                   @"%@ - %@"
+#define kLabelStoryEstimation             @"a %@, estimated as %d point(s)"
+#define kLabelStoryEstimationNonFeature   @"a %@"
+#define kLabelStoryComments               @"%d Comments"
+#define kLabelStoryAttachments            @"%d Attachments"
+#define kLabelStoryTasks                  @"%d Tasks"
 
-#define kLableProjectActivity       @"last activity %@"
-#define kLabelLastUpdated           @"last updated: "
+#define kLableProjectActivity             @"last activity %@"
+#define kLabelLastUpdated                 @"last updated: "
 
 
 #define kLabelName                  @"Name"

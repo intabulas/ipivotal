@@ -339,9 +339,15 @@
     if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
     if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateThreePoints];          
     
-    estimate.text = [NSString stringWithFormat:kLabelStoryEstimation, self.story.storyType, self.story.estimate];
+    if ( [self.story.storyType hasPrefix:kTypeFeature] ) {
+       estimate.text = [NSString stringWithFormat:kLabelStoryEstimation, self.story.storyType, self.story.estimate];
+    } else {
+       estimate.text = [NSString stringWithFormat:kLabelStoryEstimationNonFeature, self.story.storyType];        
+    }
     
-    if ( [story.storyType hasPrefix:kMatchBug] ) {    
+    self.story.storyType = [self.story.storyType  lowercaseString];
+    
+    if ( [self.story.storyType hasPrefix:kMatchBug] ) {    
         typeIcon.image = [UIImage imageNamed:kIconTypeBug];        
     } else if ( [self.story.storyType hasPrefix:kMatchFeature] ) {
         typeIcon.image = [UIImage imageNamed:kIconTypeFeature];
