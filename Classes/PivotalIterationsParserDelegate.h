@@ -40,6 +40,7 @@
     BOOL handlingNotes;    
     BOOL handlingTasks;
 	BOOL handlingAttachments;    
+    NSInteger projectId;
     NSDateFormatter *dateFormatter;
     PivotalIteration *currentIteration;
     PivotalNote      *currentNote;

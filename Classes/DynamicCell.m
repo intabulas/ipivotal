@@ -254,7 +254,7 @@
 }
 
 - (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font onNewLine:(BOOL)newLine {
-    [self addLabelWithText:text andFont:font onNewLine:newLine rightAligned:NO];
+    return [self addLabelWithText:text andFont:font onNewLine:newLine rightAligned:NO];
 }
 
 - (UILabel*) addLabelWithText:(NSString*)text {

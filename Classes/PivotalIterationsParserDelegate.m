@@ -37,7 +37,7 @@
 #import "PivotalStory.h"
 #import "PivotalAttachment.h"
 #import "PivotalTask.h"
-
+#import "PivotalManager.h"
 
 @implementation PivotalIterationsParserDelegate
 
@@ -77,7 +77,7 @@
 		[currentIteration release];
 		currentIteration = nil;
     } else if ([elementName isEqualToString:kTagStory]) {
-        [currentIteration.stories addObject:currentStory];
+        [currentIteration.stories addObject:currentStory];    
         [currentStory release];
         currentStory = nil;        
         handlingStory = NO;
@@ -96,7 +96,10 @@
         [currentStory.attachments addObject:currentAttachment];
         [currentAttachment release];
         currentAttachment = nil;        
-        handlingAttachments = NO;           
+        handlingAttachments = NO; 
+        
+    } else if ([elementName isEqualToString:kTagProjectId]) {
+        projectId = [currentElementValue integerValue];
 	} else if ([elementName isEqualToString:kTagId]) {      
         if ( handlingNotes ) { 
             currentNote.noteId = [currentElementValue integerValue];

@@ -55,11 +55,15 @@ typedef enum {
 
 @interface PivotalObject : NSObject {
     PivotalResourceType resourceType;
+    NSInteger objectId;    
+    NSDate *lastSync;
     BOOL isDirty;
 }
 
 @property (nonatomic, readwrite) PivotalResourceType resourceType;
 @property (nonatomic, readwrite) BOOL isDirty;
+@property (nonatomic, readwrite) NSInteger objectId;
+@property (nonatomic, retain)    NSDate *lastSync;
 
 
 @end

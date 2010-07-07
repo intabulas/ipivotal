@@ -33,7 +33,7 @@
 #import "PivotalResourceParserDelegate.h"
 
 
-@implementation PivotalResourceParserDelegate
+@implementation PivotalResourceParserDelegate 
 
 - (id)initWithTarget:(id)theTarget andSelector:(SEL)theSelector {
 	[super init];

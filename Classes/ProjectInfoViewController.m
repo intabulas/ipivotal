@@ -34,6 +34,7 @@
 #import "PivotalProject.h"
 #import "NSDate+Nibware.h"
 #import "DynamicCell.h"
+#import "PivotalMembership.h"
 
 @implementation ProjectInfoViewController
 

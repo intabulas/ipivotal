@@ -30,23 +30,10 @@
 //	OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "PivotalObject.h"
+#import <Foundation/Foundation.h>
 
+@interface PivotalTrackerEngine : NSObject {
 
-@implementation PivotalObject
-
-@synthesize resourceType, isDirty, lastSync, objectId;
-
-#pragma mark Method Stubs
-
-- (NSString*) resourceAsXML {
-  return @"";    
-}
-
-
-- (void) dealloc {
-    [lastSync release]; lastSync = nil;
-    [super dealloc];
 }
 
 @end

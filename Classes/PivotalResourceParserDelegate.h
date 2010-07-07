@@ -32,7 +32,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PivotalResourceParserDelegate : NSObject {
+@interface PivotalResourceParserDelegate : NSObject <NSXMLParserDelegate> {
 	NSMutableArray *resources;
 	NSMutableString *currentElementValue;
 @private

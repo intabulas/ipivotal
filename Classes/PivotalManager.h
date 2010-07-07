@@ -31,14 +31,21 @@
 //
 
 #import "ASIHTTPRequest.h"
-
+#import "PivotalObject.h"
+@class PivotalTrackerEngine;
 @interface PivotalManager : NSObject {
 
     int logLevel;
+    PivotalTrackerEngine *engine;
+    
+    NSMutableDictionary *entities;
+    
     
 }
 
 @property (nonatomic, assign) int logLevel;
+@property (nonatomic, retain) PivotalTrackerEngine *engine;
+@property (nonatomic, retain) NSMutableDictionary *entities;
 
 + (PivotalManager*) main;
 + (void) setMain: (PivotalManager*)newMain;
@@ -47,5 +54,13 @@
 #pragma mark Alerts & Errors
 + (void) alertWithError:(NSError*)error;
 + (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message;
+
+
+//- (void)addEntity:(NSObject*)entity forKey:(NSString*)key;
+//- (id)entityForKey:(NSString*)key;
+//
+//- (id)entitiyForProject:(NSString*)projectId withEntityId:(NSString*)entity;
+//- (NSString*)addEntityToProject:(NSString*)projectId entity:(PivotalObject*)entity;
+
 
 @end

@@ -65,9 +65,6 @@
         currentActivity.author = currentElementValue;
 	} else if ([elementName isEqualToString:kTagProjectId]) {              
         currentActivity.projectId = [currentElementValue integerValue];
-
-		
-		
 	} else if ([elementName isEqualToString:kTagName]) {              
         currentActivity.story = currentElementValue;
 	} else if ([elementName isEqualToString:kTagDescription]) {                      

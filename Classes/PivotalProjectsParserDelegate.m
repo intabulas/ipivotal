@@ -32,12 +32,13 @@
 
 #import "PivotalProjectsParserDelegate.h"
 #import "PivotalProject.h"
-
+#import "PivotalManager.h"
 
 @implementation PivotalProjectsParserDelegate
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	[super parserDidStartDocument:parser];
+    
 	dateFormatter = [[NSDateFormatter alloc] init];
 	dateFormatter.dateFormat = kDateFormatUTC;	
     handlingMembership = NO;
@@ -82,6 +83,7 @@
 			currentIntegration.integrationId = [currentElementValue integerValue];
 		} else {
           currentProject.projectId = [currentElementValue integerValue];
+          [currentProject setObjectId:[currentElementValue integerValue]];
         }
 	} else if ([elementName isEqualToString:kTagIterationLength]) {      
         currentProject.iterationLength = [currentElementValue integerValue];

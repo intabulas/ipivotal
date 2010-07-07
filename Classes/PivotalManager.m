@@ -32,11 +32,11 @@
 
 #import "PivotalManager.h"
 #import "Reachability.h"
-
+#import "PivotalTrackerEngine.h"
 
 @implementation PivotalManager
 
-@synthesize logLevel;
+@synthesize logLevel, engine, entities;
 
 #pragma mark -
 #pragma mark Static access
@@ -55,9 +55,43 @@ static PivotalManager* _main;
             _main = self;
         }        
         logLevel = 1;
+        
+        engine   = [[PivotalTrackerEngine alloc] init];
+        entities = [[NSMutableDictionary  alloc] initWithCapacity:50];
+        
     }
     return self;
 }
+
+
+//- (void)addEntity:(NSObject*)entity forKey:(NSString*)key {
+//    NSMutableDictionary *entityDict = [[NSMutableDictionary alloc] initWithCapacity: 10];
+//    [entityDict setObject:entity forKey:@"self"];
+//    [entityDict setValue:[NSDate date] forKeyPath:@"lastUpdated"];    
+//    [entities setObject:entityDict forKey:key];
+//}
+//
+//- (id)entityForKey:(NSString*)key {
+//  return [entities valueForKeyPath:key];
+//}
+//
+//- (id)entitiyForProject:(NSString*)projectId withEntityId:(NSString*)entity {
+//    return [self entityForKey:[NSString stringWithFormat:@"%@.%@", projectId, entity]]; 
+//    
+//}
+//
+//- (NSString*)addEntityToProject:(NSString*)projectId entity:(PivotalObject*)entity {
+//    
+//    NSMutableDictionary *projectDict = [entities objectForKey:projectId];    
+//    [projectDict setValue:[NSDate date] forKeyPath:@"lastUpdated"];
+//    NSString *key = [NSString  stringWithFormat:@"%d", [entity objectId]];
+//    [projectDict setObject:entity forKey:key];
+//    NSLog(@"%@", entities);
+//    
+//    return key;
+//}
+//
+//
 
 #pragma mark -
 # pragma mark Alerts
@@ -73,5 +107,10 @@ static PivotalManager* _main;
     [alert release];
 }
 
+- (void) dealloc {
+    [entities removeAllObjects]; [entities release]; entities = nil;
+    [engine release]; engine = nil;
+    [super dealloc];
+}
 
 @end
