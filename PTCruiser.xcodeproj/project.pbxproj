@@ -29,7 +29,6 @@
 		8C0590A311E4F6B500E5F098 /* estimate_unestimated.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09C040FD04BEA00846DBA /* estimate_unestimated.gif */; };
 		8C0590A411E4F6B500E5F098 /* bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09C090FD04BF200846DBA /* bug.png */; };
 		8C0590A511E4F6B500E5F098 /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA09CEB0FD05B2300846DBA /* StoriesViewController.xib */; };
-		8C0590A611E4F6B500E5F098 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C0590A711E4F6B500E5F098 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
 		8C0590A811E4F6B500E5F098 /* ListSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */; };
 		8C0590A911E4F6B500E5F098 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C50D6190FE1A86300F41900 /* Entitlements.plist */; };
@@ -202,7 +201,6 @@
 		8C81C1131110AC7F00378558 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1121110AC7F00378558 /* tag.png */; };
 		8C81C1181110ACE800378558 /* map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1171110ACE800378558 /* map-marker.png */; };
 		8C81C1361110AF4F00378558 /* storyheader.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1351110AF4F00378558 /* storyheader.png */; };
-		8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
 		8C870CD5112B72F8001EDF46 /* RefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C870CD4112B72F8001EDF46 /* RefreshArrow.png */; };
@@ -370,7 +368,6 @@
 		8C81C1121110AC7F00378558 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
 		8C81C1171110ACE800378558 /* map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-marker.png"; sourceTree = "<group>"; };
 		8C81C1351110AF4F00378558 /* storyheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storyheader.png; sourceTree = "<group>"; };
-		8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionListViewController.xib; sourceTree = "<group>"; };
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
 		8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStoryViewController.xib; sourceTree = "<group>"; };
@@ -627,14 +624,6 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		8C5224830FD094170090C625 /* Lists */ = {
-			isa = PBXGroup;
-			children = (
-				8C826A7E0FD16A51008F9E51 /* SelectionListViewController.xib */,
-			);
-			name = Lists;
-			sourceTree = "<group>";
-		};
 		8C587FE7111496C500C24B7A /* EGOTableViewPullRefresh Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,7 +803,6 @@
 		8CDB63B30FCF87BD003AC065 /* IBFiles */ = {
 			isa = PBXGroup;
 			children = (
-				8C5224830FD094170090C625 /* Lists */,
 				8CBBB5170FF957DB00A32C37 /* ActivityViewController.xib */,
 				8C255AC8103F606C00DEE140 /* AddComment.xib */,
 				8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */,
@@ -963,7 +951,6 @@
 				8CA09C080FD04BEA00846DBA /* estimate_unestimated.gif in Resources */,
 				8CA09C0A0FD04BF200846DBA /* bug.png in Resources */,
 				8CA09CEC0FD05B2300846DBA /* StoriesViewController.xib in Resources */,
-				8C826A7F0FD16A51008F9E51 /* SelectionListViewController.xib in Resources */,
 				8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */,
 				8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */,
 				8C50D61A0FE1A86300F41900 /* Entitlements.plist in Resources */,
@@ -1019,7 +1006,6 @@
 				8C0590A311E4F6B500E5F098 /* estimate_unestimated.gif in Resources */,
 				8C0590A411E4F6B500E5F098 /* bug.png in Resources */,
 				8C0590A511E4F6B500E5F098 /* StoriesViewController.xib in Resources */,
-				8C0590A611E4F6B500E5F098 /* SelectionListViewController.xib in Resources */,
 				8C0590A711E4F6B500E5F098 /* AddStoryViewController.xib in Resources */,
 				8C0590A811E4F6B500E5F098 /* ListSelectionController.xib in Resources */,
 				8C0590A911E4F6B500E5F098 /* Entitlements.plist in Resources */,
