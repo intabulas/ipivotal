@@ -108,14 +108,14 @@
         
     }
      [buttonItems addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
-    
+
     if ( buttonItems.count > 0 ) { [self.actionToolbar setItems:buttonItems]; }
     
     [buttonItems release];    
 }
 - (void)viewWillAppear:(BOOL)animated { 
     [self.navigationItem setTitle:kLabelStoryDetails]; 
-    [self updateActions];
+    //[self updateActions];
     [self displayStory];    
     
 }
