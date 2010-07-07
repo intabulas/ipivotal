@@ -184,7 +184,6 @@
         self.yOffset = 0.0;
 		self.graceTime = 0.0;
 		self.minShowTime = 0.0;
-		
 		self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 		
         // Transparent background

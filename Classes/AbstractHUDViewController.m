@@ -48,9 +48,9 @@
 }
 
 - (void)showHUDWithLabel:(NSString*)label {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    hudDisplay = [[MBProgressHUD alloc] initWithWindow:window];
-    [window addSubview:hudDisplay];
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    hudDisplay = [[MBProgressHUD alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:hudDisplay];
     hudDisplay.delegate = self;
     [hudDisplay setLabelText:label];
     isHudDisplayed = YES;
