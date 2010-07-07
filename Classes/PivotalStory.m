@@ -98,7 +98,7 @@
     if ([storyType hasPrefix:kTypeFeature]) {
         return [NSString stringWithFormat:kXmlAddStoryFeature, [storyType lowercaseString], name, estimate, owner];            
     } else {
-        return [NSString stringWithFormat:kXmlAddStory, [storyType lowercaseString], name, owner];    
+        return [NSString stringWithFormat:kXmlAddBugStory, [storyType lowercaseString], name, owner];    
     }    
 }
 
