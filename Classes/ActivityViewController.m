@@ -158,7 +158,7 @@ static UIFont *boldFont;
     [activityText replaceOccurrencesOfString:@"\"" withString:@" " options:NSLiteralSearch range:NSMakeRange(0,[activityText length])];
 	NSString *prettyDate = [activity.occuredAt prettyDate];
 
-#ifdef LOG_CONTENT
+#if LOG_CONTENT
     NSLog(@"[PivotalActivity] Description == %@", activity.description);
 #endif
     

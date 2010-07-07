@@ -96,7 +96,7 @@
 	[request startSynchronous];
 	NSError *error = [request error];
 	
-#ifdef LOG_NETWORK	
+#if LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif   
 	
@@ -131,7 +131,7 @@
 		[alert show];
 		[alert release];        
     } else {
-#ifdef LOG_NETWORK		
+#if LOG_NETWORK		
 		NSLog(@"token is '%@'", [theResult objectAtIndex:0]);
 #endif		
 		NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];

@@ -123,7 +123,7 @@
     [request setRequestMethod:@"GET"];    
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
 	[request startSynchronous];
-#ifdef LOG_NETWORK	
+#if LOG_NETWORK	
     NSLog(@"%@", [request responseString]);
 #endif    
     self.savingStatus = PivotalResourceStatusSaved;

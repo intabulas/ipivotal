@@ -289,14 +289,14 @@
         newstory = [NSString stringWithFormat:kXmlStoryStateTransitiionNoEstimate, newState];
     }
     
-#ifdef LOG_NETWORK    
+#if LOG_NETWORK    
     NSLog(@"Toggle Story State XML: %@", newstory);
 #endif    
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
     [request startSynchronous];
-#ifdef LOG_NETWORK    
+#if LOG_NETWORK    
     NSLog(@" Response: '%@'", [request responseString]);
 #endif
     NSError *error = [request error];
@@ -339,10 +339,10 @@
     if ( self.story.estimate == 2 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
     if ( self.story.estimate == 3 ) estimateIcon.image = [UIImage imageNamed:kIconEstimateThreePoints];          
     
-    if ( [self.story.storyType hasPrefix:kTypeFeature] ) {
-       estimate.text = [NSString stringWithFormat:kLabelStoryEstimation, self.story.storyType, self.story.estimate];
+    if ( [self.story.storyType hasPrefix:kTypeFeature] || [self.story.storyType hasPrefix:kMatchFeature]) {
+       estimate.text = [NSString stringWithFormat:kLabelStoryEstimation, [self.story.storyType capitalizedString], self.story.estimate];
     } else {
-       estimate.text = [NSString stringWithFormat:kLabelStoryEstimationNonFeature, self.story.storyType];        
+       estimate.text = [NSString stringWithFormat:kLabelStoryEstimationNonFeature, [self.story.storyType capitalizedString]];        
     }
     
     self.story.storyType = [self.story.storyType  lowercaseString];
