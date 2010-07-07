@@ -434,7 +434,7 @@
 		8CD5BB4A1112514C004B4553 /* TitleLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleLabelCell.m; sourceTree = "<group>"; };
 		8CD5BB5411125246004B4553 /* ProjectInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectInfoViewController.h; sourceTree = "<group>"; };
 		8CD5BB5511125246004B4553 /* ProjectInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectInfoViewController.m; sourceTree = "<group>"; };
-		8CD5BB5611125246004B4553 /* ProjectInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProjectInfoViewController.xib; path = Classes/ProjectInfoViewController.xib; sourceTree = "<group>"; };
+		8CD5BB5611125246004B4553 /* ProjectInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectInfoViewController.xib; sourceTree = "<group>"; };
 		8CDB63390FCF5685003AC065 /* PivotalResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalResource.h; sourceTree = "<group>"; };
 		8CDB633A0FCF5685003AC065 /* PivotalResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalResource.m; sourceTree = "<group>"; };
 		8CDB63410FCF58B9003AC065 /* PivotalProjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalProjects.h; sourceTree = "<group>"; };

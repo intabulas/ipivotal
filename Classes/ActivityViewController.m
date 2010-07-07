@@ -165,7 +165,7 @@ static UIFont *boldFont;
     
     [cell addLabelWithText:activityText];
     [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont boldSystemFontOfSize:13.0]];
-
+    [activityText release];
     
     [cell prepare];
     return cell;
