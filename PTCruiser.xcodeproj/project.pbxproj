@@ -307,8 +307,8 @@
 		8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
 		8C40FF7A11A2359D00FA7EFA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8C40FF7B11A2359D00FA7EFA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		8C43293C1135C24700FC2B52 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = ../TaskViewController.h; sourceTree = "<group>"; };
-		8C43293D1135C24700FC2B52 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = ../TaskViewController.m; sourceTree = "<group>"; };
+		8C43293C1135C24700FC2B52 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		8C43293D1135C24700FC2B52 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		8C43293E1135C24700FC2B52 /* TaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
 		8C4329871135C5F600FC2B52 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
 		8C4329881135C5F600FC2B52 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
