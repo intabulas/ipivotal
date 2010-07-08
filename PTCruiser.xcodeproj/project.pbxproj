@@ -251,6 +251,7 @@
 		8CE039E0112B570400E76306 /* PullToRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE039DE112B570400E76306 /* PullToRefreshTableViewController.m */; };
 		8CE039E5112B574900E76306 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE039E4112B574900E76306 /* SoundEffect.m */; };
 		8CE039F7112B577400E76306 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE039F6112B577400E76306 /* AudioToolbox.framework */; };
+		8CEDA5BB11E58AB20066CD8E /* PivotalTaskParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDA5B911E58AB20066CD8E /* PivotalTaskParserDelegate.m */; };
 		8CF6169C111CC76D002C315C /* ToolbarDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169A111CC76D002C315C /* ToolbarDown.png */; };
 		8CF6169D111CC76D002C315C /* ToolbarUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6169B111CC76D002C315C /* ToolbarUp.png */; };
 /* End PBXBuildFile section */
@@ -448,6 +449,8 @@
 		8CE039E3112B574900E76306 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
 		8CE039E4112B574900E76306 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
 		8CE039F6112B577400E76306 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8CEDA5B911E58AB20066CD8E /* PivotalTaskParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalTaskParserDelegate.m; sourceTree = "<group>"; };
+		8CEDA5BA11E58AB20066CD8E /* PivotalTaskParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalTaskParserDelegate.h; sourceTree = "<group>"; };
 		8CF6169A111CC76D002C315C /* ToolbarDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarDown.png; sourceTree = "<group>"; };
 		8CF6169B111CC76D002C315C /* ToolbarUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarUp.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -729,6 +732,8 @@
 		8CDB632D0FCF4FF7003AC065 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				8CEDA5B911E58AB20066CD8E /* PivotalTaskParserDelegate.m */,
+				8CEDA5BA11E58AB20066CD8E /* PivotalTaskParserDelegate.h */,
 				8CBBB4A80FF953BC00A32C37 /* PivotalActivityParserDelegate.h */,
 				8CBBB4A90FF953BC00A32C37 /* PivotalActivityParserDelegate.m */,
 				8CA099070FCFB65900846DBA /* PivotalIterationsParserDelegate.h */,
@@ -1098,6 +1103,7 @@
 				8C40FF7C11A2359D00FA7EFA /* MBProgressHUD.m in Sources */,
 				8CABE89411DD422E006F1731 /* PivotalObject.m in Sources */,
 				8CABE8C411DD4949006F1731 /* PivotalTrackerEngine.m in Sources */,
+				8CEDA5BB11E58AB20066CD8E /* PivotalTaskParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

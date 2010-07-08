@@ -34,6 +34,13 @@
 #import "PivotalProject.h"
 #import "PivotalTask.h"
 #import "TaskCell.h"
+#import "PivotalTaskParserDelegate.h"
+
+
+@interface TaskViewController ()
+    - (void)toggleTask:(PivotalTask *)toggleTask;
+@end
+
 
 @implementation TaskViewController
 
@@ -63,6 +70,7 @@
     [super viewDidLoad];    
  //   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(composeReply:)];
     [self setTitle:kLabelTasks];
+
     
 }
 
@@ -115,16 +123,18 @@
     
     PivotalTask *task = [story.tasks objectAtIndex:indexPath.row];
     
-    [cell.description setText:task.description];    
+    [cell.description setText:task.description];  
+    [cell toggle:task.complete];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	TaskCell *newCell = (TaskCell*)[taskTableView cellForRowAtIndexPath:indexPath];
-
+    PivotalTask *task = [story.tasks objectAtIndex:indexPath.row];  
+    task.complete = !task.complete;
 	[newCell toggle:!newCell.completed];
-    
+    [self toggleTask:task];
 	[taskTableView deselectRowAtIndexPath:indexPath animated:YES];
 	
 }
@@ -133,14 +143,6 @@
 
 #pragma mark Editing
 
-- (void)edit:(id)sender {
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(cancel:)] autorelease];    
-    [self.taskTableView setEditing:TRUE animated:YES];
-}
-- (void)cancel:(id)sender {
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)] autorelease];    
-    [self.taskTableView setEditing:FALSE animated:YES];
-}
 
 
 
@@ -182,6 +184,119 @@
     [pool release];        
     
 }
+
+#pragma mark Add Task
+
+- (IBAction)addTask:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Add New Task" message:@"\n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    newTaskField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
+    [newTaskField setBackgroundColor:[UIColor whiteColor]];
+    [newTaskField setPlaceholder:@"enter task name"];
+    [alert addSubview:newTaskField];
+    [alert show];
+    [alert release];    
+    [newTaskField becomeFirstResponder];    
+}
+
+- (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex{    
+    if (buttonIndex == 1) { 
+        
+        [newTaskField resignFirstResponder];
+        
+        
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        //            [self showHUDWithLabel:kLabelSaving];        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
+        
+        NSURL *followingURL = [NSURL URLWithString:[NSString stringWithFormat:kUrlAddTask, project.projectId, story.storyId]];    
+        ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
+        NSString *newProject = [NSString stringWithFormat:kXmlAddTask, newTaskField.text];
+        [request setRequestMethod:@"POST"];
+        [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
+        [request setPostBody:[[[NSMutableData alloc] initWithData:[newProject dataUsingEncoding:NSUTF8StringEncoding]]autorelease]];
+        [request startSynchronous];
+#if LOG_NETWORK    
+        NSLog(@" Response: '%@'", [request responseString]);
+#endif        
+        
+        NSError *error = [request error];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+        
+        if ( error ) {
+            UIAlertView *alert;        
+            alert = [[UIAlertView alloc] initWithTitle:@"Error Adding Task" message:@"There was a problem adding a task to this story. Please try again later" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+            [alert show];
+            [alert release];            
+        } else {
+            PivotalTaskParserDelegate *parserDelegate = [[PivotalTaskParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedTask:)];
+            NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
+            [parser setDelegate:parserDelegate];
+            [parser setShouldProcessNamespaces:NO];
+            [parser setShouldReportNamespacePrefixes:NO];
+            [parser setShouldResolveExternalEntities:NO];
+            [parser parse];
+            [parser release];
+            [parserDelegate release];  
+        }
+        [pool release];    
+        
+        [self.taskTableView reloadData];
+//        [self.navigationController popViewControllerAnimated:YES];    
+    } 
+}
+
+- (void)loadedTask:(id)theResult {
+	if ([theResult isKindOfClass:[NSError class]]) {
+//		self.error = theResult;
+//		self.status = PivotalResourceStatusNotLoaded;
+	} else {
+		//self. = theResult;
+        NSArray *tasks = theResult;
+        PivotalTask *tmpTask = [tasks objectAtIndex:0];
+        
+        [story.tasks addObject:tmpTask];
+        
+	}
+}
+
+- (void)toggleTask:(PivotalTask *)toggleTask {
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [self showHUDWithLabel:@"Toggling Task"];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;    
+    NSString *urlString = [NSString stringWithFormat:kUrlUpdateTask, project.projectId, story.storyId, toggleTask.taskId];                            
+	NSURL *followingURL = [NSURL URLWithString:urlString];    
+    NSString *completeState = @"false";
+    if ( toggleTask.complete ) {
+        completeState = @"true";
+    }
+    
+    
+    NSString *updateTask = [NSString stringWithFormat:kXmlToggleTask, toggleTask.description, completeState];
+    NSLog(@"%@", updateTask);
+    ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
+    [request setRequestMethod:@"PUT"];
+    [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
+    [request setPostBody:[[[NSMutableData alloc] initWithData:[updateTask dataUsingEncoding:NSUTF8StringEncoding]]autorelease]];
+    [request startSynchronous];
+    
+#if LOG_NETWORK    
+    NSLog(@" Response: '%@'", [request responseString]);
+#endif
+    NSError *error = [request error];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
+    [self hideHUD];
+    if ( error ) {
+        UIAlertView *alert;        
+        alert = [[UIAlertView alloc] initWithTitle:@"Error Toggling Task" message:@"There was a problem toggling this task. Please try again later" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+        [alert show];
+        [alert release];            
+    }
+    [pool release];        
+    
+}
+
 
 
 

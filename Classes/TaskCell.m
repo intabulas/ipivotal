@@ -56,7 +56,7 @@
             description.autoresizingMask = UIViewAutoresizingNone;
             description.backgroundColor = [UIColor clearColor];
             description.highlightedTextColor = [UIColor whiteColor];
-            description.font = [UIFont  systemFontOfSize:14.0f];
+            description.font = [UIFont  systemFontOfSize:17.0f];
             description.textColor = [UIColor blackColor];
             description.textAlignment = UITextAlignmentLeft;
             

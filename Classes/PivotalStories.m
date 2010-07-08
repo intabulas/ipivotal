@@ -104,6 +104,9 @@
 
     
 	[request startSynchronous];
+#if LOG_NETWORK    
+    NSLog(@" Response: '%@'", [request responseString]);
+#endif    
     self.error = [request error];
 
 	PivotalStoriesParserDelegate *parserDelegate = [[PivotalStoriesParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedStories:)];

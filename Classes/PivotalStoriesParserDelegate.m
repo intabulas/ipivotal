@@ -161,7 +161,8 @@
 	} else if ([elementName isEqualToString:kTagPosition]) {      
         currentTask.position = [currentElementValue integerValue];
 	} else if ([elementName isEqualToString:kTagComplete]) {      
-        currentTask.complete = [currentElementValue integerValue];
+        currentTask.complete = [currentElementValue boolValue];
+        
         
 	} 
     

@@ -34,10 +34,12 @@
 
 @class PivotalStory, PivotalProject, PivotalTask;
 @interface TaskViewController : AbstractHUDViewController <UITableViewDelegate, UITableViewDataSource> {
-    UITableView *taskTableView;
+    IBOutlet UITableView *taskTableView;
     PivotalProject *project;
     PivotalStory *story;
     NSIndexPath *lastIndexPath;
+    UITextField *newTaskField;
+
 
 }
 @property (nonatomic,retain) PivotalStory *story;
@@ -47,5 +49,7 @@
 - (id)initWithProject:(PivotalProject *)theProject andStory:(PivotalStory *)theStory;
 
 - (void)deleteTask:(PivotalTask *)deleteTask;
+
+- (IBAction)addTask:(id)sender;
 
 @end
