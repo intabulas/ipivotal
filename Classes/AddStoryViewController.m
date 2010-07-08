@@ -84,6 +84,9 @@
     self.story.name = textField.text;
     [textField resignFirstResponder];
 
+    if ( [self.story.owner hasPrefix:kLabelSetOwner] ) {
+        self.story.owner    = @"";
+    }
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [self showHUDWithLabel:kLabelSaving];        
@@ -143,6 +146,7 @@
     
     self.story.name           = textField.text;
     self.story.owner          = [editingDictionary valueForKey:kKeyOwned];
+        
     self.story.storyType      = [editingDictionary valueForKey:kKeyType];
 
     NSNumber *estimateNumber  = [editingDictionary valueForKey:kKeyEstimate];
