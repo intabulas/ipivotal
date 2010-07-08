@@ -32,9 +32,10 @@
 
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK           0
+#define LOG_NETWORK           1
 #define LOG_CONTENT           0
 #define NO_COMPRESS_RESPONSE  0
+#define SHOW_CURL_VERSION     1
 
 #define kTagStory                   @"story"
 #define kTagId                      @"id"
