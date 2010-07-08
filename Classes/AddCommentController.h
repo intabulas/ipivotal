@@ -32,7 +32,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class PivotalNote;
+@class PivotalNote, PivotalStory, PivotalProject;
 
 @interface AddCommentController : UITableViewController <UITextFieldDelegate,UIAlertViewDelegate> {
     IBOutlet UITextView *commentBody;
@@ -40,10 +40,14 @@
 	IBOutlet UIActivityIndicatorView *activityView;
 	IBOutlet UIButton *saveButton;
 	IBOutlet UIView *tableFooterView;
-    PivotalNote *note;
+    PivotalStory *story;
+    PivotalNote  *note;
+    PivotalProject *project;
 }
 
--(id)initWithNote:(PivotalNote *)theNote;
+-(id)createCommentforStory:(PivotalStory*)theStory andProject:(PivotalProject*)theProject ;
+
 - (IBAction)saveNote:(id)sender;
+
 
 @end

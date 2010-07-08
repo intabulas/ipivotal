@@ -36,7 +36,7 @@
 @implementation PivotalStory
 
 @synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt, comments, 
-            tasks, attachments, lighthouseId, lighthouseUrl, updatedAt, labels;
+            tasks, attachments, lighthouseId, lighthouseUrl, updatedAt, labels, project;
 
 
 #pragma mark -

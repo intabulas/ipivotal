@@ -33,21 +33,23 @@
 #import "AddCommentController.h"
 #import "PivotalResource.h"
 #import "PivotalNote.h"
-
+#import "PivotalStory.h"
+#import "PivotalProject.h"
 
 @implementation AddCommentController
 
 - (void)dealloc {
-    [note release]; note = nil;
+    [note removeObserver:self forKeyPath:kResourceSavingStatusKeyPath];
+    [note release];
     [super dealloc];
 }
 
-
--(id)initWithNote:(PivotalNote *)theNote {
+-(id)createCommentforStory:(PivotalStory*)theStory andProject:(PivotalProject*)theProject {    
     [super initWithNibName:@"AddComment" bundle:nil];
-
-	note = [theNote retain];
-    return self;    
+    story = theStory;
+    project = theProject;
+    note = [[PivotalNote alloc] initWithProject:project andStory:story];
+    return self;
 }
 
 
@@ -69,7 +71,9 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:kResourceSavingStatusKeyPath]) {
 		if (note.isSaving) return;
-		if (note.isSaved) {
+		if (note.isSaved) {            
+           [story.comments addObject:note];
+            
   		   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Your comment has been added to this story" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		   [alert show];
 		   [alert release];
@@ -85,6 +89,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	[commentBody resignFirstResponder];
     [self.navigationController popViewControllerAnimated:YES];            
     
 }

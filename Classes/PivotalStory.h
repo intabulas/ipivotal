@@ -76,6 +76,7 @@
 @property (nonatomic, retain) NSMutableArray  *attachments;
 @property (nonatomic, retain) NSMutableArray *labels;
 @property (nonatomic, retain) NSString *lighthouseUrl;
+@property (nonatomic, retain) PivotalProject *project;
 @property (nonatomic, readwrite) NSInteger lighthouseId;
 
 

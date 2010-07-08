@@ -157,10 +157,7 @@
 #pragma mark Add Comments
 
 -(void)composeReply:(id)sender {
-
-    PivotalNote *note = [[[PivotalNote alloc] initWithProject:project andStory:story] autorelease];
-    [story.comments addObject:note];
-    AddCommentController *controller = [[AddCommentController alloc] initWithNote:note];
+    AddCommentController *controller = [[AddCommentController alloc] createCommentforStory:story andProject:project];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
     
