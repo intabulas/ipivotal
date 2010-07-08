@@ -55,6 +55,6 @@
 
 - (void)edit:(id)sender;
 - (void)cancel:(id)sender;
-- (void)deleteStory:(PivotalStory *)deleteStory;
+- (void)deleteStory:(PivotalStory *)deleteStory atIndex:(NSUInteger)row;
 
 @end

@@ -75,7 +75,7 @@
         self.error = theResult;
         self.status = PivotalResourceStatusNotLoaded;
     } else {
-        self.stories = theResult;
+        self.stories = [NSMutableArray arrayWithArray:theResult];
         self.status = PivotalResourceStatusLoaded;
     }
 }

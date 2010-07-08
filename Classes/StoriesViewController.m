@@ -227,13 +227,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
  
-        PivotalStory *story = [stories.stories objectAtIndex:indexPath.row];
-        [self deleteStory:story];
+        PivotalStory *story = [stories.stories objectAtIndex:indexPath.row];        
+        [self deleteStory:story atIndex:indexPath.row];
         
     } 
 }
 
-- (void)deleteStory:(PivotalStory *)deleteStory {
+- (void)deleteStory:(PivotalStory *)deleteStory atIndex:(NSUInteger)row {
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [self showHUDWithLabel:kLabelDeletingStory];
@@ -255,9 +255,13 @@
         alert = [[UIAlertView alloc] initWithTitle:@"Error Deleting Story" message:@"There was a problem deleting this story. Please try again later" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
         [alert show];
         [alert release];            
+    } else {
+        [stories.stories removeObjectAtIndex:row];
     }
-    [pool release];        
-    [self refresh:self];    
+    [pool release]; 
+    [storiesTableView reloadData];
+//
+//    [self refresh:self];    
 
 }
 

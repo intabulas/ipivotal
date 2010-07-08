@@ -38,12 +38,12 @@
     PivotalProject *project;
 @private
     NSURL *url;
-    NSArray *stories;
+    NSMutableArray *stories;
     NSString *storyType;
 }
 
 @property (nonatomic,retain) NSURL *url;
-@property (nonatomic,retain) NSArray *stories;
+@property (nonatomic,retain) NSMutableArray *stories;
 @property (nonatomic, retain) NSString *storyType;
 
 
