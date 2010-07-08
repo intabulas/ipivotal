@@ -12,16 +12,16 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="33"/>
-			<integer value="12"/>
-			<integer value="46"/>
 			<integer value="76"/>
-			<integer value="22"/>
 			<integer value="19"/>
-			<integer value="62"/>
-			<integer value="67"/>
+			<integer value="22"/>
 			<integer value="73"/>
 			<integer value="8"/>
+			<integer value="62"/>
+			<integer value="12"/>
+			<integer value="33"/>
+			<integer value="46"/>
+			<integer value="67"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -51,25 +51,6 @@
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIImageView" id="226971321">
-						<reference key="NSNextResponder" ref="997801338"/>
-						<int key="NSvFlags">290</int>
-						<string key="NSFrameSize">{320, 60}</string>
-						<reference key="NSSuperview" ref="997801338"/>
-						<object class="NSColor" key="IBUIBackgroundColor" id="442276842">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MCAwAA</bytes>
-						</object>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">storyheader.png</string>
-						</object>
-					</object>
 					<object class="IBUIImageView" id="798691022">
 						<reference key="NSNextResponder" ref="997801338"/>
 						<int key="NSvFlags">292</int>
@@ -86,7 +67,10 @@
 						<int key="NSvFlags">294</int>
 						<string key="NSFrame">{{36, 10}, {274, 21}}</string>
 						<reference key="NSSuperview" ref="997801338"/>
-						<reference key="IBUIBackgroundColor" ref="442276842"/>
+						<object class="NSColor" key="IBUIBackgroundColor" id="442276842">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MCAwAA</bytes>
+						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -1281,7 +1265,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="570858029"/>
 							<reference ref="798691022"/>
 							<reference ref="415048181"/>
-							<reference ref="226971321"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -1344,11 +1327,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<int key="objectID">69</int>
 						<reference key="object" ref="57249302"/>
 						<reference key="parent" ref="817516427"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">72</int>
-						<reference key="object" ref="226971321"/>
-						<reference key="parent" ref="997801338"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">73</int>
@@ -1454,7 +1432,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string>67.IBPluginDependency</string>
 					<string>68.IBPluginDependency</string>
 					<string>69.IBPluginDependency</string>
-					<string>72.IBPluginDependency</string>
 					<string>73.IBEditorWindowLastContentRect</string>
 					<string>73.IBPluginDependency</string>
 					<string>74.IBPluginDependency</string>
@@ -1504,7 +1481,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{488, 640}, {320, 40}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -2136,7 +2112,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<string>ToolbarUp.png</string>
 				<string>chat_medium.png</string>
 				<string>map-marker.png</string>
-				<string>storyheader.png</string>
 				<string>tag.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
@@ -2145,7 +2120,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<string>{17, 16}</string>
 				<string>{18, 17}</string>
 				<string>{10, 17}</string>
-				<string>{320, 60}</string>
 				<string>{18, 18}</string>
 			</object>
 		</object>
