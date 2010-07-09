@@ -237,6 +237,9 @@ static UIFont *boldFont;
     projectName.highlightedTextColor = [UIColor whiteColor];
 
     UILabel *updatedLabel = [cell addLabelWithText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]] andFont:[UIFont systemFontOfSize:13.0]];
+    if ( pp.lastActivityAt == nil ) {
+        [updatedLabel setText:kLableNoProjectActivity];
+    }
     updatedLabel.textColor = [UIColor grayColor];
     updatedLabel.highlightedTextColor = [UIColor whiteColor];
 

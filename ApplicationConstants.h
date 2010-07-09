@@ -244,6 +244,7 @@
 #define kLabelStoryTasks                  @"%d Tasks"
 
 #define kLableProjectActivity             @"last activity %@"
+#define kLableNoProjectActivity           @"no recent activity"
 #define kLabelLastUpdated                 @"last updated: "
 
 
