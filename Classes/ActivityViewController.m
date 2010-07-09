@@ -162,7 +162,10 @@ static UIFont *boldFont;
     NSLog(@"[PivotalActivity] Description == %@", activity.description);
 #endif
     
-    
+    [cell setRowSpacing:1.0f];
+    [cell setPaddingTop:5.0];
+    [cell setPaddingBottom:5.0];    
+
     [cell addLabelWithText:activityText];
     [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont boldSystemFontOfSize:13.0]];
     [activityText release];
