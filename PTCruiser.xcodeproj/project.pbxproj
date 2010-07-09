@@ -188,6 +188,7 @@
 		8C6BF4A5114846FB0001939F /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BF4A4114846FB0001939F /* NSSet+Core.m */; };
 		8C70E22A0FE3216E0074DE16 /* TextInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C70E2290FE3216E0074DE16 /* TextInputController.xib */; };
 		8C70E22E0FE321F30074DE16 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C70E22D0FE321F30074DE16 /* TextFieldCell.m */; };
+		8C751F2611E76B7A00B1E8F5 /* story_flyover_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C751F2511E76B7A00B1E8F5 /* story_flyover_icon.png */; };
 		8C762C7B111497F600A1FA85 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C762C7A111497F600A1FA85 /* QuartzCore.framework */; };
 		8C7C5F3E10155C5B002A4C52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */; };
 		8C7C5F6210155D49002A4C52 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C5F6110155D49002A4C52 /* Reachability.m */; };
@@ -349,6 +350,7 @@
 		8C70E2290FE3216E0074DE16 /* TextInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputController.xib; sourceTree = "<group>"; };
 		8C70E22C0FE321F30074DE16 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		8C70E22D0FE321F30074DE16 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		8C751F2511E76B7A00B1E8F5 /* story_flyover_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = story_flyover_icon.png; sourceTree = "<group>"; };
 		8C762C7A111497F600A1FA85 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8C7C5F3D10155C5B002A4C52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8C7C5F6010155D49002A4C52 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -812,6 +814,7 @@
 		8CDB64590FCF8D3C003AC065 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8C751F2511E76B7A00B1E8F5 /* story_flyover_icon.png */,
 				8CA966FE1135A96C002152EE /* story_comment_icon.png */,
 				8C81C1351110AF4F00378558 /* storyheader.png */,
 				8C81C1171110ACE800378558 /* map-marker.png */,
@@ -971,6 +974,7 @@
 				8C870CD5112B72F8001EDF46 /* RefreshArrow.png in Resources */,
 				8CA966FF1135A96C002152EE /* story_comment_icon.png in Resources */,
 				8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */,
+				8C751F2611E76B7A00B1E8F5 /* story_flyover_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

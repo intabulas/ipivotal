@@ -64,7 +64,7 @@
         NSLog( @"%@", self.contentView);
     
 
-        commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(275.0f, 25.0f, 14.0f, 12.0f)];
+        commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(275.0f, 28.0f, 16.0f, 16.0f)];
         commentImage.image = [UIImage imageNamed:kIconComment];
         commentImage.backgroundColor = [UIColor clearColor];
         [commentImage setHidden:TRUE];
