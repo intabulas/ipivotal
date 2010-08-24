@@ -36,6 +36,8 @@
 @interface CommentCell : UITableViewCell {
    PivotalNote *comment;
     IBOutlet UITextView *commentText;
+    IBOutlet UILabel *commentName;
+    IBOutlet UILabel *commentWhen;    
 }
 
 @property (nonatomic,retain) PivotalNote *comment;

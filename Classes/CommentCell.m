@@ -55,6 +55,10 @@
 	comment = [anComment retain];    
     commentText.text = comment.text;
     [commentText sizeThatFits:commentText.bounds.size];
+    
+    [commentName setText:anComment.author];
+    [commentWhen setText:[anComment.createdAt prettyDate]];
+
     anComment.visualHeight = commentText.bounds.size.height;
     
 }

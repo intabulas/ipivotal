@@ -150,7 +150,8 @@
 		currentStory.lighthouseUrl = currentElementValue;
    	} else if ([elementName isEqualToString:kTagLighthouseId]) {  
 		currentStory.lighthouseId = [currentElementValue integerValue];
-		
+    } else if ([elementName isEqualToString:kTagDeadline]) {  
+        currentStory.deadline = [dateFormatter dateFromString:currentElementValue];                		
 	} else if ([elementName isEqualToString:kTagAcceptedAt]) {  
         currentStory.acceptedAt = [dateFormatter dateFromString:currentElementValue];        
 	} else if ([elementName isEqualToString:kTagText]) {          

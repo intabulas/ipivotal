@@ -48,6 +48,7 @@
     NSDate  *createdAt;
     NSDate *updatedAt;
     NSDate  *acceptedAt;
+    NSDate  *deadline;
 	NSString *lighthouseUrl;
 	NSInteger lighthouseId;
 	
@@ -71,6 +72,7 @@
 @property (nonatomic, retain) NSDate  *createdAt;
 @property (nonatomic, retain) NSDate  *updatedAt;
 @property (nonatomic, retain) NSDate  *acceptedAt;
+@property (nonatomic, retain) NSDate  *deadline;
 @property (nonatomic, retain) NSMutableArray  *comments;
 @property (nonatomic, retain) NSMutableArray  *tasks;
 @property (nonatomic, retain) NSMutableArray  *attachments;

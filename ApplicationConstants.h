@@ -32,8 +32,8 @@
 
 
 //#define CACHED_CONTENT
-#define LOG_NETWORK           0
-#define LOG_CONTENT           0
+#define LOG_NETWORK           1
+#define LOG_CONTENT           1
 #define NO_COMPRESS_RESPONSE  0
 #define SHOW_CURL_VERSION     0
 
@@ -51,6 +51,7 @@
 #define kTagCreatedAt               @"created_at"
 #define kTagUpdatedAt               @"updated_at"
 #define kTagAcceptedAt              @"accepted_at"
+#define kTagDeadline                @"deadline"
 #define kTagProject                 @"project"
 #define kTagIterationLength         @"iteration_length"
 #define kTagWeekStartDay            @"week_start_day"

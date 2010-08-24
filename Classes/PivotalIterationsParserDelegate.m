@@ -150,6 +150,8 @@
         }	    
     } else if ([elementName isEqualToString:kTagAcceptedAt]) {  
         currentStory.acceptedAt = [dateFormatter dateFromString:currentElementValue];        
+    } else if ([elementName isEqualToString:kTagDeadline]) {  
+        currentStory.deadline = [dateFormatter dateFromString:currentElementValue];                
     } else if ([elementName isEqualToString:kTagText]) {          
         currentNote.text = currentElementValue;
 	} else if ([elementName isEqualToString:kTagLabels]) {      

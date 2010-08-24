@@ -36,7 +36,7 @@
 @implementation PivotalStory
 
 @synthesize storyId, storyType, estimate, url, currentState, description, name, requestedBy, owner, createdAt, acceptedAt, comments, 
-            tasks, attachments, lighthouseId, lighthouseUrl, updatedAt, labels, project;
+            tasks, attachments, lighthouseId, lighthouseUrl, updatedAt, labels, project, deadline;
 
 
 #pragma mark -
@@ -88,6 +88,7 @@
     [createdAt release]; createdAt = nil;
     [updatedAt release]; updatedAt = nil;
     [acceptedAt release]; acceptedAt = nil;
+    [deadline release]; deadline = nil;
 	[lighthouseUrl  release]; lighthouseUrl = nil;
     [labels release]; labels = nil;
     [super dealloc];
