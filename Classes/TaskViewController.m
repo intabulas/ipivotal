@@ -170,7 +170,7 @@
     [request setRequestMethod:@"DELETE"];
     [request startSynchronous];
 #if LOG_NETWORKWORK    
-    NSLog(@" Response: '%@'", [request responseString]);
+    PTLog(@" Response: '%@'", [request responseString]);
 #endif
     NSError *error = [request error];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
@@ -216,7 +216,7 @@
         [request setPostBody:[[[NSMutableData alloc] initWithData:[newProject dataUsingEncoding:NSUTF8StringEncoding]]autorelease]];
         [request startSynchronous];
 #if LOG_NETWORK    
-        NSLog(@" Response: '%@'", [request responseString]);
+        PTLog(@" Response: '%@'", [request responseString]);
 #endif        
         
         NSError *error = [request error];
@@ -274,7 +274,7 @@
     
     
     NSString *updateTask = [NSString stringWithFormat:kXmlToggleTask, toggleTask.description, completeState];
-    NSLog(@"%@", updateTask);
+
     ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:followingURL];
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
@@ -282,7 +282,7 @@
     [request startSynchronous];
     
 #if LOG_NETWORK    
-    NSLog(@" Response: '%@'", [request responseString]);
+    PTLog(@" Response: '%@'", [request responseString]);
 #endif
     NSError *error = [request error];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    

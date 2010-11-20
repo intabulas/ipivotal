@@ -125,7 +125,7 @@
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
 	[request startSynchronous];
 #if LOG_NETWORK	
-    NSLog(@"%@", [request responseString]);
+    PTLog(@"%@", [request responseString]);
 #endif    
     self.savingStatus = PivotalResourceStatusSaved;
     

@@ -290,14 +290,14 @@
     }
     
 #if LOG_NETWORK    
-    NSLog(@"Toggle Story State XML: %@", newstory);
+    PTLog(@"Toggle Story State XML: %@", newstory);
 #endif    
     [request setRequestMethod:@"PUT"];
     [request addRequestHeader:kHttpContentType value:kHttpMimeTypeXml];
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newstory dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
     [request startSynchronous];
 #if LOG_NETWORK    
-    NSLog(@" Response: '%@'", [request responseString]);
+    PTLog(@" Response: '%@'", [request responseString]);
 #endif
     NSError *error = [request error];
     if ( !error ) {    

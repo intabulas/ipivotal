@@ -61,7 +61,6 @@
         statusLabel.font = [UIFont  systemFontOfSize:13.0f];
         statusLabel.textColor = [UIColor blackColor];
         statusLabel.textAlignment = UITextAlignmentLeft;
-        NSLog( @"%@", self.contentView);
     
 
         commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(275.0f, 28.0f, 16.0f, 16.0f)];

@@ -159,7 +159,7 @@ static UIFont *boldFont;
 	NSString *prettyDate = [activity.occuredAt prettyDate];
 
 #if LOG_CONTENT
-    NSLog(@"[PivotalActivity] Description == %@", activity.description);
+    PTLog(@"[PivotalActivity] Description == %@", activity.description);
 #endif
     
     [cell setRowSpacing:1.0f];

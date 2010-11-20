@@ -31,9 +31,27 @@
 //
 
 
+/* Logging */
+#define PTLog(__FORMAT__, ...) NSLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+
+
+
+/* Memory Managment */
+#if DEBUG
+#define RELEASE_SAFELY(__INSTANCE) [__INSTANCE release]
+#else
+#define RELEASE_SAFELY(__INSTANCE) [__INSTANCE release], __INSTANCE = nil
+#endif
+
+
+/* Database */
+#define DATABASE_FILE_NAME  @"ptcruiser.sqlite"
+
+
 //#define CACHED_CONTENT
-#define LOG_NETWORK           1
-#define LOG_CONTENT           1
+#define LOG_NETWORK           0
+#define LOG_CONTENT           0
 #define NO_COMPRESS_RESPONSE  0
 #define SHOW_CURL_VERSION     0
 
@@ -134,7 +152,6 @@
 
 #define kPivotalTrackerHost        @"www.apple.com"
 #define kUrlRetrieveToken          @"https://www.pivotaltracker.com/services/v3/tokens/active"
-//#define kUrlRetrieveToken          @"https://www.pivotaltracker.com/services/v3/tokens/active?username=%@\&password=%@"
 #define kUrlProjectList            @"https://www.pivotaltracker.com/services/v3/projects"
 #define kUrlIterationList          @"https://www.pivotaltracker.com/services/v3/projects/%d/iterations"    
 #define kUrlIterationTypeList      @"https://www.pivotaltracker.com/services/v3/projects/%d/iterations/%@"

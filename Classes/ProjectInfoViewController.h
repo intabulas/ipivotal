@@ -33,7 +33,7 @@
 #import <UIKit/UIKit.h>
 
 @class PivotalProject;
-@interface ProjectInfoViewController : UIViewController  <UITableViewDelegate>  {
+@interface ProjectInfoViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>  {
     PivotalProject *project;
     @private    
     IBOutlet UITableView *projectTableView;    

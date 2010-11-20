@@ -103,7 +103,7 @@
 	[request startSynchronous];
     self.error = [request error];
 #if LOG_NETWORK    
-    NSLog(@"Activities: '%@'", [request responseString]);
+    PTLog(@"Activities: '%@'", [request responseString]);
 #endif    
 
     PivotalActivityParserDelegate *parserDelegate = [[PivotalActivityParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedActivities:)];

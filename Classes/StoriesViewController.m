@@ -245,7 +245,7 @@
     [request setRequestMethod:@"DELETE"];
     [request startSynchronous];
 #if LOG_NETWORK    
-    NSLog(@" Response: '%@'", [request responseString]);
+    PTLog(@" Response: '%@'", [request responseString]);
 #endif
     NSError *error = [request error];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    

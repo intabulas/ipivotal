@@ -14,6 +14,12 @@
 		8C026B260FDC9829002CFEE0 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026B250FDC9829002CFEE0 /* LabelCell.m */; };
 		8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */; };
 		8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */; };
+		8C04189C1259533700CEAEC0 /* EGODatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0418951259533600CEAEC0 /* EGODatabase.m */; };
+		8C04189D1259533700CEAEC0 /* EGODatabaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0418971259533600CEAEC0 /* EGODatabaseRequest.m */; };
+		8C04189E1259533700CEAEC0 /* EGODatabaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0418991259533600CEAEC0 /* EGODatabaseResult.m */; };
+		8C04189F1259533700CEAEC0 /* EGODatabaseRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04189B1259533700CEAEC0 /* EGODatabaseRow.m */; };
+		8C0418AF1259534700CEAEC0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0418AE1259534700CEAEC0 /* libsqlite3.dylib */; };
+		8C0418C0125956E900CEAEC0 /* ptcruiser.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8C0418BF125956E900CEAEC0 /* ptcruiser.sqlite */; };
 		8C05909711E4F6B500E5F098 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
 		8C05909811E4F6B500E5F098 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */; };
 		8C05909911E4F6B500E5F098 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
@@ -271,6 +277,17 @@
 		8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSelectionController.h; sourceTree = "<group>"; };
 		8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSelectionController.m; sourceTree = "<group>"; };
 		8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSelectionController.xib; sourceTree = "<group>"; };
+		8C0418941259533600CEAEC0 /* EGODatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabase.h; sourceTree = "<group>"; };
+		8C0418951259533600CEAEC0 /* EGODatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabase.m; sourceTree = "<group>"; };
+		8C0418961259533600CEAEC0 /* EGODatabaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRequest.h; sourceTree = "<group>"; };
+		8C0418971259533600CEAEC0 /* EGODatabaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseRequest.m; sourceTree = "<group>"; };
+		8C0418981259533600CEAEC0 /* EGODatabaseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseResult.h; sourceTree = "<group>"; };
+		8C0418991259533600CEAEC0 /* EGODatabaseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseResult.m; sourceTree = "<group>"; };
+		8C04189A1259533600CEAEC0 /* EGODatabaseRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRow.h; sourceTree = "<group>"; };
+		8C04189B1259533700CEAEC0 /* EGODatabaseRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseRow.m; sourceTree = "<group>"; };
+		8C0418AE1259534700CEAEC0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8C0418B71259538500CEAEC0 /* ptcruiser.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ptcruiser.sql; sourceTree = "<group>"; };
+		8C0418BF125956E900CEAEC0 /* ptcruiser.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ptcruiser.sqlite; sourceTree = "<group>"; };
 		8C05911C11E4F6B500E5F098 /* PTCruiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTCruiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C222A3C1036669D00A75012 /* PivotalNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalNote.h; sourceTree = "<group>"; };
 		8C222A3D1036669D00A75012 /* PivotalNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalNote.m; sourceTree = "<group>"; };
@@ -473,6 +490,7 @@
 				8C99682010422BD90079345A /* CoreGraphics.framework in Frameworks */,
 				8C762C7B111497F600A1FA85 /* QuartzCore.framework in Frameworks */,
 				8CE039F7112B577400E76306 /* AudioToolbox.framework in Frameworks */,
+				8C0418AF1259534700CEAEC0 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +561,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C0418B21259536400CEAEC0 /* sqlite */,
 				8CE039D1112B54C800E76306 /* CHANGELOG */,
 				8C50D6190FE1A86300F41900 /* Entitlements.plist */,
 				8CDB63B30FCF87BD003AC065 /* IBFiles */,
@@ -564,8 +583,33 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				8C762C7A111497F600A1FA85 /* QuartzCore.framework */,
 				8CE039F6112B577400E76306 /* AudioToolbox.framework */,
+				8C0418AE1259534700CEAEC0 /* libsqlite3.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C0418931259531B00CEAEC0 /* EGODatabase */ = {
+			isa = PBXGroup;
+			children = (
+				8C0418941259533600CEAEC0 /* EGODatabase.h */,
+				8C0418951259533600CEAEC0 /* EGODatabase.m */,
+				8C0418961259533600CEAEC0 /* EGODatabaseRequest.h */,
+				8C0418971259533600CEAEC0 /* EGODatabaseRequest.m */,
+				8C0418981259533600CEAEC0 /* EGODatabaseResult.h */,
+				8C0418991259533600CEAEC0 /* EGODatabaseResult.m */,
+				8C04189A1259533600CEAEC0 /* EGODatabaseRow.h */,
+				8C04189B1259533700CEAEC0 /* EGODatabaseRow.m */,
+			);
+			path = EGODatabase;
+			sourceTree = "<group>";
+		};
+		8C0418B21259536400CEAEC0 /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				8C0418BF125956E900CEAEC0 /* ptcruiser.sqlite */,
+				8C0418B71259538500CEAEC0 /* ptcruiser.sql */,
+			);
+			path = sqlite;
 			sourceTree = "<group>";
 		};
 		8C3FD3B00FCF0A4D004D8DD0 /* Images */ = {
@@ -688,6 +732,7 @@
 		8CB92D361117DCE1005F20AE /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				8C0418931259531B00CEAEC0 /* EGODatabase */,
 				8C6BF49C114846880001939F /* DynamicCell */,
 				8CE039DA112B56F600E76306 /* PullToRefresh */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
@@ -913,7 +958,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PTCruiser" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* iPivotal */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -979,6 +1031,7 @@
 				8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */,
 				8C751F2611E76B7A00B1E8F5 /* story_flyover_icon.png in Resources */,
 				8CFEFFF311E97E430048EDBC /* Icon@2x.png in Resources */,
+				8C0418C0125956E900CEAEC0 /* ptcruiser.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,6 +1165,10 @@
 				8CABE89411DD422E006F1731 /* PivotalObject.m in Sources */,
 				8CABE8C411DD4949006F1731 /* PivotalTrackerEngine.m in Sources */,
 				8CEDA5BB11E58AB20066CD8E /* PivotalTaskParserDelegate.m in Sources */,
+				8C04189C1259533700CEAEC0 /* EGODatabase.m in Sources */,
+				8C04189D1259533700CEAEC0 /* EGODatabaseRequest.m in Sources */,
+				8C04189E1259533700CEAEC0 /* EGODatabaseResult.m in Sources */,
+				8C04189F1259533700CEAEC0 /* EGODatabaseRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1216,7 +1273,6 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C260C056-AC07-4B88-B134-FCDC2D58B5A0";
 			};
 			name = Debug;
 		};
@@ -1231,7 +1287,6 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "393643DA-E171-4782-A31C-6DEFBE945F38";
 			};
 			name = Release;
 		};
@@ -1263,7 +1318,6 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "393643DA-E171-4782-A31C-6DEFBE945F38";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = Release;
@@ -1279,7 +1333,6 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "168E0D8E-CCE4-4F8F-924C-FB61A35F1023";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = Distribution;
@@ -1288,16 +1341,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier (BL537QE4CE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mark Lussier";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030100";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C260C056-AC07-4B88-B134-FCDC2D58B5A0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7ED064E0-0B58-4692-A8C8-01546E6B4833";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 				VALID_ARCHS = armv6;
 			};
 			name = Distribution;
@@ -1313,26 +1369,28 @@
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = PTCruiser;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "168E0D8E-CCE4-4F8F-924C-FB61A35F1023";
 			};
 			name = Distribution;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier (BL537QE4CE)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030100";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C260C056-AC07-4B88-B134-FCDC2D58B5A0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EAAA4ABA-C6D4-4AB4-92F7-05D67B9EC7C7";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv6;
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
 		};
@@ -1340,16 +1398,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Lussier (BL537QE4CE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030100";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C260C056-AC07-4B88-B134-FCDC2D58B5A0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Release;
 		};

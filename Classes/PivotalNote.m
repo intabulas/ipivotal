@@ -85,7 +85,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	ASIHTTPRequest *request = [PivotalResource authenticatedRequestForURL:theURL];
 #if LOG_NETWORK	
-    NSLog(@"URL: '%@'", theURL);
+    PTLog(@"URL: '%@'", theURL);
 #endif
     
     NSString *newcomment = [self to_xml];
@@ -93,7 +93,7 @@
     [request setPostBody:[[[NSMutableData alloc] initWithData:[newcomment dataUsingEncoding:NSUTF8StringEncoding]] autorelease]];
 	[request startSynchronous];
 #if LOG_NETWORK	
-    NSLog(@"%@", [request responseString]);
+    PTLog(@"%@", [request responseString]);
 #endif    
     
    	PivotalNoteParserDelegate *parserDelegate = [[PivotalNoteParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedNote:)];

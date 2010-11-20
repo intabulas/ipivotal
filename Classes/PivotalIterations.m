@@ -117,7 +117,7 @@
     
 
 #if LOG_NETWORK    
-    NSLog(@"Iterations: '%@'", [request responseString]);
+    PTLog(@"Iterations: '%@'", [request responseString]);
 #endif    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;    
 	[pool release];    

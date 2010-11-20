@@ -97,7 +97,7 @@
 	NSError *error = [request error];
 	
 #if LOG_NETWORK	
-    NSLog(@"%@", [request responseString]);
+    PTLog(@"%@", [request responseString]);
 #endif   
 	
 	if ( !error ) {
@@ -132,7 +132,7 @@
 		[alert release];        
     } else {
 #if LOG_NETWORK		
-		NSLog(@"token is '%@'", [theResult objectAtIndex:0]);
+		PTLog(@"token is '%@'", [theResult objectAtIndex:0]);
 #endif		
 		NSCharacterSet *trimSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 		NSString *myId = [theResult objectAtIndex:1];

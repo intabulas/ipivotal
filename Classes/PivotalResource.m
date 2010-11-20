@@ -80,7 +80,7 @@
     [request addRequestHeader:kTrackerTokenHeader value:token];
 	
 #if SHOW_CURL_VERSION    
-	NSLog( @"if I CURLd it would be 'curl -H \"X-TrackerToken: %@\" -X GET %@'", token, theURL );
+	PTLog( @"if I CURLd it would be 'curl -H \"X-TrackerToken: %@\" -X GET %@'", token, theURL );
 #endif
 	
     return request;

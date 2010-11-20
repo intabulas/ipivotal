@@ -96,7 +96,7 @@
     self.error = [request error];
 	PivotalProjectsParserDelegate *parserDelegate = [[PivotalProjectsParserDelegate alloc] initWithTarget:self andSelector:@selector(loadedProjects:)];
 #if LOG_NETWORK    
-    NSLog(@" Response: '%@'", [request responseString]);
+    PTLog(@" Response: '%@'", [request responseString]);
 #endif
 	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[request responseData]];
 	[parser setDelegate:parserDelegate];

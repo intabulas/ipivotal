@@ -105,7 +105,7 @@
     
 	[request startSynchronous];
 #if LOG_NETWORK    
-    NSLog(@" Response: '%@'", [request responseString]);
+    PTLog(@" Response: '%@'", [request responseString]);
 #endif    
     self.error = [request error];
 
