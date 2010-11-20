@@ -40,7 +40,7 @@
 #import "NSDate+Nibware.h"
 #import "PivotalStoriesParserDelegate.h"
 #import "TaskViewController.h"
-
+#import "UILabel+Alignment.h"
 
 @interface StoryDetailViewController ()
 - (void)displayStory;
@@ -125,6 +125,8 @@
     [commentsLabel setText:[NSString stringWithFormat:kLabelStoryComments, [self.story.comments count]]];
 	[attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryAttachments, [self.story.attachments count]]];
     [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
+    
+    [storyName alignTop];
     
 }
 

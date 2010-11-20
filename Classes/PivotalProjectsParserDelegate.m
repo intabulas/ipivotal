@@ -61,7 +61,9 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	if ([elementName isEqualToString:kTagProject]) {
 		[resources addObject:currentProject];
-        
+//        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastActivityAt" ascending:NO];
+//        resources = [NSMutableArray arrayWithArray:[resources sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]]];
+//        [sortDescriptor release];            
 		[currentProject release];
 		currentProject = nil;
         handlingMembership = NO;
@@ -144,9 +146,7 @@
 
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastActivityAt" ascending:NO];
-    resources = [NSMutableArray arrayWithArray:[resources sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]]];
-    [sortDescriptor release];    
+
 	[super parserDidEndDocument:parser];
     
     

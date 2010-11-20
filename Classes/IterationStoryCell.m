@@ -35,7 +35,7 @@
 
 @implementation IterationStoryCell
 
-@synthesize typeImage, estimateImage, storyLabel, statusLabel, story, commentImage;
+@synthesize typeImage, estimateImage, storyLabel, statusLabel, story, commentImage, ownerLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -61,7 +61,15 @@
         statusLabel.font = [UIFont  fontWithName:@"Helvetica" size:13.0f];
         statusLabel.textColor = [UIColor blackColor];
         statusLabel.textAlignment = UITextAlignmentLeft;
-    
+
+        ownerLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 28.0f, (self.contentView.frame.size.width - 60.0f) , 15.0f)];
+        ownerLabel.autoresizingMask = UIViewAutoresizingNone;
+        ownerLabel.backgroundColor = [UIColor clearColor];
+        ownerLabel.highlightedTextColor = [UIColor whiteColor];
+        ownerLabel.font = [UIFont  fontWithName:@"Helvetica" size:13.0f];
+        ownerLabel.textColor = [UIColor blackColor];
+        ownerLabel.textAlignment = UITextAlignmentRight;
+        
 
         commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(275.0f, 28.0f, 16.0f, 16.0f)];
         commentImage.image = [UIImage imageNamed:kIconComment];
@@ -78,6 +86,7 @@
         [self.contentView addSubview:storyLabel];        
         [self.contentView addSubview:statusLabel];      
         [self.contentView addSubview:commentImage];
+        [self.contentView addSubview:ownerLabel];
                 
                 
         }
@@ -138,6 +147,7 @@
                 typeImage.image = [UIImage imageNamed:kIconTypeRelease];        
         }
     
+       [ownerLabel setText:theStory.owner];
         
         [commentImage setHidden:( [theStory.comments count] == 0 )];        
         [self.backgroundView setBackgroundColor:theColor]; 
@@ -150,6 +160,7 @@
     [estimateImage release];
     [storyLabel release]; 
     [statusLabel release]; 
+    [ownerLabel release];
     [super dealloc];
 }
 

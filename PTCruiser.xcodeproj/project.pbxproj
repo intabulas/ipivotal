@@ -144,6 +144,7 @@
 		8C05911611E4F6B500E5F098 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C762C7A111497F600A1FA85 /* QuartzCore.framework */; };
 		8C05911711E4F6B500E5F098 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE039F6112B577400E76306 /* AudioToolbox.framework */; };
 		8C15659112985A5700C804CA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15659012985A5700C804CA /* Default@2x.png */; };
+		8C1566C11298801B00C804CA /* UILabel+Alignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1566C01298801B00C804CA /* UILabel+Alignment.m */; };
 		8C222A3E1036669D00A75012 /* PivotalNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C222A3D1036669D00A75012 /* PivotalNote.m */; };
 		8C222B2B103744CE00A75012 /* StoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C222B2A103744CE00A75012 /* StoryDetailViewController.m */; };
 		8C222B2D103744E500A75012 /* StoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C222B2C103744E500A75012 /* StoryDetailViewController.xib */; };
@@ -291,6 +292,8 @@
 		8C0418BF125956E900CEAEC0 /* ptcruiser.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ptcruiser.sqlite; sourceTree = "<group>"; };
 		8C05911C11E4F6B500E5F098 /* PTCruiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTCruiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C15659012985A5700C804CA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8C1566BF1298801B00C804CA /* UILabel+Alignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Alignment.h"; sourceTree = "<group>"; };
+		8C1566C01298801B00C804CA /* UILabel+Alignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Alignment.m"; sourceTree = "<group>"; };
 		8C222A3C1036669D00A75012 /* PivotalNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalNote.h; sourceTree = "<group>"; };
 		8C222A3D1036669D00A75012 /* PivotalNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PivotalNote.m; sourceTree = "<group>"; };
 		8C222B29103744CE00A75012 /* StoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryDetailViewController.h; sourceTree = "<group>"; };
@@ -517,6 +520,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C1566BE1298801100C804CA /* Categories */,
 				8CB92D361117DCE1005F20AE /* Third Party */,
 				8CF614FA111C8EA3002C315C /* Pivotal API */,
 				8CA098F30FCFB47A00846DBA /* Controllers */,
@@ -612,6 +616,15 @@
 				8C0418B71259538500CEAEC0 /* ptcruiser.sql */,
 			);
 			path = sqlite;
+			sourceTree = "<group>";
+		};
+		8C1566BE1298801100C804CA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8C1566BF1298801B00C804CA /* UILabel+Alignment.h */,
+				8C1566C01298801B00C804CA /* UILabel+Alignment.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		8C3FD3B00FCF0A4D004D8DD0 /* Images */ = {
@@ -1173,6 +1186,7 @@
 				8C04189D1259533700CEAEC0 /* EGODatabaseRequest.m in Sources */,
 				8C04189E1259533700CEAEC0 /* EGODatabaseResult.m in Sources */,
 				8C04189F1259533700CEAEC0 /* EGODatabaseRow.m in Sources */,
+				8C1566C11298801B00C804CA /* UILabel+Alignment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
