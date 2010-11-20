@@ -48,7 +48,7 @@
         cellLabel.autoresizingMask = UIViewAutoresizingNone;
         cellLabel.backgroundColor = [UIColor clearColor];
         cellLabel.highlightedTextColor = [UIColor whiteColor];
-        cellLabel.font = [UIFont  systemFontOfSize:17.0f];
+        cellLabel.font = [UIFont  fontWithName:@"Helvetica" size:17.0f];
         cellLabel.textColor = [UIColor blackColor];
         cellLabel.textAlignment = UITextAlignmentLeft;
         [cellLabel setText:kLabelLoadingProgress];

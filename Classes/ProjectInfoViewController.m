@@ -107,14 +107,14 @@ static UIFont *boldFont;
     
     static float defaultFontSize = 14.0;
     if ( boldFont == nil ) {
-        boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
+        boldFont = [[UIFont fontWithName:@"Helvetica-Bold" size:defaultFontSize] retain];        
     }
     
     
     DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
     if ( cell == nil ) {
         cell = [DynamicCell cellWithReuseIdentifier:@"InfoCell"];
-        cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.defaultFont = [UIFont fontWithName:@"Helvetica" size:defaultFontSize];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
     }
     [cell reset];
@@ -189,7 +189,7 @@ static UIFont *boldFont;
         PivotalMembership *member = (PivotalMembership*)[self.project.members objectAtIndex:row];        
 
         [cell addLabelWithText:[NSString stringWithFormat:kFormatMemberCellNameIntitials, [member memberName], [member initials]] andFont:boldFont onNewLine: NO];
-        [cell addLabelWithText:[NSString stringWithFormat:kFormatMemberCellRole, [member role]] andFont:[UIFont systemFontOfSize:12.0] onNewLine: YES];
+        [cell addLabelWithText:[NSString stringWithFormat:kFormatMemberCellRole, [member role]] andFont:[UIFont fontWithName:@"Helvetica" size:12.0] onNewLine: YES];
          
     }
     

@@ -75,7 +75,7 @@ static UIFont *boldFont;
 	newProjectField.borderStyle = UITextBorderStyleBezel;
 	newProjectField.textColor = [UIColor blackColor];
 	newProjectField.textAlignment = UITextAlignmentCenter;
-	newProjectField.font = [UIFont systemFontOfSize:14.0];
+	newProjectField.font = [UIFont fontWithName:@"Helvetica" size:14.0];
 	newProjectField.placeholder = @"enter project name";
     
 	newProjectField.backgroundColor = [UIColor whiteColor];
@@ -214,14 +214,14 @@ static UIFont *boldFont;
     
     static float defaultFontSize = 18.0;
     if ( boldFont == nil ) {
-        boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
+        boldFont = [[UIFont fontWithName:@"Helvetica-Bold" size:defaultFontSize] retain];        
     }
     
     
     DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
     if ( cell == nil ) {
         cell = [DynamicCell cellWithReuseIdentifier:@"InfoCell"];
-        cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.defaultFont = [UIFont fontWithName:@"Helvetica" size:defaultFontSize];
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
     }
@@ -236,7 +236,7 @@ static UIFont *boldFont;
     UILabel *projectName = [cell addLabelWithText:pp.name andFont:boldFont];
     projectName.highlightedTextColor = [UIColor whiteColor];
 
-    UILabel *updatedLabel = [cell addLabelWithText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]] andFont:[UIFont systemFontOfSize:13.0]];
+    UILabel *updatedLabel = [cell addLabelWithText:[NSString stringWithFormat:kLableProjectActivity, [pp.lastActivityAt prettyDate]] andFont:[UIFont fontWithName:@"Helvetica" size:13.0]];
     if ( pp.lastActivityAt == nil ) {
         [updatedLabel setText:kLableNoProjectActivity];
     }

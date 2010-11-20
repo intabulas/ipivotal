@@ -45,7 +45,7 @@
 		cellLabel.autoresizingMask = UIViewAutoresizingNone;
 		cellLabel.backgroundColor = [UIColor clearColor];
 		cellLabel.highlightedTextColor = [UIColor whiteColor];
-		cellLabel.font = [UIFont  boldSystemFontOfSize:14.0f];
+		cellLabel.font = [UIFont  fontWithName:@"Helvetica-Bold" size:14.0f];
 		cellLabel.textColor = [UIColor blackColor];
 		cellLabel.textAlignment = UITextAlignmentLeft;
         
@@ -55,7 +55,7 @@
 		cellValue.autoresizingMask = UIViewAutoresizingNone;
 		cellValue.backgroundColor = [UIColor clearColor];
 		cellValue.highlightedTextColor = [UIColor whiteColor];
-		cellValue.font = [UIFont  systemFontOfSize:14.0f];
+		cellValue.font = [UIFont  fontWithName:@"Helvetica"  size:14.0f];
 		cellValue.textColor = [UIColor blackColor];
 		cellValue.textAlignment = UITextAlignmentLeft;
         

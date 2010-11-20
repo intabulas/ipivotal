@@ -54,7 +54,7 @@
 		commentTitle.autoresizingMask = UIViewAutoresizingNone;
 		commentTitle.backgroundColor = [UIColor clearColor];
 		commentTitle.highlightedTextColor = [UIColor whiteColor];
-		commentTitle.font = [UIFont  boldSystemFontOfSize:13.0f];
+		commentTitle.font = [UIFont  fontWithName:@"Helvetica-Bold" size:13.0f];
 		commentTitle.textColor = [UIColor whiteColor];
 		commentTitle.textAlignment = UITextAlignmentLeft;
         

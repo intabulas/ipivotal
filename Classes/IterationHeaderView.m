@@ -43,12 +43,12 @@
         [self setBackgroundColor: [UIColor colorWithRed:76.0/255.0 green:76.0/255.0 blue:76.0/255.0 alpha:1.0]];
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, self.bounds.size.width, 20)];
         titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
         titleLabel.textColor = [UIColor whiteColor];    
         
         dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 22, self.bounds.size.width, 10)];
         dateLabel.backgroundColor = [UIColor clearColor];
-        dateLabel.font = [UIFont boldSystemFontOfSize:11];
+        dateLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:11];
         dateLabel.textColor = [UIColor whiteColor];
         dateLabel.text = kLabelNoDatesForIteration;
         

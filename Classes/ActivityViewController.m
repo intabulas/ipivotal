@@ -140,14 +140,14 @@ static UIFont *boldFont;
     
     static float defaultFontSize = 16.0;
     if ( boldFont == nil ) {
-        boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];        
+        boldFont = [[UIFont fontWithName:@"Helvetica-Bold" size:defaultFontSize] retain];        
     } 
     
     
     DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
     if ( cell == nil ) {
         cell = [DynamicCell cellWithReuseIdentifier:@"InfoCell"];
-        cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.defaultFont = [UIFont fontWithName:@"Helvetica" size:defaultFontSize];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;        
     }
@@ -166,8 +166,8 @@ static UIFont *boldFont;
     [cell setPaddingTop:5.0];
     [cell setPaddingBottom:5.0];    
 
-    [cell addLabelWithText:activityText];
-    [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont boldSystemFontOfSize:13.0]];
+    [cell addLabelWithText:activityText andFont:[UIFont fontWithName:@"Helvetica" size:15]];
+    [cell addLabelWithText:[NSString stringWithFormat:kFormatObject, prettyDate] andFont:[UIFont fontWithName:@"Helvetica-Bold" size:12.0]];
     [activityText release];
     
     [cell prepare];

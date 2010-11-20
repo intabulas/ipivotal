@@ -43,7 +43,7 @@
 		titleLabel.autoresizingMask = UIViewAutoresizingNone;
 		titleLabel.backgroundColor = [UIColor clearColor];
 		titleLabel.highlightedTextColor = [UIColor whiteColor];
-		titleLabel.font = [UIFont  boldSystemFontOfSize:14.0f];
+		titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0f];
 		titleLabel.textColor = [UIColor blackColor];
 		titleLabel.textAlignment = UITextAlignmentLeft;
 
@@ -51,7 +51,7 @@
 		contentLabel.autoresizingMask = UIViewAutoresizingNone;
 		contentLabel.backgroundColor = [UIColor clearColor];
 		contentLabel.highlightedTextColor = [UIColor whiteColor];
-		contentLabel.font = [UIFont  systemFontOfSize:14.0f];
+		contentLabel.font = [UIFont  fontWithName:@"Helvetica" size:14.0f];
 		contentLabel.textColor = [UIColor blackColor];
 		contentLabel.textAlignment = UITextAlignmentRight;
         
