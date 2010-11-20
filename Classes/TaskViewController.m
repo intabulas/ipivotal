@@ -199,9 +199,10 @@
 }
 
 - (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex{    
+    [newTaskField resignFirstResponder];
+    
     if (buttonIndex == 1) { 
         
-        [newTaskField resignFirstResponder];
         
         
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
