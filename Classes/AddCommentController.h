@@ -31,6 +31,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SMTEDelegateController.h"
 
 @class PivotalNote, PivotalStory, PivotalProject;
 
@@ -43,7 +44,12 @@
     PivotalStory *story;
     PivotalNote  *note;
     PivotalProject *project;
+    
+    SMTEDelegateController *textExpander;
+    
 }
+
+@property (nonatomic,retain) SMTEDelegateController *textExpander;
 
 -(id)createCommentforStory:(PivotalStory*)theStory andProject:(PivotalProject*)theProject ;
 

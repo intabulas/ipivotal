@@ -37,12 +37,34 @@
 #import "PivotalProject.h"
 
 @implementation AddCommentController
+@synthesize textExpander;
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        textExpander = [[SMTEDelegateController alloc] init];
+        [textExpander setNextDelegate:self];
+        
+        [commentBody setDelegate:textExpander];
+        
+    }
+    return self;
+}
+
 
 - (void)dealloc {
     [note removeObserver:self forKeyPath:kResourceSavingStatusKeyPath];
     [note release];
+    
+    [textExpander release], textExpander = nil;
+    
+    
     [super dealloc];
 }
+
+
+
 
 -(id)createCommentforStory:(PivotalStory*)theStory andProject:(PivotalProject*)theProject {    
     [super initWithNibName:@"AddComment" bundle:nil];
