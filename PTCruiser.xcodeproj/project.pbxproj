@@ -204,6 +204,10 @@
 		8C81C1131110AC7F00378558 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1121110AC7F00378558 /* tag.png */; };
 		8C81C1181110ACE800378558 /* map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1171110ACE800378558 /* map-marker.png */; };
 		8C81C1361110AF4F00378558 /* storyheader.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C81C1351110AF4F00378558 /* storyheader.png */; };
+		8C82615E1299A3900060AE80 /* libteEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82615D1299A3900060AE80 /* libteEngine.a */; };
+		8C8261611299A3960060AE80 /* libteEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8261601299A3960060AE80 /* libteEngine.a */; };
+		8C82617A1299A4610060AE80 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8261791299A4610060AE80 /* AddressBook.framework */; };
+		8C82617C1299A4610060AE80 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82617B1299A4610060AE80 /* AddressBookUI.framework */; };
 		8C826AD40FD16D3B008F9E51 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */; };
 		8C826AD70FD16D7E008F9E51 /* AddStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */; };
 		8C870CD5112B72F8001EDF46 /* RefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C870CD4112B72F8001EDF46 /* RefreshArrow.png */; };
@@ -382,6 +386,11 @@
 		8C81C1121110AC7F00378558 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
 		8C81C1171110ACE800378558 /* map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-marker.png"; sourceTree = "<group>"; };
 		8C81C1351110AF4F00378558 /* storyheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storyheader.png; sourceTree = "<group>"; };
+		8C82615D1299A3900060AE80 /* libteEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libteEngine.a; sourceTree = "<group>"; };
+		8C8261601299A3960060AE80 /* libteEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libteEngine.a; sourceTree = "<group>"; };
+		8C8261791299A4610060AE80 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		8C82617B1299A4610060AE80 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		8C8262011299A8000060AE80 /* SMTEDelegateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTEDelegateController.h; sourceTree = "<group>"; };
 		8C826AD20FD16D3B008F9E51 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
 		8C826AD30FD16D3B008F9E51 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
 		8C826AD60FD16D7E008F9E51 /* AddStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStoryViewController.xib; sourceTree = "<group>"; };
@@ -496,6 +505,10 @@
 				8C762C7B111497F600A1FA85 /* QuartzCore.framework in Frameworks */,
 				8CE039F7112B577400E76306 /* AudioToolbox.framework in Frameworks */,
 				8C0418AF1259534700CEAEC0 /* libsqlite3.dylib in Frameworks */,
+				8C82615E1299A3900060AE80 /* libteEngine.a in Frameworks */,
+				8C8261611299A3960060AE80 /* libteEngine.a in Frameworks */,
+				8C82617A1299A4610060AE80 /* AddressBook.framework in Frameworks */,
+				8C82617C1299A4610060AE80 /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,8 +570,8 @@
 				8C7C5F6110155D49002A4C52 /* Reachability.m */,
 				8C3FD5930FCF31F9004D8DD0 /* ApplicationConstants.h */,
 				1D3623240D0F684500981E51 /* iPivotalAppDelegate.h */,
-				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
 				28A0AB4B0D9B1048005BE974 /* PTCruiser_Prefix.pch */,
+				1D3623250D0F684500981E51 /* iPivotalAppDelegate.m */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -590,6 +603,8 @@
 				8C762C7A111497F600A1FA85 /* QuartzCore.framework */,
 				8CE039F6112B577400E76306 /* AudioToolbox.framework */,
 				8C0418AE1259534700CEAEC0 /* libsqlite3.dylib */,
+				8C8261791299A4610060AE80 /* AddressBook.framework */,
+				8C82617B1299A4610060AE80 /* AddressBookUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -703,6 +718,33 @@
 			name = DynamicCell;
 			sourceTree = "<group>";
 		};
+		8C82615A1299A34E0060AE80 /* Textexpander SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8C8262011299A8000060AE80 /* SMTEDelegateController.h */,
+				8C82615F1299A3960060AE80 /* Simulator4 */,
+				8C82615C1299A3900060AE80 /* Device */,
+			);
+			name = "Textexpander SDK";
+			path = "third-party/textexpander";
+			sourceTree = "<group>";
+		};
+		8C82615C1299A3900060AE80 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				8C82615D1299A3900060AE80 /* libteEngine.a */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		8C82615F1299A3960060AE80 /* Simulator4 */ = {
+			isa = PBXGroup;
+			children = (
+				8C8261601299A3960060AE80 /* libteEngine.a */,
+			);
+			path = Simulator4;
+			sourceTree = "<group>";
+		};
 		8CA098F30FCFB47A00846DBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +790,7 @@
 		8CB92D361117DCE1005F20AE /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				8C82615A1299A34E0060AE80 /* Textexpander SDK */,
 				8C0418931259531B00CEAEC0 /* EGODatabase */,
 				8C6BF49C114846880001939F /* DynamicCell */,
 				8CE039DA112B56F600E76306 /* PullToRefresh */,
@@ -1290,6 +1333,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/third-party/textexpander/Device\"",
+					"\"$(SRCROOT)/Classes/third-party/textexpander/Simulator4\"",
+				);
 				PRODUCT_NAME = PTCruiser;
 			};
 			name = Debug;
@@ -1304,6 +1352,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/third-party/textexpander/Device\"",
+					"\"$(SRCROOT)/Classes/third-party/textexpander/Simulator4\"",
+				);
 				PRODUCT_NAME = PTCruiser;
 			};
 			name = Release;
@@ -1366,8 +1419,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=*]" = "$(SRCROOT)/Classes/third-party/textexpander/Device";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=*]" = "$(SRCROOT)/Classes/third-party/textexpander/Simulator4";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030100";
+				OTHER_LDFLAGS = (
+					"-l",
+					teEngine,
+				);
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7ED064E0-0B58-4692-A8C8-01546E6B4833";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1386,6 +1445,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PTCruiser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/third-party/textexpander/Device\"",
+					"\"$(SRCROOT)/Classes/third-party/textexpander/Simulator4\"",
+				);
 				PRODUCT_NAME = PTCruiser;
 			};
 			name = Distribution;
@@ -1401,8 +1465,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=*]" = "$(SRCROOT)/Classes/third-party/textexpander/Device";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=*]" = "$(SRCROOT)/Classes/third-party/textexpander/Simulator4";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030100";
+				OTHER_LDFLAGS = (
+					"-l",
+					teEngine,
+				);
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EAAA4ABA-C6D4-4AB4-92F7-05D67B9EC7C7";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1422,8 +1492,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=*]" = "$(SRCROOT)/Classes/third-party/textexpander/Device";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=*]" = "$(SRCROOT)/Classes/third-party/textexpander/Simulator4";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030100";
+				OTHER_LDFLAGS = (
+					"-l",
+					teEngine,
+				);
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
