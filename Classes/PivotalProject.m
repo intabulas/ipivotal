@@ -86,6 +86,5 @@
     return foundMember;        
 }
 
-
 @end
 
