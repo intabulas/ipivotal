@@ -33,48 +33,18 @@
 #import "iPivotalAppDelegate.h"
 #import "AuthenticationViewController.h"
 #import "Reachability.h"
-#import "EGODatabase.h"
 
 @interface iPivotalAppDelegate (private)
     - (void) postLaunch;
     - (void) presentLogin;
     - (void) authenticate;
-    - (void) checkForDatabase:(id)sender;
 @end
 
 
 
 @implementation iPivotalAppDelegate
 
-@synthesize internetConnectionStatus, remoteHostStatus, localWiFiConnectionStatus, database;
-
-- (void) checkForDatabase:(id)sender {
-    
-    if ( self.database != nil && [self.database open] ) {
-        [self.database close];
-    }
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];    
-    NSError *err;    
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];    
-    NSString *databaseFile =  [documentsDirectory stringByAppendingPathComponent:@"ptcruiser.sqlite"];     
-    if ( ![fileManager fileExistsAtPath:databaseFile] ) {        
-        NSString *srcPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:DATABASE_FILE_NAME];
-        PTLog(@"Initializing with Empty Database from: %@", srcPath);
-        [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:databaseFile  error:&err];
-    }
-    
-    self.database = [EGODatabase databaseWithPath:databaseFile];
-    
-    if ( ![self.database open] ) {
-        PTLog(@"Error Opening Database!!");      
-    }     
-    
-}
-
-
+@synthesize internetConnectionStatus, remoteHostStatus, localWiFiConnectionStatus;
 
 
 - (void)reachabilityChanged:(NSNotification *)note {
@@ -117,11 +87,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
 
-    [self checkForDatabase:self];
-    
     pivotalManager = [[PivotalManager alloc] init];
-    
-
 
     [[Reachability sharedReachability] setHostName:kPivotalTrackerHost];
     [[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
@@ -182,7 +148,6 @@
 
 
 - (void)dealloc {
-    RELEASE_SAFELY(database);
     RELEASE_SAFELY(pivotalManager);
     RELEASE_SAFELY(navigationController);
     RELEASE_SAFELY(toolbar);

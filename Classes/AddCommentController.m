@@ -40,19 +40,6 @@
 @synthesize textExpander;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        textExpander = [[SMTEDelegateController alloc] init];
-        [textExpander setNextDelegate:self];
-        
-        [commentBody setDelegate:textExpander];
-        
-    }
-    return self;
-}
-
-
 - (void)dealloc {
     [note removeObserver:self forKeyPath:kResourceSavingStatusKeyPath];
     [note release];
@@ -68,16 +55,24 @@
 
 -(id)createCommentforStory:(PivotalStory*)theStory andProject:(PivotalProject*)theProject {    
     [super initWithNibName:@"AddComment" bundle:nil];
+    
+    textExpander = [[SMTEDelegateController alloc] init];
+    [textExpander setNextDelegate:self];
+    [commentBody setDelegate:textExpander];
+
+    
     story = theStory;
     project = theProject;
     note = [[PivotalNote alloc] initWithProject:project andStory:story];
+
     return self;
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+    [super viewDidAppear:animated];    
     [commentBody becomeFirstResponder];
+    
 }
 
 

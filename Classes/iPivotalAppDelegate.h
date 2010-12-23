@@ -36,7 +36,6 @@
 #import "Reachability.h"
 #import "PivotalManager.h"
 
-@class EGODatabase;
 @interface iPivotalAppDelegate : NSObject <UIApplicationDelegate> {
     IBOutlet UIWindow *window;
     IBOutlet UINavigationController *navigationController;
@@ -46,11 +45,10 @@
     NetworkStatus remoteHostStatus;
     NetworkStatus localWiFiConnectionStatus;
     PivotalManager *pivotalManager;
-    EGODatabase *database;
+
 }
 
 @property (nonatomic, readonly) AuthenticationViewController *loginController;
-@property (nonatomic, retain)   EGODatabase *database;
 @property NetworkStatus internetConnectionStatus;
 @property NetworkStatus remoteHostStatus;
 @property NetworkStatus localWiFiConnectionStatus;

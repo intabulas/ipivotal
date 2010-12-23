@@ -14,12 +14,7 @@
 		8C026B260FDC9829002CFEE0 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026B250FDC9829002CFEE0 /* LabelCell.m */; };
 		8C026D4D0FDCA771002CFEE0 /* ListSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */; };
 		8C026D580FDCA96C002CFEE0 /* ListSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */; };
-		8C04189C1259533700CEAEC0 /* EGODatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0418951259533600CEAEC0 /* EGODatabase.m */; };
-		8C04189D1259533700CEAEC0 /* EGODatabaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0418971259533600CEAEC0 /* EGODatabaseRequest.m */; };
-		8C04189E1259533700CEAEC0 /* EGODatabaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0418991259533600CEAEC0 /* EGODatabaseResult.m */; };
-		8C04189F1259533700CEAEC0 /* EGODatabaseRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04189B1259533700CEAEC0 /* EGODatabaseRow.m */; };
 		8C0418AF1259534700CEAEC0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0418AE1259534700CEAEC0 /* libsqlite3.dylib */; };
-		8C0418C0125956E900CEAEC0 /* ptcruiser.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8C0418BF125956E900CEAEC0 /* ptcruiser.sqlite */; };
 		8C05909711E4F6B500E5F098 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3B20FCF0A84004D8DD0 /* Icon.png */; };
 		8C05909811E4F6B500E5F098 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD3F90FCF1AD0004D8DD0 /* MainWindow.xib */; };
 		8C05909911E4F6B500E5F098 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3FD4360FCF1CA7004D8DD0 /* ProjectsViewController.xib */; };
@@ -283,17 +278,7 @@
 		8C026D4B0FDCA771002CFEE0 /* ListSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSelectionController.h; sourceTree = "<group>"; };
 		8C026D4C0FDCA771002CFEE0 /* ListSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSelectionController.m; sourceTree = "<group>"; };
 		8C026D570FDCA96C002CFEE0 /* ListSelectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSelectionController.xib; sourceTree = "<group>"; };
-		8C0418941259533600CEAEC0 /* EGODatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabase.h; sourceTree = "<group>"; };
-		8C0418951259533600CEAEC0 /* EGODatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabase.m; sourceTree = "<group>"; };
-		8C0418961259533600CEAEC0 /* EGODatabaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRequest.h; sourceTree = "<group>"; };
-		8C0418971259533600CEAEC0 /* EGODatabaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseRequest.m; sourceTree = "<group>"; };
-		8C0418981259533600CEAEC0 /* EGODatabaseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseResult.h; sourceTree = "<group>"; };
-		8C0418991259533600CEAEC0 /* EGODatabaseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseResult.m; sourceTree = "<group>"; };
-		8C04189A1259533600CEAEC0 /* EGODatabaseRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRow.h; sourceTree = "<group>"; };
-		8C04189B1259533700CEAEC0 /* EGODatabaseRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseRow.m; sourceTree = "<group>"; };
 		8C0418AE1259534700CEAEC0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		8C0418B71259538500CEAEC0 /* ptcruiser.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ptcruiser.sql; sourceTree = "<group>"; };
-		8C0418BF125956E900CEAEC0 /* ptcruiser.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ptcruiser.sqlite; sourceTree = "<group>"; };
 		8C05911C11E4F6B500E5F098 /* PTCruiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTCruiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C15659012985A5700C804CA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8C1566BF1298801B00C804CA /* UILabel+Alignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Alignment.h"; sourceTree = "<group>"; };
@@ -580,7 +565,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8C0418B21259536400CEAEC0 /* sqlite */,
 				8CE039D1112B54C800E76306 /* CHANGELOG */,
 				8C50D6190FE1A86300F41900 /* Entitlements.plist */,
 				8CDB63B30FCF87BD003AC065 /* IBFiles */,
@@ -607,30 +591,6 @@
 				8C82617B1299A4610060AE80 /* AddressBookUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8C0418931259531B00CEAEC0 /* EGODatabase */ = {
-			isa = PBXGroup;
-			children = (
-				8C0418941259533600CEAEC0 /* EGODatabase.h */,
-				8C0418951259533600CEAEC0 /* EGODatabase.m */,
-				8C0418961259533600CEAEC0 /* EGODatabaseRequest.h */,
-				8C0418971259533600CEAEC0 /* EGODatabaseRequest.m */,
-				8C0418981259533600CEAEC0 /* EGODatabaseResult.h */,
-				8C0418991259533600CEAEC0 /* EGODatabaseResult.m */,
-				8C04189A1259533600CEAEC0 /* EGODatabaseRow.h */,
-				8C04189B1259533700CEAEC0 /* EGODatabaseRow.m */,
-			);
-			path = EGODatabase;
-			sourceTree = "<group>";
-		};
-		8C0418B21259536400CEAEC0 /* sqlite */ = {
-			isa = PBXGroup;
-			children = (
-				8C0418BF125956E900CEAEC0 /* ptcruiser.sqlite */,
-				8C0418B71259538500CEAEC0 /* ptcruiser.sql */,
-			);
-			path = sqlite;
 			sourceTree = "<group>";
 		};
 		8C1566BE1298801100C804CA /* Categories */ = {
@@ -791,7 +751,6 @@
 			isa = PBXGroup;
 			children = (
 				8C82615A1299A34E0060AE80 /* Textexpander SDK */,
-				8C0418931259531B00CEAEC0 /* EGODatabase */,
 				8C6BF49C114846880001939F /* DynamicCell */,
 				8CE039DA112B56F600E76306 /* PullToRefresh */,
 				8C3FD3C30FCF0B7C004D8DD0 /* Categories */,
@@ -1090,7 +1049,6 @@
 				8C4329401135C24700FC2B52 /* TaskViewController.xib in Resources */,
 				8C751F2611E76B7A00B1E8F5 /* story_flyover_icon.png in Resources */,
 				8CFEFFF311E97E430048EDBC /* Icon@2x.png in Resources */,
-				8C0418C0125956E900CEAEC0 /* ptcruiser.sqlite in Resources */,
 				8C15659112985A5700C804CA /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1225,10 +1183,6 @@
 				8CABE89411DD422E006F1731 /* PivotalObject.m in Sources */,
 				8CABE8C411DD4949006F1731 /* PivotalTrackerEngine.m in Sources */,
 				8CEDA5BB11E58AB20066CD8E /* PivotalTaskParserDelegate.m in Sources */,
-				8C04189C1259533700CEAEC0 /* EGODatabase.m in Sources */,
-				8C04189D1259533700CEAEC0 /* EGODatabaseRequest.m in Sources */,
-				8C04189E1259533700CEAEC0 /* EGODatabaseResult.m in Sources */,
-				8C04189F1259533700CEAEC0 /* EGODatabaseRow.m in Sources */,
 				8C1566C11298801B00C804CA /* UILabel+Alignment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
