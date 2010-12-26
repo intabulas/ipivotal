@@ -89,6 +89,7 @@
 - (NSString *)to_xml;
 
 - (void)loadStory;
+- (NSString*)storyOwner;
 
 @end
 

@@ -31,38 +31,38 @@
 //
 
 #import "IterationStoryCell.h"
+#import "UILabel+Alignment.h"
 
 
 @implementation IterationStoryCell
 
-@synthesize typeImage, estimateImage, storyLabel, statusLabel, story, commentImage, ownerLabel;
+@synthesize typeImage, storyLabel, statusLabel, story, commentImage, ownerLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-                
+        
         typeImage = [[UIImageView alloc] initWithFrame:CGRectMake(4.0f, 6.0f, 20.0f, 20.0f)];
         typeImage.backgroundColor = [UIColor clearColor];
-                
-        estimateImage = [[UIImageView alloc] initWithFrame:CGRectMake(8.0f, 29.0f, 12.0f, 12.0f)];        
-        estimateImage.contentMode =  UIViewContentModeBottom;
-                
-        storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 3.0f, (self.contentView.frame.size.width - 55.0f) , 25.0f)];
+        
+        storyLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 3.0f, (self.contentView.frame.size.width - 56.0f) , 40.0f)];
         storyLabel.autoresizingMask = UIViewAutoresizingNone;
         storyLabel.backgroundColor = [UIColor clearColor];
         storyLabel.highlightedTextColor = [UIColor whiteColor];
-        storyLabel.font = [UIFont  fontWithName:@"Helvetica" size:16.0f];
+        storyLabel.font = [UIFont  fontWithName:@"Helvetica-Bold" size:15.0f];
         storyLabel.textColor = [UIColor blackColor];
+        [storyLabel setNumberOfLines:5];
+        [storyLabel setLineBreakMode:UILineBreakModeWordWrap];
         storyLabel.textAlignment = UITextAlignmentLeft;
-                        
-        statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 28.0f, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
+        
+        statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 44, (self.contentView.frame.size.width - 66.0f) , 15.0f)];
         statusLabel.autoresizingMask = UIViewAutoresizingNone;
         statusLabel.backgroundColor = [UIColor clearColor];
         statusLabel.highlightedTextColor = [UIColor whiteColor];
-        statusLabel.font = [UIFont  fontWithName:@"Helvetica" size:13.0f];
+        statusLabel.font = [UIFont  fontWithName:@"Helvetica" size:11.0f];
         statusLabel.textColor = [UIColor blackColor];
         statusLabel.textAlignment = UITextAlignmentLeft;
-
-        ownerLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 28.0f, (self.contentView.frame.size.width - 60.0f) , 15.0f)];
+        
+        ownerLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 28.0f, (self.contentView.frame.size.width - 100.0f) , 15.0f)];
         ownerLabel.autoresizingMask = UIViewAutoresizingNone;
         ownerLabel.backgroundColor = [UIColor clearColor];
         ownerLabel.highlightedTextColor = [UIColor whiteColor];
@@ -70,94 +70,92 @@
         ownerLabel.textColor = [UIColor blackColor];
         ownerLabel.textAlignment = UITextAlignmentRight;
         
-
-        commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(275.0f, 28.0f, 16.0f, 16.0f)];
+        
+        //        commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(275.0f, 28.0f, 16.0f, 16.0f)];
+        commentImage = [[UIImageView alloc] initWithFrame:CGRectMake(6, 44, 16.0f, 16.0f)];        
         commentImage.image = [UIImage imageNamed:kIconComment];
         commentImage.backgroundColor = [UIColor clearColor];
         [commentImage setHidden:TRUE];
-
-                
+        
+        
         UIView* backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectZero ] autorelease ];
         self.backgroundView = backgroundView;
-                
-                
+        
+        
         [self.contentView addSubview:typeImage];
-        [self.contentView addSubview:estimateImage];        
         [self.contentView addSubview:storyLabel];        
         [self.contentView addSubview:statusLabel];      
         [self.contentView addSubview:commentImage];
-        [self.contentView addSubview:ownerLabel];
-                
-                
-        }
-        return self;
+        // [self.contentView addSubview:ownerLabel];
+        
+        
+    }
+    return self;
 }
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     
-        [super setSelected:selected animated:animated];
+    [super setSelected:selected animated:animated];
     
-        // Configure the view for the selected state
+    // Configure the view for the selected state
 }
 
 
 - (void)setStory:(PivotalStory *)theStory {
-     
-        statusLabel.textColor = [UIColor blackColor];
-        storyLabel.textColor = [UIColor blackColor];
     
-        storyLabel.text = theStory.name;
-        statusLabel.text = theStory.currentState;
-        UIColor *theColor;
-            
-        if ( [theStory.currentState hasPrefix:kStateAccepted] ) {
-                theColor = [UIColor colorWithRed:216.0/255.0 green:238.0/255.0 blue:206.0/255.0 alpha:1.0];
-        } else if ( [theStory.currentState hasPrefix:kStateStarted] || [theStory.currentState hasPrefix:kStateDelivered] ) {
-                theColor = [UIColor colorWithRed:255.0/255.0 green:248.0/255.0 blue:228.0/255.0 alpha:1.0];
-//        } else if ( [theStory.currentState hasPrefix:kStateUnStarted] &&  [theStory.storyType hasPrefix:kStateRelease] ) {
-        } else if ( [theStory.storyType hasPrefix:kStateRelease] ) {            
-            theColor = [UIColor colorWithRed:64.0/255.0 green:122.0/255.0 blue:165.0/255.0 alpha:1.0];       
-			statusLabel.textColor = [UIColor whiteColor];
-			storyLabel.textColor = [UIColor whiteColor];
- 			
-//                theColor = [UIColor colorWithRed:145.0/255.0 green:49.0/255.0 blue:50.0/255.0 alpha:1.0];        			
-        } else if ( [theStory.currentState hasPrefix:kStateUnScheduled] ) {
-                theColor = [UIColor colorWithRed:231.0/255.0 green:243.0/255.0 blue:250.0/255.0 alpha:1.0];        
-                
-        } else {
-                theColor = [UIColor whiteColor];
-        }
-        
-        estimateImage.image = [UIImage imageNamed: kIconEstimateNone];
-        if ( theStory.estimate == 1 ) estimateImage.image = [UIImage imageNamed:kIconEstimateOnePoint];
-        if ( theStory.estimate == 2 ) estimateImage.image = [UIImage imageNamed:kIconEstimateTwoPoints];    
-        if ( theStory.estimate == 3 ) estimateImage.image = [UIImage imageNamed:kIconEstimateThreePoints];        
-        
-        if ([theStory.storyType hasPrefix:kStateRelease]) estimateImage.image = nil;
+    statusLabel.textColor = [UIColor blackColor];
+    storyLabel.textColor = [UIColor blackColor];
     
-        if ( [theStory.storyType hasPrefix:kMatchBug] ) {    
-                typeImage.image = [UIImage imageNamed:kIconTypeBug];        
-        } else if ( [theStory.storyType hasPrefix:kMatchFeature] ) {
-                typeImage.image = [UIImage imageNamed:kIconTypeFeature];
-        } else if ( [theStory.storyType hasPrefix:kMatchChore] ) {
-                typeImage.image = [UIImage imageNamed:kIconTypeChore];
-                
-        } else if ( [theStory.storyType hasPrefix:kMatchRelease] ) {
-                typeImage.image = [UIImage imageNamed:kIconTypeRelease];        
-        }
+    storyLabel.text = theStory.name;
+    [storyLabel alignTop];
     
-       [ownerLabel setText:theStory.owner];
+    NSString *statusFormat = [NSString stringWithFormat:@"%@, %d point(s), owned by: %@", theStory.currentState, theStory.estimate, [theStory storyOwner]];
+    
+    [statusLabel setText:statusFormat];
+    //        statusLabel.text = theStory.currentState;
+    UIColor *theColor;
+    
+    if ( [theStory.currentState hasPrefix:kStateAccepted] ) {
+        theColor = [UIColor colorWithRed:219.0/255.0 green:235.0/255.0 blue:209.0/255.0 alpha:1.0];
+    } else if ( [theStory.currentState hasPrefix:kStateStarted] || [theStory.currentState hasPrefix:kStateDelivered] || [theStory.currentState hasPrefix:kStateFinished] ) {
+        theColor = [UIColor colorWithRed:239.0/255.0 green:240.0/255.0 blue:198.0/255.0 alpha:1.0];            
+        //        } else if ( [theStory.currentState hasPrefix:kStateUnStarted] &&  [theStory.storyType hasPrefix:kStateRelease] ) {
+    } else if ( [theStory.storyType hasPrefix:kStateRelease] ) {            
+        theColor = [UIColor colorWithRed:64.0/255.0 green:122.0/255.0 blue:165.0/255.0 alpha:1.0];       
+        statusLabel.textColor = [UIColor whiteColor];
+        storyLabel.textColor = [UIColor whiteColor];
         
-        [commentImage setHidden:( [theStory.comments count] == 0 )];        
-        [self.backgroundView setBackgroundColor:theColor]; 
+        //                theColor = [UIColor colorWithRed:145.0/255.0 green:49.0/255.0 blue:50.0/255.0 alpha:1.0];        			
+    } else if ( [theStory.currentState hasPrefix:kStateUnScheduled] ) {
+        theColor = [UIColor colorWithRed:229.0/255.0 green:239.0/255.0 blue:248.0/255.0 alpha:1.0];        
+        
+    } else {
+        theColor = [UIColor whiteColor];
+    }
+    
+    
+    if ( [theStory.storyType hasPrefix:kMatchBug] ) {    
+        typeImage.image = [UIImage imageNamed:kIconTypeBug];        
+    } else if ( [theStory.storyType hasPrefix:kMatchFeature] ) {
+        typeImage.image = [UIImage imageNamed:kIconTypeFeature];
+    } else if ( [theStory.storyType hasPrefix:kMatchChore] ) {
+        typeImage.image = [UIImage imageNamed:kIconTypeChore];
+        
+    } else if ( [theStory.storyType hasPrefix:kMatchRelease] ) {
+        typeImage.image = [UIImage imageNamed:kIconTypeRelease];        
+    }
+    
+    [ownerLabel setText:theStory.owner];
+    
+    [commentImage setHidden:( [theStory.comments count] == 0 )];        
+    [self.backgroundView setBackgroundColor:theColor]; 
 }
 
 
 - (void)dealloc {
     [commentImage release];
     [typeImage release]; 
-    [estimateImage release];
     [storyLabel release]; 
     [statusLabel release]; 
     [ownerLabel release];

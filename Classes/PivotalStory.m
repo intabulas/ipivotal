@@ -132,6 +132,12 @@
 	[pool release];
 }
 
-
+- (NSString*)storyOwner {
+    if ( self.owner == nil ) {
+        return @"none";
+    } else {
+        return self.owner;
+    }
+}
 
 @end
