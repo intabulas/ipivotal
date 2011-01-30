@@ -74,7 +74,7 @@
 
 - (void)loadRecords {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
-        self.fetchProjects;
+    [self fetchProjects];
     [pool release];    
 }
 

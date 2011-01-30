@@ -82,7 +82,7 @@
 
 - (void)loadRecords {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
-     self.fetchStories;
+    [self fetchStories];
     [pool release];    
 }
 
