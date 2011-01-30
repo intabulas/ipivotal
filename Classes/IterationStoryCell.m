@@ -36,7 +36,7 @@
 
 @implementation IterationStoryCell
 
-@synthesize typeImage, storyLabel, statusLabel, story, commentImage, ownerLabel;
+@synthesize typeImage, storyLabel, statusLabel, story, commentImage, ownerLabel, estimateImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -163,6 +163,7 @@
     [storyLabel release]; 
     [statusLabel release]; 
     [ownerLabel release];
+    [estimateImage release];
     [super dealloc];
 }
 
