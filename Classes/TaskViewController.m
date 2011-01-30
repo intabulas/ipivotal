@@ -253,9 +253,10 @@
 	} else {
 		//self. = theResult;
         NSArray *tasks = theResult;
-        PivotalTask *tmpTask = [tasks objectAtIndex:0];
-        
-        [story.tasks addObject:tmpTask];
+        if ( tasks.count > 0 ) {
+            PivotalTask *tmpTask = [tasks objectAtIndex:0];        
+            [story.tasks addObject:tmpTask];
+        }
         
 	}
 }
