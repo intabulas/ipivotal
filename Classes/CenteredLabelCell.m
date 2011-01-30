@@ -55,6 +55,12 @@
 }
 
 
+- (void) setFrame:(CGRect)theFrame {
+    [cellLabel setFrame:CGRectMake(0,0,theFrame.size.width, theFrame.size.height)];
+    [super setFrame:theFrame];
+    
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {    
     [super setSelected:selected animated:animated];
 }

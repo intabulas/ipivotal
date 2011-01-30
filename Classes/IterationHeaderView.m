@@ -65,6 +65,10 @@
     // Drawing code
 }
 
+- (void) setFrame:(CGRect)theFrame {
+    [super setFrame:theFrame];
+}    
+
 
 
 - (void)setIteration:(PivotalIteration*)iteration {

@@ -64,6 +64,10 @@
     return self;
 }
 
+- (void) setFrame:(CGRect)theFrame {
+    [super setFrame:theFrame];
+}    
+
 
 - (void)dealloc {
     [cellLabel release]; cellLabel = nil;

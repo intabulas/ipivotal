@@ -71,6 +71,10 @@
     // Configure the view for the selected state
 }
 
+- (void) setFrame:(CGRect)theFrame {
+    [super setFrame:theFrame];
+}    
+
 
 - (void)setText:(NSString*)text {
 	cellLabel.text = text;

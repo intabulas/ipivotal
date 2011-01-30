@@ -66,6 +66,11 @@
 }
 
 
+- (void) setFrame:(CGRect)theFrame {
+    [super setFrame:theFrame];
+}    
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     
     [super setSelected:selected animated:animated];
