@@ -161,9 +161,9 @@
 #pragma mark Add Comments
 
 -(void)composeReply:(id)sender {
-    AddCommentController *controller = [[AddCommentController alloc] createCommentforStory:story andProject:project];
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
+    AddCommentController *addController = [[AddCommentController alloc] createCommentforStory:story andProject:project];
+    [self.navigationController pushViewController:addController animated:YES];
+    [addController release];
     
     
 }

@@ -190,7 +190,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ( stories.isLoaded && stories.stories.count > 0 ) {        StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStories:stories.stories andIndex:indexPath.row andProject:project];        
+    if ( stories.isLoaded && stories.stories.count > 0 ) {        
+        StoryDetailViewController *controller = [[StoryDetailViewController alloc] initWithStories:stories.stories andIndex:indexPath.row andProject:project];        
         [self.navigationController pushViewController:controller animated:YES];
       [controller release];
     }

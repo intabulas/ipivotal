@@ -116,7 +116,9 @@
 - (void)viewWillAppear:(BOOL)animated { 
     [self.navigationItem setTitle:kLabelStoryDetails]; 
     //[self updateActions];
-    [self displayStory];    
+    [self displayStory];  
+    [storyName alignTop];
+   
     
 }
 
@@ -126,7 +128,6 @@
 	[attachmentsLabel setText:[NSString stringWithFormat:kLabelStoryAttachments, [self.story.attachments count]]];
     [tasksLabel setText:[NSString stringWithFormat:kLabelStoryTasks, [self.story.tasks count]]];
     
-    [storyName alignTop];
     
 }
 
@@ -336,6 +337,7 @@
     [storyOwner setText:self.story.owner];
     storyDescription.text = self.story.description;
     [storyName setText:self.story.name];
+    [storyName alignTop];
     
     
     

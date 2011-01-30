@@ -5,6 +5,8 @@ v1.9
 + Accidentally built last release for 3.1.2, all released are build against 3.0 now
 + Added ability to Add new Projects
 + Added Task Management
++ Lots of UI cleanup and optimization
++ Fixed some misc bugs and plugged a few memory leaks
 
 
 v1.8
