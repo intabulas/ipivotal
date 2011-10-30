@@ -43,6 +43,7 @@
 	[super parserDidStartDocument:parser];
 	dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];    
+	[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];	
 	dateFormatter.dateFormat = kDateFormatUTC;
     handlingNotes = NO;
     handlingTasks = NO;
